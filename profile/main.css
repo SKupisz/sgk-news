@@ -1,0 +1,143 @@
+#u1{
+  box-shadow: 0px 2px #333;
+}
+#u10t{
+  width: 100%;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../pipes.png");
+  color: black;
+  text-align: center;
+  font-size: 200%;
+  position: absolute; top: 0%; left: 0px;
+  font-family: monospace;
+  height: 10%;
+}
+#u10ia{
+  width: 100%;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../dark-grey-terrazzo.png");
+  color: white;
+  font-family: Verdana;
+  font-size: 2em;
+  text-align: center;
+  position: absolute; top: 10%; left: 0px;
+  height: 10%;
+  cursor: default;
+}
+#u10ial{
+  cursor: pointer;
+}
+#u10ic{
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: Verdana;
+  font-size: 200%;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../tactile_noise.png");
+  display: none;
+  z-index: 2;
+  position: absolute; top: 20%; left: 0px;
+  box-shadow: 1px 1px #222;
+}
+#u10p,#u10a{
+  width: 50%;
+  text-align: center;
+  color: white;
+  font-family: monospace;
+}
+#u10p{
+  background-image: url("articles.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 200%;
+  position: absolute; top: 20%; left: 0px;
+  height: 60%;
+  color: #aaa;
+}
+#u10a{
+  background: url("articles2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 200%;
+  position: absolute; top: 20%; left: 50%;
+  height: 60%;
+  color: black;
+}
+#u10pt{
+  font-size: 150%;
+  width: 100%;
+  position: absolute; top: 3%; left: 0px;
+  color: white;
+  text-shadow: 1px 1px #111;
+}
+#u10pbc{
+  width: 100%;
+  height: 100%;
+  position: absolute; top: 0px; left: 0px;
+  background: rgba(0,0,0,0.3);
+}
+#u10pc{
+  font-size: 110%;
+  width: 90%;
+  position: absolute; top: 15%; left: 5%;
+  color: #aaa;
+}
+#u10pl,#u10al{
+  width: 75%;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 15px;
+  color: white;
+  transition: all 0.45s;
+  position: absolute; top: 40%; left: 12.5%;
+  box-shadow: 1px 1px #888;
+}
+#u10al{
+  background: url("../curls.png");
+}
+#u10pl{
+  background: url("../textured_paper.png");
+  color: black;
+  border-color: #222;
+}
+#u10pl:hover,#u10al:hover{
+  transform: scale(0.99);
+}
+#u10ph{
+  background: #ff1111;
+  color: white;
+  border-radius: 30px;
+  font-size: 150%;
+  text-align: center;
+
+}
+#u10phc{
+  width: 100%;
+  text-align: center;
+  position: absolute; top: 20%; left: 0px;
+}
+@media screen and (max-height: 557px)
+{
+  #u10t{
+    font-size: 175%;
+  }
+  #u10ia{
+    font-size: 250%;
+  }
+}
+@media screen and (max-width: 1024px)
+{
+  #u10p,#u10a{
+    width: 100%;
+  }
+  #u10p{
+    position: absolute; top: 20%; left: 0px;
+  }
+  #u10a{
+    position: absolute; top: 80%; left: 0px;
+  }
+}

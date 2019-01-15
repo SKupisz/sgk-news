@@ -1,0 +1,97 @@
+body{
+  background: #ddd;
+}
+#u10main{
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.5em;
+}
+#u10t{
+  width: 100%;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../what-the-hex-dark.png");
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  font-family: monospace;
+  position: absolute; top: 0px; left: 0px;
+}
+#u11b{
+  width: 100%;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../tactile_noise.png");
+  color: white;
+  font-size: 2em;
+  font-family: monospace;
+  text-align: center;
+  height: 70%;
+  position: absolute; top: 50px; left: 0px;
+}
+#u11cc{
+  width: 100%;
+}
+
+#u11c{
+  width: 100%;
+  /*margin-left: 25%;*/
+  font-size: 200%;
+  font-family: Verdana;
+  color: white;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../dark-grey-terrazzo.png");
+  border: 1px solid;
+  border-color: url("../connectwork.png");
+  border-radius: 5px;
+  transition: background 0.5s;
+
+  cursor: pointer;
+  position: absolute; top: 70%; left: 0px;
+}
+#u11c:hover{
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../curls.png");
+}
+#u11n{
+  margin-top: 5px;
+}
+#u11p,#u11pr,#u11e{
+  margin-top: 5px;
+}
+#u11ni,#u11pi,#u11pri,#u11ei{
+  width: 50%;
+  height: 30px;
+}
+@media screen and (max-width: 1024px)
+{
+  #u10t{
+    font-size: 2em;
+  }
+  #u11b{
+    top: 30px;
+  }
+}
+@media screen and (max-width: 700px)
+{
+  .respfont{
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 500px){
+  #u11ni,#u11pi,#u11pri,#u11ei{
+    width: 80%;
+  }
+  #u11b{
+    font-size: 1.2em;
+    height: 90%;
+  }
+  #u11c{
+    position: absolute; top: 90%; left: 0px;
+  }
+  form{
+    height: 400px;
+  }
+  .respfont{
+    font-size: 0.5em;
+  }
+}

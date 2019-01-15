@@ -1,0 +1,101 @@
+@keyframes get-in{
+  0%{
+    opacity: 0;
+    position: absolute; top: 0px; left: 0px;
+  }
+  100%{
+    opacity: 1;
+    position: absolute; top: 0px; left: 0px;
+  }
+
+}
+@keyframes get-out{
+  0%{
+    opacity: 1;
+    position: absolute; top: 0px; left: 0px;
+  }
+  100%{
+    opacity: 0;
+    position: absolute; top: 0px; left: 0px;
+  }
+
+}
+.get-in{
+  animation-name: get-in;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+#u12more{
+  width: 100%;
+  height: 100%;
+  /*Background pattern from: subtlepatterns.com*/
+  background: url("../textured_paper.png");
+  position: absolute; top: 0px; left: 0px;
+  z-index: 10;
+  display: none;
+}
+.more-other-wrapper{
+  display: block;
+}
+.u12more-header{
+  width: 100%;
+  text-align: center;
+  font-size: 150%;
+  color: black;
+  font-family: Verdana;
+}
+.u12statistic{
+  width: 40%;
+  height: 10%;
+  /*Background pattern from: subtlepatterns.com */
+  background: url("../tactile_noise.png");
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  font-family: Arial;
+  box-shadow: 2px 2px #333;
+}
+.modify{
+  width: 90%;
+}
+#words{
+  position: absolute; top: 10%; left: 5%;
+}
+#views{
+  position: absolute; top: 10%; left: 55%;
+}
+#place{
+  position: absolute; top: 23%; left: 5%;
+}
+.u12close{
+  width: 10%;
+  height: 10%;
+  font-size: 1.4em;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: none;
+  border-radius: 5px;
+  /*Background pattern from: subtlepatterns.com */
+  background: url("../curls.png");
+  color: white;
+  box-shadow: 2px 2px #333;
+  position: absolute; top: 60%; left: 45%;
+}
+.u12close:hover{
+  transform: scale(1.01);
+}
+
+@media screen and (max-width: 500px){
+  .u12more-header{
+    font-size: 0.9em;
+  }
+  .u12statistic{
+    width: 90%;
+  }
+  #views{
+    position: absolute; top: 24%; left: 5%;
+  }
+  #place{
+    position: absolute; top: 36%; left: 5%;
+  }
+}

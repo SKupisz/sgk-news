@@ -1,0 +1,161 @@
+body{
+  background: url("../textured_paper.png");
+}
+#u10main{
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-size: 150%;
+}
+#u10go{
+  color: white;
+  text-decoration: none;
+  background: #1999ff;
+  width: 40%;
+  font-family: fantasy;
+  text-align: center;
+  font-size: 150%;
+  border: 3px solid white;
+  border-radius: 5px;
+  position: absolute; left: 28%;
+  transition: background 0.45s;
+  padding: 2%;
+
+}
+#u10go:hover{
+  background: #1555ff;
+}
+#u10{
+  /*background: #999;*/
+  /*Background pattern from: subbtlepatterns.com */
+  background-image: url("what-the-hex-dark.png");
+  box-shadow: inset 5px 5px 10px;
+
+}
+#u11main{
+  color: white;
+  text-align: center;
+  font-size: 200%;
+  margin-top: 10%;
+}
+#u9{
+  /*Background pattern from: subbtlepatterns.com*/
+  background-image: url("connectwork.png");
+  filter: brightness(90%);
+  box-shadow: inset 5px 5px 10px;
+}
+#u11{
+  width: 40%;
+  height: 30%;
+  position: absolute; top: 50%; left: 60%;
+  transition: background 0.9s;
+  text-decoration: none;
+  /*Background pattern from: subbtlepatterns.com */
+  background-image: url("spiration dark.png");
+
+}
+#u11:hover{
+  /*Background pattern from: subbtlepatterns.com */
+  background: url("curls.png");
+}
+@media screen and (min-width: 1025px)
+{
+  #umain{
+    width: 100%;
+    height: 85%;
+    position: absolute; top: 15%; left: 0px;
+  }
+  #u9{
+    width: 60%;
+    height: 80%;
+    position: absolute; top: 0px; left: 0px;
+  }
+  #u9main{
+    color: white;
+    font-family: fantasy;
+    font-size: 200%;
+    text-align: center;
+
+  }
+  #u9content{
+  text-align: left;
+  color: white;
+  font-size: 150%;
+  font-family: sans-serif;
+  }
+  #u10{
+    width: 40%;
+    height: 50%;
+    position: absolute; top: 0px; left: 60%;
+
+  }
+
+}
+
+@media screen and (max-width: 1024px)
+{
+  #umain{
+    width: 100%;
+    height: 80%;
+    position: absolute; top: 20%; left: 0px;
+  }
+  #u9{
+    width: 60%;
+    height: 80%;
+    position: absolute; top: 0px; left: 0px;
+    /*Background pattern from: subbtlepatterns.com*/
+    background-image: url("connectwork.png");
+    filter: brightness(90%);
+    box-shadow: inset 5px 5px 10px;
+  }
+  #u9main{
+    color: white;
+    font-family: fantasy;
+    font-size: 200%;
+    text-align: center;
+  }
+  #u9content{
+  text-align: left;
+  color: white;
+  font-size: 150%;
+  font-family: sans-serif;
+  }
+  #u10{
+    width: 40%;
+    height: 80%;
+    position: absolute; top: 0px; left: 60%;
+  }
+  #u11{
+    width: 100%;
+    height: 20%;
+    position: absolute; top: 80%; left: 0px;
+    transition: background 0.9s;
+    text-decoration: none;
+    font-size: 80%;
+  }
+  #u11main{
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 500px){
+  #u9,#u10,#u11{
+    width: 100%;
+    height: 33%;
+    top: 0px; left: 0px;
+  }
+  #u9content{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 130%;
+  }
+  #u10{
+    top: 33%;
+  }
+  #u11{
+    top: 66%;
+    margin-top: 0px;
+  }
+  #u11main{
+    margin-top: 50px;
+  }
+}

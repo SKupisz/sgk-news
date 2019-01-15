@@ -1,0 +1,141 @@
+body{
+  background: #eee;
+}
+  #u9h{
+    width: 100%;
+    height: 10%;
+    position: fixed; top: 0px; left: 0px;
+    text-align: center;
+    /*Background pattern from: subltepatterns.com */
+    background: url("../curls.png");
+    color: white;
+    font-size: 3em;
+    font-family: monospace;
+    z-index: 2;
+  }
+  #u10f,#u10t{
+    width: 50%;
+    height: 10%;
+    position: fixed; top: 10%; left: 0px;
+    text-align: center;
+    /*Background pattern from: subltepatterns.com */
+    background: url("../dark-grey-terrazzo.png");
+    color: white;
+    font-size: 2em;
+    font-family: Verdana;
+    z-index: 2;
+    box-shadow: 0px 2px #111;
+  }
+  #u10t{
+    left: 50%;
+  }
+  #u11m{
+    width: 100%;
+    position: absolute; top: 20%; left: 0px;
+    color: black;
+    font-size: 1.5em;
+    font-family: Verdana;
+  }
+  #u12l{
+    width: 100%;
+    height: 10%;
+    position: fixed; top: 90%; left: 0px;
+    text-align: center;
+    background: #555;
+    color: white;
+    font-size: 200%;
+    display: none;
+  }
+  #u12lg,#u12li,#u12la,#u12lp{
+    height: 100%;
+    width: 10%;
+    text-decoration: none;
+    color: white;
+    transition: background 0.4s;
+  }
+  #u12lg,#u12la,#u12lp{
+    position: absolute; top: 0px; left: 16%;
+    /*Background pattern from: subltepatterns.com */
+    background: url("../tactile_noise.png");
+
+  }
+  #u12li > #u12liimg
+  {
+    width: 100%;
+    height: 100%;
+    /*Background pattern from: subltepatterns.com */
+    background: url("../tactile_noise.png");
+    transition: all 0.45s;
+
+  }
+  #u12lg:hover,#u12la:hover,#u12lp:hover{
+    /*Background pattern from: subltepatterns.com */
+    background: url("../textured_paper.png");
+    color: black;
+  }
+  #u12li > #u12liimg:hover{
+    /*Background pattern from: subltepatterns.com */
+    background: url("../textured_paper.png");
+  }
+  #u12li{
+    position: absolute; top: 0px; left: 36%;
+  }
+  #u12la{
+    position: absolute; top: 0px; left: 54%;
+    font-size: 80%;
+  }
+  #u12lp{
+    position: absolute; top: 0px; left: 74%;
+  }
+  #u12lg,#u12la,#u12lp,#u12li{
+    width: 25%;
+  }
+  #u12lg{
+    left: 0px;
+  }
+  #u12li{
+    left: 25%;
+  }
+  #u12la{
+    left: 50%;
+  }
+  #u12lp{
+    left: 75%;
+  }
+@media screen and (max-width: 1024px)
+{
+  #u10f,#u10t{
+    width: 50%;
+    height: 10%;
+    position: fixed; top: 10%; left: 0px;
+  }
+  #u10t{
+    left: 50%;
+  }
+  #u12l{
+    width: 100%;
+    height: 10%;
+    position: fixed; top: 90%; left: 0px;
+    text-align: center;
+    background: #555;
+    color: white;
+    font-size: 150%;
+  }
+}
+@media screen and (max-width: 550px)
+{
+  #u10f,#u10t{
+    width: 100%;
+    height: 10%;
+    position: fixed; top: 10%; left: 0px;
+  }
+  #u10t{
+    position: fixed; top: 20%;
+  }
+  #u11m{
+    top: 30%;
+  }
+  .resp{
+    display: none;
+  }
+}

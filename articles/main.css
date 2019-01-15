@@ -1,0 +1,281 @@
+@import "../main/preloader.css";
+@import url("statistic.css");
+#u10bar{
+  width: 100%;
+  height: 10%;
+  position: absolute; top: 0px; left: 0px;
+}
+#u10barContainer{
+  width: 100%;
+  height: 100%;
+  background: url("../dark-grey-terrazzo.png");
+  text-align: center;
+  color: white;
+  font-size: 250%;
+  font-family: Raider Crusader;
+  box-shadow: inset 4px 5px 5px #222;
+}
+#u11titles{
+  width: 100%;
+  height: 7%;
+  position: absolute; top: 10%; left: 0px;
+  background: #aaa;
+}
+#u11a,#u11s,#u11c,#u11w{
+  width: 30%;
+  height: 100%;
+  color: white;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../connectwork.png");
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-size: 160%;
+  font-family: Verdana;
+  box-shadow: inset 1px 1px 3px 3px #677;
+  filter: brightness(100%);
+}
+#u11a:hover,#u11s:hover,#u11c:hover,#u11w:hover{
+  filter: brightness(10%);
+}
+#u11a{
+  position: absolute; top: 0px; left: 0px;
+}
+#u11s{
+  width: 40%;
+  position: absolute; top: 0px; left: 30%;
+}
+#u11c{
+  position: absolute; top: 0px; left: 50%;
+  display: none;
+}
+#u11w{
+  position: absolute; top: 0px; left: 70%;
+}
+#u11asection,#u11ssection,#u11csection,#u11wsection{
+  width: 100%;
+  height: 73%;
+  display: none;
+  position: absolute; top: 17%; left: 0px;
+  transition: all 0.5s;
+}
+#u11atr{
+  width: 100%;
+  height: 7%;
+  color: white;
+}
+.u11atr1{
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../curls.png");
+}
+.u11atr2{
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../curls.png");
+}
+#u11anh{
+  width: 100%;
+  height: 100%;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../connectwork.png");
+  color: white;
+  font-size: 200%;
+  text-align: center;
+  font-family: Verdana;
+}
+#u11wti,#u11wta{
+  text-align: center;
+  font-size: 200%;
+  color: white;
+  font-family: monospace;
+}
+#u11wti{
+  margin-bottom: 2%;
+}
+#u11wtai{
+  max-width: 60%;
+  min-width: 60%;
+  min-height: 40%;
+  max-height: 40%;
+  font-size: 50%;
+  font-family: Times New Roman;
+  position: absolute; top: 25%; left: 20%;
+}
+#u11wsection{
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../tactile_noise.png");
+}
+#u11was{
+  width: 40%;
+  height: 20%;
+  position: absolute; top: 72%; left: 30%;
+  font-size: 1.7em;
+  font-family: Verdana;
+  border: none;
+  border-radius: 5px;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../curls.png");
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+  filter: brightness(100%);
+}
+#u11was:hover{
+  filter: brightness(40%);
+}
+#u11atrt{
+  color: white;
+  font-family: Arial;
+  font-size: 150%;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../spiration dark.png");
+  position: absolute; top: 0px; left: 0px;
+}
+#u11atrr{
+  width: 40%;
+  height: 100%;
+  position: absolute; top: 0px; left: 50%;
+  border-radius: 5px;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../pipes.png");
+  color: black;
+  text-align: center;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+#u11atrcr{
+  width: 25%;
+  height: 100%;
+  position: absolute; top: 0px; left: 50%;
+  text-align: center;
+  font-size: 150%;
+  font-family: sans-serif;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../bo_play_pattern.png");
+  border-radius: 50px;
+  cursor: pointer;
+  filter: invert(0%);
+  transition: all 0.5s;
+  color: white;
+  text-decoration: none;
+}
+#u11atrcr:hover{
+  filter: invert(100%);
+}
+#u11atrca{
+  width: 25%;
+  height: 100%;
+  position: absolute; top: 0px; left: 75%;
+}
+#u11atrcas{
+  width: 100%;
+  height: 100%;
+  color: white;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../dark-grey-terrazzo.png");
+  position: absolute; top: 0px; left: 0px;
+  font-size: 150%;
+  font-family: sans-serif;
+  border: none;
+  border-radius: 50px;
+  filter: sepia(0%) brightness(100%);
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 50px;
+}
+#u11atrcas:hover{
+  filter: sepia(100%) brightness(200%);
+}
+#u11atrmo{
+  width: 30%;
+  height: 100%;
+  color: white;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../dark-grey-terrazzo.png");
+  position: absolute; top: 0px; left: 70%;
+  font-size: 150%;
+  font-family: sans-serif;
+  border: none;
+  border-radius: 50px;
+  filter: sepia(0%) brightness(100%);
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 50px;
+  display: none;
+}
+#u11atrca,#u11atrcr{
+  display: block;
+}
+#u11atrresp{
+  display: none;
+}
+@media screen and (max-width: 1024px)
+{
+  #u11was{
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 768px){
+  #u11a,#u11w{
+    font-size: 0.9em;
+  }
+  #u11atrt{
+    font-size: 0.9em;
+  }
+  #u11atrtnext{
+    display: none;
+  }
+  #u11was{
+    font-size: 1em;
+  }
+  #u11atrcas,#u11atrcr{
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 425px)
+{
+  #u11atrr{
+    left: 55%;
+    font-size: 1em;
+    height: 100%;
+  }
+  #u11was{
+    font-size: 0.5em;
+  }
+  #u11atrmo{
+    display: block;
+  }
+  /*#u11atrca,#u11atrcr{
+    width: 100%;
+    left: 0px;
+    top: 100%;
+    display: none;
+    z-index: 3;
+  }*/
+  #u11atrcr{
+    left: 40%;
+  }
+  #u11atrresp{
+    display: block;
+  }
+  #u11atrca{
+    left: 70%;
+  }
+  #u11atrcrr{
+    display: none;
+  }
+  .u11atrcrr{
+    display: none;
+  }
+  .u11wasr{
+    display: none;
+  }
+}
+@media screen and (max-width: 320px)
+{
+  /*#u11was{
+    font-size: 1em;
+  }*/
+}

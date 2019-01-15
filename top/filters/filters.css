@@ -1,0 +1,242 @@
+#u10sort,#u10name,#u10tags,#u10words{
+  width: 25%;
+  height: 100%;
+  position: absolute; top: 0;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 3;
+}
+#u10sort{
+  left: 0;
+}
+#u10name{
+  width: 50%;
+  left: 25%;
+}
+#u10tags{
+  left: 50%;
+}
+#u10words{
+  left: 75%;
+}
+#u10sortAdvance{
+  width: 25%;
+  height: 10%;
+  background: #555;
+  position: fixed; top: 27%; left: 0px;
+  display: none;
+  z-index: 4;
+}
+#u10sortAdvance > #u10bi,#u10li{
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0%;
+  text-align: center;
+  font-family: Verdana;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: block;
+  font-size: 1em;
+  text-decoration: none;
+  cursor: pointer;
+}
+#u10sortAdvance > #u10bi:hover,#u10li:hover{
+  background: url("../../dark-grey-terrazzo.png");
+  font-size: 1.1em;
+}
+#u10sortAdvance > #u10bi{
+  top: 0px;
+}
+#u10sortAdvance > #u10li{
+  top: 50%;
+}
+#u10nameAdvance,#u10tagsAdvance{
+  width: 48%;
+  height: 5%;
+  background: #555;
+  position: fixed; top: 27% ; left: 26%;
+  display: none;
+  z-index: 4;
+}
+#u10tagsAdvance{
+  position: fixed; top: 27%; left: 37.5%;
+}
+#u10an{
+  width: 70%;
+  height: 88%;
+  position: absolute; top: 0px; left: 1%;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid #222;
+}
+#u10as{
+  width: 20%;
+  height: 100%;
+  position: absolute; top: 0px; left: 75%;
+  color: white;
+  /*Background pattern from: subtlepatterns.com*/
+  background: url("../../curls.png");
+  border: none;
+  border-radius: 2px;
+  font-family: Verdana;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+#u10as:hover{
+  background: url("../../what-the-hex-dark.png");
+  transform: scale(0.98);
+}
+#u10pt,#u10et,#u10lt,#u10ot{
+  width: 20%;
+  height: 100%;
+  color: black;
+  background: url("../../pipes.png");
+  position: absolute;
+  top: 0px;
+  left: 2%;
+  text-align: center;
+  font-size: 120%;
+  font-family: Arial;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#u10pt:hover,#u10et:hover,#u10lt:hover,#u10ot:hover{
+  filter: blur(1px);
+}
+#u10et{
+  left: 24%;
+  font-size: 120%;
+  width: 26%;
+}
+#u10lt{
+  left: 53%;
+}
+#u10ot{
+  left: 76%;
+}
+#u10wordsAdvance{
+  width: 25%;
+  height: 50%;
+  background: #555;
+  position: fixed; top: 27%; left: 75%;
+  display: none;
+  z-index: 4;
+}
+#u10wordsAdvance > #u10s,#u10min,#u10t,#u10f,#u10max{
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  left: 0px;
+  text-align: center;
+  color: white;
+  font-family: Verdana;
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+#u10wordsAdvance > #u10min:hover,#u10s:hover,#u10t:hover,#u10max:hover,#u10f:hover{
+  background: url("../../dark-grey-terrazzo.png");
+  font-size: 1.4em;
+}
+#u10min{
+  top: 0px;
+}
+#u10s{
+  top: 20%;
+}
+#u10t{
+  top: 40%;
+}
+#u10f{
+  top: 60%;
+}
+#u10max{
+  top: 80%;
+}
+
+.u10soon{
+  filter: brightness(70%);
+}
+@media screen and (max-width: 955px)
+{
+  #u10sortAdvance > #u10bi,#u10li{
+    font-size: 1em;
+  }
+  #u10sortAdvance > #u10bi:hover,#u10li:hover{
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 800px)
+{
+  #u10nameAdvance,#u10sortAdvance{
+    width: 100%;
+  }
+  #u10nameAdvance{
+    left: 0px;
+  }
+  #u10wordsAdvance{
+    left: 0px;
+    width: 100%;
+  }
+  #u10wordsAdvance > #u10s,#u10min,#u10t,#u10f,#u10max{
+    background: url("../../curls.png");
+    font-size: 1.4em;
+  }
+  #u10sortAdvance > #u10bi,#u10li{
+    background: url("../../curls.png");
+  }
+}
+@media screen and (max-width: 620px)
+{
+  #u10as{
+    font-size: 60%;
+  }
+}
+@media screen and (max-width: 521px)
+{
+  #u10nameAdvance{
+    height: 10%;
+  }
+  #u10as,#u10an{
+    height: 40%;
+  }
+  #u10as{
+    width: 90%;
+    left: 5%;
+    top: 50%;
+  }
+  #u10an{
+    width: 98%;
+    left: 1%;
+  }
+}
+@media screen and (max-width: 470px)
+{
+  #u10wordsAdvance > #u10s,#u10min,#u10t,#u10f,#u10max{
+    font-size: 1.1em;
+  }
+  #u10wordsAdvance > #u10min:hover,#u10max:hover,#u10s:hover,#u10t:hover,#u10f:hover{
+    font-size: 1.1em;
+  }
+  #u10max{
+    font-size: 1.05em;
+  }
+  #u10wordsAdvance > #u10max:hover{
+    font-size: 1.05em;
+  }
+}
+@media screen and (max-width: 319px)
+{
+  #u10sortAdvance > #u10bi,#u10li{
+    font-size: 0.8em;
+  }
+  #u10sortAdvance > #u10bi:hover,#u10li:hover{
+    font-size: 0.9em;
+  }
+}

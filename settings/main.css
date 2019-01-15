@@ -1,0 +1,160 @@
+@import url("responsivibility.css");
+#u10title{
+  width: 100%;
+  height: 10%;
+  /*Background pattern from subltepatterns.com */
+  background: url("../curls.png");
+  text-align: center;
+  font-size: 1.8em;
+  font-family: monospace;
+  color: white;
+  position: absolute; top: 0px; left: 0px;
+}
+#u11{
+  position: absolute; top: 10%; left: 0px;
+  width: 100%;
+  height: 90%;
+}
+#u11pass,#u11del{
+  width: 40%;
+  height: 50%;
+  /*Background pattern from: subltepatterns.com */
+  background: url("../dark-grey-terrazzo.png");
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  position: absolute; top: 0px; left: 0px;
+}
+#u11del{
+  top: 50%;
+}
+.uheader{
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-family: Verdana;
+  margin-bottom: 10px;
+}
+#u11passil{
+  width: 100%;
+  font-family: Arial;
+  font-size: 1.4em;
+  margin-bottom: 4px;
+}
+#u11passi{
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  color: black;
+  font-size: 0.7em;
+  font-family: Verdana;
+  padding: 2px;
+}
+#u11pass_submit{
+  width: 50%;
+  height: 50px;
+  font-family: Verdana;
+  font-size: 1.3em;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../pipes.png");
+  cursor: pointer;
+  transition: all 2s;
+}
+#u11promotion{
+  width: 60%;
+  height: 100%;
+  position: absolute; top: 0px; left: 40%;
+  /*Background pattern from: subltepatterns.com */
+  background: url("../tactile_noise.png");
+  text-align: center;
+}
+#promheader{
+  font-family: monospace;
+  color: #eee;
+  font-size: 2.1em;
+}
+#u11promcont{
+  min-width: 60%;
+  max-width: 60%;
+  min-height: 50%;
+  max-height: 50%;
+  color: #222;
+  font-size: 0.8em;
+  font-family: Arial;
+  /*Background pattern from: subltepatterns.com */
+  background: url("../textured_paper.png");
+  margin-bottom: 30px;
+}
+#u11promcontent_submit
+{
+  border-color: #fff;
+  cursor: pointer;
+  transition: all 1s;
+  width: 40%;
+  height: 10%;
+  color: white;
+  font-size: 1.5em;
+  font-family: monospace;
+  /*Background pattern from: subltepatterns.com */
+  background: url("../dark-grey-terrazzo.png");
+}
+#u11promcontent_submit:hover{
+  transform: scale(0.96);
+}
+.u11promcontheader{
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.1em;
+  font-family: sans-serif;
+}
+#u11pass_submit:hover{
+  transform: scale(0.98);
+  opacity: 0.8;
+}
+#umain{
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../textured_paper.png");
+}
+@media screen and (max-width: 984px)
+{
+  #u11pass,#u11prom,#u11del{
+    width: 100%;
+  }
+  #u11pass{
+    top: 0px;
+  }
+  #u11del{
+    top: 50%;
+  }
+  #u11promotion{
+    top: 100%;
+    width: 100%; left: 0px;
+  }
+  #u11pass_submit{
+    font-size: 0.9em;
+  }
+  #promheader{
+    font-size: 1.5em;
+  }
+  .u11promcontheader{
+    font-size: 0.9em;
+  }
+  #passheader{
+    font-size: 1.8em;
+  }
+  #u11passil{
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 474px)
+{
+  #u11passil{
+    font-size: 1em;
+  }
+  #u11promheader{
+    font-size: 1em;
+  }
+}

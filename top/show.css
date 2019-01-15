@@ -1,0 +1,86 @@
+#u10connectionfail,#u10connection{
+  width: 80%;
+  position: absolute; top: 10%; left: 10%;
+  /*Background pattern from: subtlepatterns.com*/
+  background: url("../connectwork.png");
+  font-family: Verdana;
+  box-shadow: 0px 5px 5px #111;
+}
+#u10connectionfail{
+  height: 40%;
+}
+#u10connection{
+  margin-bottom: 10px;
+}
+.u10cfheader{
+  width: 90%;
+  font-size: 2em;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  margin-bottom: 20px;
+  font-family: Arial;
+}
+#u10cfmain{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4em;
+  text-align: center;
+  /*Background pattern from: subtlepatterns.com*/
+  background: url("../pipes.png");
+  box-shadow: 0px 5px 5px #111;
+  margin-bottom: 10px;
+  line-height: 35px;
+}
+#u10cv{
+  /*Background pattern from: subtlepatterns.com*/
+  background: url("../pipes.png");
+  font-family: Arial;
+  width: 100%;
+  font-size: 1.2em;
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+#u10rl{
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border: none;
+  /*Background from: https://www.iconfinder.com/icons/3844426/approve_hand_like_thumb_up_icon*/
+  background: url("like.png");
+  background-size: cover;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+#u10rl:hover{
+  filter: brightness(70%) blur(2px);
+}
+@media screen and (max-width: 800px)
+{
+  #u10connection{
+    width: 90%;
+    left: 5%;
+  }
+  #u10cfmain{
+    width: 98%;
+    left: 1%;
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 600px)
+{
+  .u10cfheader{
+    font-size: 1.5em;
+  }
+  #u10connection{
+    width: 98%;
+    left: 1%;
+  }
+}
