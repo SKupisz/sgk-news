@@ -96,7 +96,7 @@ body{
   }
   #u2 > #u2i{
     height: 100%;
-    width: 100%;
+    width: auto;
   }
   #u2i{
     transition: background 0.5s;
@@ -192,7 +192,7 @@ body{
   }
   #u2 > #u2i{
     height: 100%;
-    width: 100%;
+    width: auto;
   }
   #u2i{
     transition: background 0.5s;
@@ -266,7 +266,7 @@ body{
   }
   #u2 > #u2i{
     height: 100%;
-    width: 100%;
+    width: auto;
   }
   #u2i{
     transition: background 0.5s;
