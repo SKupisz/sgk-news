@@ -7,7 +7,7 @@ if(!isset($_GET['id']))
 }
 $id = $_GET['id'];
 $test_id = (int)$id;
-if($id != $test_id)
+if($id != $test_id || $id < 0)
 {
   header("Location: index.php");
   exit();
@@ -22,8 +22,28 @@ try {
     throw new Exception($polaczenie->connect_error);
   }
   else {
-    $rezultat = $polaczenie->query("UPDATE sent_articles SET views = views+1 WHERE id = $id");
+    $likes = 0;
+    if(isset($_SESSION['liking_error']))
+    {
+      unset($_SESSION['liking_error']);
+    }
+    $rezultat = $polaczenie->query("SELECT likes FROM sent_articles WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
+    if($rezultat->num_rows == 0)
+    {
+      mysqli_close($polaczenie);
+      header("Location: ../../");
+      exit();
+    }
+    $row = $rezultat->fetch_assoc();
+    $likes = $row['likes'];
+    if(!isset($_SESSION['liking']))
+    {
+      $rezultat = $polaczenie->query("UPDATE sent_articles SET views = views+1 WHERE id = $id");
+      if(!$rezultat) throw new Exception($polaczenie->error);
+    }
+
+
   }
 } catch (Exception $e) {
   $connection = 0;
@@ -78,16 +98,29 @@ try {
             else {
               echo $views;?> views<?php
             }
-          ?><br>
-          <button id = "u10rl">
-          </button>
+            if(isset($_SESSION['zalogowany']))
+            {
+              ?><br>
+
+              <a href = "top/likes/like.php?aid=<?php echo $id;?>">
+                <button id = "u10rl">
+                </button>
+              </a>
+              <div class = "u10lq">
+                <?php echo $likes;?>
+              </div><?php
+            }
+          ?>
         </aside>
 
       </section><?php
     }?>
   </main>
 </body>
-
+<?php if(isset($_SESSION['liking'])) {
+  ?><script>window.scrollTo(0,document.querySelector("#u10cfmain").scrollHeight);</script><?php
+  unset($_SESSION['liking']);
+}?>
 <script src = "main/main.js"></script>
 <script src = "jquery-3-2-1.js"></script>
 <script src = "top/options.js"></script>

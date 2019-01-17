@@ -40,7 +40,7 @@ try {
     $title = $row['title'];
     $content = $row['article'];
     $words = str_word_count($content);
-    $rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0)");
+    $rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0)");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $rezultat = $polaczenie->query("UPDATE $user SET status = 2 WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
