@@ -28,21 +28,22 @@ body{
   }
   #u3,#u4,#u5,#u6,#u7,#u8,#u9d{
     width: 12.5%;
-    height: 100%;
+    height: 72%;
     color: white;
-    font-size: 200%;
-    font-family: monospace;
+    font-size: 150%;
+    font-family: Verdana;
     text-decoration: none;
     position: absolute; top: 0px; left: 12.5%;
     text-align: center;
     transition: background 0.4s;
+    padding-top: 2%;
   }
-  .menDesc{
+  /*.menDesc{
     margin-top: 10%;
   }
   .menDescLower{
     margin-top: 6%;
-  }
+  }*/
   #u3:hover,#u4:hover,#u5:hover,#u6:hover,#u7:hover,#u8:hover,#u9d:hover{
     background: #2999ff;
   }
@@ -93,6 +94,7 @@ body{
     height: 100%;
     width: 25%;
     position: absolute; top: 0px; left: 0px;
+    text-align: center;
   }
   #u2 > #u2i{
     height: 100%;
@@ -112,16 +114,19 @@ body{
     position: fixed; top: 20%; left: 0px;
     display: none;
   }
+  .menDesc,.menDescLower{
+    margin-top: 0%;
+  }
   #upanelopen{
-    width: 75%;
+    width: 70%;
     height: 100%;
-    position: absolute; top: 0px; left: 25%;
+    position: absolute; top: 0px; left: 30%;
     /*Background pattern from: subltepatterns.com*/
     background: url("../connectwork.png");
     border: none;
     color: white;
     font-size: 250%;
-    font-family: monospace;
+    font-family: Verdana;
     transition: background 0.45s;
     cursor: pointer;
     box-shadow: 2px 2px #111 inset;
@@ -145,7 +150,7 @@ body{
     font-size: 175%;
     position: absolute; top: 10%; left: 3%;
     text-align: center;
-    font-family: cursive;
+    font-family: Verdana;
     display: table-cell;
     vertical-align: middle;
   }
@@ -188,10 +193,10 @@ body{
   #u1 > #u2{
     height: 100%;
     width: 25%;
-    position: absolute; top: 0px; left: 0px;
+    text-align: center;
   }
   #u2 > #u2i{
-    height: 100%;
+    height: 90%;
     width: auto;
   }
   #u2i{
@@ -222,7 +227,7 @@ body{
     font-size: 175%;
     position: absolute; top: 10%; left: 4%;
     text-align: center;
-    font-family: cursive;
+    font-family: Verdana;
   }
   #u4{
     position: absolute; top: 10%; left: 51%;
@@ -263,10 +268,7 @@ body{
     height: 100%;
     width: 25%;
     position: absolute; top: 0px; left: 0px;
-  }
-  #u2 > #u2i{
-    height: 100%;
-    width: auto;
+    text-align: center;
   }
   #u2i{
     transition: background 0.5s;
@@ -282,22 +284,6 @@ body{
     position: fixed; top: 20%; left: 0px;
     display: none;
   }
-  #upanelopen{
-    width: 75%;
-    height: 100%;
-    position: absolute; top: 0px; left: 25%;
-    background: url("../connectwork.png");
-    border: none;
-    color: white;
-    font-size: 250%;
-    font-family: monospace;
-    transition: background 0.45s;
-    cursor: pointer;
-  }
-  #upanelopen:hover{
-    /*Background pattern from: subltepatterns.com*/
-    background: url("../dark-grey-terrazzo.png");
-  }
   #u3,#u4,#u5,#u6,#u7,#u8,#u9d{
     width: 70%;
     height: 10%;
@@ -309,7 +295,7 @@ body{
     font-size: 150%;
     position: absolute; top: 10%; left: 15%;
     text-align: center;
-    font-family: cursive;
+    font-family: Verdana;
   }
   #u4{
     position: absolute; top: 22%; left: 15%;

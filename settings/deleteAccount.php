@@ -38,6 +38,8 @@ try {
       }
     }
     else {
+      $rezultat = $polaczenie->query("SELECT * FROM users WHERE username = '$name'");
+      if(!$rezultat) throw new Exception($polaczenie->error);
       $row = $rezultat->fetch_assoc();
       if(password_verify($pass,$row['password']))
       {
@@ -53,7 +55,7 @@ try {
     $rezultat = $polaczenie->query("DROP TABLE $name");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $post = $name."_post";
-    $bl = $name."_blacklist";
+    $bl = $name."_blackList";
     $rezultat = $polaczenie->query("DROP TABLE $post");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $rezultat = $polaczenie->query("DROP TABLE $bl");

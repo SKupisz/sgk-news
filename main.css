@@ -4,7 +4,7 @@ body{
 #u10main{
   color: white;
   text-align: center;
-  font-family: monospace;
+  font-family: Verdana;
   font-size: 150%;
 }
 #u10go{
@@ -12,7 +12,7 @@ body{
   text-decoration: none;
   background: #1999ff;
   width: 40%;
-  font-family: fantasy;
+  font-family: Verdana;
   text-align: center;
   font-size: 150%;
   border: 3px solid white;

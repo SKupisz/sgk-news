@@ -16,7 +16,7 @@ $pass2 = $_POST['u11pr'];
 $email = $_POST['u11e'];
 $nick = htmlentities($nick);
 $emailb = filter_var($email,FILTER_SANITIZE_EMAIL);
-echo $emailb;
+
 
 if($email != $emailb)
 {
