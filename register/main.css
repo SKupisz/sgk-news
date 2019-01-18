@@ -61,6 +61,19 @@ body{
 #u11ni,#u11pi,#u11pri,#u11ei{
   width: 50%;
   height: 30px;
+  border: 0px solid black;
+  border-radius: 5px;
+}
+.u11ntagg{
+  color: white;
+}
+#u11nti{
+  width: 20px;
+  height: 20px;
+  background-color: #1999ff;
+  position: absolute;
+  opacity: 1;
+  margin-left: 10px;
 }
 @media screen and (max-width: 1024px)
 {
@@ -79,7 +92,7 @@ body{
 }
 @media screen and (max-width: 500px){
   #u11ni,#u11pi,#u11pri,#u11ei{
-    width: 80%;
+    width: 100%;
   }
   #u11b{
     font-size: 1.2em;

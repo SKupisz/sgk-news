@@ -15,4 +15,4 @@ We hope it will help improving design, website mechanice, and content</div>
 <span id = "u11remove">Can I remove my data from the SGK-news database?</span><br>
 <div id = "u11removee">Of course, according to the SGK-news regulations,<br>
 if you did not brake it, you can remove every data about you, including your articles.<br>
-In order to do it, write to us: /email\</div>
+In order to do it, write to us: sgk-news@wp.pl</div>

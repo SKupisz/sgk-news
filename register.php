@@ -38,7 +38,8 @@ session_start();
     <section id = "u11pr"><input type = "password" name = "u11pr" id = "u11pri" required placeholder = "Repeat password"/></section>
     <section id = "u11e"><input type = "text" name = "u11e" id = "u11ei" required placeholder = "E-mail adress"/></section>
     <section id = "u11nt">Newsletter <input type="checkbox" name = "u11nt" id = "u11nti"/></section>
-    <section id = "u11nt">I accept the SGK-news regulations and the privacy politic <input type="checkbox" name = "u11rl" id = "u11nti"/></section>
+    <section id = "u11nt">I accept <a href = "regulations.php" class = "u11ntagg">the SGK-news regulations</a>
+       and <a class = "u11ntagg" href = "privacy_politic.php">the privacy politic</a> <input type="checkbox" name = "u11rl" id = "u11nti"/></section>
 
   </section>
   <input type="submit" value="Confirm" id = "u11c"/>
