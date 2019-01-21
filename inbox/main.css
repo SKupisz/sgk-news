@@ -37,7 +37,6 @@ body{
 }
 #u10el{
   width: 100%;
-  height: 15%;
   /*Background pattern from: subbtlepatterns.com*/
   background-image: url("../curls.png");
   text-align: center;
@@ -45,7 +44,32 @@ body{
   font-family: monospace;
   position: absolute; top: 15%; left: 0px;
   color: transparent;
-  display:inline-block;
+  display: inline-block;
+  padding-top: 2px;
+  padding-bottom: 5px;
+}
+.defaultLink{
+  text-decoration: none;
+}
+.u10elwrapper{
+  margin-left: auto;
+  margin-right: auto;
+  /*Background pattern from: subbtlepatterns.com*/
+  background: url("../textured_paper.png");
+  font-size: 1.5em;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display:block;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px;
+  margin-bottom: 5px;
+  transition: all 0.5s;
+  width: 20%;
+}
+a > .u10elwrapper:hover{
+  transform: scale(0.96);
 }
 #u10elwrapper{
   width: 100%;
@@ -53,11 +77,12 @@ body{
   position: absolute; top: 0px; left: 0px;
   /*Background pattern from: subbtlepatterns.com*/
   background: url("../textured_paper.png");
-  font-size: 135%;
+  font-size: 1.5em;
   font-weight: bold;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   display:block;
+
 }
 #u9m{
   width: 100%;
@@ -363,6 +388,14 @@ body{
   #u9cr{
     top: 27%;
   }
+}
+@media screen and (max-width: 768px)
+{
+  .u10elwrapper{
+    width: 50%;
+    font-size: 1.2em;
+  }
+  #u
 }
 @media screen and (max-width: 670px)
 {

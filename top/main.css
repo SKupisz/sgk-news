@@ -4,7 +4,7 @@
   width: 100%;
   height: 7%;
   /*Background pattern from: subtlepatterns.com*/
-  background: url("../bo_play_pattern.png");
+  background: url("../connectwork.png");
   position: fixed; top: 15%; left: 0px;
   color: white;
   text-align: center;
@@ -13,10 +13,11 @@
   transition: background 0.45s;
   cursor: pointer;
   z-index: 4;
+  box-shadow: inset 1px 1px 10px #111;
 }
 #u10bar:hover{
   /*Background pattern from: subtlepatterns.com*/
-  background: url("../connectwork.png");
+  background: url("../curls.png");
 }
 
 #u10filtersbar{

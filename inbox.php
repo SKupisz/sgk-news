@@ -29,9 +29,11 @@ else {
   <?php
   if($pass == 0)
   {
-    ?><section id = "u9e"><span id = "u9ec">You are not logged in</span></section>
+    ?><section id = "u9e"><span id = "u9ec">You are not signed in</span></section>
     <section id = "u10el">
-      <nav id = "u10elwrapper">Sign up or register first</nav></section><?php
+      <a href = "login.php" class = "defaultLink notLoggedIn"><nav class = "u10elwrapper">Sign in</nav></a>
+      <a href = "register.php" class = "defaultLink notLoggedIn"><nav class = "u10elwrapper">Register</nav></a>
+    </section><?php
   }
   else if($connection == 0)
   {

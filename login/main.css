@@ -15,16 +15,15 @@ body{
   background: url("../connectwork.png");
   text-align: center;
   filter: brightness(90%);
-  box-shadow: inset 1px 1px 10px;
+  box-shadow: inset 1px 1px 10px #111;
 }
 #u10l,#u10p{
   width: 100%;
   color: white;
-  font-size: 200%;
+  font-size: 1.8em;
   text-align: center;
   /*background: linear-gradient(to bottom, #1888ff,#1000ff);*/
-  background: #444;
-  font-family: Comic Sans MS;
+  font-family: Verdana;
   /*Background pattern from: subbtlepatterns.com*/
   background: url("../spiration dark.png");
 }
@@ -45,7 +44,16 @@ body{
 }
 #u10sb:hover{
   /*Background pattern from: subbtlepatterns.com*/
-  background: url("../tactile_noise.png");
+  background: url("../curls.png");
+}
+#u10pi,#u10li{
+  border: 1px solid black;
+  border-radius: 4px;
+  font-family: Verdana;
+  font-size: 0.7em;
+}
+#u10pi{
+  margin-bottom: 5px;
 }
 @media screen and (max-width: 425px)
 {
@@ -53,9 +61,15 @@ body{
     font-size: 2em;
   }
   #u10l,#u10p{
-    font-size: 1.2em;
-    margin-bottom: 30px;
     background: none;
+  }
+  .u10ldis{
+    display: none;
+  }
+  #u10pi,#u10li{
+    padding: 2px;
+    margin-bottom: 2px;
+
   }
   #u10sb{
     font-size: 1.9em;

@@ -42,7 +42,7 @@ try {
       exitInstructions("Your article has been sent");
     }
     else {
-      $rezultat = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$content',1)");
+      $rezultat = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$content',1,"")");
       if(!$rezultat) throw new Exception($polaczenie->error);
       exitInstructions("Your article has been sent");
     }

@@ -18,7 +18,7 @@ session_start();
   <section id = "u10t">
     <?php if(isset($_SESSION['zalogowany']))
     {
-      ?>You are logged in!<?php
+      ?>You are signed in!<?php
     }
     else if(isset($_SESSION['r_error']))
     {
@@ -33,9 +33,9 @@ session_start();
 ?>
 
   <form method="post" action="getIn.php">
-    <section id = "u10l">Login >> <input type="text" name = "u10l" id = "u10li" required/></section>
-    <section id = "u10p">Password >> <input type="password" name = "u10p" id = "u10pi" required/></section>
-    <input type="submit" id = "u10sb" value="Log In"/>
+    <section id = "u10l"><label class = "u10ldis">Login » </label><input type="text" placeholder = "Login" name = "u10l" id = "u10li" required/></section>
+    <section id = "u10p"><label class = "u10ldis">Password » </label><input type="password" placeholder = "Password" name = "u10p" id = "u10pi" required/></section>
+    <input type="submit" id = "u10sb" value="Sign In"/>
   </form>
 <?php }?>
 </section>

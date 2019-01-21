@@ -82,12 +82,16 @@ require_once "articles/loadData.php";
               echo $sidname;
             }?>"/></section>
             <section id = "u11wta">
-              Article content
+              <div class = "u11wtadesc">Article content</div>
               <textarea id = "u11wtai" name = "u11wtai" placeholder="Write here...">
                 <?php if($sid != -1)
                 {
                   echo $sidcontent;
                 }?></textarea>
+            </section>
+            <section class = "u11wtga">
+              <div class = "u11wtadesc">Tags(optional)</div>
+              <textarea class = "u11wtgai" name = "u11wtgai" placeholder="Tags..."></textarea>
             </section>
             <button type = "submit" id = "u11was">
                Send<label class = "u11wasr"> an article</label> to waiting room
