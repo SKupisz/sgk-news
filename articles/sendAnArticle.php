@@ -5,7 +5,7 @@ if(!isset($_SESSION['zalogowany']))
   header("Location: ../index.php");
   exit();
 }
-if(!isset($_POST['u11wti']) || !isset($_POST['u11wtai']))
+if(!isset($_POST['u11wti']) || !isset($_POST['u11wtai']) || !isset($_POST['u11wtgai']))
 {
   header("Location: ../articles.php");
   exit();
@@ -17,9 +17,12 @@ function exitInstructions($content){
 }
 $title = $_POST['u11wti'];
 $content = $_POST['u11wtai'];
+$tags = $_POST['u11wtgai'];
 $title = htmlentities($title,ENT_QUOTES,"UTF-8");
 $content = htmlentities($content,ENT_QUOTES,"UTF-8");
+$tags = htmlentities($tags,ENT_QUOTES,"UTF-8");
 $content = str_replace("\n", "<br>", $content);
+$tags = str_replace("\n"," ",$tags);
 $checkin = 1;
 require_once "../main/connect.php";
 
@@ -42,7 +45,7 @@ try {
       exitInstructions("Your article has been sent");
     }
     else {
-      $rezultat = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$content',1,"")");
+      $rezultat = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$content',1,'$tags')");
       if(!$rezultat) throw new Exception($polaczenie->error);
       exitInstructions("Your article has been sent");
     }

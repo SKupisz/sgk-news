@@ -39,8 +39,9 @@ try {
     $row = $rezultat->fetch_assoc();
     $title = $row['title'];
     $content = $row['article'];
+    $tags = $row['tags'];
     $words = str_word_count($content);
-    $rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0,"")");
+    $rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0,'$tags')");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $rezultat = $polaczenie->query("UPDATE $user SET status = 2 WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);

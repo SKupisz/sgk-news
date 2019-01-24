@@ -3,7 +3,7 @@
   width: 80%;
   height: 40%;
   position: absolute; top: 12%; left: 10%;
-  background: #aaa;
+  background: #eee;
   transition: all 0.2s;
   cursor: pointer;
   transition-timing-function: ease-in-out;
@@ -16,10 +16,11 @@
   width: 15%;
   height: 15%;
   text-align: center;
-  font-size: 200%;
-  font-family: monospace;
+  font-size: 1.6em;
+  font-family: Verdana;
   /*Background pattern from: subtlepatterns.com*/
-  background: url("../../pipes.png");
+  background: #fff;
+  border: 1px solid #aaa;
   position: absolute; top: 5%; left: 5%;
   color: black;
 }
@@ -35,6 +36,7 @@
   /*Background pattern from: subtlepatterns.com*/
   background: url("../../tactile_noise.png");
   color: white;
+  padding-left: 5px;
 }
 #u11aofae,#u11ate{
   width: 90%;
