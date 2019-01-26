@@ -69,7 +69,7 @@ function goToReader(id){
 }
 let post_number = 1;
 function left(){
-  if(post_number > 0)
+  if(post_number > 1)
   {
     let pClass = "."+post_number;
     $(pClass).css("display","none");
@@ -82,7 +82,7 @@ function left(){
 }
 function right(){
 
-    if(document.getElementsByClassName(post_number+1))
+    if(document.getElementsByClassName(post_number+1) && document.getElementsByClassName(post_number+1).length > 0)
     {
       let pClass = "."+post_number;
       $(pClass).css("display","none");

@@ -80,12 +80,6 @@ else {
         else {
           ?>
 
-          <section id = "u9crtable">
-            <section id = "u9crm" style="position: absolute; top: 10%; left: 0px; ">
-            <span id = "u9crmf"  class = "u9crmitem">From</span>
-            <span id = "u9crmtc" class = "u9crmimiddle">Title</span>
-            <span id = "u9crmun" class = "u9crmitem">Select</span>
-          </section>
           <section id = "u9crms"></section>
             <?php
               $lt = count($content);

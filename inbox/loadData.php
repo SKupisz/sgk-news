@@ -54,6 +54,7 @@ try {
         }
         require "postService.php";
         mysqli_close($polaczenie);
+        
       }
       else {
         mysqli_close($polaczenie);

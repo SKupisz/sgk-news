@@ -1,5 +1,6 @@
 body{
-  background: #ddd;
+  /*Background pattern from: subbtlepatterns.com*/
+  background: url("../textured_paper.png");
 }
 #u10main{
   color: white;
@@ -19,18 +20,10 @@ body{
 }
 #u10l,#u10p{
   width: 100%;
-  color: white;
+  color: #111;
   font-size: 1.8em;
   text-align: center;
-  /*background: linear-gradient(to bottom, #1888ff,#1000ff);*/
   font-family: Verdana;
-  /*Background pattern from: subbtlepatterns.com*/
-  background: url("../spiration dark.png");
-}
-#u10p{
-/*Background pattern from: subbtlepatterns.com*/
-  background: url("../spiration dark.png");
-  /*background: linear-gradient(to bottom,#0000ff,#1998ff);*/
 }
 #u10sb{
   width: 100%;
@@ -38,22 +31,46 @@ body{
   font-size: 2.5em;
   color: white;
   /*Background pattern from: subbtlepatterns.com*/
-  background: url("../what-the-hex-dark.png");
+  background: url("../dark-grey-terrazzo.png");
   transition: background 0.45s;
   cursor: pointer;
+  border-radius: 5px;
 }
 #u10sb:hover{
   /*Background pattern from: subbtlepatterns.com*/
   background: url("../curls.png");
 }
 #u10pi,#u10li{
-  border: 1px solid black;
+  border: none;
   border-radius: 4px;
   font-family: Verdana;
   font-size: 0.7em;
+  box-shadow: 1px 1px 5px #555;
+}
+#u10li{
+  margin-top: 100px;
 }
 #u10pi{
-  margin-bottom: 5px;
+  margin-top: 25px;
+  margin-bottom: 55px;
+}
+#u10fp{
+  text-align: center;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+#u10fp > a{
+  color: #111;
+  font-size: 1.6em;
+  font-family: Verdana;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+.u10wrapper{
+
+  margin-top: 10px;
+  /*Background pattern from: subbtlepatterns.com*/
+  background: url("../textured_paper.png");
 }
 @media screen and (max-width: 425px)
 {
@@ -69,12 +86,12 @@ body{
   #u10pi,#u10li{
     padding: 2px;
     margin-bottom: 2px;
-
   }
   #u10sb{
     font-size: 1.9em;
   }
-  form{
-    background: url("../spiration dark.png");
+  #u10fp{
+    margin-top: 40px;
+    font-size: 0.9em;
   }
 }

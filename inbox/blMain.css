@@ -11,24 +11,21 @@ body{
   font-style: oblique;
   cursor: pointer;
   transition: all 0.45s;
+  background: #eee;
+  color: #111;
   z-index: 2;
+  opacity: 0.89;
+  border: 1px solid black;
 }
 #u9cbl_w{
   position: fixed; top: 36.1%; left: 50%;
-  /*Background pattern from: subbtlepatterns.com*/
-  background: url("../spiration dark.png");
-  color: #889889;
-  opacity: 0.89;
 }
 #u9cbl_r{
-  /*Background pattern from: subbtlepatterns.com*/
-  background: url("../spiration dark.png");
-  color: #889889;
-  opacity: 0.89;
   position: fixed; top: 36.1%; left: 0%;
 }
 #u9cbl_w:hover,#u9cbl_r:hover{
-  color: #fff;
+  color: #eee;
+  background: #111;
   opacity: 1;
 }
 #u9cbl_rc,#u9cbl_wc{
@@ -39,19 +36,20 @@ body{
   height: 8%;
   width: 100%;
   position: absolute; top: 15%; left: 0px;
+  /*Background pattern from : subbtlepatterns.com*/
+  background-image: url("../connectwork.png");
 }
 #u9cbl_rcmrn,#u9cbl_rcmrd,#u9cbl_rcmrr{
   width: 30%;
   height: 100%;
-  /*Background pattern from : subbtlepatterns.com*/
-  background-image: url("../connectwork.png");
+
   color: white;
   text-align: center;
-  font-size: 175%;
-  font-family: monospace;
-  font-style: italic;
+  font-size: 1.3em;
+  font-family: Verdana;
   position: absolute; top: 0px; left: 0px;
-  z-index: 2;
+  z-index: 4;
+  /*box-shadow: 0px 4px 2px #111 inset;*/
 }
 #u9cbl_rcmrd{
   position: absolute; top: 0%; left: 30%;
@@ -115,6 +113,7 @@ body{
   #u9cbl_rcmrd,#u9cbl_rcmrr
   {
     font-size: 1em;
+    top: 10%;
   }
 }
 @media screen and (max-width: 768px)

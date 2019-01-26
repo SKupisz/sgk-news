@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+body{
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../textured_paper.png");
+  margin: 0;
+  padding: 0;
+}
+.u10t{
+  width: 100%;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../curls.png");
+  color: white;
+  padding-bottom: 5px;
+}
+.u11f{
+  width: 100%;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: Verdana;
+  font-weight: bold;
+}
+.u11femail{
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 50%;
+  font-size: 1.2em;
+  font-family: Verdana;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #555;
+  margin-top: 10px;
+}
+.u11fsub{
+  width: 60%;
+  padding: 2px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../dark-grey-terrazzo.png");
+  font-size: 2.1em;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+#u11fsub:hover{
+  filter: brightness(70%);
+}
+.u11done{
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}

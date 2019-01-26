@@ -7,7 +7,7 @@
   font-family: Verdana;
   /*background pattern from: subttlepatterns.com*/
   background: url("../dark-grey-terrazzo.png");
-  position: absolute; top: 0px; left: 0px;
+  box-shadow: 4px 4px 2px #111 inset;
 }
 #u10{
   width: 98%;
@@ -15,16 +15,16 @@
   font-size: 150%;
   font-family: Arial;
   padding: 1%;
-  position: absolute; top: 13%; left: 0px;
 
 }
 #u10desc{
   margin-bottom: 30px;
 }
 #u11{
-  background: #aaa;
+  background: #eee;
   width: 100%;
   height: 300px;
+  box-shadow: 2px 2px 2px #111;
 }
 #u11SKP{
   width: 30%;
@@ -39,14 +39,9 @@
   margin-left: 30%;
   margin-top: -300px;
   font-size: 150%;
-  font-family: Verdana;
+  font-family: Arial;
   text-align: center;
 
-}
-@media screen and (max-width: 1210px){
-  #u11{
-    position: absolute; top: 100%;
-  }
 }
 @media screen and (max-width: 1024px){
   #u10desc{
@@ -55,8 +50,8 @@
 }
 @media screen and (max-width: 700px){
   #u11SKP{
-    width: 30%;
-    height: 50%;
+    width: 50%;
+    height: 60%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -67,26 +62,13 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 1em;
-  }
-}/*
-@media screen and (max-width: 398px){
-  #u10{
-    font-size: 110%;
-  }
-  #u11{
-    position: absolute; top: 53%; left: 0px;
+    margin-bottom: 10px;
   }
 }
-@media screen and (max-width: 350px){
-  #u10{
-    font-size: 105%;
-  }
+@media screen and (max-width: 375px)
+{
   #u11{
-    position: absolute; top: 58%; left: 0px;
+    height: 400px;
+    padding-bottom: 10px;
   }
 }
-@media screen and (max-width: 320px){
-  #u11{
-    position: absolute; top: 80%; left: 0px;
-  }
-}*/

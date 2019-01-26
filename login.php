@@ -26,15 +26,18 @@ session_start();
       unset($_SESSION['r_error']);
     }
     else {
-    ?>Login
+    ?>Sign in
     <?php } ?></section>
     <?php if(!isset($_SESSION['zalogowany']))
     {
 ?>
 
   <form method="post" action="getIn.php">
+    <section class = "u10wrapper">
     <section id = "u10l"><label class = "u10ldis">Login » </label><input type="text" placeholder = "Login" name = "u10l" id = "u10li" required/></section>
     <section id = "u10p"><label class = "u10ldis">Password » </label><input type="password" placeholder = "Password" name = "u10p" id = "u10pi" required/></section>
+    <section id = "u10fp"><a href = "login/forgot.php">Forgot password?</a></section>
+  </section>
     <input type="submit" id = "u10sb" value="Sign In"/>
   </form>
 <?php }?>

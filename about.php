@@ -23,7 +23,6 @@ session_start();
     That day, the first version of main site had been written. After that, during next months,
     we were developing our project - we added the main part of our website, sign-up system, and
     an internal inbox, which is just like an email for our users.
-      <hr id = "u1011hr"></hr>
     </section>
 
   <section id = "u11">
