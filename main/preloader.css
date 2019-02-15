@@ -1,41 +1,24 @@
 * {box-sizing: border-box;}
+
 .onLoadCut {
   overflow: hidden;
 }
 
-@keyframes rotating {
+@keyframes preloaderAnimation {
   0%{
-    -webkit-transform: rotate(0deg);
+    box-shadow: 10px 10px 10px #eee inset;
   }
-  /*10%{
-    transform: rotate(18deg);
-  }
-  20%{
-    transform: rotate(72deg);
-  }
-  30%{
-    transform: rotate(108deg);
-  }
-  40%{
-    transform: rotate(144deg);
+  25%{
+    box-shadow: 10px -10px 10px #eee inset;
   }
   50%{
-    transform: rotate(180deg);
+    box-shadow: -10px -10px 10px #eee inset;
   }
-  60%{
-    transform: rotate(216deg);
+  75%{
+    box-shadow: -10px 10px 10px #eee inset;
   }
-  70%{
-    transform: rotate(252deg);
-  }
-  80%{
-    transform: rotate(288deg);
-  }
-  90%{
-    transform: rotate(324deg);
-  }*/
   100%{
-    -webkit-transform: rotate(360deg);
+    box-shadow: 10px 10px 10px #eee inset;
   }
 }
 #preloader {
@@ -51,39 +34,27 @@
     background-color: #000;
     transition: top 500ms linear 500ms;
 }
-#alfa{
-}
-#rotating{
-  width: 20%;
-  height: 25%;
-  background: #aaa;
-  position: absolute; top: 40%; left: 37.5%;
-  animation-name: rotating;
-  animation-duration: 0.7s;
-  animation-iteration-count: infinite;
-}
-#rotating-image{
-  width: 100%;
-  height: 100%;
-  position: absolute; top: 0px; left: 0px;
-}
-#middle{
-  width: 400px;
-  height: 400px;
+.ourLogo{
   margin-left: auto;
   margin-right: auto;
-  background: #aaa;
-  border-radius: 10%;
-}
-#middle{
-  animation-name: rotating;
-  animation-duration: 3s;
+  animation-name: preloaderAnimation;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
+  border-radius: 50%;
 }
-@media screen and (max-width: 600px)
+.ourLogo > img{
+  transform: scale(0.8);
+}
+@media screen and (max-width: 583px)
 {
-  #middle{
-    width: 200px;
-    height: 200px;
+  .onLoadNot{
+    display: none;
+  }
+  .ourLogo{
+    width: 50%;
+    height: 50%;
+  }
+  .ourLogo > img{
+    display: none;
   }
 }

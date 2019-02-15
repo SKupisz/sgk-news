@@ -60,7 +60,8 @@ function addToList(id){
 }
 document.getElementById("u9crmt1").addEventListener("click",function(){
   var adres = "inbox/editRecive.php?nd="+alfa;
-  window.open(adres);
+  var win = window.open(adres,"_self");
+  win.focus();
 });
 function goToReader(id){
   var adres = "inbox/openMessage.php?nmb="+id;

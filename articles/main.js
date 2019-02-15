@@ -1,4 +1,5 @@
 var atrAlpha = 0;
+let tagsList = [];
 function beingWrittenOpen(){
   document.getElementById("u11ssection").style.display = "none";
   document.getElementById("u11csection").style.display = "none";
@@ -24,9 +25,36 @@ function preloader(){
         var loader  =   document.getElementById("preloader");
         body.className   -=   "onLoadCut";
         loader.style.display = "none";
-        beingWrittenOpen();
+        if(typeof literature !== "undefined" || typeof politic !== "undefined" || typeof other !== "undefined" || typeof science !== "undefined"  || typeof entertaiment !== "undefined")
+        {
+          if(typeof literature !== "undefined")
+          {
+            tagOperand("literatureTag");
+          }
+          if(typeof politic !== "undefined")
+          {
+            tagOperand("politicTag");
+          }
+          if(typeof other !== "undefined")
+          {
+            tagOperand("otherTag");
+          }
+          if(typeof entertaiment !== "undefined")
+          {
+            tagOperand("entertaimentTag");
+          }
+          if(typeof science !== "undefined")
+          {
+            tagOperand("scienceTag");
+          }
+          writingOpen();
+        }
+        else {
+          beingWrittenOpen();
+        }
 
-},3000);
+
+},4000);
 }
 function goWriting(id){
   window.location.assign("articles.php?sid="+id);
@@ -77,3 +105,39 @@ function atrOpen(){
   }
 
 }
+function tagOperand(tagName){
+  if(tagsList.includes(tagName))
+  {
+    tagsList.splice(tagsList.indexOf(tagName),1);
+    document.getElementById(tagName).classList.remove("tagSigned");
+  }
+  else {
+    tagsList.push(tagName);
+    document.getElementById(tagName).classList.add("tagSigned");
+  }
+  let finalTags = "";
+  for(var i = 0 ; i < tagsList.length; i++)
+  {
+    finalTags+=tagsList[i];
+    if(i != tagsList.length-1)
+    {
+      finalTags+=" ";
+    }
+  }
+  document.querySelector(".u11moreInfo").value = finalTags;
+}
+document.getElementById("politicTag").addEventListener("click",function(){
+tagOperand("politicTag");
+});
+document.getElementById("entertaimentTag").addEventListener("click",function(){
+tagOperand("entertaimentTag");
+});
+document.getElementById("literatureTag").addEventListener("click",function(){
+tagOperand("literatureTag");
+});
+document.getElementById("scienceTag").addEventListener("click",function(){
+tagOperand("scienceTag");
+});
+document.getElementById("otherTag").addEventListener("click",function(){
+tagOperand("otherTag");
+});

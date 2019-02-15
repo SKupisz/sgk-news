@@ -64,6 +64,7 @@ try {
       $words = array();
       $id = array();
       $likes = array();
+      $tags = array();
       $length = $rezultat->num_rows;
       if($length > 50)
       {
@@ -79,6 +80,7 @@ try {
         $views[$i] = $row["views"];
         $words[$i] = $row['words'];
         $likes[$i] = $row['likes'];
+        $tags[$i] = $row['tags'];
       }
       $id = array_reverse($id);
       $title = array_reverse($title);
@@ -87,6 +89,7 @@ try {
       $views = array_reverse($views);
       $words = array_reverse($words);
       $likes = array_reverse($likes);
+      $tags = array_reverse($tags);
       mysqli_close($polaczenie);
     }
 

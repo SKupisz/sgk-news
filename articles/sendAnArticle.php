@@ -5,7 +5,7 @@ if(!isset($_SESSION['zalogowany']))
   header("Location: ../index.php");
   exit();
 }
-if(!isset($_POST['u11wti']) || !isset($_POST['u11wtai']) || !isset($_POST['u11wtgai']))
+if(!isset($_POST['u11moreInfo']) || !isset($_POST['u11wti']) || !isset($_POST['u11wtai']))
 {
   header("Location: ../articles.php");
   exit();
@@ -17,12 +17,11 @@ function exitInstructions($content){
 }
 $title = $_POST['u11wti'];
 $content = $_POST['u11wtai'];
-$tags = $_POST['u11wtgai'];
+$tags = $_POST['u11moreInfo'];
 $title = htmlentities($title,ENT_QUOTES,"UTF-8");
 $content = htmlentities($content,ENT_QUOTES,"UTF-8");
-$tags = htmlentities($tags,ENT_QUOTES,"UTF-8");
 $content = str_replace("\n", "<br>", $content);
-$tags = str_replace("\n"," ",$tags);
+$tags = str_replace("Tag","",$tags);
 $checkin = 1;
 require_once "../main/connect.php";
 
@@ -41,6 +40,8 @@ try {
       $row = $rezultat->fetch_assoc();
       $id = $row['id'];
       $rezultat = $polaczenie->query("UPDATE $user SET article = '$content' WHERE id = $id");
+      if(!$rezultat) throw new Exception($polaczenie->error);
+      $rezultat = $polaczenie->query("UPDATE $user SET tags = '$tags' WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
       exitInstructions("Your article has been sent");
     }

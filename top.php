@@ -54,6 +54,7 @@ session_start();
             $now_views = $views[$i];
             $now_words = $words[$i];
             $now_likes = $likes[$i];
+            $now_tags = $tags[$i];
             if(strlen($now_title) > 40){
               $now_title = substr($now_title,0,40)."...";
             }
@@ -78,7 +79,16 @@ session_start();
               <section id = "u11av">
                 <?php echo $now_content; ?>
               </section>
-              <aside id = "u11tags">
+              <?php
+              if(strlen($now_tags) > 0)
+              {
+                ?><aside id = "u11info"><?php
+              }
+              else {
+                ?><aside id = "u11tags"><?php
+              }
+              ?>
+
                 <?php
                   if($now_views == 1)
                   {
@@ -105,6 +115,11 @@ session_start();
                   else {
                     echo $now_likes;?> likes<?php
                   }
+                ?>
+              </aside>
+              <aside id = "u11tags">
+                <?php
+                echo $now_tags;
                 ?>
               </aside>
             </a>

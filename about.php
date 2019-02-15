@@ -12,7 +12,13 @@ session_start();
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
   <title> SGK-news </title>
 </head>
-<body>
+<body onload = "preloader();" class = "onLoadCut">
+  <section id = "preloader" progressbar>
+    <figure class = "ourLogo">
+      <img src = "./noweLogo2.png" alt = "logo"/>
+    </figure>
+  </section>
+<section id = "onLoadNot" class = "onLoadNot">
 <?php require_once "main/bar.php" ?>
 <main id = "umain">
   <header id = "u9">
@@ -37,7 +43,9 @@ session_start();
   </section>
   </section>
 </main>
+</section>
 </body>
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>
+<script src="about/main.js"></script>
 </html>

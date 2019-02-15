@@ -51,12 +51,15 @@
   color: black;
   font-size: 1em;
 }
-#u11tags{
+#u11info,#u11tags{
   width: 90%;
   height: 20%;
   font-family: Verdana;
-  position: absolute; top: 80%; left: 5%;
+  position: absolute; top: 70%; left: 5%;
   color: black;
+}
+#u11tags{
+  top: 80%;
 }
 .error{
   text-align: center;

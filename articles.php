@@ -22,13 +22,11 @@ require_once "articles/loadData.php";
     <title>SGK news</title>
   </head>
   <body onload = "preloader();" class = "onLoadCut">
-    <section id = "preloader">
-      <section id = "alfa">
-      <section id = "middle">
-        <img src = "noweLogo2.png" alt = "logo" id = "rotating-image"/>
+      <section id = "preloader" progressbar>
+        <figure class = "ourLogo">
+          <img src = "./noweLogo2.png" alt = "logo"/>
+        </figure>
       </section>
-    </section>
-    </section>
     <?php require_once "main/bar.php";?>
     <main id = "umain">
       <section class = "more-other-wrapper">
@@ -91,7 +89,14 @@ require_once "articles/loadData.php";
             </section>
             <section class = "u11wtga">
               <div class = "u11wtadesc">Tags(optional)</div>
-              <textarea class = "u11wtgai" name = "u11wtgai" placeholder="Tags..."></textarea>
+              <span class = "u11wtmain">
+                <button type="button" class = "u11wttag" id = "politicTag">Politic</button>
+                <button type="button" class = "u11wttag" id = "entertaimentTag">Entertaiment</button>
+                <button type="button" class = "u11wttag" id = "literatureTag">Literature</button>
+                <button type="button" class = "u11wttag" id = "scienceTag">Science</button>
+                <button type="button" class = "u11wttag" id = "otherTag">Other</button>
+              </span>
+              <input type = "hidden" name = "u11moreInfo" class = "u11moreInfo"/>
             </section>
             <button type = "submit" id = "u11was">
                Send<label class = "u11wasr"> an article</label> to waiting room
@@ -130,6 +135,8 @@ require_once "articles/loadData.php";
   {
     ?>writingOpen();<?php
   }
+
 ?>
+
   </script>
 </html>

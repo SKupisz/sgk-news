@@ -47,8 +47,6 @@ function openSort(){
     {
       document.querySelector("#u10sortAdvance").style.display = "block";
       sortalpha = 1;
-      namealpha = 0;
-      wordsalpha = 0;
     }
     else {
       document.querySelector("#u10sortAdvance").style.display = "none";
@@ -84,7 +82,6 @@ function openName(){
       document.querySelector("#u10nameAdvance").style.display = "block";
       //document.querySelector("#u10tagsAdvance").style.display = "none";
       namealpha = 1;
-      tagsalpha = 0;
     }
     else {
       document.querySelector("#u10nameAdvance").style.display = "none";
@@ -100,6 +97,7 @@ function openTags(){
     document.querySelector("#u10nameAdvance").style.display = "none";
     namealpha = 0;
     tagsalpha = 1;
+    sortalpha = 0;
   }
   else {
     document.querySelector("#u10tagsAdvance").style.display = "none";

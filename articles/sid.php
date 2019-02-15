@@ -8,7 +8,7 @@ if(isset($_GET['sid']))
     $sid = -1;
   }
   else {
-    $sid = (int)$_GET['sid'];
+    $sid = $idint;
 
   }
 }

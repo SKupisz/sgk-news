@@ -1,5 +1,65 @@
-@import "../main/preloader.css";
 @import url("statistic.css");
+* {box-sizing: border-box;}
+
+.onLoadCut {
+  overflow: hidden;
+}
+
+@keyframes preloaderAnimation {
+  0%{
+    box-shadow: 10px 10px 10px #eee inset;
+  }
+  25%{
+    box-shadow: 10px -10px 10px #eee inset;
+  }
+  50%{
+    box-shadow: -10px -10px 10px #eee inset;
+  }
+  75%{
+    box-shadow: -10px 10px 10px #eee inset;
+  }
+  100%{
+    box-shadow: 10px 10px 10px #eee inset;
+  }
+}
+#preloader {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    background-color: #000;
+    transition: top 500ms linear 500ms;
+}
+.ourLogo{
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: preloaderAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+}
+.ourLogo > img{
+  transform: scale(0.8);
+}
+@media screen and (max-width: 583px)
+{
+  .onLoadNot{
+    display: none;
+  }
+  .ourLogo{
+    width: 50%;
+    height: 50%;
+  }
+  .ourLogo > img{
+    display: none;
+  }
+}
+
 #u10bar{
   width: 100%;
   height: 10%;
@@ -119,10 +179,10 @@
   height: 83%;
 }
 #u11was{
-  margin-top: 5px;
+  margin-top: 15px;
   width: 40%;
   height: 20%;
-  position: absolute; left: 30%;
+  margin-left: 30%;
   font-size: 1.7em;
   font-family: Verdana;
   border: none;
@@ -133,6 +193,7 @@
   cursor: pointer;
   transition: all 0.5s;
   filter: brightness(100%);
+  padding: 10px;
 }
 #u11was:hover{
   filter: brightness(40%);
@@ -160,23 +221,23 @@
   font-size: 1.4em;
   cursor: pointer;
 }
-#u11atrcr{
+#u11atrcr,#u11atrcas{
   width: 25%;
   height: 100%;
   position: absolute; top: 0px; left: 50%;
   text-align: center;
-  font-size: 150%;
-  font-family: sans-serif;
+  font-size: 1.5em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   /*Background pattern from: subttlepatterns.com*/
   background: url("../bo_play_pattern.png");
-  border-radius: 50px;
+  border-radius: 15px;
   cursor: pointer;
   filter: invert(0%);
   transition: all 0.5s;
   color: white;
   text-decoration: none;
 }
-#u11atrcr:hover{
+#u11atrcr:hover,#u11atrcas:hover{
   filter: invert(100%);
 }
 #u11atrca{
@@ -185,23 +246,11 @@
   position: absolute; top: 0px; left: 75%;
 }
 #u11atrcas{
-  width: 100%;
-  height: 100%;
-  color: white;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../dark-grey-terrazzo.png");
-  position: absolute; top: 0px; left: 0px;
-  font-size: 150%;
-  font-family: sans-serif;
+  left: 5%;
+  position: none;
+  width: 95%;
+  height: 99%;
   border: none;
-  border-radius: 50px;
-  filter: sepia(0%) brightness(100%);
-  cursor: pointer;
-  transition: all 0.5s;
-  border-radius: 50px;
-}
-#u11atrcas:hover{
-  filter: sepia(100%) brightness(200%);
 }
 #u11atrmo{
   width: 30%;
@@ -229,10 +278,42 @@
 #u3,#u4,#u5,#u6,#u7,#u8,#u9d{
   height: 100%;
 }
+.u11wtmain{
+  margin-bottom: 20px;
+}
+.u11wttag{
+  font-family: Arial;
+  font-size: 1em;
+  border: 1px solid #111;
+  border-radius: 5px;
+  background: #aaa;
+  color: #111;
+  cursor: pointer;
+  margin-top: 5px;
+}
+#politicTag,#entertaimentTag,#scienceTag,#otherTag,#literatureTag{
+  transition: all 0.5s;
+}
+#politicTag:hover,
+#entertaimentTag:hover,
+#scienceTag:hover,
+#otherTag:hover,#literatureTag:hover{
+  filter: brightness(70%);
+}
+.tagSigned{
+  background: #888;
+  color: #000;
+  transform: scale(1.03);
+  outline-color: #111;
+  filter: brightness(160%);
+}
 @media screen and (max-width: 1024px)
 {
   #u11was{
     font-size: 1.4em;
+  }
+  .u11wasr{
+    display: none;
   }
 }
 @media screen and (max-width: 768px){
@@ -250,6 +331,16 @@
   }
   #u11atrcas,#u11atrcr{
     font-size: 0.9em;
+  }
+  .u11wttag{
+    font-size: 0.7em;
+  }
+
+}
+@media screen and (max-width: 550px)
+{
+  #u11wsection{
+    height: 87%;
   }
 }
 @media screen and (max-width: 425px)
@@ -287,9 +378,7 @@
   .u11atrcrr{
     display: none;
   }
-  .u11wasr{
-    display: none;
-  }
+
 }
 @media screen and (max-width: 320px)
 {

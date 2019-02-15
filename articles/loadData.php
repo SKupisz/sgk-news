@@ -57,7 +57,7 @@ try {
     $snumber = array_reverse($snumber);
     $sviews = array_reverse($sviews);
     $swords = array_reverse($swords);
-    if($sid != -1)
+    if($sid > 0)
     {
       $rezultat = $polaczenie->query("SELECT * FROM $user WHERE id = $sid AND status = 1");
       if(!$rezultat) throw new Exception($polaczenie->error);
@@ -74,25 +74,18 @@ try {
         {
           $sidcontent = substr($sidcontent,1,strlen($sidcontent));
         }
+        $baseTags = $row['tags'];
+        $baseTags = explode(" ",$baseTags);
+        ?><script><?php
+        for($i = 0 ; $i < count($baseTags); $i++)
+        {
+          ?>let <?php echo $baseTags[$i];?> = 1;<?php
+        }
+        ?></script><?php
       }
     }
     else {
-      $rezultat = $polaczenie->query("SELECT * FROM $user WHERE status = 1");
-      if(!$rezultat) throw new Exception($polaczenie->error);
-      if($rezultat->num_rows == 0)
-      {
-        $sid == -1;
-      }
-      else {
-        $row = $rezultat->fetch_assoc();
-        $sidname = $row['title'];
-        $sidcontent = $row['article'];
-        $sidcontent = str_replace("<br>", "\n", $sidcontent);
-        while($sidcontent[0] == " ")
-        {
-          $sidcontent = substr($sidcontent,1,strlen($sidcontent));
-        }
-      }
+      $sid = -1;
     }
   }
 } catch (Exception $e) {
