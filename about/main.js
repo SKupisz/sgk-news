@@ -7,5 +7,5 @@ function preloader(){
         loader.style.display = "none";
         document.getElementById("onLoadNot").classList.remove("onLoadNot");
 
-},4000);
+},2000);
 }

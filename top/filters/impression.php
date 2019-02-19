@@ -29,6 +29,8 @@ try {
     $views = array();
     $row = array();
     $words = array();
+    $tags = array();
+    $likes = array();
     $id = array();
     $length = $rezultat->num_rows;
     if($length > 50)
@@ -44,23 +46,27 @@ try {
       $content[$i] = $row["content"];
       $views[$i] = $row["views"];
       $words[$i] = $row['words'];
+      $likes[$i] = $row['likes'];
+      $tags[$i] = $row['tags'];
     }
-    if($b == 1)
-    {
-      $id = array_reverse($id);
-      $title = array_reverse($title);
-      $content = array_reverse($content);
-      $from = array_reverse($from);
-      $views = array_reverse($views);
-      $words = array_reverse($words);
-    }
+    $id = array_reverse($id);
+    $title = array_reverse($title);
+    $content = array_reverse($content);
+    $from = array_reverse($from);
+    $views = array_reverse($views);
+    $words = array_reverse($words);
+    $tags = array_reverse($tags);
+    $likes = array_reverse($likes);
+
     $_SESSION['topimpression'] = [
       "id"=>$id,
       "from"=>$from,
       "title"=>$title,
       "content"=>$content,
       "words"=>$words,
-      "views"=>$views
+      "views"=>$views,
+      "tags"=>$tags,
+      "likes"=$likes
     ];
     mysqli_close($polaczenie);
     header("Location: ../../top.php");

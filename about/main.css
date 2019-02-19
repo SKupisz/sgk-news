@@ -45,6 +45,9 @@
 .ourLogo > img{
   transform: scale(0.8);
 }
+#u3,#u4,#u5,#u6,#u7,#u8,#u9{
+  height: 100%;
+}
 @media screen and (max-width: 583px)
 {
   .onLoadNot{

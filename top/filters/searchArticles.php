@@ -26,6 +26,8 @@ try {
       $views = array();
       $row = array();
       $words = array();
+      $likes = array();
+      $tags = array();
       $id = array();
       require_once"../filtersHelp/helpingLoadingWords.php";
       $_SESSION['topname'] = ['id'=>$id,
@@ -33,7 +35,9 @@ try {
       'title'=>$title,
       'content'=>$content,
       'words'=>$words,
-      'views'=>$views];
+      'views'=>$views,
+      'tags'=>$tags,
+      'likes'=>$likes];
       mysqli_close($polaczenie);
       header("Location: ../../top.php");
       exit();

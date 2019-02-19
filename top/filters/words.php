@@ -29,6 +29,8 @@ try {
     $content = array();
     $words = array();
     $views = array();
+    $tags = array();
+    $likes = array();
     if($b == 0 && $t == 50)
     {
       $rezultat = $polaczenie->query("SELECT * FROM sent_articles WHERE words <= 50 ORDER BY views");
@@ -69,7 +71,9 @@ try {
     'title'=>$title,
     'content'=>$content,
     'words'=>$words,
-    'views'=>$views];
+    'views'=>$views,
+    "tags"=>$tags,
+    "likes"=>$likes];
     mysqli_close($polaczenie);
     header("Location: ../../top.php");
     exit();

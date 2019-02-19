@@ -343,6 +343,12 @@
     height: 87%;
   }
 }
+@media screen and (max-width: 493px)
+{
+  .u11atrcrr{
+    display: none;
+  }
+}
 @media screen and (max-width: 425px)
 {
   #u11atrr{
@@ -364,18 +370,15 @@
     z-index: 3;
   }*/
   #u11atrcr{
-    left: 40%;
+    margin-right: 10px;
   }
   #u11atrresp{
     display: block;
   }
   #u11atrca{
-    left: 70%;
+    left: 74%;
   }
   #u11atrcrr{
-    display: none;
-  }
-  .u11atrcrr{
     display: none;
   }
 

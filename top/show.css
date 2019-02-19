@@ -1,10 +1,11 @@
 #u10connectionfail,#u10connection{
-  width: 80%;
-  position: absolute; top: 10%; left: 10%;
+  width: 98%;
+  position: absolute; top: 10%; left: 1%;
   /*Background pattern from: subtlepatterns.com*/
   background: url("../connectwork.png");
   font-family: Verdana;
   box-shadow: 0px 5px 5px #111;
+  padding: 1px;
 }
 #u10connectionfail{
   height: 40%;
@@ -23,21 +24,21 @@
   font-family: Arial;
 }
 #u10cfmain{
-  width: 90%;
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
   font-size: 1.4em;
   text-align: left;
   /*Background pattern from: subtlepatterns.com*/
-  background: url("../pipes.png");
+  background: url("../textured_paper.png");
   box-shadow: 0px 5px 5px #111;
   margin-bottom: 10px;
   line-height: 35px;
-  padding-left: 2px;
+  padding: 15px;
 }
 #u10cv{
   /*Background pattern from: subtlepatterns.com*/
-  background: url("../pipes.png");
+  background: url("../textured_paper.png");
   font-family: Arial;
   width: 100%;
   font-size: 1.2em;
@@ -63,6 +64,9 @@
 #u10rl:hover{
   filter: brightness(70%) blur(2px);
 }
+.u10tq{
+  padding: 2px;
+}
 @media screen and (max-width: 800px)
 {
   #u10connection{
@@ -83,5 +87,8 @@
   #u10connection{
     width: 98%;
     left: 1%;
+  }
+  #u10cv{
+    width: 98%;
   }
 }

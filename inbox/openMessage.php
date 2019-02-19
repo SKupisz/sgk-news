@@ -56,7 +56,6 @@ try {
       require_once "encrypt.php";
       $en = new Encrypt;
       $content = $en->goBack($content);
-      $content = substr($content,0,strlen($content)-1);
     }
   }
 } catch (Exception $e) {

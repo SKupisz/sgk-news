@@ -1,6 +1,14 @@
 <?php
+require_once "cyphering.php";
+require_once "decoding.php";
 class Encrypt{
   public $alfa;
+  public function goWithIt($alfa){
+    $base = new Cypher;
+    $encrypt = $base->toDelta($alfa,51,1,1);
+    return $encrypt;
+  }
+  /*
   public function goWithIt($alfa){
     $encrypt = "";
     for($i = 0 ; $i < strlen($alfa); $i++)
@@ -13,16 +21,26 @@ class Encrypt{
     }
     return $encrypt;
   }
+  */
   public function goBack($alfa){
     $decrypt = "";
     $table = explode(" ",$alfa);
-    for($i = 0 ; $i < count($table); $i++)
+    if(count($table) == 1)
     {
-      $code = (int) $table[$i];
-      $code = sqrt($code);
-      $code-=1;
-      $decrypt.=chr($code);
+      $base = new Decode;
+      $decrypt = $base->toNormal($alfa);
+      echo $decrypt;
     }
+    else {
+      for($i = 0 ; $i < count($table); $i++)
+      {
+        $code = (int) $table[$i];
+        $code = sqrt($code);
+        $code-=1;
+        $decrypt.=chr($code);
+      }
+    }
+
     return $decrypt;
   }
 }

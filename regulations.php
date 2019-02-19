@@ -24,7 +24,7 @@ $reg = fopen("regulations/SGK-news_regulations.txt","r");
           ?><header class = "header" id = "main"><?php
           echo fgets($reg);?></header><?php
         }
-        else if($counter == 1 || $counter == 6 || $counter == 13 || $counter ==23 || $counter == 31)
+        else if($counter == 1 || $counter == 6 || $counter == 13 || $counter ==23 || $counter == 33)
         {
           ?><header class = "header" id = "usual"><?php
           echo fgets($reg);?></header><?php

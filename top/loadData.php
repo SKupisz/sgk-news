@@ -17,6 +17,8 @@ try {
       $content = $_SESSION['topwords']['content'];
       $words = $_SESSION['topwords']['words'];
       $views = $_SESSION['topwords']['views'];
+      $tags = $_SESSION['topwords']['tags'];
+      $likes = $_SESSION['topwords']['likes'];
       $length = count($id);
       unset($_SESSION['topwords']);
     }
@@ -28,6 +30,8 @@ try {
       $content = $_SESSION['topimpression']['content'];
       $words = $_SESSION['topimpression']['words'];
       $views = $_SESSION['topimpression']['views'];
+      $tags = $_SESSION['topimpression']['tags'];
+      $likes = $_SESSION['topimpression']['likes'];
       $length = count($id);
       unset($_SESSION['topimpression']);
     }
@@ -39,6 +43,9 @@ try {
       $content = $_SESSION['topname']['content'];
       $words = $_SESSION['topname']['words'];
       $views = $_SESSION['topname']['views'];
+      $tags = $_SESSION['topname']['tags'];
+      $likes = $_SESSION['topname']['likes'];
+      echo count($likes);
       $length = count($id);
       unset($_SESSION['topname']);
     }

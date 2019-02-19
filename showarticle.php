@@ -27,6 +27,16 @@ try {
     {
       unset($_SESSION['liking_error']);
     }
+    $rezultat = $polaczenie->query("SELECT tags FROM sent_articles WHERE id = $id");
+    if(!$rezultat) throw new Exception($polaczenie->error);
+    if($rezultat->num_rows == 0)
+    {
+      mysqli_close($polaczenie);
+      header("Location: ../../");
+      exit();
+    }
+    $row = $rezultat->fetch_assoc();
+    $tags = $row['tags'];
     $rezultat = $polaczenie->query("SELECT likes FROM sent_articles WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
     if($rezultat->num_rows == 0)
@@ -42,7 +52,7 @@ try {
       $rezultat = $polaczenie->query("UPDATE sent_articles SET views = views+1 WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
     }
-
+    mysqli_close($polaczenie);
 
   }
 } catch (Exception $e) {
@@ -109,7 +119,16 @@ try {
               <div class = "u10lq">
                 <?php echo $likes;?>
               </div><?php
-            }
+            }?>
+            <div class = "u10tq">
+              <?php if(strlen($tags) == 0){
+                ?>No tags<?php
+              }
+              else {
+                ?>Tags: <?php echo $tags;
+              }?>
+            </div>
+            <?php
           ?>
         </aside>
 
