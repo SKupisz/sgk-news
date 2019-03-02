@@ -5,7 +5,7 @@ class Encrypt{
   public $alfa;
   public function goWithIt($alfa){
     $base = new Cypher;
-    $encrypt = $base->toDelta($alfa,51,1,1);
+    $encrypt = $base->toDelta($alfa,rand(500,5000),1,1);
     return $encrypt;
   }
   /*
