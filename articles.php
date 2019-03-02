@@ -122,9 +122,6 @@ require_once "articles/loadData.php";
 
     </main>
   </body>
-  <script src = "main/jquery-3-2-1.js"></script>
-  <script src = "main/main.js"></script>
-  <script src = "articles/main.js"></script>
   <script>
   <?php if(isset($_SESSION['e_artc']))
   {
@@ -139,4 +136,8 @@ require_once "articles/loadData.php";
 ?>
 
   </script>
+  <script src = "main/jquery-3-2-1.js"></script>
+  <script src = "main/main.js"></script>
+  <script src = "articles/main.js"></script>
+
 </html>

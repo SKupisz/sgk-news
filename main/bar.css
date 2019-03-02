@@ -1,6 +1,28 @@
 body{
   background: #ddd;
 }
+body::-webkit-scrollbar{
+  width: 15px;
+  height: 15px;
+}
+body::-webkit-scrollbar-track{
+  background: #11111f;
+}
+body::-webkit-scrollbar-thumb{
+  background: rgba(10,10,255,0.7);
+}
+body::-webkit-scrollbar-thumb:active{
+  background: rgba(10,10,255,0.5);
+}
+body::-webkit-scrollbar-button{
+  background: #11111f;
+}
+body::-webkit-scrollbar-button:vertical:decrement{
+  background: #11111f url("upArrow.png") 0px 2px no-repeat;
+}
+body::-webkit-scrollbar-button:vertical:increment{
+  background: #11111f url("downArrow.png") no-repeat;
+}
 @media screen and (min-width: 1025px)
 {
   #u1{

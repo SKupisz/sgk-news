@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+.wrong{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(15% + 50px);
+  background: #eee;
+  box-shadow: 2px 2px 5px #111;
+}
+.wrongHeader{
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+}
+.wrongContent{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.4em;
+  font-family: sans-serif;
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+.newPasswordHeader{
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 5px;
+}
+.newPassword{
+  margin-top: calc(15% + 50px);
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+.passwordInput{
+  width: 60%;
+  float: center;
+  margin-top: 3px;
+  font-size: 1.6em;
+  font-family: 'Lato', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  transition: all 0.4s;
+}
+.passwordSubmit{
+  width: 40%;
+  margin-top: 10px;
+  border: none;
+  /*Background pattern from: subltepatterns.com*/
+  color: white;
+  background: url("../curls.png");
+  font-size: 1.5em;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.passwordFirstInfo,.passwordSecondInfo{
+  font-size: 1em;
+  font-family: 'Lato',sans-serif;
+  color: red;
+}
+.inputCorrect{
+  background: lightgreen;
+}
+.inputIncorrect{
+  background: rgba(255,0,0,0.7);
+}
+input[class="passwordSubmit"]{
+  transition: filter 0.4s;
+}
+input[class="passwordSubmit"]:hover{
+  filter: brightness(70%);
+}
+@media screen and (max-width: 640px)
+{
+  .wrong,.newPassword{
+    margin-top: calc(30% + 50px);
+  }
+  .newPassword{
+    width: 100%;
+  }
+  .passwordInput{
+    width: 80%;
+  }
+  .passwordSubmit{
+    width: 69%;
+  }
+}

@@ -8,7 +8,9 @@ else {
   $alfa = $_POST['u11femail'];
   if(filter_var($alfa,FILTER_VALIDATE_EMAIL))
   {
-    mail($alfa,"Recovering the SGK-news password","");
+    mail($alfa,"Recovering the SGK-news password","Hello,
+    Your password reset link is http://localhost/sgk-news/login/authorizeReset.php?primDat=".$alfa."
+    Ignore it if you did not ask for a reset");
     $content = 2;
   }
   else {

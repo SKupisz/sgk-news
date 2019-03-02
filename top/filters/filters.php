@@ -8,6 +8,9 @@
   <div id = "u10name" onclick = "openName();" class = "u10ad">
     Name
   </div>
+  <div id = "u10tags" onclick = "openTags();" class = "u10ad">
+    Tags
+  </div>
   <div id = "u10words" onclick = "openWords();" class = "u10ad">
     Length
   </div>
@@ -26,7 +29,21 @@
     <input type = "submit" value = "Search" id = "u10as"/>
   </form>
 </section>
-
+<section id = "u10tagsAdvance">
+  <form method = "post" action = "top/filters/tags.php">
+    <input type = "checkbox" id = "politicBtn" class = "tagsBtn" name = "politic"/>
+    <label class = "tagsLabel" id = "politic" for = "politicBtn">Politic</label>
+    <input type = "checkbox" id = "literatureBtn" class = "tagsBtn" name = "literature"/>
+    <label class = "tagsLabel" id = "literature" for = "literatureBtn">Literature</label>
+    <input type = "checkbox" id = "scienceBtn" class = "tagsBtn" name = "science"/>
+    <label class = "tagsLabel" id = "science" for = "scienceBtn">Science</label>
+    <input type = "checkbox" id = "entertaimentBtn" class = "tagsBtn" name = "entertaiment"/>
+    <label class = "tagsLabel" id = "entertaiment" for = "entertaimentBtn">Entertaiment</label>
+    <input type = "checkbox" id = "otherBtn" class = "tagsBtn" name = "other"/>
+    <label class = "tagsLabel" id = "other" for = "otherBtn">Other</label>
+    <input type = "submit" value = "Search" class = "u10tagsSubmit" id = "u10tagsSubmit"/>
+  </form>
+</section>
 <section id = "u10wordsAdvance">
   <a id = "u10min" href = "top/filters/words.php?b=0&t=50">
     <nav >To 50 words</nav></a>

@@ -4,7 +4,7 @@
   position: absolute; top: 0;
   color: white;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.4em;
   cursor: pointer;
   z-index: 3;
   font-family: Verdana;
@@ -13,7 +13,6 @@
   left: 0;
 }
 #u10name{
-  width: 50%;
   left: 25%;
 }
 #u10tags{
@@ -65,6 +64,7 @@
 }
 #u10tagsAdvance{
   position: fixed; top: 27%; left: 37.5%;
+  height: 10%;
 }
 #u10an{
   width: 70%;
@@ -164,6 +164,81 @@
 .u10soon{
   filter: brightness(70%);
 }
+#u10tagsAdvance{
+  background: #222;
+}
+.tagsBtn{
+  display: none;
+}
+.tagsLabel{
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../../textured_paper.png");
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  height: 40%;
+  width: 19%;
+  position: absolute;
+  text-align: center;
+  top: 10%;
+  left: 0.5%;
+  transition: all 0.4s;
+}
+.u10tagsSubmit{
+  width: 90%;
+  left: 5%;
+  position: absolute;
+  top: 55%;
+  height: 40%;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4em;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../../textured_paper.png");
+}
+#u10tagsSubmit{
+  transition: all 0.4s;
+}
+#u10tagsSubmit:hover{
+  filter: brightness(50%);
+}
+#literature{
+  left: 20.5%;
+}
+#science{
+  left: 40.5%;
+}
+#entertaiment{
+  left: 60.5%;
+}
+#other{
+  left: 80.5%;
+}
+#politic:hover,#literature:hover,#science:hover,#entertaiment:hover,#other:hover{
+  filter: brightness(50%);
+}
+#politicBtn:checked + #politic{
+  filter: brightness(50%);
+}
+#literatureBtn:checked + #literature{
+  filter: brightness(50%);
+}
+#scienceBtn:checked + #science{
+  filter: brightness(50%);
+}
+#entertaimentBtn:checked + #entertaiment{
+  filter: brightness(50%);
+}
+#otherBtn:checked + #other{
+  filter: brightness(50%);
+}
+@media screen and (max-width: 1024px)
+{
+  #u10tagsAdvance{
+    top: 32%;
+  }
+}
 @media screen and (max-width: 955px)
 {
   #u10sortAdvance > #u10bi,#u10li{
@@ -175,10 +250,10 @@
 }
 @media screen and (max-width: 800px)
 {
-  #u10nameAdvance,#u10sortAdvance{
+  #u10nameAdvance,#u10sortAdvance,#u10tagsAdvance{
     width: 100%;
   }
-  #u10nameAdvance{
+  #u10nameAdvance,#u10tagsAdvance{
     left: 0px;
   }
   #u10wordsAdvance{
@@ -216,6 +291,12 @@
     width: 98%;
     left: 1%;
   }
+  #u10sort,#u10name,#u10tags,#u10words{
+    font-size: 1em;
+  }
+  #entertaiment{
+    font-size: 0.8em;
+  }
 }
 @media screen and (max-width: 470px)
 {
@@ -230,6 +311,15 @@
   }
   #u10wordsAdvance > #u10max:hover{
     font-size: 1.05em;
+  }
+  .tagsLabel{
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 400px)
+{
+  #entertaiment{
+    font-size: 0.5em;
   }
 }
 @media screen and (max-width: 319px)

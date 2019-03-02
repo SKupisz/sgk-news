@@ -53,12 +53,13 @@ try {
     {
       $connection = 0;
     }
-    else if(isset($_SESSION['topwords_error']) || isset($_SESSION['topimpression_error']) || isset($_SESSION['topName_error']))
+    else if(isset($_SESSION['topwords_error']) || isset($_SESSION['topimpression_error']) || isset($_SESSION['topName_error']) || isset($_SESSION['tagsError']))
     {
       $connection = 0;
       unset($_SESSION['topwords_error']);
       unset($_SESSION['topimpression_error']);
       unset($_SESSION['topName_error']);
+      unset($_SESSION['tagsError']);
     }
     else {
       $rezultat = $polaczenie->query("SELECT * FROM sent_articles ORDER BY views");

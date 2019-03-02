@@ -13,7 +13,7 @@ function openFilters(){
     document.querySelector("#u10filtersbar").style.display = "none";
     document.querySelector("#u10sortAdvance").style.display = "none";
     document.querySelector("#u10nameAdvance").style.display = "none";
-    //document.querySelector("#u10tagsAdvance").style.display = "none";
+    document.querySelector("#u10tagsAdvance").style.display = "none";
     document.querySelector("#u10wordsAdvance").style.display = "none";
     filtersalpha = 0;
     sortalpha = 0;
@@ -32,6 +32,7 @@ function openSort(){
       document.querySelector("#u10sortAdvance").style.display = "block";
       document.querySelector("#u10nameAdvance").style.display = "none";
       document.querySelector("#u10wordsAdvance").style.display = "none";
+      document.querySelector("#u10tagsAdvance").style.display = "none";
       sortalpha = 1;
       tagsalpha = 0;
       wordsalpha = 0;
@@ -65,7 +66,7 @@ function openName(){
       document.querySelector("#u10nameAdvance").style.display = "block";
       document.querySelector("#u10sortAdvance").style.display = "none";
       document.querySelector("#u10wordsAdvance").style.display = "none";
-      //document.querySelector("#u10tagsAdvance").style.display = "none";
+      document.querySelector("#u10tagsAdvance").style.display = "none";
       namealpha = 1;
       tagsalpha = 0;
       wordsalpha = 0;
@@ -80,7 +81,8 @@ function openName(){
     if(namealpha == 0)
     {
       document.querySelector("#u10nameAdvance").style.display = "block";
-      //document.querySelector("#u10tagsAdvance").style.display = "none";
+      document.querySelector("#u10tagsAdvance").style.display = "none";
+      tagsalpha = 0;
       namealpha = 1;
     }
     else {
@@ -91,17 +93,39 @@ function openName(){
 
 }
 function openTags(){
-  if(tagsalpha == 0)
+  var wdt = window.innerWidth;
+  if(wdt <= 800)
   {
-    document.querySelector("#u10tagsAdvance").style.display = "block";
-    document.querySelector("#u10nameAdvance").style.display = "none";
-    namealpha = 0;
-    tagsalpha = 1;
-    sortalpha = 0;
+    if(tagsalpha == 0)
+    {
+      document.querySelector("#u10nameAdvance").style.display = "none";
+      document.querySelector("#u10sortAdvance").style.display = "none";
+      document.querySelector("#u10wordsAdvance").style.display = "none";
+      document.querySelector("#u10tagsAdvance").style.display = "block";
+      namealpha = 0;
+      tagsalpha = 1;
+      wordsalpha = 0;
+      sortalpha = 0;
+    }
+    else {
+      document.querySelector("#u10tagsAdvance").style.display = "none";
+      tagsalpha = 0;
+    }
   }
   else {
-    document.querySelector("#u10tagsAdvance").style.display = "none";
-    tagsalpha = 0;
+    if(tagsalpha == 0)
+    {
+      document.querySelector("#u10tagsAdvance").style.display = "block";
+      document.querySelector("#u10nameAdvance").style.display = "none";
+      document.querySelector("#u10wordsAdvance").style.display = "none";
+      wordsalpha = 0;
+      tagsalpha = 1;
+      namealpha = 0;
+    }
+    else {
+      document.querySelector("#u10tagsAdvance").style.display = "none";
+      tagsalpha = 0;
+    }
   }
 }
 function openWords(){
@@ -113,9 +137,11 @@ function openWords(){
       document.querySelector("#u10wordsAdvance").style.display = "block";
       document.querySelector("#u10sortAdvance").style.display = "none";
       document.querySelector("#u10nameAdvance").style.display = "none";
+      document.querySelector("#u10tagsAdvance").style.display = "none";
       wordsalpha = 1;
       namealpha = 0;
       sortalpha = 0;
+      tagsalpha = 0;
     }
     else {
       document.querySelector("#u10wordsAdvance").style.display = "none";
@@ -125,7 +151,9 @@ function openWords(){
   else {
     if(wordsalpha == 0)
     {
+      document.querySelector("#u10tagsAdvance").style.display = "none";
       document.querySelector("#u10wordsAdvance").style.display = "block";
+      tagsalpha = 0;
       wordsalpha = 1;
     }
     else {
