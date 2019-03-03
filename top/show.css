@@ -67,18 +67,6 @@
 .u10tq{
   padding: 2px;
 }
-@media screen and (max-width: 800px)
-{
-  #u10connection{
-    width: 90%;
-    left: 5%;
-  }
-  #u10cfmain{
-    width: 98%;
-    left: 1%;
-    font-size: 1.2em;
-  }
-}
 @media screen and (max-width: 600px)
 {
   .u10cfheader{

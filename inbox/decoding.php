@@ -71,43 +71,53 @@ class Decode{
         else if(in_array($actualNumber,$uppers)){
           $pos = array_search($actualNumber,$uppers);
         }
-        else {
+        else if(in_array($actualNumber,$nonalpha)){
           //echo $actualNumber."<br>";
           $pos = array_search($actualNumber,$nonalpha);
         }
-
-        $modNow += ($pos % $modulo);
-        $pos-=($modNow-($pos % $modulo));
-        //echo $pos."<br>";
-        if(in_array($actualNumber,$nonalpha))
+        else {
+          $pos = -1;
+        }
+        if($pos != -1)
         {
-          $pos%=count($nonalpha);
-          if($pos < 0)
-          {
-            $pos+=count($nonalpha);
-          }
+
+                  $modNow += ($pos % $modulo);
+                  $pos-=($modNow-($pos % $modulo));
+                  //echo $pos."<br>";
+                  if(in_array($actualNumber,$nonalpha))
+                  {
+                    $pos%=count($nonalpha);
+                    if($pos < 0)
+                    {
+                      $pos+=count($nonalpha);
+                    }
+                  }
+                  else {
+                    $pos%=26;
+                    if($pos < 0)
+                    {
+                      $pos+=26;
+                    }
+                  }
+
+                  //echo $actualNumber." ".$modNow."<br>";
+                  if(in_array($actualNumber,$table))
+                  {
+                    $cypher.=(String)chr($pos+97);
+                  }
+                  else if(in_array($actualNumber,$uppers)){
+                    $cypher.=(String)chr($pos+65);
+                  }
+                  else {
+                    $cypher.=classicNonAlpha()[1][$pos];
+                  }
+                  $actual = "";
+                  $actualNumber = "";
         }
         else {
-          $pos%=26;
-          if($pos < 0)
-          {
-            $pos+=26;
-          }
+          $actual.=$alfa[$i];
         }
 
-        //echo $actualNumber." ".$modNow."<br>";
-        if(in_array($actualNumber,$table))
-        {
-          $cypher.=(String)chr($pos+97);
-        }
-        else if(in_array($actualNumber,$uppers)){
-          $cypher.=(String)chr($pos+65);
-        }
-        else {
-          $cypher.=classicNonAlpha()[1][$pos];
-        }
-        $actual = "";
-        $actualNumber = "";
       }
       else {
         $actual.=$alfa[$i];

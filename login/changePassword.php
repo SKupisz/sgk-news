@@ -16,7 +16,6 @@ if(count($e1) != 1){
 require_once "../inbox/encrypt.php";
 $ob = new Encrypt;
 $cypher = $ob->goBack($email);
-echo $cypher;
 if($alfa != $beta || strlen($alfa) < 8 || strtolower($alfa) == $alfa || strtoupper($alfa) == $alfa)
 {
   header("location:javascript://history.go(-1)");
@@ -31,7 +30,24 @@ try {
     throw new Exception($polaczenie->error);
   }
   else {
+    $rezultat = $polaczenie->query("SELECT * FROM users WHERE email = '$cypher'");
+    if(!$rezultat) throw new Exception($polaczenie->error);
+    if($rezultat->num_rows == 0)
+    {
+      $rezultat = $polaczenie->query("SELECT * FROM admins WHERE email = '$cypher'");
+      if(!$rezultat) throw new Exception($polaczenie->error);
+      if($rezultat->num_rows == 0)
+      {
+        header("Location:javascript://history.go(-1)");
+        exit();
+      }
+      else {
+        
+      }
+    }
+    else {
 
+    }
   }
 } catch (Exception $e) {
   $_SESSION['changingFail'] = "Sorry, something went wrong. Try again";

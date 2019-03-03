@@ -25,11 +25,10 @@ class Encrypt{
   public function goBack($alfa){
     $decrypt = "";
     $table = explode(" ",$alfa);
-    if(count($table) == 1)
+    if(strpos($alfa," ") == false)
     {
       $base = new Decode;
       $decrypt = $base->toNormal($alfa);
-      echo $decrypt;
     }
     else {
       for($i = 0 ; $i < count($table); $i++)

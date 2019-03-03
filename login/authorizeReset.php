@@ -159,7 +159,7 @@ else {
           require_once "../inbox/encrypt.php";
           $ob = new Encrypt;
           $cypher = $ob->goWithIt($alfa);
-          
+
           ?>
           <form method = "post" action = "changePassword.php?email=<?php echo $cypher;?>">
             <input type = "password" class = "passwordInput firstInput" name = "pass" placeholder="Type password here" required/>
