@@ -57,30 +57,24 @@ for($i = 0 ; $i < $bwlength; $i++)
   </label>
 </section>
 <a href = "articles.php?sid=<?php echo $bwids[$i];?>" id = "u11atrcr">
-  Continue<label class = "u11atrcrr"> writing</label>
+  Continue
 </a>
 <section id = "u11atrca">
   <form method = "post" action = "articles/confirmArticle.php">
     <input type = "hidden" name = "id" value = "<?php echo $bwids[$i];?>"/>
     <button type = "submit" id = "u11atrcas">
-      Send<label class = "u11atrcrr"> an article</label>
+      Send
     </button>
   </form>
 </section>
-<!--<div id = "u11atrmo" onclick="atrOpen();">
-  Options
-</div>
-<section id = "u11atrresp">
-  <a href = "articles.php?sid=<?php //echo $bwids[$i];?>" id = "u11atrcrr">
-    Continue writing
-  </a>
-  <section id = "u11atrcar">
-    <form method = "post" action = "articles/confirmArticle.php">
-      <input type = "hidden" name = "id" value = "<?php //echo $bwids[$i];?>"/>
-      <input type = "submit" id = "u11atrcas" value = "Send an article"/>
-    </form>
-  </section>
-</section>-->
+<section class = "u11delArt">
+  <form method = "post" action = "articles/delArticle.php">
+    <input type = "hidden" name = "id" value = "<?php echo $bwids[$i];?>"/>
+    <button type = "submit" class = "u11delArtSumbit">
+      Delete
+    </button>
+  </form>
+</section>
 </section><?php
 }
 }

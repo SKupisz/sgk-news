@@ -8,6 +8,15 @@ if(!isset($_SESSION['zalogowany']))
 $checkin = 1;
 require_once "articles/sid.php";
 require_once "articles/loadData.php";
+if(isset($_SESSION['uploadImageFail']))
+{
+  ?>
+  <script>  var changeMode = 1;</script><?php
+}
+else {
+  ?>
+  <script>  var changeMode = 0;</script><?php
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,6 +31,28 @@ require_once "articles/loadData.php";
     <title>SGK news</title>
   </head>
   <body onload = "preloader();" class = "onLoadCut">
+    <?php if(isset($_SESSION['uploadImageFail']) || isset($_SESSION['e_art']) || isset($_SESSION['deletingError']))
+    {
+      ?><div class = "errorInformation">
+        <header class = "errorInformationHeader">Oooops!.....<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
+        <main class = "errorInformationContent">
+          <?php if(isset($_SESSION['uploadImageFail']))
+          {
+            echo $_SESSION['uploadImageFail'];
+          }
+          else if(isset($_SESSION['e_art']))
+          {
+            echo $_SESSION['e_art'];
+            unset($_SESSION['e_art']);
+          }
+          else if(isset($_SESSION['deletingError']))
+          {
+            echo $_SESSION['deletingError'];
+            unset($_SESSION['deletingError']);
+          }?>
+        </main>
+      </div><?php
+    } ?>
       <section id = "preloader" progressbar>
         <figure class = "ourLogo">
           <img src = "./noweLogo2.png" alt = "logo"/>
@@ -44,12 +75,7 @@ require_once "articles/loadData.php";
       ?>
       <header id = "u10bar">
         <div id = "u10barContainer">
-          <?php if(isset($_SESSION['e_art']))
-          {
-            echo $_SESSION['e_art'];
-            unset($_SESSION['e_art']);
-          }
-          else if(isset($_SESSION['e_artc']))
+          <?php if(isset($_SESSION['e_artc']))
           {
             echo $_SESSION['e_artc'];
           }
@@ -60,23 +86,28 @@ require_once "articles/loadData.php";
       </div>
       </header>
       <section id = "u11titles">
-        <div id = "u11a" onclick = "beingWrittenOpen();">Being Written</div>
+        <div id = "u11a" onclick = "beingWrittenOpen();">Waiting room</div>
         <div id = "u11s" onclick = "sentOpen();">Sent</div>
         <div id = "u11c" onclick = "confirmedOpen();">Confirmed</div>
         <div id = "u11w" onclick = "writingOpen();">Write<label class = "u11wasr"> an article</label></div>
       </section>
       <section id = "u11projects">
-        <section id = "u11asection">
+        <section id = "u11asection" <?php if(isset($_SESSION['uploadImageFail'])) echo "style='display: none;'";?>>
           <?php require_once "articles/beingWrittenTable.php";?>
         </section>
-        <section id = "u11ssection">
+        <section id = "u11ssection" <?php if(isset($_SESSION['uploadImageFail'])) echo "style='display: none;'";?>>
           <?php require_once "articles/sentTable.php"; ?>
         </section>
-        <section id = "u11csection">
+        <section id = "u11csection" <?php if(isset($_SESSION['uploadImageFail'])) echo "style='display: none;'";?>>
         </section>
-        <section id = "u11wsection">
-          <form method = "post" action = "articles/sendAnArticle.php">
-            <section id = "u11wti">Title <input type = "text" name = "u11wti" value = "<?php if($sid != -1){
+        <section id = "u11wsection" <?php if(isset($_SESSION['uploadImageFail'])) echo "style='display: block;'";?>>
+          <div class = "changeContainer">
+            <div class = "changingMode bar1 now" id = "bar1">Article</div>
+            <div class = "changingMode bar2" id = "bar2">Image</div>
+          </div>
+          <form method = "post" action = "articles/sendAnArticle.php" class = "sendingArticle">
+
+            <section id = "u11wti">Title <input type = "text" name = "u11wti" class = "titleInput" value = "<?php if($sid != -1){
               echo $sidname;
             }?>"/></section>
             <section id = "u11wta">
@@ -102,6 +133,18 @@ require_once "articles/loadData.php";
                Send<label class = "u11wasr"> an article</label> to waiting room
             </button>
           </form>
+          <form method = "post" action = "articles/uploadingSupport/uploadImage.php" enctype="multipart/form-data" class = "imageUpload">
+            <section class = "postHeader">
+              Title of image <input type = "text" name = "imageTitle" class = "titleInput" required/>
+            </section>
+            <main class = "mainUploadSection">
+              <input type = "file" name = "fileToUpload" class = "forUpload" style = "display: none;"/>
+              <input type="button" value="Browse..." class = "forUploadBtn" onclick="document.querySelector('.forUpload').click();" />
+              <section class = "submitSection">
+              <input name = "submit" type="submit" class = "uploadSubmitButton" value = "Send this photo to public"/>
+            </section>
+            </main>
+          </form>
         </section>
       </section>
     <?php }?>
@@ -121,6 +164,7 @@ require_once "articles/loadData.php";
       </section>
 
     </main>
+
   </body>
   <script>
   <?php if(isset($_SESSION['e_artc']))
@@ -132,7 +176,10 @@ require_once "articles/loadData.php";
   {
     ?>writingOpen();<?php
   }
-
+  if(isset($_SESSION['uploadImageFail']))
+  {
+    unset($_SESSION['uploadImageFail']);
+  }
 ?>
 
   </script>

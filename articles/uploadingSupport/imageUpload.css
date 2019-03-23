@@ -1,0 +1,82 @@
+.postHeader{
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-family: monospace;
+  color: white;
+}
+.mainUploadSection{
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+.forUploadBtn{
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6em;
+  font-family: 'Lato',sans-serif;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(255,255,255,.7);
+}
+.submitSection{
+  margin-top: 30px;
+}
+.uploadSubmitButton{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 1.6em;
+  font-family: 'Lato',sans-serif;
+  border-radius: 10px;
+}
+input[class="uploadSubmitButton"]:hover{
+  filter: brightness(70%);
+}
+.errorInformation{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  z-index: 10;
+  background: rgba(0,255,0,1);
+  position: absolute;
+  min-height: 160px;
+  left: 10%;
+  border-radius: 5px;
+}
+.errorInformationHeader{
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+  font-family: 'Lato',sans-serif;
+}
+.errorInformationContent{
+  width: 90%;
+  min-height: 103px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  font-size: 1em;
+  text-align: center;
+  font-family: 'Lato',sans-serif;
+  margin-top: 10px;
+}
+.errorInformationClose{
+  float: right;
+  background: rgba(255,11,11,.91);
+  border-radius: 50%;
+  width: 40px;
+  height: 20px;
+  border: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px 1px 1px 0px;
+}

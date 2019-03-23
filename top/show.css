@@ -67,6 +67,66 @@
 .u10tq{
   padding: 2px;
 }
+.comments{
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.commentContent{
+  width: 70%;
+  min-height: 100px;
+  max-height: 100px;
+  min-width: 70%;
+  max-width: 70%;
+  font-size: 1.3em;
+  font-family: Helvetica, sans-serif;
+  border-radius: 2px;
+}
+.commentSubmit{
+  width: 30%;
+  font-size: 1.2em;
+  font-family: Helvetica, sans-serif;
+  border: none;
+  border-radius: 10px;
+  margin-top: 9px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 3px;
+}
+.showingComments{
+  font-size: 1.3em;
+  font-family: Helvetica, sans-serif;
+  /*Background pattern from: subltepatterns.com*/
+  background: url("../textured_paper.png");
+  margin-top: 20px;
+}
+.noCommentHere{
+  font-size: 1.7em;
+}
+.commentContainer{
+  display: block;
+  padding: 2px;
+}
+.commentFrom{
+  font-size: 1.4em;
+  float: left;
+  margin-left: 60px;
+  width: calc(100% - 60px);
+  text-align: left;
+  margin-bottom: 9px;
+}
+.commentContentNow{
+  text-align: left;
+  width: calc(100% - 20px);
+  float: left;
+  margin-left: 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+.yourComment{
+  background: rgba(69,69,69,0.4);
+}
 @media screen and (max-width: 600px)
 {
   .u10cfheader{

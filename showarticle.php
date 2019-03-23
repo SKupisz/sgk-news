@@ -47,10 +47,31 @@ try {
     }
     $row = $rezultat->fetch_assoc();
     $likes = $row['likes'];
-    if(!isset($_SESSION['liking']))
+    if(!isset($_SESSION['liking']) && !isset($_SESSION['comment_done']))
     {
       $rezultat = $polaczenie->query("UPDATE sent_articles SET views = views+1 WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
+
+    }
+    $comments = $polaczenie->query("SELECT * FROM sent_comments WHERE postId = $id");
+    if(!$comments) throw new Exception($polaczenie->error);
+    if($comments->num_rows == 0)
+    {
+      $noComments = 1;
+    }
+    else {
+      $noComments = 0;
+      $fromCom = array();
+      $contentsCom = array();
+      $len = $comments->num_rows;
+      for($i = 0 ; $i < $len; $i++)
+      {
+        $row = $comments->fetch_assoc();
+        $fromCom[$i] = $row['username'];
+        $contentsCom[$i] = $row['content'];
+      }
+      $fromCom = array_reverse($fromCom);
+      $contentsCom = array_reverse($contentsCom);
     }
     mysqli_close($polaczenie);
 
@@ -58,7 +79,6 @@ try {
 } catch (Exception $e) {
   $connection = 0;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang = "pl">
@@ -131,16 +151,62 @@ try {
             <?php
           ?>
         </aside>
+        <section class = "comments">
+          <form method = "post" action = "top/sendCom.php?postId=<?php echo $id;?>">
+            <textarea class = "commentContent" name = "content" placeholder="Write your comment here"></textarea>
+            <button class = "commentSubmit" type = "submit">Send comment</button>
+          </form>
 
-      </section><?php
-    }?>
+        </section>
+        <section class = "comments showingComments">
+          <?php
+          if($noComments == 1)
+          {
+            ?>
+            <label class = "noCommentHere">No Comments</label><?php
+          }
+          else {
+            $lt = count($contentsCom);
+            for($i = 0 ; $i < $lt; $i++)
+            {
+              $nowFrom = $fromCom[$i];
+              $nowContent = $contentsCom[$i];
+              ?><section class = "commentContainer">
+                <div class = "commentFrom">
+                  <label <?php if(isset($_SESSION['zalogowany']) && $nowFrom == $_SESSION['zalogowany']) echo 'class = "yourComment"';?>>
+                    <?php echo $nowFrom;?>
+                  </label>
+                </div>
+                <div class = "commentContentNow"><?php echo $nowContent;?>
+                </div>
+              </section><?php
+            }
+          }
+          ?>
+        </section>
+      </section>
+
+
+    <?php
+  }?>
   </main>
 </body>
-<?php if(isset($_SESSION['liking'])) {
+<?php if(isset($_SESSION['liking'])|| isset($_SESSION['comment_done'])) {
   ?><script>window.scrollTo(0,document.querySelector("#u10cfmain").scrollHeight);</script><?php
   unset($_SESSION['liking']);
+  unset($_SESSION['comment_done']);
 }?>
+<script src = "main/jsLibrarys/push.js"></script>
 <script src = "main/main.js"></script>
 <script src = "jquery-3-2-1.js"></script>
 <script src = "top/options.js"></script>
+<script>
+document.querySelector(".showingComments").top = window.innerHeight;
+</script>
+<?php
+if(isset($_SESSION['commentError']))
+{
+  ?><script>failedComment();</script><?php
+  unset($_SESSION['commentError']);
+}?>
 </html>

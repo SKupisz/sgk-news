@@ -1,4 +1,5 @@
 @import url("statistic.css");
+@import url("./uploadingSupport/imageUpload.css");
 * {box-sizing: border-box;}
 
 .onLoadCut {
@@ -112,7 +113,7 @@
 #u11w{
   position: absolute; top: 0px; left: 70%;
 }
-#u11asection,#u11ssection,#u11csection,#u11wsection{
+#u11asection,#u11ssection,#u11csection{
   width: 100%;
   height: 73%;
   display: none;
@@ -150,6 +151,7 @@
 }
 #u11wti{
   margin-bottom: 2%;
+  width: 100%;
 }
 .u11wtadesc{
   width: 100%;
@@ -176,7 +178,11 @@
 #u11wsection{
   /*Background pattern from: subttlepatterns.com*/
   background: url("../tactile_noise.png");
-  height: 83%;
+  width: 100%;
+  min-height: 83%;
+  display: none;
+  position: absolute; top: 17%; left: 0px;
+  transition: all 0.5s;
 }
 #u11was{
   margin-top: 15px;
@@ -193,7 +199,7 @@
   cursor: pointer;
   transition: all 0.5s;
   filter: brightness(100%);
-  padding: 10px;
+  padding: 5px;
 }
 #u11was:hover{
   filter: brightness(40%);
@@ -221,37 +227,39 @@
   font-size: 1.4em;
   cursor: pointer;
 }
-#u11atrcr,#u11atrcas{
-  width: 25%;
+#u11atrcr,#u11atrcas,.u11delArtSumbit{
+  width: 15%;
   height: 100%;
   position: absolute; top: 0px; left: 50%;
   text-align: center;
   font-size: 1.5em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   /*Background pattern from: subttlepatterns.com*/
-  background: url("../bo_play_pattern.png");
+  background: linear-gradient(rgba(11,11,11,.9),rgba(99,99,99,.9),rgba(11,11,11,.9));
   border-radius: 15px;
   cursor: pointer;
   filter: invert(0%);
   transition: all 0.5s;
   color: white;
   text-decoration: none;
+  border: none;
 }
-#u11atrcr:hover,#u11atrcas:hover{
+#u11atrcr:hover,#u11atrcas:hover,.u11delArtSumbit:hover{
   filter: invert(100%);
 }
-#u11atrca{
-  width: 25%;
-  height: 100%;
-  position: absolute; top: 0px; left: 75%;
-}
 #u11atrcas{
+  left: 67%;
+}
+.u11delArtSumbit{
+  left: 84%;
+}
+/*#u11atrcas{
   left: 5%;
   position: none;
   width: 95%;
   height: 99%;
   border: none;
-}
+}*/
 #u11atrmo{
   width: 30%;
   height: 100%;
@@ -306,6 +314,39 @@
   transform: scale(1.03);
   outline-color: #111;
   filter: brightness(160%);
+}
+.changeContainer{
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.bar1,.bar2{
+  font-size: 1em;
+  color: black;
+  font-family: Helvetica, sans-serif;
+  display: inline-block;
+  padding: 10px;
+  /*Background pattern from: subttlepatterns.com*/
+  background: url("../textured_paper.png");
+  margin-right: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+.now{
+  filter: brightness(70%);
+}
+.titleInput{
+  border: none;
+  background: rgba(255,255,255,.9);
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-family: 'Lato',sans-serif;
+}
+.imageUpload{
+  display: none;
 }
 @media screen and (max-width: 1024px)
 {

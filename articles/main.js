@@ -25,36 +25,44 @@ function preloader(){
         var loader  =   document.getElementById("preloader");
         body.className   -=   "onLoadCut";
         loader.style.display = "none";
-        if(typeof literature !== "undefined" || typeof politic !== "undefined" || typeof other !== "undefined" || typeof science !== "undefined"  || typeof entertaiment !== "undefined")
+        if(changeMode == 1 || typeof literature !== "undefined" || typeof politic !== "undefined" || typeof other !== "undefined" || typeof science !== "undefined"  || typeof entertaiment !== "undefined")
         {
-          if(typeof literature !== "undefined")
+          if(changeMode == 1)
           {
-            tagOperand("literatureTag");
+            writingOpen();
+            imageLoad();
           }
-          if(typeof politic !== "undefined")
-          {
-            tagOperand("politicTag");
+          else {
+            if(typeof literature !== "undefined")
+            {
+              tagOperand("literatureTag");
+            }
+            if(typeof politic !== "undefined")
+            {
+              tagOperand("politicTag");
+            }
+            if(typeof other !== "undefined")
+            {
+              tagOperand("otherTag");
+            }
+            if(typeof entertaiment !== "undefined")
+            {
+              tagOperand("entertaimentTag");
+            }
+            if(typeof science !== "undefined")
+            {
+              tagOperand("scienceTag");
+            }
+            writingOpen();
           }
-          if(typeof other !== "undefined")
-          {
-            tagOperand("otherTag");
-          }
-          if(typeof entertaiment !== "undefined")
-          {
-            tagOperand("entertaimentTag");
-          }
-          if(typeof science !== "undefined")
-          {
-            tagOperand("scienceTag");
-          }
-          writingOpen();
+
         }
         else {
           beingWrittenOpen();
         }
 
 
-},4000);
+},2000);
 }
 function goWriting(id){
   window.location.assign("articles.php?sid="+id);
@@ -140,4 +148,25 @@ tagOperand("scienceTag");
 });
 document.getElementById("otherTag").addEventListener("click",function(){
 tagOperand("otherTag");
+});
+document.querySelector("#bar2").addEventListener("click",function(){
+  this.classList.add("now");
+  document.querySelector("#bar1").classList.remove("now");
+  document.querySelector(".sendingArticle").style.display = "none";
+  document.querySelector(".imageUpload").style.display = "block";
+});
+document.querySelector("#bar1").addEventListener("click",function(){
+  this.classList.add("now");
+  document.querySelector("#bar2").classList.remove("now");
+  document.querySelector(".sendingArticle").style.display = "block";
+  document.querySelector(".imageUpload").style.display = "none";
+});
+function imageLoad(){
+  document.querySelector("#bar2").classList.add("now");
+  document.querySelector("#bar1").classList.remove("now");
+  document.querySelector(".sendingArticle").style.display = "none";
+  document.querySelector(".imageUpload").style.display = "block";
+}
+document.querySelector("#errorInformationClose").addEventListener("click",function(){
+  document.body.querySelector(".errorInformation").remove();
 });
