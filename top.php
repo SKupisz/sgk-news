@@ -1,5 +1,12 @@
 <?php
 session_start();
+if(isset($_GET['watchingImage']))
+{
+  if($_GET['watchingImage'] < 0)
+  {
+    $_GET['watchingImage'] = 0;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang = "pl">
@@ -17,6 +24,19 @@ session_start();
 <body>
   <?php require_once "main/bar.php";?>
   <main id = "umain">
+    <?php if(isset($_SESSION['liking_image_feedback']))
+    {
+      ?><div class = "errorInformation">
+        <header class = "errorInformationHeader">Ooops!....<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
+        <main class = "errorInformationContent">
+          <?php if(isset($_SESSION['liking_image_feedback']))
+          {
+            echo $_SESSION['liking_image_feedback'];
+          }?>
+        </main>
+      </div><?php
+    } ?>
+    <?php require_once "top/choosingCategory.php"?>
     <?php require_once "top/filters/filters.php" ?>
     <section class = "u11">
       <section class = "u11list">
@@ -129,9 +149,28 @@ session_start();
       ?>
     </section>
     </section>
+    <section class = "u12">
+      <?php require_once "top/images/loadingImages.php"; ?>
+    </section>
   </main>
 </body>
-
+<?php
+  if(isset($_GET['watchingImage']))
+  {
+    ?>
+    <script>
+    document.querySelector(".u11").style.display = "none";
+    document.querySelector(".u12").style.display = "block";
+    document.querySelector("#u10bar").style.display = "none";
+    document.querySelector("#u10filtersbar").style.display = "none";
+    document.querySelector("#u10sortAdvance").style.display = "none";
+    document.querySelector("#u10nameAdvance").style.display = "none";
+    document.querySelector("#u10tagsAdvance").style.display = "none";
+    document.querySelector("#u10wordsAdvance").style.display = "none";
+    document.querySelector("#imageId<?php echo $_GET['watchingImage'];?>").scrollIntoView();
+    </script><?php
+  }
+?>
 <script src = "main/main.js"></script>
 <script src = "jquery-3-2-1.js"></script>
 <script src = "top/main.js"></script>

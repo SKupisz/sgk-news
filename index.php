@@ -18,13 +18,18 @@ session_start();
   <section id = "u9">
     <section id = "u9main"> What is SGK-news? </section>
     <span id = "u9content">It's a very advanced newspaper whereby you can be a web journalist even you haven't got an education </span>
+    <div class = "background-rect rect-one"></div>
   </section>
+<div class = "rect-second"></div>
   <section id = "u10">
-    <section id = "u10main">Who are we?</section>
-    <a href = "about.php" id = "u10go">Check it!</a>
+      <section id = "u10main">Who are we?</section>
+      <a href = "about.php" id = "u10go">Check it!</a>
+
   </section>
+
   <a href="top.php" id = "u11">
-    <div id = "u11main" >Check our Rankings</div>
+    <div id = "u11mainhanged">Check our Rankings</div>
+
   </a>
   <section id = "links">
   </section>

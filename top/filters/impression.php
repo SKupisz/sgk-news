@@ -66,8 +66,8 @@ try {
       "words"=>$words,
       "views"=>$views,
       "tags"=>$tags,
-      "likes"=$likes
-    ];
+      "likes"=>$likes
+];
     mysqli_close($polaczenie);
     header("Location: ../../top.php");
     exit();

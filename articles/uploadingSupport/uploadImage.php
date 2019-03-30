@@ -61,6 +61,21 @@ if($uploadOk == 0)
 else {
   if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'],$target_dirname))
   {
+    $checkin = 1;
+    require_once "../../main/connect.php";
+    $user = $_SESSION['zalogowany'];
+    try {
+      $polaczenie = new PDO('mysql:host='.$host.';dbname='.$db_name,$db_user,$db_password,
+      [PDO::ATTR_EMULATE_PREPARES => false,
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+      $query = $polaczenie->prepare("INSERT INTO sent_images_location VALUES(NULL,:user,:address,0,0)");
+      $query->bindValue(":user",$user,PDO::PARAM_STR);
+      $query->bindValue(":address",$target_dirname,PDO::PARAM_STR);
+      $query->execute();
+    } catch (Exception $e) {
+      exitInstructions("Failed to upload. Try later");
+    }
+
     exitInstructions("File uploaded!");
   }
   else {

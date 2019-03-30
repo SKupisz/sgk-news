@@ -1,0 +1,40 @@
+@import "../../articles/uploadingSupport/imageUpload.css";
+.imageContainer{
+  width: 80%;
+  min-height: 100px;
+  background: #ccc;
+  box-shadow: 5px 5px 10px #111;
+  margin-left: auto;
+  margin-right: auto;
+}
+.anotherImageContainer{
+  margin-top: 5px;
+}
+.imageFigure{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.showingImage{
+  max-width: 100%;
+  height: auto;
+}
+.imageCaption{
+  font-size: 1.4em;
+  font-family: 'Lato',sans-serif;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+#like-image{
+  width: 30px;
+  height: auto;
+}
+.likesQuantity{
+  font-size: 1.4em;
+  font-family: 'Lato',sans-serif;
+}
+.imageSumbitButton{
+  background: none;
+  border: none;
+  cursor: pointer;
+}

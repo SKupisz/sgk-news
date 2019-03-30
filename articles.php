@@ -34,7 +34,7 @@ else {
     <?php if(isset($_SESSION['uploadImageFail']) || isset($_SESSION['e_art']) || isset($_SESSION['deletingError']))
     {
       ?><div class = "errorInformation">
-        <header class = "errorInformationHeader">Oooops!.....<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
+        <header class = "errorInformationHeader">Articles Information<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
         <main class = "errorInformationContent">
           <?php if(isset($_SESSION['uploadImageFail']))
           {

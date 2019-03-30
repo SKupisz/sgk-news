@@ -1,36 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
 body{
   background: url("../textured_paper.png");
+}
+#umain{
+  width: 100%;
+  height: 200px;
 }
 #u10main{
   color: white;
   text-align: center;
-  font-family: Verdana;
-  font-size: 150%;
+  font-family: 'Lato',sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 #u10go{
   color: white;
   text-decoration: none;
-  background: #1999ff;
+  background: #aaa;
   width: 40%;
-  font-family: Verdana;
+  font-family: 'Lato',sans-serif;
   text-align: center;
-  font-size: 150%;
-  border: 3px solid white;
+  font-size: 1.5em;
+  border: 1px solid black;
   border-radius: 5px;
-  position: absolute; left: 28%;
   transition: background 0.45s;
-  padding: 2%;
-
+  padding: 5px;
 }
 #u10go:hover{
-  background: #1555ff;
+  background: rgba(170,170,170,.5);
 }
-#u10{
-  /*background: #999;*/
-  /*Background pattern from: subbtlepatterns.com */
-  background-image: url("what-the-hex-dark.png");
-  box-shadow: inset 5px 5px 10px;
-
+#u9main{
+  font-family: 'Lato',sans-serif;
+  font-size: 2em;
+  text-align: center;
+  z-index: 3;
+}
+#u9content{
+text-align: left;
+font-size: 1.5em;
+font-family: 'Lato',sans-serif;
+z-index: 3;
 }
 #u11main{
   color: white;
@@ -39,58 +48,68 @@ body{
   margin-top: 10%;
 }
 #u9{
-  /*Background pattern from: subbtlepatterns.com*/
-  background-image: url("connectwork.png");
   filter: brightness(90%);
-  box-shadow: inset 5px 5px 10px;
+  color: black;
 }
 #u11{
   width: 40%;
   height: 30%;
-  position: absolute; top: 50%; left: 60%;
-  transition: background 0.9s;
+  float: right;
+  transition: filter 0.9s;
   text-decoration: none;
-  /*Background pattern from: subbtlepatterns.com */
-  background-image: url("spiration dark.png");
-
-}
-#u11:hover{
+  color: white;
+  font-family: 'Lato',sans-serif;
   /*Background pattern from: subbtlepatterns.com */
   background: url("curls.png");
-}
-@media screen and (min-width: 1025px)
-{
-  #umain{
-    width: 100%;
-    height: 85%;
-    position: absolute; top: 15%; left: 0px;
-  }
-  #u9{
-    width: 60%;
-    height: 80%;
-    position: absolute; top: 0px; left: 0px;
-  }
-  #u9main{
-    color: white;
-    font-family: fantasy;
-    font-size: 200%;
-    text-align: center;
-
-  }
-  #u9content{
-  text-align: left;
+  text-align: center;
   color: white;
-  font-size: 150%;
-  font-family: sans-serif;
-  }
-  #u10{
-    width: 40%;
-    height: 50%;
-    position: absolute; top: 0px; left: 60%;
-
-  }
-
+  font-size: 2em;
 }
+#u11:hover{
+  filter: brightness(50%);
+}
+#u9{
+  width: 60%;
+  height: 80%;
+  float: left;
+}
+#u10{
+  width: 40%;
+  height: 50%;
+  float: right;
+  text-align: center;
+  z-index: 3;
+  /*Background pattern from: subbtlepatterns.com*/
+  background-image: url("spiration dark.png");
+}
+.background-rect{
+  transform: skewY(-0deg);
+  opacity: .5;
+  transform-origin: top left;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.rect-one{
+  /*Background pattern from: subbtlepatterns.com */
+  background-image: url("connectwork.png");
+  width: 100%;
+  height: 100%;
+}
+/*.rect-second{
+  /*Background pattern from: subbtlepatterns.com
+  background-image: url("spiration dark.png");
+  width: 40%;
+  height: 50%;
+  left: 60%;
+  transform-origin: top left;
+  margin-left: auto;
+  opacity: .5;
+  float: right;
+}*/
 
 @media screen and (max-width: 1024px)
 {
@@ -100,48 +119,21 @@ body{
     position: absolute; top: 20%; left: 0px;
   }
   #u9{
-    width: 60%;
-    height: 80%;
-    position: absolute; top: 0px; left: 0px;
-    /*Background pattern from: subbtlepatterns.com*/
-    background-image: url("connectwork.png");
-    filter: brightness(90%);
-    box-shadow: inset 5px 5px 10px;
-  }
-  #u9main{
-    color: white;
-    font-family: fantasy;
-    font-size: 200%;
-    text-align: center;
-  }
-  #u9content{
-  text-align: left;
-  color: white;
-  font-size: 150%;
-  font-family: sans-serif;
+    width: 100%;
+    height: 130px;
   }
   #u10{
-    width: 40%;
-    height: 80%;
-    position: absolute; top: 0px; left: 60%;
+    height: 130px;
   }
-  #u11{
+  #u10,#u11{
     width: 100%;
-    height: 20%;
-    position: absolute; top: 80%; left: 0px;
-    transition: background 0.9s;
-    text-decoration: none;
-    font-size: 80%;
-  }
-  #u11main{
-    margin-top: 40px;
+    float: left;
   }
 }
 @media screen and (max-width: 500px){
   #u9,#u10,#u11{
     width: 100%;
     height: 33%;
-    top: 0px; left: 0px;
   }
   #u9content{
     margin-bottom: 10px;
@@ -154,8 +146,5 @@ body{
   #u11{
     top: 66%;
     margin-top: 0px;
-  }
-  #u11main{
-    margin-top: 50px;
   }
 }

@@ -53,6 +53,7 @@ try {
         if(password_verify($pass,$row['password']))
         {
           $_SESSION['zalogowany'] = $login;
+          $_SESSION['zalogowany_id'] = $row['id'];
           header("Location: login.php");
           exit();
         }

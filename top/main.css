@@ -1,49 +1,75 @@
 @import url("filters/filters.css");
 @import url("articles/articles.css");
+@import url("images/imagesMain.css");
 #u10bar{
-  width: 100%;
+  width: 80%;
   height: 7%;
-  /*Background pattern from: subtlepatterns.com*/
-  background: url("../connectwork.png");
-  position: fixed; top: 15%; left: 0px;
-  color: white;
+  background: #aaa;
+  position: fixed; top: 22%; left: 10%;
   text-align: center;
   font-size: 1.8em;
-  font-family: cursive;
-  transition: background 0.45s;
+  font-family: 'Lato',sans-serif;
+  transition: filter 0.45s;
   cursor: pointer;
   z-index: 4;
-  box-shadow: inset 1px 1px 10px #111;
+  /*box-shadow: inset 1px 1px 10px #111;*/
+  border-radius: 5px;
 }
 #u10bar:hover{
-  /*Background pattern from: subtlepatterns.com*/
-  background: url("../curls.png");
+  filter: brightness(70%);
 }
 
 #u10filtersbar{
-  width: 100%;
+  width: 80%;
   height: 5%;
-  /*Background pattern from: subtlepatterns.com*/
-  background: url("../dark-grey-terrazzo.png");
-  position: fixed; top: 22%; left: 0px;
+  background: #aaa;
+  border-radius: 5px;
+  position: fixed; top: 30%; left: 10%;
   display: none;
   z-index: 4;
+  box-shadow: inset 1px 1px 10px #777;
 }
-.u11{
+#u11choosing{
+width: 100%;
+height: 7%;
+position: fixed; top: 15%; left: 0px;
+text-align: center;
+z-index: 4;
+background: #ddd;
+}
+.u11,.u12{
   width: 100%;
   height: 120%;
   position: absolute; top: 20%; left: 0%;
   z-index: 3;
 }
+.u12{
+  display: none;
+  top: 13%;
+}
 @media screen and (max-width: 1024px)
 {
+  #u11choosing{
+    top: 20%;
+  }
 #u10bar{
-  top: 20%;
-}
-#u10filtersbar{
   top: 27%;
 }
-#u10wordsAdvance,#u10nameAdvance,#u10sortAdvance{
-  top: 32%;
+#u10filtersbar{
+  top: 35%;
 }
+#u10tagsAdvance,#u10wordsAdvance,#u10nameAdvance,#u10sortAdvance{
+  top: 40%;
+}
+}
+@media screen and (max-width: 800px)
+{
+  #u10bar{
+    width: 100%;
+    left: 0px;
+  }
+  #u10filtersbar{
+    width: 100%;
+    left: 0px;
+  }
 }

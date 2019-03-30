@@ -176,3 +176,41 @@ function paralax_article(id)
   article.style.display = "block";
   article.classList.add("going-up");
 }
+document.querySelector("#articles").addEventListener("click",function(){
+  document.querySelector(".u11").style.display = "block";
+  document.querySelector(".u12").style.display = "none";
+  document.querySelector("#u10bar").style.display = "block";
+  if(filtersalpha == 1)
+  {
+    document.querySelector("#u10filtersbar").style.display = "block";
+    if(sortalpha == 1)
+    {
+      document.querySelector("#u10sortAdvance").style.display = "block";
+    }
+    if(namealpha == 1)
+    {
+      document.querySelector("#u10nameAdvance").style.display = "block";
+    }
+    if(tagsalpha == 1)
+    {
+      document.querySelector("#u10tagsAdvance").style.display = "block";
+    }
+    if(wordsalpha == 1)
+    {
+      document.querySelector("#u10wordsAdvance").style.display = "block";
+    }
+  }
+});
+document.querySelector("#images").addEventListener("click",function(){
+  document.querySelector(".u11").style.display = "none";
+  document.querySelector(".u12").style.display = "block";
+  document.querySelector("#u10bar").style.display = "none";
+  document.querySelector("#u10filtersbar").style.display = "none";
+  document.querySelector("#u10sortAdvance").style.display = "none";
+  document.querySelector("#u10nameAdvance").style.display = "none";
+  document.querySelector("#u10tagsAdvance").style.display = "none";
+  document.querySelector("#u10wordsAdvance").style.display = "none";
+});
+document.querySelector("#errorInformationClose").addEventListener("click",function(){
+  document.body.querySelector(".errorInformation").remove();
+});

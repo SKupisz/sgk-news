@@ -1,4 +1,5 @@
 @import url("responsivibility.css");
+@import url('https://fonts.googleapis.com/css?family=Lato');
 #u10title{
   width: 100%;
   height: 10%;
@@ -6,7 +7,7 @@
   background: url("../curls.png");
   text-align: center;
   font-size: 1.8em;
-  font-family: monospace;
+  font-family: 'Lato',sans-serif;
   color: white;
   position: absolute; top: 0px; left: 0px;
 }
@@ -72,7 +73,7 @@
   text-align: center;
 }
 #promheader{
-  font-family: monospace;
+  font-family: 'Lato',sans-serif;;
   color: #eee;
   font-size: 2.1em;
 }
@@ -83,26 +84,29 @@
   max-height: 50%;
   color: #222;
   font-size: 0.8em;
-  font-family: Arial;
+  font-family: 'Lato',sans-serif;;
   /*Background pattern from: subltepatterns.com */
   background: url("../textured_paper.png");
   margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
 }
 #u11promcontent_submit
 {
-  border-color: #fff;
   cursor: pointer;
   transition: all 1s;
   width: 40%;
   height: 10%;
   color: white;
   font-size: 1.5em;
-  font-family: monospace;
-  /*Background pattern from: subltepatterns.com */
-  background: url("../dark-grey-terrazzo.png");
+  font-family: 'Lato',sans-serif;
+  background: rgba(150,150,150,.5);
+  border: none;
+  border-radius: 5px;
 }
 #u11promcontent_submit:hover{
   transform: scale(0.96);
+  filter: brightness(150%);
 }
 .u11promcontheader{
   margin-bottom: 20px;

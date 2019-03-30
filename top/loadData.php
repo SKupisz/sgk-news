@@ -98,9 +98,31 @@ try {
       $words = array_reverse($words);
       $likes = array_reverse($likes);
       $tags = array_reverse($tags);
-      mysqli_close($polaczenie);
-    }
 
+    }
+    $rezultat = $polaczenie->query("SELECT * FROM sent_images_location ORDER BY views");
+    if(!$rezultat) throw new Exception($polaczenie->error);
+    $howManyImages = $rezultat->num_rows;
+    $imagesId = array();
+    $imagesFrom = array();
+    $imagesAddress = array();
+    $imagesViews = array();
+    $imagesLikes = array();
+    for($i = 0; $i < $howManyImages; $i++)
+    {
+      $row = $rezultat->fetch_assoc();
+      $imagesId[$i] = $row['id'];
+      $imagesFrom[$i] = $row['fromm'];
+      $imagesAddress[$i] = $row['localAddress'];
+      $imagesViews[$i] = $row['views'];
+      $imagesLikes[$i] = $row['likes'];
+    }
+    $imagesId = array_reverse($imagesId);
+    $imagesFrom = array_reverse($imagesFrom);
+    $imagesAddress = array_reverse($imagesAddress);
+    $imagesViews = array_reverse($imagesViews);
+    $imagesLikes = array_reverse($imagesLikes);
+    mysqli_close($polaczenie);
   }
 } catch (Exception $e) {
   $connection = 0;
