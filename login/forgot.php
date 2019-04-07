@@ -25,7 +25,7 @@ else {
   <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href = "../main/bar.css"/>
   <link rel="stylesheet" type="text/css" href = "forgot.css"/>
-  <link rel="shortcut icon" type = "image/ico" href = "../main/favicon.ico"/>
+  <link rel="shortcut icon" type = "image/png" href = "../main/logo.png"/>
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
   <title> SGK-news </title>
@@ -33,7 +33,7 @@ else {
 <body>
   <section id = "u1">
     <a href = "index.php" id = "u2">
-      <img src="../noweLogo2.png" alt="logo" id = "u2i"/>
+      <img src="../main/logo.png" alt="logo" id = "u2i"/>
     </a>
     <button id = "upanelopen">
       Menu

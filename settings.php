@@ -16,7 +16,7 @@ require_once "main/connect.php";
   <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href = "settings/main.css"/>
   <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
-  <link rel="shortcut icon" type = "image/ico" href = "main/favicon.ico"/>
+  <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
   <title> SGK-news </title>

@@ -1,6 +1,6 @@
 <section id = "u1">
   <a href = "index.php" id = "u2">
-    <img src="noweLogo2.png" alt="logo" id = "u2i"/>
+    <img src="main/logo.png" alt="logo" id = "u2i"/>
   </a>
   <button id = "upanelopen">
     Menu

@@ -45,11 +45,23 @@ try {
       $views = $_SESSION['topname']['views'];
       $tags = $_SESSION['topname']['tags'];
       $likes = $_SESSION['topname']['likes'];
-      echo count($likes);
       $length = count($id);
       unset($_SESSION['topname']);
     }
-    else if(isset($_SESSION['topname_none']))
+    else if(isset($_SESSION['toptags_feedback']))
+    {
+      $id = $_SESSION['toptags_feedback']['id'];
+      $from = $_SESSION['toptags_feedback']['from'];
+      $title = $_SESSION['toptags_feedback']['title'];
+      $content = $_SESSION['toptags_feedback']['content'];
+      $words = $_SESSION['toptags_feedback']['words'];
+      $views = $_SESSION['toptags_feedback']['views'];
+      $tags = $_SESSION['toptags_feedback']['tags'];
+      $likes = $_SESSION['toptags_feedback']['likes'];
+      $length = count($id);
+      unset($_SESSION['toptags_feedback']);
+    }
+    else if(isset($_SESSION['topname_none']) || isset($_SESSION['tags_none']))
     {
       $connection = 0;
     }

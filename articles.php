@@ -25,7 +25,7 @@ else {
       <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
       <link rel = "stylesheet" type = "text/css" href = "articles/main.css"/>
-      <link rel="shortcut icon" type = "image/ico" href = "main/favicon.ico"/>
+      <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
       <meta name="description" content="SGK-news website">
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
@@ -107,16 +107,12 @@ else {
           </div>
           <form method = "post" action = "articles/sendAnArticle.php" class = "sendingArticle">
 
-            <section id = "u11wti">Title <input type = "text" name = "u11wti" class = "titleInput" value = "<?php if($sid != -1){
+            <section id = "u11wti">Title <input type = "text" name = "u11wti" class = "titleInput" required value = "<?php if($sid != -1){
               echo $sidname;
             }?>"/></section>
             <section id = "u11wta">
               <div class = "u11wtadesc">Article content</div>
-              <textarea id = "u11wtai" name = "u11wtai" placeholder="Write here...">
-                <?php if($sid != -1)
-                {
-                  echo $sidcontent;
-                }?></textarea>
+              <textarea id = "u11wtai" name = "u11wtai" placeholder="Write here..." required><?php if($sid != -1){  echo $sidcontent;}?></textarea>
             </section>
             <section class = "u11wtga">
               <div class = "u11wtadesc">Tags(optional)</div>
@@ -130,7 +126,7 @@ else {
               <input type = "hidden" name = "u11moreInfo" class = "u11moreInfo"/>
             </section>
             <button type = "submit" id = "u11was">
-               Send<label class = "u11wasr"> an article</label> to waiting room
+               Send<span class = "u11wasr"> an article</span> to waiting room
             </button>
           </form>
           <form method = "post" action = "articles/uploadingSupport/uploadImage.php" enctype="multipart/form-data" class = "imageUpload">

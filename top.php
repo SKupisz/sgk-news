@@ -15,7 +15,7 @@ if(isset($_GET['watchingImage']))
       <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
       <link rel = "stylesheet" type = "text/css" href = "top/main.css"/>
-      <link rel="shortcut icon" type = "image/ico" href = "main/favicon.ico"/>
+      <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
       <meta name="description" content="SGK-news website">
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
@@ -44,14 +44,23 @@ if(isset($_GET['watchingImage']))
         if($connection == 0){
           ?>
           <section id = "u11article">
-            <?php if(isset($_SESSION['topname_none']))
+            <?php if(isset($_SESSION['topname_none']) || isset($_SESSION['tags_none']))
             {
               ?>
               <span id = "u11aofae">We are sorry</span>
               <section id = "u11av" class = "error">
-                <?php echo $_SESSION['topname_none']; ?>
+                <?php
+                if(isset($_SESSION['topname_none'])){
+                  echo $_SESSION['topname_none'];
+                  unset($_SESSION['topname_none']);
+                }
+                if(isset($_SESSION['tags_none']))
+                {
+                  echo $_SESSION['tags_none'];
+                  unset($_SESSION['tags_none']);
+                } ?>
               </section><?php
-              unset($_SESSION['topname_none']);
+
             }
             else {
               ?>

@@ -44,17 +44,18 @@ input[class="uploadSubmitButton"]:hover{
   margin-right: auto;
   margin-top: 20px;
   z-index: 10;
-  background: rgba(0,255,0,1);
+  background: url("../../curls.png");
   position: absolute;
   min-height: 160px;
   left: 10%;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .errorInformationHeader{
   width: 100%;
   text-align: center;
   font-size: 1.8em;
   font-family: 'Lato',sans-serif;
+  color: white;
 }
 .errorInformationContent{
   width: 90%;

@@ -92,7 +92,7 @@ try {
       </section>
       <section id = "u12l">
         <a href = "../inbox.php" id = "u12lg"><label class = "resp">Go </label>back</a>
-        <a href = "../index.php" id = "u12li"><img src = "../noweLogo2.png" alt = "Main site" id = "u12liimg"/></a>
+        <a href = "../index.php" id = "u12li"><img src = "../main/logo.png" alt = "Main site" id = "u12liimg"/></a>
         <a href = "../topArticles.php" id = "u12la">Top articles</a>
         <a href = "../profile.php" id = "u12lp">Profile</a>
       </section>
