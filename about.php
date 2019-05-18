@@ -16,7 +16,7 @@ session_start();
 <body onload = "preloader();" class = "onLoadCut">
   <section id = "preloader" progressbar>
     <figure class = "ourLogo">
-      <img src = "./noweLogo2.png" alt = "logo"/>
+      <img src = "./main/logo.png" alt = "logo"/>
     </figure>
   </section>
 <section id = "onLoadNot" class = "onLoadNot">
@@ -26,9 +26,9 @@ session_start();
     About us
   </header>
   <section id = "u10">
-    <section id = "u10desc">The 28th of April 2018 - a date for SGK-news as important as a National Day for a country.
-    That day, the first version of main site had been written. After that, during next months,
-    we were developing our project - we added the main part of our website, sign-up system, and
+    <section id = "u10desc">The 28th of April 2018 - a date for SGK-news as important as the National Day for a country.
+    That day, the first version of the main site has been written. After that, during the following months,
+    we were developing our project - we added the main part of our website, a sign-up system, and
     an internal inbox, which is just like an email for our users.
     </section>
 

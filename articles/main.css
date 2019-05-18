@@ -42,7 +42,7 @@
   animation-name: preloaderAnimation;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 .ourLogo > img{
   transform: scale(0.8);

@@ -55,7 +55,7 @@ else {
     } ?>
       <section id = "preloader" progressbar>
         <figure class = "ourLogo">
-          <img src = "./noweLogo2.png" alt = "logo"/>
+          <img src = "./main/logo.png" alt = "logo"/>
         </figure>
       </section>
     <?php require_once "main/bar.php";?>
