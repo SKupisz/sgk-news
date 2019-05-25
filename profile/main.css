@@ -4,7 +4,7 @@
 #u10t{
   width: 100%;
   /*Background pattern from: subltepatterns.com*/
-  background: url("../pipes.png");
+  background: url("../textured_paper.png");
   color: black;
   text-align: center;
   font-size: 200%;
@@ -14,8 +14,7 @@
 }
 #u10ia{
   width: 100%;
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../dark-grey-terrazzo.png");
+  background: #111;
   color: white;
   font-family: Verdana;
   font-size: 2em;
@@ -91,15 +90,9 @@
   text-align: center;
   border: 1px solid white;
   border-radius: 15px;
-  color: white;
   transition: all 0.45s;
   position: absolute; top: 40%; left: 12.5%;
   box-shadow: 1px 1px #888;
-}
-#u10al{
-  background: url("../curls.png");
-}
-#u10pl{
   background: url("../textured_paper.png");
   color: black;
   border-color: #222;

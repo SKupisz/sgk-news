@@ -117,8 +117,8 @@ input:checked[type="checkbox"]::before{
   #u11ni,#u11pi,#u11pri,#u11ei{
     width: 98%;
   }
-  #u11b{
-    font-size: 1.9em;
+  #u11nt{
+    font-size: 0.7em;
   }
   #u11nti{
     transform: scale(0.9);

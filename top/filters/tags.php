@@ -57,7 +57,6 @@ try {
       $query.=" '%other%'";
       $flag = 1;
     }
-    echo $query;
     $rezultat = $polaczenie->query($query);
     if(!$rezultat) throw new Exception($polaczenie->error);
     if($rezultat->num_rows > 0)
@@ -80,15 +79,13 @@ try {
       'views'=>$views,
       'tags'=>$tags,
       'likes'=>$likes];
-      mysqli_close($polaczenie);
-      header("Location: ../../top.php");
-      exit();
+
     }
     else {
       $_SESSION['tags_none'] = "Sorry, there is no articles for this combination of tags";
-      header("Location: ../../top.php");
-      exit();
     }
+    header("Location: ../../top.php");
+    exit();
   }
 } catch (Exception $e) {
   $_SESSION['tagsError'] = "Lost connection. Try later";

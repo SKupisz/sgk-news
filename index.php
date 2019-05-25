@@ -17,7 +17,7 @@ session_start();
 <main id = "umain">
   <section id = "u9">
     <section id = "u9main"> What is SGK-news? </section>
-    <span id = "u9content">It's a very advanced newspaper whereby you can be a web journalist even you haven't got an education </span>
+    <span id = "u9content">You want publish an article, but you don't know where? No problem! On SGK-news, you can share your creation. Remember - public news, your news, sgk-news </span>
     <div class = "background-rect rect-one"></div>
   </section>
 <div class = "rect-second"></div>

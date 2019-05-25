@@ -3,15 +3,25 @@ body{
   overflow-x: hidden;
 }
 
+.apologising{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4em;
+  font-family: 'Lato',sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+
 #u9e,#u9t{
   width: 100%;
-  height: 15%;
+  height: 100px;
   color: white;
   background: #fff;
   text-align: center;
   font-size: 200%;
   font-family: Comic Sans MS;
-  position: absolute; top: 0px; left: 0px;
+  float: left;
 }
 #u9t{
   position: fixed; top: 15%; left: 0px;
@@ -41,7 +51,7 @@ body{
   text-align: center;
   font-size: 150%;
   font-family: monospace;
-  position: absolute; top: 15%; left: 0px;
+  float: left;
   color: transparent;
   display: inline-block;
   padding-top: 2px;
@@ -395,8 +405,15 @@ input[type="checkbox"]::before
 input:checked[type="checkbox"]::before{
   background: #eee;
 }
-@media screen and (max-width: 1027px)
+@media screen and (max-width: 1024px)
 {
+  #umain{
+    width: 103%;
+  }
+  #u9e,#u10el{
+    width: 100%;
+
+  }
   #u10el,#u9e{
     top: 0%;
     height: 15%;
@@ -439,6 +456,7 @@ input:checked[type="checkbox"]::before{
 }
 @media screen and (max-width: 768px)
 {
+
   .u10elwrapper{
     width: 50%;
     font-size: 1.2em;

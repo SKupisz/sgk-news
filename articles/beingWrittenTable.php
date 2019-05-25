@@ -49,7 +49,7 @@ for($i = 0 ; $i < $bwlength; $i++)
     ?>u11atr2<?php
   }
   ?>"
-  style = "position: absolute; top: <?php echo $i*7;?>%; left: 0px;">
+  style = "position: absolute; top: <?php echo $i*40;?>px; left: 0px;">
 <section id = "u11atrt">
   <?php echo $title1; ?>
   <label id = "u11atrtnext">
@@ -57,7 +57,9 @@ for($i = 0 ; $i < $bwlength; $i++)
   </label>
 </section>
 <a href = "articles.php?sid=<?php echo $bwids[$i];?>" id = "u11atrcr">
-  Continue
+  <label class = "nonResponsive">Continue</label>
+  <label class = "onResponsive">
+  <img src = "articles/writing.png" class = "onResponsiveIcon"/></label>
 </a>
 <section id = "u11atrca">
   <form method = "post" action = "articles/confirmArticle.php">
@@ -70,8 +72,11 @@ for($i = 0 ; $i < $bwlength; $i++)
 <section class = "u11delArt">
   <form method = "post" action = "articles/delArticle.php">
     <input type = "hidden" name = "id" value = "<?php echo $bwids[$i];?>"/>
-    <button type = "submit" class = "u11delArtSumbit">
+    <button type = "submit" class = "u11delArtSumbit nonResponsive">
       Delete
+    </button>
+    <button type="submit" class = "u11delArtSumbit onResponsive">
+        <img src = "articles/delete.png" class = "onResponsiveIcon"/>
     </button>
   </form>
 </section>

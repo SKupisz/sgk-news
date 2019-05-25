@@ -29,7 +29,7 @@ $imageType = strtolower(pathinfo($target_dirname,PATHINFO_EXTENSION));
 $target_dirname = $dir.$title.".".$imageType;
 $check = getimagesize($_FILES['fileToUpload']['tmp_name']);
 $messageError = "";
-if($check != false)
+/*if($check == true)
 {
   //echo "File is an image - " . $check["mime"] . ".";
   $uploadOk = 1;
@@ -37,13 +37,13 @@ if($check != false)
 else {
   exitInstructions("File must be an image");
   $uploadOk = 0;
-}
+}*/
 if(file_exists($target_dirname)) //sprawdzamy, czy jest
 {
   exitInstructions("File with this title exists");
   $uploadOk = 0;
 }
-if($_FILES['fileToUpload']["size"] > 500000) //checking size
+if($_FILES['fileToUpload']["size"] > 36000000) //checking size
 {
   exitInstructions("File is too large");
   $uploadOk = 0;
@@ -79,6 +79,6 @@ else {
     exitInstructions("File uploaded!");
   }
   else {
-    exitInstructions("Failed to upload. Try later");
+    exitInstructions("Technical problems. Try later");
   }
 }

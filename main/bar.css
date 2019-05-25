@@ -150,7 +150,7 @@ body::-webkit-scrollbar-button:vertical:increment{
     color: white;
     font-size: 250%;
     font-family: Verdana;
-    transition: background 0.45s;
+    transition: filter 0.45s;
     cursor: pointer;
     box-shadow: 2px 2px #111 inset;
     z-index: 5;
@@ -159,8 +159,7 @@ body::-webkit-scrollbar-button:vertical:increment{
     display: none;
   }
   #upanelopen:hover{
-    /*Background pattern from: subltepatterns.com*/
-    background: url("../dark-grey-terrazzo.png");
+    filter: blur(1px);
   }
   #u3,#u4,#u5,#u6,#u7,#u8,#u9d{
     width: 30%;

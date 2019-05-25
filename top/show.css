@@ -2,7 +2,7 @@
   width: 98%;
   position: absolute; top: 10%; left: 1%;
   /*Background pattern from: subtlepatterns.com*/
-  background: url("../connectwork.png");
+  background: #111;
   font-family: Verdana;
   box-shadow: 0px 5px 5px #111;
   padding: 1px;
@@ -73,14 +73,18 @@
   text-align: center;
 }
 .commentContent{
-  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 100px;
   max-height: 100px;
-  min-width: 70%;
-  max-width: 70%;
+  min-width: 50%;
+  max-width: 50%;
   font-size: 1.3em;
   font-family: Helvetica, sans-serif;
   border-radius: 2px;
+  background: url("../textured_paper.png");
+  border: none;
+  padding: 5px;
 }
 .commentSubmit{
   width: 30%;
@@ -92,6 +96,9 @@
   margin-bottom: 10px;
   cursor: pointer;
   padding: 3px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .showingComments{
   font-size: 1.3em;
@@ -127,8 +134,30 @@
 .yourComment{
   background: rgba(69,69,69,0.4);
 }
+@media screen and (max-width: 900px)
+{
+  #u10cfmain{
+    font-size: 1.1em;
+  }
+  .commentContent{
+    min-width: 60%;
+    max-width: 60%;
+  }
+}
+@media screen and (max-width: 768px)
+{
+  #u10cfmain{
+    font-size: 0.77em;
+  }
+}
 @media screen and (max-width: 600px)
 {
+  .commentFrom{
+    font-size: 1.2em;
+  }
+  .commentContentNow{
+    font-size: 1em;
+  }
   .u10cfheader{
     font-size: 1.5em;
   }
@@ -137,6 +166,17 @@
     left: 1%;
   }
   #u10cv{
-    width: 98%;
+    width: 100%;
+  }
+  #u10cfmain{
+    margin-bottom: 0px;
+  }
+  .commentSubmit{
+    width: 60%;
+  }
+  .commentContent{
+    font-size: 1em;
+    min-width: 75%;
+    max-width: 75%;
   }
 }

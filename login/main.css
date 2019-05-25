@@ -12,8 +12,8 @@ body{
   width: 100%;
   font-size: 3em;
   font-family: monospace;
-  color: white;
-  background: url("../connectwork.png");
+  color: black;
+  background: linear-gradient(to bottom, #111,url("../textured_paper.png"));
   text-align: center;
   filter: brightness(90%);
   box-shadow: inset 1px 1px 10px #111;

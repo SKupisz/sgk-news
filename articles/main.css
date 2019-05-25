@@ -85,9 +85,7 @@
 #u11a,#u11s,#u11c,#u11w{
   width: 30%;
   height: 100%;
-  color: white;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../connectwork.png");
+  color: black;
   text-align: center;
   transition: all 0.5s;
   cursor: pointer;
@@ -122,26 +120,26 @@
 }
 #u11atr{
   width: 100%;
-  height: 7%;
+  height: 40px;
   color: white;
+  padding: 10px;
 }
 .u11atr1{
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../curls.png");
+background: #111;
 }
 .u11atr2{
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../curls.png");
+  background: #111;
 }
 #u11anh{
   width: 100%;
   height: 100%;
   /*Background pattern from: subttlepatterns.com*/
-  background: url("../connectwork.png");
+  background: url("../textured_paper.png");
   color: white;
   font-size: 200%;
   text-align: center;
   font-family: Verdana;
+  color: black;
 }
 #u11wti,#u11wta,.u11wtga{
   text-align: center;
@@ -183,7 +181,7 @@
   /*Background pattern from: subttlepatterns.com*/
   background: url("../tactile_noise.png");
   width: 100%;
-  min-height: 83%;
+  min-height: 87%;
   display: none;
   position: absolute; top: 17%; left: 0px;
   transition: all 0.5s;
@@ -197,9 +195,8 @@
   font-family: Verdana;
   border: none;
   border-radius: 5px;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../curls.png");
-  color: white;
+  background: #aaa;
+  color: black;
   cursor: pointer;
   transition: all 0.5s;
   filter: brightness(100%);
@@ -215,8 +212,7 @@
   width: 50%;
   height: 100%;
   text-align: center;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../spiration dark.png");
+  background: #111;
   position: absolute; top: 0px; left: 0px;
 }
 #u11atrr{
@@ -233,8 +229,8 @@
 }
 #u11atrcr,#u11atrcas,.u11delArtSumbit{
   width: 15%;
-  height: 100%;
-  position: absolute; top: 0px; left: 50%;
+  height: 98%;
+  position: absolute; top: 1%; left: 50%;
   text-align: center;
   font-size: 1.5em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -253,6 +249,15 @@
 }
 #u11atrcas{
   left: 67%;
+}
+#u11atrcr{
+  padding-top: 5px;
+}
+.nonResponsive{
+  display: block;
+}
+.onResponsive{
+  display: none;
 }
 .u11delArtSumbit{
   left: 84%;
@@ -363,6 +368,13 @@
   }
 }
 @media screen and (max-width: 768px){
+  .titleInput{
+    font-size: 0.5em;
+  }
+  #u11wtai{
+    min-width: 80%;
+    max-width: 80%;
+  }
   #u11a,#u11w{
     font-size: 0.9em;
   }
@@ -375,18 +387,29 @@
   #u11was{
     font-size: 1em;
   }
-  #u11atrcas,#u11atrcr{
+  #u11atrcas,#u11atrcr,.u11delArtSumbit{
     font-size: 0.9em;
   }
   .u11wttag{
     font-size: 0.7em;
   }
-
+  .nonResponsive{
+    display: none;
+  }
+  .onResponsive{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .onResponsiveIcon{
+    height: 30px;
+    width: auto;
+  }
 }
 @media screen and (max-width: 550px)
 {
   #u11wsection{
-    height: 87%;
+    min-height: 90%;
   }
 }
 @media screen and (max-width: 493px)
