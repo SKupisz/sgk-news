@@ -18,7 +18,6 @@ session_start();
   <section id = "u9">
     <section id = "u9main"> What is SGK-news? </section>
     <span id = "u9content">You want publish an article, but you don't know where? No problem! On SGK-news, you can share your creation. Remember - public news, your news, sgk-news </span>
-    <div class = "background-rect rect-one"></div>
   </section>
 <div class = "rect-second"></div>
   <section id = "u10">
@@ -27,10 +26,12 @@ session_start();
 
   </section>
 
-  <a href="top.php" id = "u11">
-    <div id = "u11mainhanged">Check our Rankings</div>
-
+  <section href="top.php" id = "u11">
+    <a href = "top.php">
+    <div class = "u11mainhanged">Check our Rankings</div>
   </a>
+
+  </section>
   <section id = "links">
   </section>
 </main>

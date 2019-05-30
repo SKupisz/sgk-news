@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 body{
-  background: url("../textured_paper.png");
+  background: url("./textured_paper.png");
+}
+a{
+  text-decoration: none;
 }
 #umain{
   width: 100%;
   height: 200px;
 }
 #u10main{
-  color: white;
+  color: black;
   text-align: center;
   font-family: 'Lato',sans-serif;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 #u10go{
-  color: white;
+  color: black;
   text-decoration: none;
   background: #aaa;
   width: 40%;
@@ -47,10 +50,6 @@ z-index: 3;
   font-size: 200%;
   margin-top: 10%;
 }
-#u9{
-  filter: brightness(90%);
-  color: black;
-}
 #u11{
   width: 40%;
   height: 30%;
@@ -59,19 +58,30 @@ z-index: 3;
   text-decoration: none;
   color: white;
   font-family: 'Lato',sans-serif;
-  background: #000;
-  box-shadow: inset 0px 0px 4px #eee;
+  background: url("./textured_paper.png");
   text-align: center;
-  color: white;
+  color: black;
   font-size: 2em;
 }
-#u11:hover{
-  filter: brightness(50%);
+.u11mainhanged{
+  color: black;
+  padding: 5px;
+  background: #aaa;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+div[class="u11mainhanged"]:hover{
+  filter: brightness(90%);
 }
 #u9{
   width: 60%;
   height: 80%;
   float: left;
+  background: url("./textured_paper.png");
 }
 #u10{
   width: 40%;
@@ -79,10 +89,9 @@ z-index: 3;
   float: right;
   text-align: center;
   z-index: 3;
-  background: #111;
-  box-shadow: inset 0px 0px 4px #eee;
+  background: url("./textured_paper.png");
 }
-.background-rect{
+/*.background-rect{
   transform: skewY(-0deg);
   opacity: .5;
   transform-origin: top left;
@@ -94,12 +103,10 @@ z-index: 3;
   z-index: 2;
 }
 .rect-one{
-  /*Background pattern from: subbtlepatterns.com */
-  background-image: url("connectwork.png");
   width: 100%;
   height: 100%;
 }
-/*.rect-second{
+.rect-second{
   /*Background pattern from: subbtlepatterns.com
   background-image: url("spiration dark.png");
   width: 40%;
@@ -130,10 +137,29 @@ z-index: 3;
     float: left;
   }
 }
+@media screen and (max-width: 768px)
+{
+  .u11mainhanged{
+    color: black;
+    padding: 5px;
+    background: #aaa;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 0.8em;
+  }
+}
 @media screen and (max-width: 582px)
 {
   #u9content{
     font-size: 1.3em;
+  }
+  .u11mainhanged{
+    font-size: 0.6em;
+    width: 35%;
   }
 }
 @media screen and (max-width: 500px){
@@ -154,9 +180,20 @@ z-index: 3;
     margin-top: 0px;
   }
 }
+@media screen and (max-width: 485px){
+  .u11mainhanged{
+    width: 90%;
+    font-size: 1em;
+  }
+}
 @media screen and (max-width: 375px)
 {
   #u9content{
     font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .u11mainhanged{
+    font-size: 0.8em;
   }
 }
