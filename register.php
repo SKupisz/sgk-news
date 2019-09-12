@@ -10,13 +10,15 @@ session_start();
   <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
+     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <title> SGK-news </title>
 </head>
 <body>
+    <center>
   <?php require_once "main/bar.php";?>
 <section id = "umain">
   <section id = "u10t"><?php if(isset($_SESSION['zalogowany'])){
-    ?>You are logged in!<?php
+    ?>Jesteś zalogowany!<?php
   }
   else if(isset($_SESSION['r_error']))
   {
@@ -24,7 +26,7 @@ session_start();
     unset($_SESSION['r_error']);
   }
   else {
-    ?>Registration<?php
+    ?><h2>Rejestracja</h2><?php
   }?></section>
   <?php if(isset($_SESSION['zalogowany'])){
   }
@@ -33,19 +35,27 @@ session_start();
 
   <form method="post" action = "go.php">
   <section id = "u11b">
-    <section id = "u11n"><input type = "text" name = "u11n" id = "u11ni" required placeholder = "Nickname"/></section>
-    <section id = "u11p"><input type = "password" name = "u11p" id = "u11pi" required placeholder = "Password"/></section>
-    <section id = "u11pr"><input type = "password" name = "u11pr" id = "u11pri" required placeholder = "Repeat password"/></section>
-    <section id = "u11e"><input type = "text" name = "u11e" id = "u11ei" required placeholder = "E-mail adress"/></section>
-    <section id = "u11nt">Newsletter <input type="checkbox" name = "u11nt" id = "u11nti"/></section>
-    <section id = "u11nt">I accept <a href = "regulations.php" class = "u11ntagg">the SGK-news regulations</a>
-       and <a class = "u11ntagg" href = "privacy_politic.php">the privacy politic</a> <input type="checkbox" name = "u11rl" id = "u11nti"/></section>
+    <section class="input"><input type = "text" name = "u11n" id = "u11ni" required placeholder = "Nazwa użytkownika"/></section>
+    <section class="input"><input type = "password" name = "u11p" id = "u11pi" required placeholder = "Hasło"/></section>
+    <section class="input"><input type = "password" name = "u11pr" id = "u11pri" required placeholder = "Powtórz hasło"/></section>
+    <section class="input"><input type = "text" name = "u11e" id = "u11ei" required placeholder = "Adres E-mail"/></section>
+    <section id="news"><p>Newsletter<input type="checkbox" name = "u11nt" id = "u11nti"/></p></section>
+    <section id = "agreements">
+          <p>Akceptuję
+        <a href = "regulations.php" class = "u11ntagg">regulacje SGK-news</a>
+          i
+              <a class = "u11ntagg" href = "privacy_politic.php">politykę prywatności</a>
+          <input type="checkbox"></p>
+    </section>
 
   </section>
-  <input type="submit" value="Confirm" id = "u11c"/>
+      
+  <input type="submit" value="Confirm">
 
 </form><?php } ?>
 </section>
+        
+        </center>
 </body>
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>

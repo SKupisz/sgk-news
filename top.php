@@ -17,6 +17,7 @@ if(isset($_GET['watchingImage']))
       <link rel = "stylesheet" type = "text/css" href = "top/main.css"/>
       <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
       <meta name="description" content="SGK-news website">
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
     <?php require_once"top/loadData.php"?>

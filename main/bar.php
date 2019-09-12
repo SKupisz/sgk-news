@@ -1,78 +1,97 @@
+<link rel="stylesheet" type="text/css" href="bar.css">
+<!--
 <section id = "u1">
-  <a href = "index.php" id = "u2">
+  <a href = "index.php" id = "logo" class="left_li">
     <img src="main/logo.png" alt="logo" id = "u2i"/>
   </a>
   <button id = "upanelopen">
     Menu
   </button>
+doesnt seem to be needed 
+    
+    
   <label id = "upanelofical">
-  <a href = "top.php" id = "u3">
-    <nav class = "menDescLower">Top articles</nav>
+  <a href = "top.php" id = "u3" class="left_li" class="navlink">
+    <nav class = "menDescLower">Artykuły</nav>
   </a>
-  <a href = "articles.php" id = "u4">
-    <nav class = "menDescLower">Your articles</nav>
+  <a href = "articles.php" id = "u4" class="left_li" class="navlink">
+    <nav class = "menDescLower">??Your articles</nav>
   </a>
-  <a href = "inbox.php" id = "u5">
-    <nav class = "menDesc">Inbox</nav>
+  <a href = "inbox.php" id = "u5" class="left_li" class="navlink">
+    <nav class = "menDesc">??Inbox</nav>
   </a>
-  <a href = "about.php" id = "u6">
-    <nav class = "menDesc">About us</nav>
+  <a href = "about.php" id = "u6" class="left_li" class="navlink">
+    <nav class = "menDesc">O nas</nav>
   </a>
+      
+      
   <?php if(isset($_SESSION['zalogowany']))
   {
     ?>
-    <a href = "settings.php" id = "u7">
-      <nav class = "menDesc">Settings</nav>
+    <a href = "settings.php" id = "u7" class="right_li" class="navlink">
+      <nav class = "menDesc">Ustawienia</nav>
     </a>
-    <a href = "profile.php" id = "u8">
-      <nav class = "menDesc">Profile</nav>
+    <a href = "profile.php" id = "u8" class="right_li" class="navlink">
+      <nav class = "menDesc">Profil</nav>
     </a>
-    <a href = "logout.php" id = "u9d">
-      <nav class = "menDesc">Logout</nav>
+    <a href = "logout.php" id = "u9d" class="right_li" class="navlink">
+      <nav class = "menDesc">Wyloguj się</nav>
     </a><?php
-  }
+  }     
   else{?>
-  <a href = "login.php" id = "u7">
-    <nav class = "menDesc">Sign in</nav>
+  <a href = "login.php" id = "u7" class="right_li" class="navlink">
+    <nav class = "menDesc">Zaloguj się</nav>
   </a>
-  <a href = "register.php" id = "u8">
-    <nav class = "menDesc">Sign up</nav>
+  <a href = "register.php" id = "u8" class="right_li" class="navlink">
+    <nav class = "menDesc">Zarejestruj się</nav>
   </a>
 <?php }?>
 </label>
-  <label id = "upanel">
-  <a href = "top.php" id = "u3">
-    Top articles
-  </a>
-  <a href = "articles.php" id = "u4">
-    Your articles
-  </a>
-  <a href = "inbox.php" id = "u5">
-    Inbox
-  </a>
-  <a href = "about.php" id = "u6">
-    About us
-  </a>
+
+-->
+    
+    
+    
+  <ul id = "upanel">
+      
+  <li class="left_li"><a href="index.php"><img id="logo" src="logo.png"></a></li>  
+  <li class="left_li"><a href = "top.php" class="navlink">
+      Artykuły
+  </a></li>
+  
+  <li class="left_li"><a href = "about.php" class="navlink">
+      O nas
+  </a></li>
+      
+      
   <?php if(isset($_SESSION['zalogowany']))
   {
     ?>
-    <a href = "settings.php" id = "u7">
-      Settings
-    </a>
-    <a href = "profile.php" id = "u8">
-      Profile
-    </a>
-    <a href = "logout.php" id = "u9d">
-      Logout
-    </a><?php
+    <li class="left_li"><a href = "articles.php"class="navlink">
+        Twoje artykuły
+  </a></li>
+    <li class="left_li"><a href = "inbox.php" class="navlink">
+        Poczta
+  </a></li>
+    <li class="right_li"><a href = "profile.php" class="navlink">
+        Profil
+    </a></li>
+    <li class="right_li"><a href = "settings.php" class="navlink">
+        Ustawienia
+    </a></li>
+    <li class="right_li"><a href = "logout.php" class="navlink">
+        Wyloguj się
+    </a></li><?php
   }
   else{?>
-    <a href = "login.php" id = "u7">
-      Sign in
-    </a>
-    <a href = "register.php" id = "u8">
-      Sign up
-    </a>
+    <li class="right_li"><a href = "login.php" class="navlink">
+        Zaloguj się
+    </a></li>
+    <li class="right_li"><a href = "register.php" class="navlink">
+        Zarejestruj się
+    </a></li>
 <?php }?>
-</label>
+</ul>
+    
+    
 </section>
