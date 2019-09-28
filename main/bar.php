@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="bar.css">
 <!--
 <section id = "u1">
   <a href = "index.php" id = "logo" class="left_li">

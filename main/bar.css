@@ -1,6 +1,3 @@
-
-
-
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body::-webkit-scrollbar{
@@ -24,10 +21,7 @@ body::-webkit-scrollbar-button:vertical:decrement{
 }
 body::-webkit-scrollbar-button:vertical:increment{
   background: #11111f url("downArrow.png") no-repeat;
-}        
-@media screen and (min-width: 1025px)
-{
-    
+}            
     /*
   #u1{
     width: 100%;
@@ -400,7 +394,13 @@ body::-webkit-scrollbar-button:vertical:increment{
   border-bottom: 1px solid #ccc;
   box-shadow: 0px 0px 20px 0px rgba(140,0,0,0.6);
   z-index: 1;
-  position: relative;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+
+}
+#umain{
+  margin-top: 67px;
 }
     
-}
+

@@ -1,4 +1,4 @@
-#u10header{
+/*#u10header{
   width: 100%;
   height: 10%;
   position: absolute; top: 0px; left: 0px;
@@ -7,13 +7,13 @@
   color: white;
   font-family: Verdana;
   font-style: italic;
-  /*Background pattern from: subltepatterns.com*/
+  /*Background pattern from: subltepatterns.com
   background: url("../curls.png");
 }
 #u11content{
   width: 100%;
   position: absolute; top: 10%; left: 0px;
-  /*Background pattern from: subltepatterns.com*/
+  /*Background pattern from: subltepatterns.com
   background: url("../connectwork.png");
   color: #fffffe;
   padding-bottom: 10px;
@@ -34,4 +34,51 @@
 }
 #u11datacontente{
 
+}*/
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+}
+.umain{
+  width: 100%;
+  margin-top: 70px;
+}
+.u10header{
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Lato',sans-serif;
+  margin-bottom: 20px;
+}
+.u11collecting,.u11collectinge,.u11datacontent{
+  padding: 5px;
+  font-size: 1.8em;
+  font-family: 'Oswald',sans-serif;
+}
+.u11collectinge{
+  font-size: 1.4em;
+  padding: 2px;
+  margin-bottom: 60px;
+}
+.u11datacontente li{
+  font-size: 1.2em;
+  font-family: 'Lato',sans-serif;
+}
+.u11datacontente ul{
+  margin-bottom: 20px;
+}
+.u11admin,.u11remove{
+  font-size: 1.5em;
+  font-family: 'Oswald',sans-serif;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+.u11admine,.u11removee{
+  font-size: 1.2em;
+  font-family: 'Oswald',sans-serif;
+  padding: 2px;
+  margin-bottom: 15px;
 }
