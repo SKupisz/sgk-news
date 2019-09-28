@@ -20,7 +20,7 @@ session_start();
   <section id = "u10t">
     <?php if(isset($_SESSION['zalogowany']))
     {
-      ?>Jesteś zalogowana/y!<?php
+      ?><header class = "signed-header">Jesteś zalogowana/y!</header><?php
     }
     else if(isset($_SESSION['r_error']))
     {
