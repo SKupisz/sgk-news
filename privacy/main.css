@@ -1,40 +1,3 @@
-/*#u10header{
-  width: 100%;
-  height: 10%;
-  position: absolute; top: 0px; left: 0px;
-  text-align: center;
-  font-size: 1.7em;
-  color: white;
-  font-family: Verdana;
-  font-style: italic;
-  /*Background pattern from: subltepatterns.com
-  background: url("../curls.png");
-}
-#u11content{
-  width: 100%;
-  position: absolute; top: 10%; left: 0px;
-  /*Background pattern from: subltepatterns.com
-  background: url("../connectwork.png");
-  color: #fffffe;
-  padding-bottom: 10px;
-}
-#u11collecting,#u11datacontent,#u11admin,#u11remove{
-  text-align: left;
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 1.4em;
-  color: #fffffe;
-  margin-left: 10px;
-}
-#u11collectinge,#u11datacontente,#u11admine,#u11removee{
-  font-family: Verdana;
-  text-align: left;
-  font-size: 1.1em;
-  margin-left: 30px;
-}
-#u11datacontente{
-
-}*/
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
@@ -63,6 +26,9 @@ body{
   padding: 2px;
   margin-bottom: 60px;
 }
+.u11datacontente{
+  list-style-position: inside;
+}
 .u11datacontente li{
   font-size: 1.2em;
   font-family: 'Lato',sans-serif;
@@ -81,4 +47,101 @@ body{
   font-family: 'Oswald',sans-serif;
   padding: 2px;
   margin-bottom: 15px;
+}
+.u11separator{
+  width: calc(100% - 20px);
+  background: black;
+  float: left;
+}
+@media screen and (max-width: 970px){
+  .umain{
+    text-align: center;
+  }
+  .u11datacontente ul{
+    text-align: center;
+  }
+  .u11datacontente li{
+    width: 300px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .u11collectinge{
+    font-size: 1.2em;
+    width: calc(80% - 20px);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .u11removee,.u11admine{
+    font-size: 1.1em;
+  }
+  .u11remove{
+    padding-bottom: 30px;
+  }
+  .u11removee{
+    width: calc(70% - 20px);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .u11separator{
+    margin-top: 35px;
+    margin-bottom: 10px;
+    width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 488px){
+  .u11remove{
+    font-size: 1.15em;
+  }
+  .u11removee{
+    font-size: 1em;
+    font-family: 'Lato',sans-serif;
+    width: calc(90% - 20px);
+  }
+}
+@media screen and (max-width: 425px){
+  .u11datacontent{
+    font-size: 1.5em;
+  }
+  .u11datacontente li{
+    font-size: 1em;
+    margin-left: 0px;
+    margin-right: auto;
+  }
+  .u11collectinge{
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 361px){
+  .u10header{
+    font-size: 2.4em;
+    width: inherit;
+  }
+  .u11collecting{
+    font-size: 1.5em;
+  }
+  .u11collectinge{
+    font-size: 1.1em;
+    width: calc(100% - 20px);
+  }
+  .u11removee{
+    width: calc(100% - 20px);
+  }
+  .u11admin{
+    font-size: 1.4em;
+    padding-bottom: 30px;
+  }
+  .u11admine{
+    font-size: 0.9em;
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+  }
+  .u11datacontent{
+    font-size: 1.2em;
+  }
+  .u11datacontente li{
+    font-size: 0.88em;
+  }
 }

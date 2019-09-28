@@ -11,7 +11,7 @@ We hope it will help improving design, website mechanice, and content</div>
   </ul>
 </div>
 <hr class = "u11separator"/>
-<span class = "u11admin">Who controls data collecting?</span><br>
+<span class = "u11admin">Who controls data collecting?</span>
 <div class = "u11admine">The CEO of the SGK-news, Simon George Kupisz</div>
 <span class = "u11remove">Can I remove my data from the SGK-news database?</span><br>
 <div class = "u11removee">Of course, according to the SGK-news regulations,

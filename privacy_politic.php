@@ -13,7 +13,7 @@ session_start();
   <title> SGK-news </title>
 </head>
 <body>
-  <?php require_once "main/bar.php" ?>
+  
     <main class = "umain">
       <header class = "u10header">
         Privacy politic
