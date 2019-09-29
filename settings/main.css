@@ -1,4 +1,3 @@
-@import url("responsivibility.css");
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 body{
@@ -6,7 +5,6 @@ body{
   padding: 0;
 }
 .umain{
-  width: 100%;
   margin-top: 67px;
 }
 .u10title{
@@ -72,4 +70,34 @@ body{
   min-width: 50%;
   max-width: 60%;
   height: 170px!important;
+}
+@media screen and (max-width: 964px){
+  .u11pass,.u11del{
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+    border-bottom-width: 90%;
+  }
+}
+@media screen and (max-width: 531px){
+  .uheader{
+    font-size: 1.5em;
+  }
+  .u11promcont{
+    min-width: 70%;
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 460px){
+  .uheader{
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 360px){
+  .u11promcontheader{
+    font-size: 0.8em;
+  }
+  .u10title{
+    font-size: 2.7em;
+  }
 }

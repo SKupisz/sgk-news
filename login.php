@@ -13,14 +13,12 @@ session_start();
   <title> SGK-news </title>
 </head>
 <body>
-      <center>
-    
   <?php require_once "main/bar.php";?>
 <section id = "umain">
   <section id = "u10t">
     <?php if(isset($_SESSION['zalogowany']))
     {
-      ?><header class = "signed-header">Jesteś zalogowana/y!</header><?php
+      ?><header class = "signed-header">You are signed in!</header><?php
     }
     else if(isset($_SESSION['r_error']))
     {

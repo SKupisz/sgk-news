@@ -1,28 +1,6 @@
-/*@media screen and (max-width: 984px)
-{
-  #u11pass,#u11prom,#u11del{
+@media screen and (max-width: 964px){
+  .u11pass,.u11del{
     width: 100%;
+    margin-bottom: 10px;
   }
-  #u11pass{
-    top: 0px;
-  }
-  #u11del{
-    top: 50%;
-  }
-  #u11promotion{
-    top: 100%;
-    width: 100%; left: 0px;
-  }
-  #u11pass_submit{
-    font-size: 0.9em;
-  }
-  #promheader{
-    font-size: 0.5em;
-  }
-  .u11promcontheader{
-    font-size: 0.9em;
-  }
-  #passheader{
-    font-size: 0.8em;
-  }
-}*/
+}
