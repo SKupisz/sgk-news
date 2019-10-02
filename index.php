@@ -22,38 +22,28 @@ session_start();
     
 <?php require_once "main/bar.php";?>
     
-    <!--
-
-    <ul>
-        <li class="left_li"><a href="https://sgk-news.pl/"><img id="logo" src="logo.png"></a></li>
-        <li class="left_li"><a class="navlink" href="https://sgk-news.pl/top.php">Artykuły</a></li>
-        <li class="left_li"><a class="navlink" href="me_eng.html">O nas</a></li>
-        <li class="left_li"><a class="navlink" href="#">Zaloguj się</a></li>
-        <li class="right_li"><a class="navlink" href="#">Utwórz konto</a></li>
-    </ul>
-   -->
-    
 <div class="mainindex">    
     
        <div class="whatnews">
-        <h1>Czym jest SGK News?</h1>
-        <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis. Vivamus justo. Nam tempor vitae, pellentesque eget, purus. <a id="readmore" href="#">Read more!</a></p>
+        <h1>What is SGK-news?</h1>
+        <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis. Vivamus justo. Nam tempor vitae, pellentesque eget, purus. 
+          <a id="readmore" href="#">Read more!</a></p>
        </div>
 
         <hr>
         
        <div class="browseartices">
-        <h1>Przeglądaj atykuły!</h1>
+        <h1>Check out the articles!</h1>
         <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis.</p>
-        <a id="przegladaj" href="#">Przeglądaj!</a>
+        <a id="przegladaj" href="#">Read more!</a>
        </div>
 
        <hr>
 
         <div class="writeartc">
-        <h1>Napisz artykuł!</h1>
+        <h1>Write an article!</h1>
         <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis.</p>
-        <a id="przegladaj" href="#">Przeglądaj!</a>
+        <a id="przegladaj" href="#">Read more!</a>
        </div>
     
 
@@ -76,9 +66,7 @@ session_start();
     
     
 </body>
-    
-    
-    
-<script src = "main/jquery-3-2-1.js"></script>
+
+
 <script src="main/main.js"></script>
 </html>

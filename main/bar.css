@@ -354,11 +354,11 @@ body::-webkit-scrollbar-button:vertical:increment{
 
 
 
-.left_li {
+.left_li ,.image_li{
   float: left;
 }
 
-.right_li {
+.right_li ,.navOpening{
   float: right;
 }
 
@@ -402,5 +402,38 @@ body::-webkit-scrollbar-button:vertical:increment{
 #umain{
   margin-top: 67px;
 }
-    
+.navOpening{
+  display: none;
+}
+.links-container{
+  display: block;
+}
+@media screen and (max-width: 967px){
+  .left_li,.right_li{
+    float: left;
+    width: 100%;
+    display: block;
+  }
+  .links-container{
+    display: none;
+  }
+  .navOpening{
+    display: block;
+    text-align: center;
+    padding-top: 12px;
+    margin-right: 6px;
+    cursor: pointer;
+    width: 40px;
+  }
+  .navOpening span{
+    width: 40px;
+    height: 9px;
+    background: black;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .navOpening > .theLastOne{
+    margin-bottom: 0px;
+  }
+}
 

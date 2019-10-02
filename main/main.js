@@ -1,23 +1,22 @@
-let control = 0;
-let without = 1;
-document.getElementById("upanelopen").addEventListener("click",function(){
-  if(control == 0)
-  {
-    $("#upanel").show(500);
-    control = 1;
-    without = 1;
+let linksContDisp = document.querySelector(".links-container");
+document.querySelector(".navOpening").addEventListener("click",function(matching){
+  if(linksContDisp.style.display == "none" || linksContDisp.style.display == "" || matching.matches){
+    linksContDisp.style.display = "block";
   }
-  else {
-    $("#upanel").hide(500);
-    control = 0;
-    without = 0;
+  else{
+    linksContDisp.style.display = "none";
   }
-
 });
-checkIfControl();
-function checkIfControl(){
-  if(window.innerWidth > 1024){
-    without = 1;
-    
+
+function forShowingNavAfterRWD(m){
+  if(m.matches){
+    linksContDisp.style.display = "block";
   }
-}
+  else{
+    linksContDisp.style.display = "none";
+  }
+};
+
+let match = window.matchMedia("(min-width: 967px)");
+forShowingNavAfterRWD(match);
+match.addListener(forShowingNavAfterRWD);
