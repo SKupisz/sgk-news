@@ -22,7 +22,7 @@ require_once"profile/loadData.php";
 <body>
 <?php require_once "main/bar.php" ?>
 <main id = "umain">
-  <header id = "u10t">
+  <header class = "u10t">
   <?php
   if($connection == 1)
   {
@@ -36,47 +36,33 @@ require_once"profile/loadData.php";
   {
     ?>
 
-  <section id = "u10i">
-    <section id = "u10ia">Authority level: <?php echo $level;?> <label id = "u10ial">(?)</label></section>
-    <section id = "u10ic">The <?php echo $level;?> level of authority approves you to:
-        <br>
+  <section class = "u10i">
+    <section class = "u10ia">Authority level: <?php echo $level;?></section>
+    <section class = "u10ic">The <?php echo $level;?> level of authority approves you to 
       <?php
       if($level == 1)
       {
-        ?>Write an article<?php
+        ?>write an article<?php
       }
       else if($level == 2){
-        ?>Write an article<br>Promote and degrade other users<?php
+        ?>write an article, promote and degrade other users<?php
       }
       else if($level == 3){
         ?>
-        Write an article<br>
-        Promote and degrade other users<br>
-        Write a newsletter to users
+        write an article,
+        promote and degrade other users and
+        write a newsletter to users
         <?php
       }
       ?></section>
   </section>
-  <section id = "u10p">
-    <div id = "u10pbc"></div>
-    <header id = "u10pt">Inbox</header>
-    <section id = "u10phc"><label id = "u10ph"><?php if($length > 0) echo $length;?></label></section>
-    <!--<section id = "u10pc">You have <?php
-     if($length == 0)
-     {
-       ?>not any unreaded message<?php
-     }
-     else if($length == 1){
-      echo $length; ?> unreaded message<?php
-    }
-    else {
-      echo $length; ?> unreaded messages<?php
-    }?></section>--><br>
-    <a href="inbox.php" id = "u10pl">Check the inbox</a>
+  <section class = "u10i">
+    <header class = "u10ia">Inbox</header>
+    <a href = "./inbox.php" class = "u10al">My inbox</a>
   </section>
-  <section id = "u10a">
-    <header id = "u10at">Articles</header>
-    <section id = "u10ac">
+  <section class = "u10a">
+    <header class = "u10at">Articles</header>
+    <section class = "u10ac">
       <?php if($articles_length == 0){
         ?>You haven't written any articles yet<?php
       }
@@ -87,12 +73,11 @@ require_once"profile/loadData.php";
       else {
         ?>You have written <?php echo $articles_length;?> articles<?php
       }?></section>
-      <a href = "articles.php" id = "u10al">My articles</a>
+      <a href = "articles.php" class = "u10al">My articles</a>
   </section>
 <?php }?>
 </main>
 </body>
-<script src = "main/jquery-3-2-1.js"></script>
 <script src="profile/main.js"></script>
 <script src="main/main.js"></script>
 </html>

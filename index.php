@@ -47,8 +47,6 @@ session_start();
        </div>
     
 
-       <br><br><br><br><br><br><br>
-
 
     <div class="footer">
       

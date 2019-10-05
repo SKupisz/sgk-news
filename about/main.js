@@ -1,4 +1,4 @@
-function preloader(){
+/*function preloader(){
   setTimeout(function() {
 
         var body    =   document.getElementsByTagName("BODY")[0];
@@ -9,3 +9,4 @@ function preloader(){
 
 },2000);
 }
+*/

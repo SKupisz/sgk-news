@@ -60,6 +60,7 @@ session_start();
     </div>
     <div class="left" class="clearfix">
         <img src="IMG_20180727_132956.jpg" id="pic1">
+        <figcaption class = "captionRWD">Simon George Kupisz - founder and CEO of SGK-news. Born in 2003 in Warsaw.</figcaption>
     </div> 
 
 
