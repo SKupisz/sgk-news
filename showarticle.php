@@ -86,6 +86,7 @@ try {
     <meta charset="utf-8"/>
       <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
+      <link rel="stylesheet" type="text/css" href = "main.css"/>
       <link rel = "stylesheet" type = "text/css" href = "top/show.css"/>
       <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
       <meta name="description" content="SGK-news website">

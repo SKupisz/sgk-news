@@ -59,7 +59,7 @@ require_once"profile/loadData.php";
   </section>
   <section id = "u10p">
     <div id = "u10pbc"></div>
-    <header id = "u10pt">Inbox</header>
+    <header class = "u10pt">Inbox</header>
     <section id = "u10phc"><label id = "u10ph"><?php if($length > 0) echo $length;?></label></section>
     <!--<section id = "u10pc">You have <?php
      if($length == 0)
@@ -75,8 +75,8 @@ require_once"profile/loadData.php";
     <a href="inbox.php" id = "u10pl">Check the inbox</a>
   </section>
   <section id = "u10a">
-    <header id = "u10at">Articles</header>
-    <section id = "u10ac">
+    <header class = "u10pt">Articles</header>
+    <section class = "u10ptsmall">
       <?php if($articles_length == 0){
         ?>You haven't written any articles yet<?php
       }

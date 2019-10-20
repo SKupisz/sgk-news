@@ -17,6 +17,7 @@ if(isset($_GET['watchingImage']))
       <link rel = "stylesheet" type = "text/css" href = "top/main.css"/>
       <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
       <meta name="description" content="SGK-news website">
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
     <?php require_once"top/loadData.php"?>
@@ -103,8 +104,9 @@ if(isset($_GET['watchingImage']))
             ?>
 
             <a id = "u11article" style = "position: absolute; top: <?php echo 12+(50*$i);?>%;" href = "showarticle.php?id=<?php echo $now_id;?>" target = "_blank">
-              <span id = "u11aofa"><?php echo $now_from;?></span>
-              <div id = "u11at"><?php echo $now_title;?></div>
+            <div class="lining">
+                 <h1 id = "u11at"><?php echo $now_title;?></h1>
+             <h2 id = "u11aofa"><?php echo $now_from;?></h2>
               <section id = "u11av">
                 <?php echo $now_content; ?>
               </section>
@@ -151,6 +153,7 @@ if(isset($_GET['watchingImage']))
                 echo $now_tags;
                 ?>
               </aside>
+                </div>
             </a>
             <?php
           }

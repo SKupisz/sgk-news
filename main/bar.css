@@ -1,8 +1,9 @@
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Lato');
-body{
-  background: #ddd;
-}
-/*body::-webkit-scrollbar{
+
+body::-webkit-scrollbar{
   width: 15px;
   height: 15px;
 }
@@ -23,9 +24,11 @@ body::-webkit-scrollbar-button:vertical:decrement{
 }
 body::-webkit-scrollbar-button:vertical:increment{
   background: #11111f url("downArrow.png") no-repeat;
-}*/
+}        
 @media screen and (min-width: 1025px)
 {
+    
+    /*
   #u1{
     width: 100%;
     position: fixed; top: 0px; left: 0px;
@@ -61,12 +64,12 @@ body::-webkit-scrollbar-button:vertical:increment{
     transition: background 0.4s;
     padding-top: 2%;
   }
-  /*.menDesc{
+ .menDesc{
     margin-top: 10%;
   }
   .menDescLower{
     margin-top: 6%;
-  }*/
+  }
   #u3:hover,#u4:hover,#u5:hover,#u6:hover,#u7:hover,#u8:hover,#u9d:hover{
     background: #2999ff;
   }
@@ -103,6 +106,7 @@ body::-webkit-scrollbar-button:vertical:increment{
     position: absolute; top: 15%; left: 0px;
   }
 }
+
 
 @media screen and (max-width: 1024px)
 {
@@ -144,7 +148,7 @@ body::-webkit-scrollbar-button:vertical:increment{
     width: 70%;
     height: 100%;
     position: absolute; top: 0px; left: 30%;
-    /*Background pattern from: subltepatterns.com*/
+    Background pattern from: subltepatterns.com
     background: url("../connectwork.png");
     border: none;
     color: white;
@@ -348,4 +352,55 @@ body::-webkit-scrollbar-button:vertical:increment{
   #upanelofical{
     display: none;
   }
+}
+
+
+*/
+
+
+
+
+.left_li {
+  float: left;
+}
+
+.right_li {
+  float: right;
+}
+
+.navlink {
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 22px 27px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.navlink:hover {
+  background-color: #eee;
+}
+
+#logo {
+    height: 63px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+
+#upanel {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0px 0px 20px 0px rgba(140,0,0,0.6);
+  z-index: 1;
+  position: relative;
+}
+    
 }
