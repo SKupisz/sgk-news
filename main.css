@@ -3,11 +3,9 @@
     margin: 0;
 }
 
-html {
-	overflow: hidden;
-}
 
-ul {
+
+.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -50,8 +48,7 @@ ul {
 
 .mainindex {  
   margin: auto;
-  width: 800px;
-  height: 100%;
+  width: 60%;
   position: relative;
 
 }
@@ -74,10 +71,8 @@ ul {
 	color: #333;
 }
 
-
-
 .footer {
-	width: 800px;
+	width: 60%;
 	height: 50px;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
@@ -94,3 +89,5 @@ ul {
 	height: 27px;
 	padding-top: 10px;
 }
+
+

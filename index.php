@@ -22,16 +22,7 @@ session_start();
     
 <?php require_once "main/bar.php";?>
     
-    <!--
 
-    <ul>
-        <li class="left_li"><a href="https://sgk-news.pl/"><img id="logo" src="logo.png"></a></li>
-        <li class="left_li"><a class="navlink" href="https://sgk-news.pl/top.php">Artykuły</a></li>
-        <li class="left_li"><a class="navlink" href="me_eng.html">O nas</a></li>
-        <li class="left_li"><a class="navlink" href="#">Zaloguj się</a></li>
-        <li class="right_li"><a class="navlink" href="#">Utwórz konto</a></li>
-    </ul>
-   -->
     
 <div class="mainindex">    
     
@@ -55,13 +46,12 @@ session_start();
         <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis.</p>
         <a id="przegladaj" href="#">Przeglądaj!</a>
        </div>
-    
-
-       <br><br><br><br><br><br><br>
 
 
     <div class="footer">
-      
+        
+      <br>
+
 
     <p>&copy; 2019 SGK News</p>
 
@@ -77,8 +67,10 @@ session_start();
     
 </body>
     
-    
+
     
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>
+    
+
 </html>

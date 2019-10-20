@@ -11,6 +11,18 @@ session_start();
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
   <title> SGK-news </title>
+    <style>
+    
+        p {
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        
+    </style>
+    
+    
+    
 </head>
 <body>
       <center>
@@ -20,7 +32,7 @@ session_start();
   <section id = "u10t">
     <?php if(isset($_SESSION['zalogowany']))
     {
-      ?>Jesteś zalogowana/y!<?php
+      ?><p>You are logged in!</p><?php
     }
     else if(isset($_SESSION['r_error']))
     {
