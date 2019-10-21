@@ -2,6 +2,7 @@
   for($i = 0; $i < $howManyImages; $i++)
   {
     $nowLocalization = substr($imagesAddress[$i],6,strlen($imagesAddress[$i]));
+    echo $nowLocalization;
     $name = substr($nowLocalization,15,strlen($nowLocalization)-19);
     $author = $imagesFrom[$i];
     $nowLikes = $imagesLikes[$i];

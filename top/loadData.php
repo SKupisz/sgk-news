@@ -74,7 +74,7 @@ try {
       unset($_SESSION['tagsError']);
     }
     else {
-      $rezultat = $polaczenie->query("SELECT * FROM sent_articles ORDER BY views");
+      $rezultat = $polaczenie->query("SELECT * FROM sent_articles ORDER BY RAND()");
       if(!$rezultat) throw new Exception($polaczenie->error);
       $from = array();
       $title = array();
@@ -125,7 +125,7 @@ try {
       $row = $rezultat->fetch_assoc();
       $imagesId[$i] = $row['id'];
       $imagesFrom[$i] = $row['fromm'];
-      $imagesAddress[$i] = $row['localAddress'];
+      $imagesAddress[$i] = $row['localAdress'];
       $imagesViews[$i] = $row['views'];
       $imagesLikes[$i] = $row['likes'];
     }

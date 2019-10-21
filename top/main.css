@@ -7,12 +7,19 @@
     margin: 0;
 }
 
+html{
+    overflow-x: hidden;
+}
+
+
+
+
 #u10bar{
   width: 80%;
   height: 45px;
-  background: #aaa;
-  position: relative; 
-  top: 40px; 
+  background: #eee;
+  border: 1px solid #ccc;
+  top: 30px;
   left: 10%;
   text-align: center;
   font-size: 1.6em;
@@ -20,25 +27,31 @@
   transition: filter 0.45s;
   cursor: pointer;
   z-index: 4;
+  position: relative;
   border-radius: 5px;
   padding-top: 10px;
 }
 
-
 #u10bar:hover{
-  filter: brightness(70%);
+  background: #ddd;
 }
+
+
+
+
+
+
+
 
 #u10filtersbar{
   width: 80%;
   height: 5%;
-  background: #aaa;
-  border-radius: 5px;
-  position: fixed; top: 30%; left: 10%;
+  position: relative; top: 30%; left: 10%;
   display: none;
   z-index: 4;
-  box-shadow: inset 1px 1px 10px #777;
+    background: #eee;
 }
+
 #u11choosing{
     width: 100%;
     height: 60px;
@@ -48,6 +61,7 @@
     text-align: center;
     z-index: 4;
 }
+
 .u11,.u12{
   width: 100%;
   height: 120%;
@@ -58,31 +72,13 @@
   display: none;
   top: 13%;
 }
-/*
-@media screen and (max-width: 1024px)
-{
-  #u11choosing{
-    top: 20%;
-  }
-#u10bar{
-  top: 27%;
-}
-#u10filtersbar{
-  top: 35%;
-}
-#u10tagsAdvance,#u10wordsAdvance,#u10nameAdvance,#u10sortAdvance{
-  top: 40%;
-}
-}
-@media screen and (max-width: 800px)
-{
+@media screen and (max-width: 460px){
   #u10bar{
-    width: 100%;
+    font-size: 1em;
+    height: auto;
+    padding: 10px;
     left: 0px;
-  }
-  #u10filtersbar{
-    width: 100%;
-    left: 0px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
-*/

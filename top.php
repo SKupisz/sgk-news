@@ -91,31 +91,33 @@ if(isset($_GET['watchingImage']))
             if(strpos($now_content,"<br>") !==false)
             {
               $now_content = substr($now_content,0,strpos($now_content,"<br>"))."...";
-              if(strlen($now_content) > 300)
+              if(strlen($now_content) > 200)
               {
-                $now_content = substr($now_content,0,300)."...";
+                $now_content = substr($now_content,0,200)."...";
               }
             }
-            else if(strlen($now_content) > 300)
+            else if(strlen($now_content) > 200)
             {
-              $now_content = substr($now_content,0,300)."...";
+              $now_content = substr($now_content,0,200)."...";
             }
 
             ?>
 
             <a id = "u11article" style = "position: absolute; top: <?php echo 12+(50*$i);?>%;" href = "showarticle.php?id=<?php echo $now_id;?>" target = "_blank">
-              <span id = "u11aofa"><?php echo $now_from;?></span>
-              <div id = "u11at"><?php echo $now_title;?></div>
+            <div class="lining">
+                 <h1 id = "u11at"><?php echo $now_title;?></h1>
+             <h2 id = "u11aofa"><?php echo $now_from;?></h2>
               <section id = "u11av">
                 <?php echo $now_content; ?>
               </section>
+              <section class = "stats">
               <?php
               if(strlen($now_tags) > 0)
               {
-                ?><aside id = "u11info"><?php
+                ?><aside class = "u11info"><?php
               }
               else {
-                ?><aside id = "u11tags"><?php
+                ?><aside class = "u11tags"><?php
               }
               ?>
 
@@ -147,11 +149,13 @@ if(isset($_GET['watchingImage']))
                   }
                 ?>
               </aside>
-              <aside id = "u11tags">
+              <aside class = "u11tags">
                 <?php
                 echo $now_tags;
                 ?>
               </aside>
+              </section>
+                </div>
             </a>
             <?php
           }

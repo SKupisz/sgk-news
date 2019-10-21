@@ -1,42 +1,49 @@
 @import url("keyframes.css");
+
+.lining {
+    width: 95%;
+    height: 280px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+
 #u11article{
   width: 80%;
-  height: 40%;
-  position: absolute; top: 12%; left: 10%;
-  background: #eee;
+  height: 300px;
+  position: absolute; 
+  top: 12%;
+  left: 10%;
   transition: all 0.2s;
   cursor: pointer;
   transition-timing-function: ease-in-out;
-  box-shadow: 0px 2px 2px #888;
 }
 #u11article:hover{
-  filter: brightness(80%);
+
 }
 #u11aofa,#u11aofae{
-  width: 15%;
-  height: 15%;
-  text-align: center;
-  font-size: 1.6em;
+  font-size: 18px;
   font-family: Verdana;
-  /*Background pattern from: subtlepatterns.com*/
-  background: #fff;
-  border: 1px solid #aaa;
-  position: absolute; top: 5%; left: 5%;
-  color: black;
+  position: absolute;
+  color: darkred;
+  top: 78px;
+  left: 58px;
 }
 
 #u11at,#u11ate{
-  width: 40%;
-  height: 15%;
   text-align: left;
-  padding: 0.1%;
-  position: absolute; top: 23%; left: 5%;
-  font-size: 140%;
-  font-family: Arial;
-  /*Background pattern from: subtlepatterns.com*/
-  background: url("../../tactile_noise.png");
-  color: white;
-  padding-left: 5px;
+  position: absolute; 
+  top: 30px;
+  left:55px;
+  font-size: 40px;
+  font-family: "Lato", sans-serif;
+  color: #333;
 }
 #u11aofae,#u11ate{
   width: 90%;
@@ -47,31 +54,34 @@
   width: 90%;
   height: 40%;
   font-family: Verdana;
-  position: absolute; top: 40%; left: 5%;
+  position: absolute; top: 44%; left: 58px;
   color: black;
   font-size: 1em;
 }
-#u11info,#u11tags{
-  width: 90%;
-  height: 20%;
-  font-family: Verdana;
-  position: absolute; top: 70%; left: 5%;
+.u11info,.u11tags{
+  width: calc(90% - 10px);
+  padding: 5px;
+  font-family: "Lato", sans-serif;
   color: black;
+  padding-left: 30px;
+  position: relative;
+}
+.stats{
+  position: relative;
+  width: 100%;
+  top: 77%;
 }
 #u11tags{
-  top: 80%;
 }
 .error{
   text-align: center;
   width: 80%;
-  position: absolute; left: 10%;
+  position: absolute;
 }
 .u11articleshowing{
   width: 100%;
   height: 0px;
   overflow: hidden;
-  /*Background pattern from: subtlepatterns.com*/
-  background: url("../../tactile_noise.png");
   position: absolute; top: -5%; left: 0%;
   display: none;
 }
@@ -89,18 +99,55 @@
     font-size: 0.7em;
   }
   #u11aofa,#u11aofae{
-    width: 90%;
+    width: 100%;
     text-align: center;
+    left: 0px;
   }
   #u11at,#u11ate{
-    width: 90%;
+    width: 100%;
     text-align: center;
     font-size: 0.9em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
   }
 }
-@media screen and (max-width: 550px)
+@media screen and (max-width: 913px){
+  #u11av{
+    left: 0px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    text-align: center;
+  }
+}
+@media screen and (max-width: 557px)
 {
   #u11av{
-    font-size: 0.5em;
+    font-size: 0.6em;
+  }
+  .choosingBtn{
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 460px){
+  #u11article{
+    width: 90%;
+    left: 5%;
+  }
+  #u11choosing{
+    top: 20px;  
+  }
+  .u11tags,.u11info{
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+  }
+  .lining{
+    width: 100%;
+    padding: 0px;
+  }
+  #u11av{
+    font-size: 0.45em;
   }
 }
