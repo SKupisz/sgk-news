@@ -72,6 +72,12 @@ html{
   display: none;
   top: 13%;
 }
+@media screen and (max-width: 786px){
+  #u10bar,#u10filtersbar{
+    width: 85%;
+    left: 7.5%;
+  }
+}
 @media screen and (max-width: 460px){
   #u10bar{
     font-size: 1em;

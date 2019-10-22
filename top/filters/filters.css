@@ -1,10 +1,10 @@
-#u10sort,#u10name,#u10tags,#u10words{
-  width: 25%;
+.u10sort,.u10name,.u10tags,.u10words{
+  width: 24%;
   height: 30px;
   position: absolute; 
   border-radius: 5px;
   color: #000;
-  top: 30px;
+  top: 32px;
     padding-top: 5px;
   border: 1px solid #ccc;
   background: #eee;
@@ -14,241 +14,18 @@
   z-index: 3;
   font-family: Verdana;
 }
-#u10sort{
+.u10sort{
   left: 0;
 }
-#u10name{
+.u10name{
   left: 25%;
 }
-#u10tags{
-  left: 50%;
+.u10tags{
+  left: 51%;
 }
-#u10words{
-  left: 75%;
-}
-#u10sortAdvance{
-  width: 20%;
-  height: 10%;
-  background: #999;
-  position: relative; 
-    top: 35%; 
-    left: 10%;
-  display: none;
-  z-index: 4;
-}
-#u10sortAdvance > #u10bi,#u10li{
-  width: 100%;
-  height: 50%;
-  position: relative;
-  left: 0%;
-  text-align: center;
-  font-family: Verdana;
-  color: white;
-  cursor: pointer;
-  transition: all 0.5s;
-  display: block;
-  font-size: 1em;
-  text-decoration: none;
-  cursor: pointer;
-}
-#u10sortAdvance > #u10bi:hover,#u10li:hover{
-  background: #eee;
-  font-size: 1.1em;
-  color: black;
-}
-#u10sortAdvance > #u10bi{
-  top: 0px;
-}
-#u10sortAdvance > #u10li{
-  top: 50%;
-}
-#u10nameAdvance,#u10tagsAdvance{
-  width: 39%;
-  height: 5%;
-  background: #aaa;
-  position: fixed; top: 35% ; left: 30%;
-  display: none;
-  z-index: 4;
-}
-#u10tagsAdvance{
-  left: 37%;
-  height: 10%;
-}
-#u10an{
-  width: 70%;
-  height: 88%;
-  position: absolute; top: 0px; left: 1%;
-  border: none;
-  border-radius: 3px;
-  border: 0px solid #222;
-  font-family: 'Lato',sans-serif;
-}
-#u10as{
-  width: 20%;
-  height: 100%;
-  position: absolute; top: 0px; left: 75%;
-  color: white;
-  background: #777;
-  border: none;
-  border-radius: 2px;
-  font-family: 'Lato',sans-serif;
-  cursor: pointer;
-  font-size: 1.2em;
-  transition: all 0.4s;
-}
-#u10as:hover{
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../../textured_paper.png");
-  color: black;
-  transform: scale(0.98);
-}
-#u10pt,#u10et,#u10lt,#u10ot{
-  width: 20%;
-  height: 100%;
-  color: black;
-  background: url("../../pipes.png");
-  position: absolute;
-  top: 0px;
-  left: 2%;
-  text-align: center;
-  font-size: 120%;
-  font-family: Arial;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-#u10pt:hover,#u10et:hover,#u10lt:hover,#u10ot:hover{
-  filter: blur(1px);
-}
-#u10et{
-  left: 24%;
-  font-size: 120%;
-  width: 26%;
-}
-#u10lt{
-  left: 53%;
-}
-#u10ot{
+.u10words{
   left: 76%;
 }
-#u10wordsAdvance{
-  width: 20%;
-  height: 50%;
-  background: #aaa;
-  position: fixed; top: 35%; left: 70%;
-  display: none;
-  z-index: 4;
-}
-#u10wordsAdvance > #u10s,#u10min,#u10t,#u10f,#u10max{
-  width: 100%;
-  height: 20%;
-  position: absolute;
-  left: 0px;
-  text-align: center;
-  color: white;
-  font-family: 'Lato',sans-serif;
-  cursor: pointer;
-  font-size: 1.5em;
-  transition: all 0.5s;
-  text-decoration: none;
-}
-#u10wordsAdvance > #u10min:hover,#u10s:hover,#u10t:hover,#u10max:hover,#u10f:hover{
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../../textured_paper.png");
-  color: black;
-  font-size: 1.4em;
-}
-#u10min{
-  top: 0px;
-}
-#u10s{
-  top: 20%;
-}
-#u10t{
-  top: 40%;
-}
-#u10f{
-  top: 60%;
-}
-#u10max{
-  top: 80%;
-}
-
-.u10soon{
-  filter: brightness(70%);
-}
-#u10tagsAdvance{
-  background: #aaa;
-}
-.tagsBtn{
-  display: none;
-}
-.tagsLabel{
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../../textured_paper.png");
-  cursor: pointer;
-  font-family: 'Lato', sans-serif;
-  height: 40%;
-  width: 19%;
-  position: absolute;
-  text-align: center;
-  top: 10%;
-  left: 0.5%;
-  transition: all 0.4s;
-  border-radius: 3px;
-}
-.u10tagsSubmit{
-  width: 90%;
-  left: 5%;
-  position: absolute;
-  top: 55%;
-  height: 40%;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.2em;
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../../textured_paper.png");
-}
-#u10tagsSubmit{
-  transition: all 0.4s;
-}
-#u10tagsSubmit:hover{
-  filter: brightness(50%);
-}
-#literature{
-  left: 20.5%;
-}
-#science{
-  left: 40.5%;
-}
-#entertaiment{
-  left: 60.5%;
-}
-#other{
-  left: 80.5%;
-}
-#politic:hover,#literature:hover,#science:hover,#entertaiment:hover,#other:hover{
-  filter: brightness(50%);
-}
-#politicBtn:checked + #politic{
-  filter: brightness(50%);
-}
-#literatureBtn:checked + #literature{
-  filter: brightness(50%);
-}
-#scienceBtn:checked + #science{
-  filter: brightness(50%);
-}
-#entertaimentBtn:checked + #entertaiment{
-  filter: brightness(50%);
-}
-#otherBtn:checked + #other{
-  filter: brightness(50%);
-}
-
-
 
 .choosingBtn{
   height: 45px;
@@ -266,126 +43,243 @@
 button[class="choosingBtn"]:hover{
   background: #ddd;
 }
+/*.u10tagsAdvance,*/.u10wordsAdvance{
+  display: none;
+}
+.u10sortAdvance,.u10tagsAdvance,.u10wordsAdvance,.u10nameAdvance{
+  width: 80%;
+  position: relative;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  z-index: 5;
+  margin-top: 71px;
+  display: none;
+}
+/*sort section*/
+.u10bi,.u10li{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 40px;
+  background: #eee;
+  display: block;
+  font-size: 16px;
+  font-family: 'Lato',sans-serif;
+  color: black;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+div[class="u10bi"]:hover,div[class="u10li"]:hover{
+  filter: brightness(70%);
+}
+.btnContent-container{
+  position: relative;
+  top: 9px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+}
+/*Name filter section*/
+.u10as{
+  height: 40px;
+  position: relative;
+  margin-left: 4px;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: 5px;
+  font-family: 'Lato',sans-serif;
+  padding: 0px 30px 0px 30px;
+  font-size: 1em;
+  transition: filter 0.4s;
+}
+button[class="u10as"]:hover{
+  filter: brightness(70%);
+}
+.u10an{
+  height: 30px;
+  font-size: 1em;
+  font-family: 'Lato',sans-serif;
+  padding: 3px;
+  width: 30%;
+  margin-right: 4px;
+}
+/*words section*/
+.u10min,.u10s,.u10t,.u10f,.u10max{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  color: black;
+  font-family: 'Lato',sans-serif;
+  font-size: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: filter 0.4s;
+}
+nav[class="u10min"]:hover,nav[class="u10s"]:hover,
+nav[class="u10t"]:hover,
+nav[class="u10f"]:hover,nav[class="u10max"]:hover{
+  filter: brightness(70%);
+}
+/*tags section*/
+.tagsLabel{
+  font-size: 1.4em;
+  font-family: 'Lato',sans-serif;
+}
+.labelContainer{
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px;
+  width: 15%;
+  display: inline-block;
+  cursor: pointer;
+  transition: filter 0.4s;
+}
+.labelContainer label{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0px; left: 0px;
+}
+.tagsBtn{
+  display: none;
+}
+.u10tagsSubmit{
+  width: 10%;
+  height: 40px;
+  margin-left: 4px;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: 5px;
+  font-family: 'Lato',sans-serif;
+  padding: 0px 30px 0px 30px;
+  font-size: 1em;
+  transition: filter 0.4s;
+  position: relative;
+  top: 4px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 1px;
+}
+input[class="u10tagsSubmit"]:hover{
+  filter: brightness(70%);
+}
 
+/*signing the selected tags*/
+#politicBtn:checked + #labelOne{
+  filter: brightness(70%);
+}
+#literatureBtn:checked + #labelTwo{
+  filter: brightness(70%);
+}
+#scienceBtn:checked + #labelThree{
+  filter: brightness(70%);
+}
+#entertaimentBtn:checked + #labelFour{
+  filter: brightness(70%);
+}
+#otherBtn:checked + #labelFive{
+  filter: brightness(70%);
+}
 
-
-
-
-
-@media screen and (max-width: 1150px)
-{
-  #u10sortAdvance > #u10bi,#u10li{
-    font-size: 0.8em;
+/*responsive design*/
+@media screen and (max-width: 1182px){
+  .labelContainer{
+    width: 19%;
+  }
+  .u10tagsSubmit{
+    width: 30%;
   }
 }
-@media screen and (max-width: 1024px)
-{
-  #u10tagsAdvance{
-    top: 32%;
-  }
-}
-@media screen and (max-width: 955px)
-{
-  #u10sortAdvance > #u10bi,#u10li{
-    font-size: 0.7em;
-  }
-  #u10sortAdvance > #u10bi:hover,#u10li:hover{
-    font-size: 0.9em;
-  }
-}
-@media screen and (max-width: 800px)
-{
-  #u10nameAdvance,#u10sortAdvance,#u10tagsAdvance{
-    width: 100%;
-    left: 0px;
-  }
-  #u10wordsAdvance{
-    left: 0px;
-    width: 100%;
-    top: 36%;
-  }
-  #u10wordsAdvance > #u10s,#u10min,#u10t,#u10f,#u10max{
-    /*Background pattern from: subltepatterns.com*/
-    background: url("../../textured_paper.png");
-    color: black;
-    font-size: 1.4em;
-  }
-  #u10sortAdvance > #u10bi,#u10li{
-    /*Background pattern from: subltepatterns.com*/
-    background: url("../../textured_paper.png");
-    color: black;
+@media screen and (max-width: 926px){
+  .tagsLabel{
     font-size: 1em;
   }
-  .choosingBtn{
-    width: 49.5%;
+}
+@media screen and (max-width: 786px){
+  .u10an{
+    width: 60%;
   }
 }
-@media screen and (max-width: 620px)
-{
-  #u10as{
-    font-size: 60%;
+@media screen and (max-width: 660px){
+  .tagsLabel{
+    font-size: 0.8em;
+  }
+  .labelContainer{
+    width: 18%;
   }
 }
-@media screen and (max-width: 521px)
-{
-  #u10nameAdvance{
-    height: 10%;
-  }
-  #u10as,#u10an{
-    height: 40%;
-  }
-  #u10as{
+@media screen and (max-width: 648px){
+  .u10sortAdvance{
     width: 90%;
-    left: 5%;
-    top: 50%;
   }
-  #u10an{
-    width: 98%;
-    left: 1%;
-  }
-  #u10sort,#u10name,#u10tags,#u10words{
-    font-size: 1em;
-  }
-  #entertaiment{
-    font-size: 0.8em;
+  .u10bi,.u10li{
+    width: 45%;
   }
 }
-@media screen and (max-width: 470px)
-{
-  #u10wordsAdvance > #u10s,#u10min,#u10t,#u10f,#u10max{
-    font-size: 1.1em;
+@media screen and (max-width: 592px){
+  .u10sort,.u10name,.u10tags,.u10words{
+    width: 23%;
+    font-size: 14px;
   }
-  #u10wordsAdvance > #u10min:hover,#u10max:hover,#u10s:hover,#u10t:hover,#u10f:hover{
-    font-size: 1.1em;
+  .u10name{
+    left: 25.3%;
   }
-  #u10max{
-    font-size: 1.05em;
+  .u10tags{
+    left: 52%;
   }
-  #u10wordsAdvance > #u10max:hover{
-    font-size: 1.05em;
+  .u10words{
+    left: 77%;
+  }
+  .u10bi,.u10li{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 534px){
+  .u10an{
+    width: 60%;
+  }
+  .labelContainer{
+    width: 30%;
+    margin-bottom: 4px;
   }
   .tagsLabel{
-    font-size: 0.7em;
+    font-size: 1em;
+  }
+  .u10tagsSubmit{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
-@media screen and (max-width: 405px)
-{
-  .choosingBtn{
-    width: 48.5%;
+@media screen and (max-width: 480px){
+  .u10sortAdvance,.u10nameAdvance,.u10wordsAdvance,.u10tagsAdvance{
+    width: 100%;
   }
 }
-@media screen and (max-width: 400px)
-{
-  #entertaiment{
-    font-size: 0.5em;
+@media screen and (max-width: 416px){
+  .u10bi,.u10li{
+    width: 90%;
+  }
+  .labelContainer{
+    width: 40%;
+  }
+  div[order="last"]{
+    width: 80%;
   }
 }
-@media screen and (max-width: 319px)
-{
-  #u10sortAdvance > #u10bi,#u10li{
-    font-size: 0.8em;
-  }
-  #u10sortAdvance > #u10bi:hover,#u10li:hover{
-    font-size: 0.9em;
+@media screen and (max-width: 350px){
+  .u10an{
+    width: 55%;
   }
 }
