@@ -90,6 +90,8 @@ try {
       {
         $length = 50;
       }
+      require_once("../../delta/decoding.php");
+      $cypheringObject = new Decode;
       for($i = 0; $i < $length; $i++)
       {
         $row = $rezultat->fetch_assoc();
@@ -97,6 +99,8 @@ try {
         $from[$i] = $row["username"];
         $title[$i] = $row["title"];
         $content[$i] = $row["content"];
+        $finalContent = $cypheringObject->toNormal($content[$i]);
+        $content[$i] = $finalContent;
         $views[$i] = $row["views"];
         $words[$i] = $row['words'];
         $likes[$i] = $row['likes'];

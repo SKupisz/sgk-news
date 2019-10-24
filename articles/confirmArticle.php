@@ -41,6 +41,9 @@ try {
     $content = $row['article'];
     $tags = $row['tags'];
     $words = str_word_count($content);
+    require_once("../../../delta/cyphering.php");
+    $cypheringObject = new Cypher;
+    $content = $cypheringObject->toDelta($content,rand(1024,2047),1,1);
     $rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0,'$tags')");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $rezultat = $polaczenie->query("UPDATE $user SET status = 2 WHERE id = $id");

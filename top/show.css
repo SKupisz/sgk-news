@@ -2,7 +2,7 @@ body{
   margin: 0;
   padding: 0;
 }
-#u10connectionfail,#u10connection{
+.u10connectionfail,.u10connection{
   width: 70%;
   margin: auto;
   font-family: "Lato",sans-serif;
@@ -12,15 +12,15 @@ body{
 }
 
 
-#u10connectionfail{
+.u10connectionfail{
   height: 40%;
 }
-#u10connection{
+.u10connection{
   margin-bottom: 10px;
 }
 .u10cfheader{
   width: 90%;
-  font-size: 35px;
+  font-size: 2.4em;
     font-weight: bold;
   text-align: center;
   margin-right: auto;
@@ -29,7 +29,7 @@ body{
   margin-bottom: 20px;
   font-family: Arial;
 }
-#u10cfmain{
+.u10cfmain{
   padding: 5px;
   margin: auto;
   font-size: 1.4em;
@@ -37,7 +37,7 @@ body{
   line-height: 35px;
   padding: 15px;
 }
-#u10cv{
+.u10cv{
   font-family: Arial;
   width: 100%;
   font-size: 1.2em;
@@ -87,7 +87,7 @@ body{
     margin-top: 20px;
 }
 .commentSubmit{
-  width: 30%;
+  width: calc(30% - 20px);
   font-size: 1.2em;
   font-family: "Lato", sans-serif;
   border: none;
@@ -99,7 +99,13 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-    color:#333;
+  color:#333;
+  padding: 10px;
+  cursor: pointer;
+  transition: filter 0.4s;
+}
+button[class="commentSubmit"]:hover{
+  filter: brightness(70%);
 }
 .showingComments{
   font-size: 15px;
@@ -138,49 +144,101 @@ body{
 .yourComment{
   background: rgba(69,69,69,0.4);
 }
-@media screen and (max-width: 900px)
-{
-  #u10cfmain{
-    font-size: 1.1em;
+@media screen and (max-width: 1000px){
+  .u10cfmain{
+    font-size: 1.2em;
+    line-height: 27px;
   }
+  .u10cfheader{
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 903px){
   .commentContent{
-    min-width: 60%;
-    max-width: 60%;
+    min-width: 70%;
+    max-width: 70%;
   }
-}
-@media screen and (max-width: 768px)
-{
-  #u10cfmain{
-    font-size: 0.77em;
-  }
-}
-@media screen and (max-width: 600px)
-{
   .commentFrom{
     font-size: 1.2em;
   }
   .commentContentNow{
     font-size: 1em;
   }
+}
+@media screen and (max-width: 824px){
+  .commentSubmit{
+    width: calc(50% - 20px);
+  }
+}
+@media screen and (max-width: 733px){
+  .u10cfmain{
+    font-size: 1.1em;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 654px){
+  .commentSubmit{
+    width: calc(70% - 20px);
+  }
+}
+@media screen and (max-width: 619px){
+  .u10connection{
+    width: 80%;
+  }
+  .commentFrom{
+    margin-left: 40px;
+  }
+  .commentContentNow{
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 531px){
+  .showingComments{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 511px){
+  .commentContent{
+    min-width: 85%;
+    max-width: 85%;
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 477px){
+  .u10cfmain{
+    font-size: 1.05em;
+  }
+  .u10connection{
+    width: 85%;
+  }
+}
+@media screen and (max-width: 409px){
   .u10cfheader{
-    font-size: 1.5em;
-  }
-  #u10connection{
-    width: 98%;
-    left: 1%;
-  }
-  #u10cv{
-    width: 100%;
-  }
-  #u10cfmain{
-    margin-bottom: 0px;
+    font-size: 1.8em;
   }
   .commentSubmit{
-    width: 60%;
+    font-size: 1.1em;
   }
-  .commentContent{
+}
+@media screen and (max-width: 363px){
+  .u10connection{
+    width: calc(90% - 10px);
+  }
+  .u10cfmain{
     font-size: 1em;
-    min-width: 75%;
-    max-width: 75%;
+    line-height: 24px;
+  }
+  .u10cfheader{
+    font-size: 1.3em;
+  }
+  .commentSubmit{
+    width: calc(80% - 20px);
+  }
+  .commentContentNow{
+    font-size: 0.8em;
+  }
+  .commentFrom{
+    font-size: 1em;
   }
 }

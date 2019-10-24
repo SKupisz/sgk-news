@@ -81,7 +81,7 @@ try {
 }
 ?>
 <!DOCTYPE html>
-<html lang = "pl">
+<html>
   <head>
     <meta charset="utf-8"/>
       <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
@@ -99,27 +99,27 @@ try {
     <?php
     if($connection == 0)
     {
-      ?><section id = "u10connectionfail">
+      ?><section class = "u10connectionfail">
         <header class = "u10cfheader">
           Ooops!...
         </header>
-        <main id = "u10cfmain">
+        <main class = "u10cfmain">
           Something went wrong. We cannot show this article right now. Try later.
         </main>
       </section><?php
     }
     else {
       ?>
-      <section id = "u10connection">
+      <section class = "u10connection">
         <header class = "u10cfheader">
           <?php
           echo $title;
           ?>
         </header>
-        <main id = "u10cfmain">
+        <main class = "u10cfmain">
           <?php echo $content;?>
         </main>
-        <aside id = "u10cv">
+        <aside class = "u10cv">
           <?php
             if($views == 1)
             {
