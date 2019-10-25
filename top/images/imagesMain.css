@@ -1,11 +1,11 @@
 @import "../../articles/uploadingSupport/imageUpload.css";
 .imageContainer{
-  width: 80%;
+  width: calc(80% - 20px);
   min-height: 100px;
-  background: #ccc;
   box-shadow: 5px 5px 10px #111;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
 }
 .anotherImageContainer{
   margin-top: 5px;
@@ -18,6 +18,8 @@
 .showingImage{
   max-width: 100%;
   height: auto;
+  max-height: 500px;
+  width: auto;
 }
 .imageCaption{
   font-size: 1.4em;
@@ -25,7 +27,7 @@
   margin-top: 3px;
   margin-bottom: 5px;
 }
-#like-image{
+.like-image{
   width: 30px;
   height: auto;
 }
@@ -37,4 +39,7 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+.imageLikes{
+  text-align: center;
 }

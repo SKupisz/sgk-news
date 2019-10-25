@@ -17,9 +17,10 @@ a{
 #u11article{
   width: 80%;
   height: 300px;
-  position: absolute; 
-  top: 12%;
-  left: 10%;
+  margin-bottom: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   transition: all 0.2s;
   cursor: pointer;
   transition-timing-function: ease-in-out;
@@ -120,6 +121,11 @@ a{
     text-align: center;
   }
 }
+@media screen and (max-width: 740px){
+  #u11article{
+    margin-bottom: 100px;
+  }
+}
 @media screen and (max-width: 557px)
 {
   #u11av{
@@ -127,6 +133,9 @@ a{
   }
   .choosingBtn{
     font-size: 1em;
+  }
+  #u11article{
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 460px){
@@ -149,5 +158,10 @@ a{
   }
   #u11av{
     font-size: 0.45em;
+  }
+}
+@media screen and (max-width: 380px){
+  #u11article{
+    margin-bottom: 30px;
   }
 }

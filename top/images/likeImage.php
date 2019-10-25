@@ -3,26 +3,19 @@ session_start();
 
 if(!isset($_SESSION['zalogowany']))
 {
-  header("Location: ../../top.php");
+  echo "Not signed";
   exit();
 }
-if(!isset($_GET['id']) || !isset($_POST['imageSumbitButton']))
-{
-  header("Location: ../../top.php");
-  exit();
-}
-function exitInstructions($type,$thisId){
-  $_SESSION['liking_image_feedback'] = $type;
-  $located = "Location: ../../top.php?watchingImage=".$thisId;
-  header($located);
+if(!isset($_REQUEST["id"])){
+  echo "Id missing";
   exit();
 }
 
-$id = $_GET['id'];
+$id = $_REQUEST['id'];
 $sid = (int)$id;
 if($sid != $id)
 {
-  header("Location: javascript://history.go(-1)");
+  echo "Wrong id";
   exit();
 }
 $checkin = 1;
@@ -40,28 +33,29 @@ try {
     $isItReal = $query->fetch_assoc();
     if(!$isItReal)
     {
-      header("Location: ../../top.php?watchingImage=".$id);
+      echo "Wrong id";
       exit();
     }
     else {
       $checkIfLiked = $polaczenie->query("SELECT * FROM sent_image_likes WHERE imageId = $id");
-      if($checkIfLiked->fetch_assoc())
+      if(!$checkIfLiked) throw new Exception($polaczenie->error);     
+      if($checkIfLiked->num_rows > 0)
       {
-        $userId = $_SESSION['zalogowany_id'];
-        $deleteLike = $polaczenie->query("DELETE FROM sent_image_likes WHERE imageId = $id AND userId = $userId");
+        $userId = $_SESSION['zalogowany'];
+        $deleteLike = $polaczenie->query("DELETE FROM sent_image_likes WHERE imageId = $id AND userId = '$userId'");
         if(!$deleteLike) throw new Exception($polaczenie->error);
         $add = $polaczenie->query("UPDATE sent_images_location SET likes = likes-1 WHERE id = $id");
         if(!$add) throw new Exception($polaczenie->error);
-        header("Location: ../../top.php?watchingImage=".$id);
+        echo "done lower";
         exit();
       }
       else {
-        $userId = $_SESSION['zalogowany_id'];
-        $insert = $polaczenie->query("INSERT INTO sent_image_likes VALUES(NULL,$id,$userId)");
+        $userId = $_SESSION['zalogowany'];
+        $insert = $polaczenie->query("INSERT INTO sent_image_likes VALUES(NULL,$id,'$userId')");
         if(!$insert) throw new Exception($polaczenie->error);
         $add = $polaczenie->query("UPDATE sent_images_location SET likes = likes+1 WHERE id = $id");
         if(!$add) throw new Exception($polaczenie->error);
-        header("Location: ../../top.php?watchingImage=".$id);
+        echo "done upper";
         exit();
       }
     }
@@ -69,7 +63,8 @@ try {
 
 
 } catch (Exception $e) {
-  exitInstructions($e->getMessage(),$id);
+  echo "Connection failure";
+  exit();
 }
 
 ?>

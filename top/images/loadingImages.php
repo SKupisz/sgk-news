@@ -2,7 +2,6 @@
   for($i = 0; $i < $howManyImages; $i++)
   {
     $nowLocalization = substr($imagesAddress[$i],6,strlen($imagesAddress[$i]));
-    echo $nowLocalization;
     $name = substr($nowLocalization,15,strlen($nowLocalization)-19);
     $author = $imagesFrom[$i];
     $nowLikes = $imagesLikes[$i];
@@ -20,12 +19,10 @@
     </figure>
     <aside class = "imageAccesories">
       <div class = "imageLikes">
-        <form method = "post" action = "top/images/likeImage.php?id=<?php echo $nowId;?>">
-          <button class = "imageSumbitButton" type="submit" name = "imageSumbitButton">
-        <img src = "top/likes/like.png" alt = "like" id = "like-image"/>
+          <button class = "imageSumbitButton" type="submit" name = "imageSumbitButton" onclick = "sendImageLike(<?php echo $nowId; ?>)">
+        <img src = "top/likes/like.png" alt = "like" class = "like-image"/>
       </button>
-        <label class = "likesQuantity"><?php echo $nowLikes;?></label>
-        </form>
+        <label class = "likesQuantity" id = "quantity<?php echo $nowId;?>"><?php echo $nowLikes;?></label>
       </div>
     </aside>
     </section><?php

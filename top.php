@@ -103,7 +103,7 @@ if(isset($_GET['watchingImage']))
 
             ?>
 
-            <a id = "u11article" style = "position: absolute; top: <?php echo 12+(50*$i);?>%;" href = "showarticle.php?id=<?php echo $now_id;?>" target = "_blank">
+            <a id = "u11article"  target = "_blank">
             <div class="lining">
                  <h1 id = "u11at"><?php echo $now_title;?></h1>
              <h2 id = "u11aofa"><?php echo $now_from;?></h2>
@@ -164,28 +164,14 @@ if(isset($_GET['watchingImage']))
     </section>
     </section>
     <section class = "u12">
+      <section class = "u12wrapper">
       <?php require_once "top/images/loadingImages.php"; ?>
+      </section>
     </section>
   </main>
 </body>
-<?php
-  if(isset($_GET['watchingImage']))
-  {
-    ?>
-    <script>
-    document.querySelector(".u11").style.display = "none";
-    document.querySelector(".u12").style.display = "block";
-    document.querySelector("#u10bar").style.display = "none";
-    document.querySelector("#u10filtersbar").style.display = "none";
-    document.querySelector("#u10sortAdvance").style.display = "none";
-    document.querySelector("#u10nameAdvance").style.display = "none";
-    document.querySelector("#u10tagsAdvance").style.display = "none";
-    document.querySelector("#u10wordsAdvance").style.display = "none";
-    document.querySelector("#imageId<?php echo $_GET['watchingImage'];?>").scrollIntoView();
-    </script><?php
-  }
-?>
 <script src = "main/main.js"></script>
-<script src = "jquery-3-2-1.js"></script>
+<script src="./src/node_modules/push.js/bin/push.min.js"></script>
+<script src = "./top/options.js"></script>
 <script src = "top/main.js"></script>
 </html>

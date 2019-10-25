@@ -147,8 +147,8 @@ function clickedCheckbox(nameofCheckBox){
 document.querySelector("#images").addEventListener("click",function(){
   document.querySelector(".u11").style.display = "none";
   document.querySelector(".u12").style.display = "block";
-  document.querySelector(".u10bar").style.display = "none";
-  document.querySelector(".u10filtersbar").style.display = "none";
+  document.querySelector("#u10bar").style.display = "none";
+  document.querySelector("#u10filtersbar").style.display = "none";
   document.querySelector(".u10sortAdvance").style.display = "none";
   document.querySelector(".u10nameAdvance").style.display = "none";
   document.querySelector(".u10tagsAdvance").style.display = "none";

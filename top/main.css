@@ -65,12 +65,13 @@ html{
 .u11,.u12{
   width: 100%;
   height: 120%;
-  position: absolute; top: 20%; left: 0%;
   z-index: 3;
+}
+.u11list,.u12wrapper{
+  margin-top: 71px;
 }
 .u12{
   display: none;
-  top: 13%;
 }
 @media screen and (max-width: 786px){
   #u10bar,#u10filtersbar{
