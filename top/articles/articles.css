@@ -25,9 +25,6 @@ a{
   cursor: pointer;
   transition-timing-function: ease-in-out;
 }
-#u11article:hover{
-
-}
 #u11aofa,#u11aofae{
   font-size: 18px;
   font-family: Verdana;
@@ -71,8 +68,6 @@ a{
   position: relative;
   width: 100%;
   top: 77%;
-}
-#u11tags{
 }
 .error{
   text-align: center;

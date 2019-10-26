@@ -1,6 +1,7 @@
 function failedComment(Title,bodyContent){
   Push.create(Title,{
-    body: bodyContent
+    body: bodyContent,
+    icon: "./main/logo.png"
   });
 }
 function sendImageLike(imageId){
@@ -11,7 +12,6 @@ function sendImageLike(imageId){
       let anwser = this.response;
       if(anwser == "Not signed"){;
         if(Push.Permission.has() == false){
-          console.log("Niet")
           Push.Permission.request(() => {failedComment("Liking error","You must be signed in for be able to like this picture")},() => {});
         }
         else{
@@ -19,7 +19,6 @@ function sendImageLike(imageId){
         }
       }
       else if(anwser == "Connection failure"){
-        console.log("Poszło w pizdu");
         if(Push.Permission.has() == false){
           Push.Permission.request(() => {failedComment("Connection error","Sorry,something went wrong. Try later")},() => {});
         }
