@@ -128,18 +128,13 @@ try {
             else {
               echo $views;?> views<?php
             }
-            if(isset($_SESSION['zalogowany']))
-            {
               ?><br>
 
-              <a href = "top/likes/like.php?aid=<?php echo $id;?>">
-                <button id = "u10rl">
+                <button id = "u10rl" onclick = "sentArticleLike(<?php echo $id; ?>)">
                 </button>
-              </a>
-              <div class = "u10lq">
+              <div class = "u10lq" id = "likes-container<?php echo $id;?>">
                 <?php echo $likes;?>
-              </div><?php
-            }?>
+              </div>
             <div class = "u10tq">
               <?php if(strlen($tags) == 0){
                 ?>No tags<?php
@@ -191,22 +186,8 @@ try {
   }?>
   </main>
 </body>
-<?php if(isset($_SESSION['liking'])|| isset($_SESSION['comment_done'])) {
-  ?><script>window.scrollTo(0,document.querySelector("#u10cfmain").scrollHeight);</script><?php
-  unset($_SESSION['liking']);
-  unset($_SESSION['comment_done']);
-}?>
-<script src = "main/jsLibrarys/push.js"></script>
+<script src="./src/node_modules/push.js/bin/push.min.js"></script>
 <script src = "main/main.js"></script>
 <script src = "jquery-3-2-1.js"></script>
 <script src = "top/options.js"></script>
-<script>
-document.querySelector(".showingComments").top = window.innerHeight;
-</script>
-<?php
-if(isset($_SESSION['commentError']))
-{
-  ?><script>failedComment();</script><?php
-  unset($_SESSION['commentError']);
-}?>
 </html>

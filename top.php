@@ -103,7 +103,7 @@ if(isset($_GET['watchingImage']))
 
             ?>
 
-            <a id = "u11article"  target = "_blank">
+            <a id = "u11article" href = "./showarticle.php?id=<?php echo $now_id;?>" target = "_blank">
             <div class="lining">
                  <h1 id = "u11at"><?php echo $now_title;?></h1>
              <h2 id = "u11aofa"><?php echo $now_from;?></h2>
