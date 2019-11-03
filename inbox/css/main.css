@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url("./mailbox.css");
+body{
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.apologising{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4em;
+  font-family: 'Lato',sans-serif;
+  width: 100%;
+  text-align: center;
+}
+.u9e{
+  width: calc(100% - 20px);
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Oswald',sans-serif;
+}
+.u10el{
+  width: calc(90% - 10px);
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 60px;
+}
+.notLoggedIn{
+  background-color: #ccc;
+  border: 1px solid black;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 3px;
+  display: block;
+  font-family: 'Lato',sans-serif;
+  margin-bottom: 5px;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: filter 0.4s;
+}
+a[class="defaultLink notLoggedIn"]:hover{
+  filter: brightness(70%);
+}
+.u9t{
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 2.3em;
+  font-family: 'Oswald',sans-serif;
+  text-align: center;
+}
+.sectionRunners{
+  width: calc(90% - 10px);
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.sectionButton{
+  width: calc(100% - 20px);
+  font-size: 1.5em;
+  font-family: 'Lato',sans-serif;
+  padding: 10px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: filter 0.4s;
+}
+.sectionRunners > button:hover{
+  filter: brightness(70%);
+}
+.sectionRunners > button:focus{
+  outline: none;
+}
+.action-block{
+  width: calc(90% - 20px);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  transition: all 0.4s;
+}
+.box,.writing,.blacklist{
+  display: none;
+}
+@media screen and (max-width: 425px){
+  .notLoggedIn{
+    width: 40%;
+  }
+}

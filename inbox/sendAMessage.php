@@ -2,12 +2,12 @@
 session_start();
 if(!isset($_SESSION['zalogowany']))
 {
-  header("Location: index.php");
+  header("Location: ../index.php");
   exit();
 }
 if(!isset($_POST['u9mr']) || !isset($_POST['u9mc']) || !isset($_POST['u9mt']))
 {
-  header("Location: inbox.php");
+  header("Location: ../inbox.php");
   exit();
 }
 function exitInstructions($ename,$econtent,$name,$content,$title){
@@ -15,7 +15,7 @@ function exitInstructions($ename,$econtent,$name,$content,$title){
   $_SESSION['e_reciver'] = $name;
   $_SESSION['e_content'] = $content;
   $_SESSION['e_title'] = $title;
-  header("Location: inbox.php");
+  header("Location: ../inbox.php");
   exit();
 }
 $name = $_POST['u9mr'];
@@ -26,7 +26,7 @@ $name = htmlentities($name,ENT_QUOTES,"UTF-8");
 $content = htmlentities($content,ENT_QUOTES,"UTF-8");
 $title = htmlentities($title,ENT_QUOTES,"UTF-8");
 $checkin = 1;
-require_once"main/connect.php";
+require_once "../main/connect.php";
 try {
   $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
   if($polaczenie->connect_errno != 0){
@@ -59,7 +59,7 @@ try {
       $bl1 = $name."_blacklist";
       $bl2 = $_SESSION['zalogowany']."_blacklist";
       $user = $_SESSION['zalogowany'];
-      require_once "inbox/encrypt.php";
+      require_once "./encrypt.php";
       $rezultat = $polaczenie->query("SELECT * FROM $bl1 WHERE username = '$user'");
       if(!$rezultat) throw new Exception($polaczenie->error);
       $rezultat2 = $polaczenie->query("SELECT * FROM $bl2 WHERE username = '$name'");
@@ -81,13 +81,13 @@ try {
       $rezultat = $polaczenie->query("INSERT INTO $post VALUES(NULL,'$user','$title','$content',0)");
       if(!$rezultat) throw new Exception($polaczenie->error);
       $_SESSION['e_mailing'] = "The message has been sent";
-      header("Location: inbox.php");
+      header("Location: ../inbox.php");
       exit();
     }
   }
 } catch (Exception $e) {
   $_SESSION['e_mailing'] = "You cannot connect right now. Try later";
-  header("Location: inbox.php");
+  header("Location: ../inbox.php");
   exit();
 }
 

@@ -190,4 +190,5 @@ try {
 <script src = "main/main.js"></script>
 <script src = "jquery-3-2-1.js"></script>
 <script src = "top/options.js"></script>
+<!-- TODO: zrób errory komentarzy i będzie git -->
 </html>
