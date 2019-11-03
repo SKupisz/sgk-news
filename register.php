@@ -14,11 +14,10 @@ session_start();
   <title> SGK-news </title>
 </head>
 <body>
-    <center>
   <?php require_once "main/bar.php";?>
 <section id = "umain">
   <section id = "u10t"><?php if(isset($_SESSION['zalogowany'])){
-    ?>Jesteś zalogowany!<?php
+    ?>You are signed in!<?php
   }
   else if(isset($_SESSION['r_error']))
   {
@@ -26,7 +25,7 @@ session_start();
     unset($_SESSION['r_error']);
   }
   else {
-    ?><h2>Rejestracja</h2><?php
+    ?><h2>Sign up</h2><?php
   }?></section>
   <?php if(isset($_SESSION['zalogowany'])){
   }
@@ -35,16 +34,16 @@ session_start();
 
   <form method="post" action = "go.php">
   <section id = "u11b">
-    <section class="input"><input type = "text" name = "u11n" id = "u11ni" required placeholder = "Nazwa użytkownika"/></section>
-    <section class="input"><input type = "password" name = "u11p" id = "u11pi" required placeholder = "Hasło"/></section>
-    <section class="input"><input type = "password" name = "u11pr" id = "u11pri" required placeholder = "Powtórz hasło"/></section>
-    <section class="input"><input type = "text" name = "u11e" id = "u11ei" required placeholder = "Adres E-mail"/></section>
+    <section class="input"><input type = "text" name = "u11n" id = "u11ni" required placeholder = "Username"/></section>
+    <section class="input"><input type = "password" name = "u11p" id = "u11pi" required placeholder = "Password"/></section>
+    <section class="input"><input type = "password" name = "u11pr" id = "u11pri" required placeholder = "Repeat password"/></section>
+    <section class="input"><input type = "text" name = "u11e" id = "u11ei" required placeholder = "E-mail address"/></section>
     <section id="news"><p>Newsletter<input type="checkbox" name = "u11nt" id = "u11nti"/></p></section>
     <section id = "agreements">
-          <p>Akceptuję
-        <a href = "regulations.php" class = "u11ntagg">regulacje SGK-news</a>
-          i
-              <a class = "u11ntagg" href = "privacy_politic.php">politykę prywatności</a>
+          <p>I accept
+        <a href = "regulations.php" class = "u11ntagg">the SGK-news regulations</a>
+          and
+              <a class = "u11ntagg" href = "privacy_politic.php">privacy politics</a>
           <input type="checkbox"></p>
     </section>
 
@@ -55,7 +54,6 @@ session_start();
 </form><?php } ?>
 </section>
         
-        </center>
 </body>
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>

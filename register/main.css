@@ -1,4 +1,8 @@
-
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 * {
     padding: 0;
     margin: 0;
@@ -57,129 +61,14 @@ a {
     color: #c71414;
 }
 
-/*@import url('https://fonts.googleapis.com/css?family=Lato');
-body{
-  background: #ddd;
-}
 
-#u10main{
-  color: white;
-  text-align: center;
-  font-family: Verdana;
-  font-size: 1.5em;
-}
-#u10t{
-  width: 100%;
-  background: url("../curls.png");
-  color: white;
-  text-align: center;
-  font-size: 2.5em;
-  font-family: 'Lato', sans-serif;
-  box-shadow: 0px 20px 100px #111 inset;
-}
-#u11b{
-  width: 100%;
-  background: url("../textured_paper.png");
-  color: #111;
-  font-size: 2em;
-  font-family: Arial;
-  text-align: center;
-  padding-top: 3px;
-  height: 80%;
-}
-
-
-#u11c{
-  width: 100%;
-  font-size: 200%;
-  font-family: Verdana;
-  color: white;
-  background: url("../dark-grey-terrazzo.png");
-  border: none;
-  border-radius: 5px;
-  transition: background 0.5s;
-  cursor: pointer;
-}
-#u11c:hover{
-  background: url("../curls.png");
-}
-#u11n{
-  margin-top: 5px;
-}
-#u11p,#u11pr,#u11e{
-  margin-top: 5px;
-}
-#u11ni,#u11pi,#u11pri,#u11ei{
-  width: 50%;
-  height: 30px;
-  border: 0px solid black;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px #555;
-}
-.u11ntagg{
-  color: #111;
-}
-input[type="checkbox"] {
-    background-color: #aaa;
-    cursor: pointer;
-    -webkit-appearance: none;
-    border: 1px solid #111;
-    outline: none;
-    border-radius: 10px;
-    transition: all 0.5s;
-}
-input:checked[type="checkbox"]
-{
-  background: #111;
-}
-input[type="checkbox"]::before
-{
-  content: '';
-  width: 20px;
-  height: 18px;
-  background: #111;
-  position: absolute;
-  border-radius: 20px;
-  transition: all 0.5s;
-}
-input:checked[type="checkbox"]::before{
-  margin-left: 20px;
-  background: #aaa;
-}
-#u11nti{
-  width: 40px;
-  height: 20px;
-  margin-left: 10px;
-  color: #1999ff;
-}
-@media screen and (max-width: 1024px)
-{
-  #u10t{
-    font-size: 2em;
+@media screen and (max-width: 929px){
+    input[type=text], input[type=password]{
+      width: 75%;
+    }
   }
-  #u11b{
-    height: 70%;
+@media screen and (max-width: 851px){
+  input[type=text], input[type=password]{
+    width: 60%;
   }
 }
-@media screen and (max-width: 700px)
-{
-  .respfont{
-    font-size: 0.8em;
-  }
-}
-@media screen and (max-width: 500px){
-  #u11ni,#u11pi,#u11pri,#u11ei{
-    width: 98%;
-  }
-  #u11nt{
-    font-size: 0.7em;
-  }
-  #u11nti{
-    transform: scale(0.9);
-    margin-top: 2px;
-  }
-  .respfont{
-    font-size: 0.5em;
-  }
-}
-*/

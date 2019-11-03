@@ -48,7 +48,7 @@ session_start();
 
 -->
 
-    <h1>O nas</h1>
+    <h1>About us</h1>
     <hr>
 <div class="right" id="text1" class="clearfix">
         <h2>

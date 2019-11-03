@@ -26,7 +26,7 @@ session_start();
       unset($_SESSION['r_error']);
     }
     else {
-    ?><h2>Zaloguj się</h2>
+    ?><h2>Sign in</h2>
     <?php } ?></section>
     <?php if(!isset($_SESSION['zalogowany']))
     {
@@ -39,15 +39,15 @@ session_start();
     <section class = "u10wrapper">
         
         
-    <section class="input"><p><input type="text" placeholder = "Nazwa użytkownika" name = "u10l" id = "u10li" required/></p></section>
+    <section class="input"><p><input type="text" placeholder = "Username" name = "u10l" id = "u10li" required/></p></section>
         
-    <section class="input"><p><input type="password" placeholder = "Hasło" name = "u10p" id = "u10pi" required/></p></section>
+    <section class="input"><p><input type="password" placeholder = "Password" name = "u10p" id = "u10pi" required/></p></section>
     
-        <section id = "u10fp"><p id="password"><a  href = "login/forgot.php">Zapomniałeś/aś hasła?</a></p></section>
+        <section id = "u10fp"><p id="password"><a  href = "login/forgot.php">Forgot the password?</a></p></section>
         
   </section>
       
-    <input type="submit" id = "u10sb" value="Zaloguj się"/>
+    <input type="submit" id = "u10sb" value="Sign in"/>
         
        
         
@@ -55,7 +55,6 @@ session_start();
 <?php }?>
 </section>
           
-           </center>
           
 </body>
 <script src = "main/jquery-3-2-1.js"></script>
