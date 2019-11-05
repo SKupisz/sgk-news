@@ -1,121 +1,59 @@
-@import url("statistic.css");
-@import url("./uploadingSupport/imageUpload.css");
-* {box-sizing: border-box;}
+@import url("statistic.css");    
+* {
+  margin: 0px;
+  padding: 0px;
+    }
 
-.onLoadCut {
-  overflow: hidden;
+body{
+    overflow-x: hidden;
 }
-
-@keyframes preloaderAnimation {
-  0%{
-    box-shadow: 10px 10px 10px #eee inset;
-  }
-  25%{
-    box-shadow: 10px -10px 10px #eee inset;
-  }
-  50%{
-    box-shadow: -10px -10px 10px #eee inset;
-  }
-  75%{
-    box-shadow: -10px 10px 10px #eee inset;
-  }
-  100%{
-    box-shadow: 10px 10px 10px #eee inset;
-  }
+    
+.umain{
+  margin-top: 67px;
 }
-#preloader {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
-    background-color: #000;
-    transition: top 500ms linear 500ms;
-}
-.ourLogo{
-  margin-left: auto;
-  margin-right: auto;
-  animation-name: preloaderAnimation;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  border-radius: 10%;
-}
-.ourLogo > img{
-  transform: scale(0.8);
-}
-@media screen and (max-width: 583px)
-{
-  .onLoadNot{
-    display: none;
-  }
-  .ourLogo{
-    width: 50%;
-    height: 50%;
-  }
-  .ourLogo > img{
-    display: none;
-  }
-}
-
 #u10bar{
-  width: 100%;
-  height: 10%;
-  position: absolute; top: 0px; left: 0px;
+  display: none;
 }
 #u10barContainer{
-  width: 100%;
-  height: 100%;
-  background: url("../dark-grey-terrazzo.png");
-  text-align: center;
-  color: white;
-  font-size: 250%;
-  font-family: sans-serif;
-  box-shadow: inset 4px 5px 5px #222;
+  display: none;
 }
 #u11titles{
   width: 100%;
-  height: 7%;
-  position: absolute; top: 10%; left: 0px;
-  background: #aaa;
+  height: 67px;
+  position: relative;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0px 6px 20px -5px rgba(140,0,0,0.6);
+  text-align: center;
 }
-#u11a,#u11s,#u11c,#u11w{
+#u11a,#u11s,#u11w{
   width: 30%;
   height: 100%;
-  color: black;
+  color: #333;
+    background-color: #fff;
   text-align: center;
-  transition: all 0.5s;
+  transition: background-color 0.5s;
   cursor: pointer;
-  font-size: 160%;
-  font-family: Verdana;
-  box-shadow: inset 1px 1px 3px 3px #677;
-  filter: brightness(100%);
-}
-#u11a:hover,#u11s:hover,#u11c:hover,#u11w:hover{
-  filter: brightness(10%);
-}
-#u11a{
-  position: absolute; top: 0px; left: 0px;
+  font-size: 25px;
+  font-family: 'Lato', sans-serif;
+    z-index: 1;   
+    display: inline-block;
 }
 #u11s{
-  width: 40%;
-  position: absolute; top: 0px; left: 30%;
+  width: 39%;
 }
-#u11c{
-  position: absolute; top: 0px; left: 50%;
-  display: none;
+#u11a:hover, #u11s:hover, #u11w:hover {
+  background-color: #eee;
 }
-#u11w{
-  position: absolute; top: 0px; left: 70%;
+
+
+.paddingtoptext {
+    padding-top: 8px;
 }
 #u11asection,#u11ssection,#u11csection{
   width: 100%;
   height: 73%;
   display: none;
-  position: absolute; top: 17%; left: 0px;
   transition: all 0.5s;
 }
 #u11atr{
@@ -133,18 +71,17 @@ background: #111;
 #u11anh{
   width: 100%;
   height: 100%;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../textured_paper.png");
-  color: white;
-  font-size: 200%;
+    padding-top: 20px;
+  font-size: 25px;
   text-align: center;
-  font-family: Verdana;
-  color: black;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+    
 }
 #u11wti,#u11wta,.u11wtga{
   text-align: center;
   font-size: 2em;
-  color: white;
+  color: black;
   font-family: monospace;
 }
 #u11wti{
@@ -154,16 +91,17 @@ background: #111;
 .u11wtadesc{
   width: 100%;
 }
-#u11wtai,.u11wtgai{
-  max-width: 60%;
-  min-width: 60%;
+.u11wtai,.u11wtgai{
+  max-width: calc(60% - 20px);
+  min-width: calc(60% - 20px);
   min-height: 150px;
   max-height: 150px;
   font-size: 50%;
+  padding: 10px;
   font-family: 'Lato',sans-serif;
 }
-#u11wtai{
-  background: #ddd;
+.u11wtai{
+  background: #fff;
   border-radius: 5px;
 }
 .u11wtgai{
@@ -178,32 +116,28 @@ background: #111;
   text-align: center;
 }
 #u11wsection{
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../tactile_noise.png");
   width: 100%;
   min-height: 87%;
   display: none;
-  position: absolute; top: 17%; left: 0px;
   transition: all 0.5s;
 }
 #u11was{
-  margin-top: 15px;
+  margin-top: 35px;
   width: 40%;
   height: 20%;
   margin-left: 30%;
   font-size: 1.7em;
-  font-family: Verdana;
-  border: none;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #333;
   border-radius: 5px;
-  background: #aaa;
+  background: #ccc;
   color: black;
   cursor: pointer;
-  transition: all 0.5s;
-  filter: brightness(100%);
   padding: 5px;
+  margin-bottom: 20px;
 }
 #u11was:hover{
-  filter: brightness(40%);
+  background-color: #fff;
 }
 #u11atrt{
   color: white;
@@ -300,30 +234,26 @@ background: #111;
   margin-bottom: 20px;
 }
 .u11wttag{
-  font-family: Arial;
-  font-size: 1em;
-  border: 1px solid #111;
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  border: 1px solid #333;
   border-radius: 5px;
-  background: #aaa;
+  background-color: #fff;
   color: #111;
+    padding: 9px 15px;
   cursor: pointer;
   margin-top: 5px;
-}
-#politicTag,#entertaimentTag,#scienceTag,#otherTag,#literatureTag{
-  transition: all 0.5s;
 }
 #politicTag:hover,
 #entertaimentTag:hover,
 #scienceTag:hover,
-#otherTag:hover,#literatureTag:hover{
-  filter: brightness(70%);
+#otherTag:hover,
+#literatureTag:hover{
+  background-color: #ddd;
 }
 .tagSigned{
-  background: #888;
+  background-color: #ddd;
   color: #000;
-  transform: scale(1.03);
-  outline-color: #111;
-  filter: brightness(160%);
 }
 .changeContainer{
   display: inline-block;
@@ -334,26 +264,58 @@ background: #111;
   margin-bottom: 10px;
 }
 .bar1,.bar2{
-  font-size: 1em;
+  font-size: 20px;
   color: black;
-  font-family: Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
   display: inline-block;
-  padding: 10px;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../textured_paper.png");
-  margin-right: 10px;
+  padding: 10px 15px;
+    border: 1px solid #333;
   border-radius: 5px;
-  margin-top: 3px;
+    margin: 30px 8px 10px 8px;
 }
 .now{
-  filter: brightness(70%);
+  background-color: #eee;
 }
+
+.articletitle ,.postHeader{
+    font-size: 30px;
+  font-family: "Lato", sans-serif;
+    margin-bottom: 5px;
+}
+.postHeader{
+  text-align: center;
+}
+
 .titleInput{
-  border: none;
-  background: rgba(255,255,255,.9);
+  border: 1px solid #333;
   border-radius: 5px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-family: 'Lato',sans-serif;
+  margin-bottom: 30px;
+}
+.forUploadBtn,.uploadSubmitButton{
+  padding: 5px;
+  font-size: 1em;
+  font-family: 'Oswald',sans-serif;
+  background: #ddd;
+  border-radius: 5px;
+  border: 1px solid #111;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  min-width: calc(10% - 10px);
+  cursor: pointer;
+  transition: filter 0.4s;
+}
+.forUploadBtn{
+  margin-bottom: 15px;
+}
+.uploadSubmitButton{
+  min-width: calc(30% - 20px);
+  padding: 10px;
+}
+button[class="forUploadBtn"]:hover{
+  filter: brightness(70%);
 }
 .imageUpload{
   display: none;
@@ -367,16 +329,30 @@ background: #111;
     display: none;
   }
 }
+@media screen and (max-width: 810px){
+  #u11a, #u11s, #u11w{
+    display:block;
+    width: 100%;
+    height:50px;
+    border:1px solid #eee;
+  }
+  #u11asection{
+    margin-top: 80px;
+  }
+}
 @media screen and (max-width: 768px){
+    
+    * {
+  margin: 0px;
+  padding: 0px;
+    }
+    
   .titleInput{
     font-size: 0.5em;
   }
-  #u11wtai{
-    min-width: 80%;
-    max-width: 80%;
-  }
-  #u11a,#u11w{
-    font-size: 0.9em;
+  .u11wtai{
+    min-width: calc(80% - 20px);
+    max-width: calc(80% - 20px);
   }
   #u11atrt{
     font-size: 0.9em;
@@ -386,12 +362,13 @@ background: #111;
   }
   #u11was{
     font-size: 1em;
+    margin-bottom: 30px;
   }
   #u11atrcas,#u11atrcr,.u11delArtSumbit{
     font-size: 0.9em;
   }
   .u11wttag{
-    font-size: 0.7em;
+    font-size: 0.5em;
   }
   .nonResponsive{
     display: none;
@@ -404,6 +381,25 @@ background: #111;
   .onResponsiveIcon{
     height: 30px;
     width: auto;
+  }
+}
+@media screen and (max-width: 583px)
+{
+    
+    * {
+  margin: 0px;
+  padding: 0px;
+    }
+    
+  .onLoadNot{
+    display: none;
+  }
+  .ourLogo{
+    width: 50%;
+    height: 50%;
+  }
+  .ourLogo > img{
+    display: none;
   }
 }
 @media screen and (max-width: 550px)
@@ -426,7 +422,10 @@ background: #111;
     height: 100%;
   }
   #u11was{
-    font-size: 0.5em;
+    width: calc(70% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
   #u11atrmo{
     display: block;

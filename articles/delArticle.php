@@ -31,6 +31,7 @@ try {
     if(!$query) throw new Exception($polaczenie->error);
     if($query->num_rows == 0)
     {
+      $_SESSION['deletingError'] = "Something went wrong. Try later";
       header("Location: ../articles.php");
       exit();
     }
@@ -38,6 +39,7 @@ try {
 
       $query = $polaczenie->query("DELETE FROM $user WHERE id = $sid");
       if(!$query) throw new Exception($polaczenie->error);
+      $_SESSION['deletingError'] = "Your article has been deleted";
       header("Location: ../articles.php");
       exit();
     }

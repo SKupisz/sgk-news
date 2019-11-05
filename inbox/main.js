@@ -1,6 +1,6 @@
 document.querySelector(".box").style.display = "none";
 document.querySelector(".writing").style.display = "none";
-document.querySelector(".blacklist").style.display = "block";
+document.querySelector(".blacklist").style.display = "none";
 document.querySelector(".userList").style.display = "none";
 document.querySelector(".blockingForm").style.display = "none";
 document.querySelector(".goCheckTheBox").addEventListener("click",function(){

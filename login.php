@@ -22,7 +22,7 @@ session_start();
     }
     else if(isset($_SESSION['r_error']))
     {
-      echo $_SESSION['r_error'];
+      ?><header class = "signed-header"><?php echo $_SESSION['r_error'];?></header><?php
       unset($_SESSION['r_error']);
     }
     else {

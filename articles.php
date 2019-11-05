@@ -8,15 +8,6 @@ if(!isset($_SESSION['zalogowany']))
 $checkin = 1;
 require_once "articles/sid.php";
 require_once "articles/loadData.php";
-if(isset($_SESSION['uploadImageFail']))
-{
-  ?>
-  <script>  var changeMode = 1;</script><?php
-}
-else {
-  ?>
-  <script>  var changeMode = 0;</script><?php
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,36 +21,9 @@ else {
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
   </head>
-  <body onload = "preloader();" class = "onLoadCut">
-    <?php if(isset($_SESSION['uploadImageFail']) || isset($_SESSION['e_art']) || isset($_SESSION['deletingError']))
-    {
-      ?><div class = "errorInformation">
-        <header class = "errorInformationHeader">Articles Information<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
-        <main class = "errorInformationContent">
-          <?php if(isset($_SESSION['uploadImageFail']))
-          {
-            echo $_SESSION['uploadImageFail'];
-          }
-          else if(isset($_SESSION['e_art']))
-          {
-            echo $_SESSION['e_art'];
-            unset($_SESSION['e_art']);
-          }
-          else if(isset($_SESSION['deletingError']))
-          {
-            echo $_SESSION['deletingError'];
-            unset($_SESSION['deletingError']);
-          }?>
-        </main>
-      </div><?php
-    } ?>
-      <section id = "preloader" progressbar>
-        <figure class = "ourLogo">
-          <img src = "./main/logo.png" alt = "logo"/>
-        </figure>
-      </section>
+  <body>
     <?php require_once "main/bar.php";?>
-    <main id = "umain">
+    <main class = "umain">
       <section class = "more-other-wrapper">
       <?php
       if($work == 0)
@@ -86,10 +50,9 @@ else {
       </div>
       </header>
       <section id = "u11titles">
-        <div id = "u11a" onclick = "beingWrittenOpen();">Waiting room</div>
-        <div id = "u11s" onclick = "sentOpen();">Sent</div>
-        <div id = "u11c" onclick = "confirmedOpen();">Confirmed</div>
-        <div id = "u11w" onclick = "writingOpen();">Write<label class = "u11wasr"> an article</label></div>
+          <div id = "u11a" onclick = "beingWrittenOpen();"><p class="paddingtoptext">Waiting room</p></div>
+        <div id = "u11s" onclick = "sentOpen();"><p class="paddingtoptext">Sent</p></div>
+          <div id = "u11w" onclick = "writingOpen();"><p class="paddingtoptext">Write<label class = "u11wasr"> an article</label></p></div>
       </section>
       <section id = "u11projects">
         <section id = "u11asection" <?php if(isset($_SESSION['uploadImageFail'])) echo "style='display: none;'";?>>
@@ -107,12 +70,12 @@ else {
           </div>
           <form method = "post" action = "articles/sendAnArticle.php" class = "sendingArticle">
 
-            <section id = "u11wti">Title <input type = "text" name = "u11wti" class = "titleInput" required value = "<?php if($sid != -1){
+            <section id = "u11wti"><p class="articletitle">Title </p><input type = "text" name = "u11wti" class = "titleInput" required value = "<?php if($sid != -1){
               echo $sidname;
             }?>"/></section>
             <section id = "u11wta">
-              <div class = "u11wtadesc">Article content</div>
-              <textarea id = "u11wtai" name = "u11wtai" placeholder="Write here..." required><?php if($sid != -1){  echo $sidcontent;}?></textarea>
+                <div class = "u11wtadesc"><p class="articletitle">Article content</p></div>
+              <textarea class = "u11wtai" name = "u11wtai" placeholder="Write here..." required><?php if($sid != -1){  echo $sidcontent;}?></textarea>
             </section>
             <section class = "u11wtga">
               <div class = "u11wtadesc">Tags(optional)</div>
@@ -162,25 +125,39 @@ else {
     </main>
 
   </body>
-  <script>
-  <?php if(isset($_SESSION['e_artc']))
-  {
-    ?>beingWrittenOpen();<?php
-    unset($_SESSION['e_artc']);
-  }
-  if($sid != -1)
-  {
-    ?>writingOpen();<?php
-  }
-  if(isset($_SESSION['uploadImageFail']))
-  {
-    unset($_SESSION['uploadImageFail']);
-  }
-?>
-
-  </script>
+  <script src="./src/node_modules/push.js/bin/push.min.js"></script>
   <script src = "main/jquery-3-2-1.js"></script>
   <script src = "main/main.js"></script>
   <script src = "articles/main.js"></script>
+  <script>
+    <?php if(isset($_SESSION['uploadImageFail']) || isset($_SESSION['e_art']) || isset($_SESSION['deletingError']))
+    {
+      ?>
+      openTheAlert("Articles Information","<?php
+      if(isset($_SESSION['uploadImageFail'])){
+        echo $_SESSION['uploadImageFail'];
+        unset($_SESSION['uploadImageFail']);
+      }
+      else if(isset($_SESSION["e_art"])){
+        echo $_SESSION["e_art"];
+        unset($_SESSION['e_art']);
+      }
+      else if(isset($_SESSION["deletingError"])){
+        echo $_SESSION["deletingError"];
+        unset($_SESSION["deletingError"]);
+      }
+      ?>");<?php
+    }
+    if(isset($_SESSION['e_artc']))
+    {
+      ?>beingWrittenOpen();<?php
+      unset($_SESSION['e_artc']);
+    }
+    if($sid != -1)
+    {
+      ?>writingOpen();<?php
+    }
+  ?> 
 
+  </script>
 </html>

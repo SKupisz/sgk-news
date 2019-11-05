@@ -1,3 +1,5 @@
+<link rel = "stylesheet" type = "text/css" href = "articles/main.css"/>
+
 <?php
 if($bwlength > 0)
 {
