@@ -2,18 +2,18 @@
 session_start();
 if(!isset($_SESSION['zalogowany']))
 {
-  header("Location: ../index.php");
+  header("Location: index.php");
   exit();
 }
 if(!isset($_GET['nmb']))
 {
-  header("Location: ../inbox.php");
+  header("Location: inbox.php");
   exit();
 }
 $alfa = $_GET['nmb'];
 if(strlen($alfa) == 0)
 {
-  header("Location: ../inbox.php");
+  header("Location: ./inbox.php");
   exit();
 }
 for($i = 0; $i < strlen($alfa); $i++)
@@ -21,7 +21,7 @@ for($i = 0; $i < strlen($alfa); $i++)
   if($alfa[$i] >'9' || $alfa[$i] < '0')
   {
     $_SESSION['e_post'] = "Incorrect data";
-    header("Location: ../inbox.php");
+    header("Location: ./inbox.php");
     exit();
     break;
   }
@@ -29,7 +29,7 @@ for($i = 0; $i < strlen($alfa); $i++)
 $final = (int)$alfa;
 $checkin = 1;
 $connect = 1;
-require_once "../main/connect.php";
+require_once "./main/connect.php";
 try {
   $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
   if($polaczenie->connect_errno != 0)
@@ -53,7 +53,7 @@ try {
       $content = $row['message'];
       $title = $row['title'];
       mysqli_close($polaczenie);
-      require_once "encrypt.php";
+      require_once "./inbox/encrypt.php";
       $en = new Encrypt;
       $content = $en->goBack($content);
     }
@@ -66,40 +66,37 @@ try {
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta charset="utf-8"/>
   <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
-  <link rel = "stylesheet" type="text/css" href = "messageLayout.css"/>
-  <link rel="shortcut icon" type = "image/ico" href = "../main/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
+  <link rel="stylesheet" type="text/css" href = "inbox/css/messageLayout.css"/>
+  <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
   <title> SGK-news </title>
 </head>
 <body>
-<main id = "umain">
+<?php require_once "./main/bar.php" ?>
+<main class = "umain">
   <?php if($connect == 1)
   {
-    ?>  <header id = "u9h">
+    ?>  <header class = "welcome-header">
         Message
       </header>
-      <section id = "u10f">
+      <section class = "from-header">
         From: <?php echo $from;?>
       </section>
-      <section id = "u10t">
-        <?php echo $title;?>
+      <section class = "title-header">
+        Title: <?php echo $title;?>
       </section>
-      <section id = "u11m">
+      <section class = "message-content">
         <?php echo $content;?>
 
-      </section>
-      <section id = "u12l">
-        <a href = "../inbox.php" id = "u12lg"><label class = "resp">Go </label>back</a>
-        <a href = "../index.php" id = "u12li"><img src = "../main/logo.png" alt = "Main site" id = "u12liimg"/></a>
-        <a href = "../topArticles.php" id = "u12la">Top articles</a>
-        <a href = "../profile.php" id = "u12lp">Profile</a>
       </section>
 <?php
   }
   else {
-    ?><section id = "u9e">
+    ?><section class = "error-section">
       Sorry, you cannot connect right now. Try later
     </section><?php
   }?>

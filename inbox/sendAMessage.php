@@ -5,7 +5,7 @@ if(!isset($_SESSION['zalogowany']))
   header("Location: ../index.php");
   exit();
 }
-if(!isset($_POST['u9mr']) || !isset($_POST['u9mc']) || !isset($_POST['u9mt']))
+if(!isset($_POST['receiver']) || !isset($_POST['content']) || !isset($_POST['topic']))
 {
   header("Location: ../inbox.php");
   exit();
@@ -18,9 +18,9 @@ function exitInstructions($ename,$econtent,$name,$content,$title){
   header("Location: ../inbox.php");
   exit();
 }
-$name = $_POST['u9mr'];
-$content = $_POST['u9mc'];
-$title = $_POST['u9mt'];
+$name = $_POST['receiver'];
+$content = $_POST['content'];
+$title = $_POST['topic'];
 
 $name = htmlentities($name,ENT_QUOTES,"UTF-8");
 $content = htmlentities($content,ENT_QUOTES,"UTF-8");

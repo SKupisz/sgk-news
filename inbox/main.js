@@ -55,3 +55,19 @@ document.querySelector(".block").addEventListener("click",function(){
     document.querySelector(".blockingForm").style.display = "none";
   }
 });
+
+
+function failedComment(Title,bodyContent){
+  Push.create(Title,{
+    body: bodyContent,
+    icon: "./main/logo.png"
+  });
+}
+function mailingInfo(Title,Body){
+  if(Push.Permission.has() == false){
+    Push.Permission.request(() => {failedComment(Title,Body)},() => {});
+  }
+  else{
+    failedComment(Title,Body);
+  }
+}

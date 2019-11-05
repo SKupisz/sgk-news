@@ -18,7 +18,9 @@ function sentOpen(){
   document.getElementById("u11asection").style.display = "none";
   document.getElementById("u11wsection").style.display = "none";
 }
+
 beingWrittenOpen();
+
 function goWriting(id){
   window.location.assign("articles.php?sid="+id);
 }

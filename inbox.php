@@ -46,12 +46,8 @@ else {
   else {
     ?>
     <header class = "u9t">
-      <?php if(isset($_SESSION['e_mailing']))
-      {
-        echo $_SESSION['e_mailing'];
-
-      }
-      else if(isset($_SESSION['e_post']))
+      <?php 
+      if(isset($_SESSION['e_post']))
       {
         echo $_SESSION['e_post'];
       }
@@ -133,10 +129,10 @@ else {
           <input type = "text" name = "receiver" class = "email-input"/>
         </div>
         <div class = "writing-Item topic">
-          <div class = "writingInput-desc">Topic:  </div>
-          <input type = "text" name = "topic" class = "email-input"/>
+          <div class = "writingInput-desc" <?php if(isset($_SESSION["e_receiver"])){?>value = "<?php echo $_SESSION['e_receiver'];?>" <?php }?>>Topic:  </div>
+          <input type = "text" name = "topic" class = "email-input" <?php if(isset($_SESSION["e_title"])){?>value = "<?php echo $_SESSION['e_title'];?>" <?php }?>/>
         </div>
-        <textarea name = "content" class = "email-mainContent"></textarea>
+        <textarea name = "content" class = "email-mainContent"><?php if(isset($_SESSION["e_receiver"])){?><?php echo $_SESSION['e_content'];?><?php }?></textarea>
         <button class = "confirm-button" type = "submit">Send</button>
       </form>
     </section>
@@ -197,7 +193,18 @@ else {
 
 </main>
 </body>
+<script src="./src/node_modules/push.js/bin/push.min.js"></script>
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>
 <script src="inbox/main.js"></script>
+<script>
+  <?php if(isset($_SESSION["e_mailing"])){
+    ?>
+    mailingInfo("Mailing","<?php echo $_SESSION['e_mailing'];?>");
+    <?php
+    unset($_SESSION["e_receiver"]);
+    unset($_SESSION["e_topic"]);
+    unset($_SESSION["e_content"]);
+  }?>
+</script>
 </html>

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+}
+.umain{
+  margin-top: 67px;
+  width: 100%;
+}
+.welcome-header{
+  font-size: 2.4em;
+  font-family: 'Oswald',sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.from-header,.title-header{
+  display: inline-block;
+  width: 49%;
+  font-size: 1.6em;
+  font-family: 'Oswald',sans-serif;
+  text-align: center;
+  margin-bottom: 17px;
+}
+.message-content{
+  width: calc(90% - 20px);
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 1.3em;
+  font-family: 'Lato',sans-serif;
+  border: 2px solid #eee;
+  border-radius: 5px;
+}
+@media screen and (max-width: 558px){
+  .welcome-header{
+    font-size: 2em;
+  }
+  .from-header,.title-header{
+    font-size: 1.4em;
+  }
+  .message-content{
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 430px){
+  .from-header,.title-header{
+    width: 100%;
+  }
+}
