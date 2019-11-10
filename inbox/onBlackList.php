@@ -5,12 +5,12 @@ if(!isset($_SESSION['zalogowany']))
   header("Location: ../index.php");
   exit();
 }
-if(!isset($_POST['u9cbl_wcn']))
+if(!isset($_POST['usernameToBlock']))
 {
   header("Location: ../inbox.php");
   exit();
 }
-$username = $_POST['u9cbl_wcn'];
+$username = $_POST['usernameToBlock'];
 if(ctype_alnum($username) == false)
 {
   $_SESSION['e_bladd'] = "User you wanna block does not exist";

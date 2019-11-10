@@ -1,0 +1,22 @@
+.unBlockingBtn,.unBlockingAllBtn{
+    height: 36px;
+    padding: 3px;
+    font-size: 16px;
+    font-family: 'Oswald',sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 2px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #bbb;
+    transition: filter 0.4s;
+}
+button[class="unBlockingBtn"]:hover,button[class="unBlockingAllBtn"]:hover{
+    filter: brightness(70%);
+}
+button[class="unBlockingBtn"]:focus,button[class="unBlockingAllBtn"]:focus{
+    outline: none;
+}

@@ -2,13 +2,37 @@
     font-size: 2em;
     font-family: 'Oswald',sans-serif;
 }
-.emails-desc,.email-row{
+.messagesPanel{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.messagesPanel-item{
+    font-size: 20px;
+    padding: 4px;
+    width: calc(33% - 8px);
+    display: inline-block;
+    font-family: 'Oswald',sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: filter 0.4s;
+}
+.messagesPanel > button:hover{
+    filter: brightness(120%);
+}
+.messagesPanel > button[disabled]:hover{
+    filter: brightness(100%);
+}
+.emails-desc,.email-row,.blacklist-desc{
     width: 100%;
     height: 40px;
     font-family: 'Oswald',sans-serif;
     border-bottom: 1px solid #bbb;
 }
-.emails-descItem,.email-rowItem{
+.emails-descItem,.email-rowItem,.blacklist-descItem{
     height: 40px;
     display: inline-block;
     text-align: center;
@@ -17,18 +41,21 @@
 .from{
     width: 20%;
 }
-.topic{
+.topic,.since{
     width: 60%;
 }
 .signAll{
     width: 10%;
     display: inline-block;
 }
+.blacklist-desc{
+    margin-top: 10px;
+}
 .checkbox-container{
     width: 100%;
     height: 100%;
 }
-input[id="main-checkbox"],input[class="subCheckbox"]{
+input[id="main-checkbox"],input[class="subCheckbox"],input[class="blockSubCheckbox"]{
     width: 20px;
     height: 20px;
     margin: 0;

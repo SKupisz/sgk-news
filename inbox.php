@@ -37,7 +37,7 @@ else {
       <a href = "register.php" class = "defaultLink notLoggedIn"><nav class = "u10elwrapper">Register</nav></a>
     </section><?php
   }
-  else if($connection == 0)
+  else if($isConnected == 0)
   {
     ?><section class = "u9e"><span class = "u9ec">Oops!...</span></section>
     <section class = "u10el">
@@ -50,11 +50,7 @@ else {
       if(isset($_SESSION['e_post']))
       {
         echo $_SESSION['e_post'];
-      }
-      else if(isset($_SESSION['e_bladd']))
-      {
-        echo $_SESSION['e_bladd'];
-        unset($_SESSION['e_bladd']);
+        unset($_SESSION["e_post"]);
       }
       else if(isset($_SESSION['delError']))
       {
@@ -82,7 +78,12 @@ else {
           ?><section class = "u9crnone">There is no messages for you</section><?php
         }
         else {
-          ?>      
+          ?>    
+              <section class = "messagesPanel">
+      <button class = "messagesPanel-item unreaded" disabled>Sign as unreaded</button>
+      <button class = "messagesPanel-item delete" disabled>Delete this message</button>
+      <button class = "messagesPanel-item blocker" disabled>Block the sender</button>
+    </section>  
           <nav class = "emails-desc">
           <div class = "emails-descItem from">
             From
@@ -143,31 +144,38 @@ else {
       </section>
       <section class = "blacklistMood-container userList">
       <?php
-      $lt = count($names);
-      if($lt == 0)
+      if($ifBlackRows == 0)
       {
         ?><section class = "u9cblnone">There is no user on your black list</section><?php
       }
       else {
-        if($lt <= 30)
+        ?><nav class = "blacklist-desc">
+        <div class = "blacklist-descItem from">
+          Username
+        </div>
+        <div class = "blacklist-descItem topic">
+          Blocked since
+        </div>
+        <div class = "blacklist-descItem signAll">
+          <button class = "unBlockingAllBtn" onClick = "clearTheBlocked()">Unblock all</button>
+        </div>
+      </nav><?php
+        if($blockedLength <= 30)
         {
-          for($i = 0 ; $i < $lt; $i++)
+          for($i = 0 ; $i < $blockedLength; $i++)
           {
-            $name = $names[$i];
-            $date = $dates[$i];
-            $numId = $ids[$i];
+            $name = $blockedNames[$i];
+            $date = $blockedDates[$i];
             ?>
-                    <div class = "email-row">
+                    <div class = "email-row" id = "u_<?php echo $name;?>">
           <div class = "email-rowItem from">
-            <?php echo $fr; ?>
+            <?php echo $name; ?>
           </div>
           <div class = "email-rowItem topic">
-            <?php echo $ti; ?>
+            <?php echo $date; ?>
           </div>
           <div class = "email-rowItem signAll">
-            <div class = "checkbox-container">
-             <input type = 'checkbox' id = "message<?php echo $ti; ?>" class = "subCheckbox"/>
-            </div>
+            <button class = "unBlockingBtn" onClick = "unblockTheUser('<?php echo $name;?>')">Unblock</button>
           </div>
         </div><?php
           }
@@ -178,7 +186,7 @@ else {
       <header class = "blocking-header">
         Blocking a user
       </header>
-      <form method = "post" action = "./inbox/sendAMessage.php">
+      <form method = "post" action = "./inbox/onBlackList.php">
         <div class = "blocking-Item receiver">
           <div class = "blockingItem-desc">Username:  </div>
           <input type = "text" name = "usernameToBlock" class = "blocking-input"/>
@@ -205,6 +213,13 @@ else {
     unset($_SESSION["e_receiver"]);
     unset($_SESSION["e_topic"]);
     unset($_SESSION["e_content"]);
+    unset($_SESSION["e_mailing"]);
+  }
+  if(isset($_SESSION["e_bladd"])){
+    ?>
+    mailingInfo("User blocking","<?php echo $_SESSION['e_bladd'];?>");
+    <?php
+    unset($_SESSION["e_bladd"]);
   }?>
 </script>
 </html>

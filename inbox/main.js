@@ -62,7 +62,7 @@ function failedComment(Title,bodyContent){
     body: bodyContent,
     icon: "./main/logo.png"
   });
-}
+};
 function mailingInfo(Title,Body){
   if(Push.Permission.has() == false){
     Push.Permission.request(() => {failedComment(Title,Body)},() => {});
@@ -70,4 +70,46 @@ function mailingInfo(Title,Body){
   else{
     failedComment(Title,Body);
   }
+};
+
+function unblockTheUser(userName){
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+      let response = this.response;
+      if(response == "User unblocked"){
+        mailingInfo("Blocking","User unblocked");
+        let row = document.querySelector("#u_"+userName);
+        let userList = document.querySelector(".userList");
+        userList.removeChild(row);
+        if(userList.childElementCount == 1){
+          userList.removeChild(document.querySelector(".blacklist-desc"));
+          userList.innerHTML = '<section class = "u9cblnone">There is no user on your black list</section>';
+        }
+      }
+      else{
+        mailingInfo("Blocking error",response);
+      }
+    }
+  }
+  xmlhttp.open("GET","./inbox/deleteFromBL.php?u="+userName,true);
+  xmlhttp.send();
+}
+
+function clearTheBlocked(){
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+      let response = this.response;
+      if(response == "cleared"){
+        mailingInfo("Blocking","All users unblocked");
+        document.querySelector(".userList").innerHTML = '<section class = "u9cblnone">There is no user on your black list</section>';
+      }
+      else{
+        mailingInfo("Blocking error",response);
+      }
+    }
+  }
+  xmlhttp.open("GET","./inbox/clearBlackList.php");
+  xmlhttp.send();
 }

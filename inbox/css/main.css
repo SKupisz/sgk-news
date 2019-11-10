@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 @import url("./mailbox.css");
+@import url("./blacklist.css");
 body{
   overflow-x: hidden;
   padding: 0;
