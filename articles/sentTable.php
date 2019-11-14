@@ -47,17 +47,16 @@ for($i = 0 ; $i < $slength; $i++)
   else {
     ?>u11atr2<?php
   }
-  ?>"
-  style = "position: absolute; top: <?php echo $i*7;?>%; left: 0px;">
+  ?>">
 <section id = "u11atrt">
   <?php echo $title1; ?>
   <label id = "u11atrtnext">
     <?php echo $title2; ?>
   </label>
 </section>
-<section id = "u11atrr" onclick = "seeStatistic('<?php echo $title;?>',<?php echo $swords[$i];?>,<?php echo $sviews[$i];?>,<?php echo $snumber[$i];?>)">
+<button id = "u11atrr" onclick = "seeStatistic('<?php echo $title;?>',<?php echo $swords[$i];?>,<?php echo $sviews[$i];?>,<?php echo $snumber[$i];?>)">
   See statistic
-</section>
+</button>
 </section><?php
 }
 }

@@ -58,9 +58,14 @@ body{
 }
 #u11atr{
   width: 100%;
-  height: 40px;
-  color: white;
-  padding: 10px;
+  height: 70px;
+  color: #000;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    margin: 20px 0px -15px 0px;
+}
+#u11atrt,.u11optionsContainer{
+  display: inline-block;
 }
 .u11atr1{
 background: #111;
@@ -140,31 +145,22 @@ background: #111;
   background-color: #fff;
 }
 #u11atrt{
-  color: white;
-  font-family: Arial;
-  font-size: 150%;
-  width: 50%;
+  color: #000;
+  font-family: "Lato", sans-serif;
+    padding-top: 18px;
+  font-size: 25px;
+  width: 60%;
   height: 100%;
+  padding-right: 10%;
   text-align: center;
-  background: #111;
-  position: absolute; top: 0px; left: 0px;
 }
-#u11atrr{
-  width: 40%;
-  height: 100%;
-  position: absolute; top: 0px; left: 50%;
-  border-radius: 5px;
-  /*Background pattern from: subttlepatterns.com*/
-  background: url("../pipes.png");
-  color: black;
-  text-align: center;
-  font-size: 1.4em;
-  cursor: pointer;
+#u11atrt,#u11atrcr,#u11atrca,.u11delArt{
+  display: inline-block;
 }
-#u11atrcr,#u11atrcas,.u11delArtSumbit{
-  width: 15%;
-  height: 98%;
-  position: absolute; top: 1%; left: 50%;
+#u11atrr,button[class="u11atrcrBtn"],#u11atrcas,.u11delArtSumbit{
+  width: 130px;
+  height: 68px;
+  display: inline-block;
   text-align: center;
   font-size: 1.5em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -178,20 +174,20 @@ background: #111;
   text-decoration: none;
   border: none;
 }
-#u11atrcr:hover,#u11atrcas:hover,.u11delArtSumbit:hover{
+#u11atrr{
+  width: 170px;
+}
+#u11atrr:hover,button[class="u11atrcrBtn"]:hover,#u11atrcas:hover,.u11delArtSumbit:hover{
   filter: invert(50%);
-}
-#u11atrcas{
-  left: 67%;
-}
-#u11atrcr{
-  padding-top: 5px;
 }
 .nonResponsive{
   display: block;
 }
 .onResponsive{
   display: none;
+}
+#u11atrt,#u11atrr{
+  display: inline-block;
 }
 .u11delArtSumbit{
   left: 84%;
@@ -220,9 +216,6 @@ background: #111;
   transition: all 0.5s;
   border-radius: 50px;
   display: none;
-}
-#u11atrca,#u11atrcr{
-  display: block;
 }
 #u11atrresp{
   display: none;

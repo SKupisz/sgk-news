@@ -98,25 +98,31 @@ else {
           </div>
         </nav><?php
           $lt = count($content);
-          for($i = 0 ; $i < $lt; $i++){
-            $fr = $from[$i];
-            $ti= $title[$i];
-            $idn = $id[$i];
-            ?>
-        <div class = "email-row">
-          <div class = "email-rowItem from">
-            <?php echo $fr; ?>
-          </div>
-          <div class = "email-rowItem topic">
-            <?php echo $ti; ?>
-          </div>
-          <div class = "email-rowItem signAll">
-            <div class = "checkbox-container">
-             <input type = 'checkbox' id = "message<?php echo $ti; ?>" class = "subCheckbox"/>
-            </div>
-          </div>
-        </div><?php
+          if($lt < 30){
+              for($i = 0 ; $i < $lt; $i++){
+                $fr = $from[$i];
+                $ti= $title[$i];
+                $idn = $id[$i];
+                ?>
+            <div class = "email-row">
+              <div class = "email-rowItem from">
+                <?php echo $fr; ?>
+              </div>
+              <div class = "email-rowItem topic">
+                <?php echo $ti; ?>
+              </div>
+              <div class = "email-rowItem signAll">
+                <div class = "checkbox-container">
+                <input type = 'checkbox' id = "message<?php echo $idn; ?>" class = "subCheckbox" onClick = "goEditThisMessage('message<?php echo $idn; ?>');"/>
+                </div>
+              </div>
+            </div><?php
+              }
           }
+          else{
+
+          }
+          
         }
           ?>
     </section>
@@ -137,64 +143,7 @@ else {
         <button class = "confirm-button" type = "submit">Send</button>
       </form>
     </section>
-    <section class = "action-block blacklist">
-      <section class = "choosing-mode">
-        <button class = "choosing-buttons list">Your list</button>
-        <button class = "choosing-buttons block">Block a user</button>
-      </section>
-      <section class = "blacklistMood-container userList">
-      <?php
-      if($ifBlackRows == 0)
-      {
-        ?><section class = "u9cblnone">There is no user on your black list</section><?php
-      }
-      else {
-        ?><nav class = "blacklist-desc">
-        <div class = "blacklist-descItem from">
-          Username
-        </div>
-        <div class = "blacklist-descItem topic">
-          Blocked since
-        </div>
-        <div class = "blacklist-descItem signAll">
-          <button class = "unBlockingAllBtn" onClick = "clearTheBlocked()">Unblock all</button>
-        </div>
-      </nav><?php
-        if($blockedLength <= 30)
-        {
-          for($i = 0 ; $i < $blockedLength; $i++)
-          {
-            $name = $blockedNames[$i];
-            $date = $blockedDates[$i];
-            ?>
-                    <div class = "email-row" id = "u_<?php echo $name;?>">
-          <div class = "email-rowItem from">
-            <?php echo $name; ?>
-          </div>
-          <div class = "email-rowItem topic">
-            <?php echo $date; ?>
-          </div>
-          <div class = "email-rowItem signAll">
-            <button class = "unBlockingBtn" onClick = "unblockTheUser('<?php echo $name;?>')">Unblock</button>
-          </div>
-        </div><?php
-          }
-        }
-      }?>
-      </section>
-      <section class = "blacklistMood-container blockingForm">
-      <header class = "blocking-header">
-        Blocking a user
-      </header>
-      <form method = "post" action = "./inbox/onBlackList.php">
-        <div class = "blocking-Item receiver">
-          <div class = "blockingItem-desc">Username:  </div>
-          <input type = "text" name = "usernameToBlock" class = "blocking-input"/>
-        </div>
-        <button class = "confirm-button" type = "submit">Block</button>
-      </form>
-      </section>
-    </section>
+    <?php require_once "./inbox/blackListIndex.php";?>
     <?php
   }
   ?>

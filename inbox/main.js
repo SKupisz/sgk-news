@@ -113,3 +113,51 @@ function clearTheBlocked(){
   xmlhttp.open("GET","./inbox/clearBlackList.php");
   xmlhttp.send();
 }
+
+
+localStorage.setItem("toEdit","");
+document.querySelector("#main-checkbox").addEventListener("click",function(){
+  if(document.querySelector("#main-checkbox").checked){
+    let data = document.getElementsByClassName("subCheckbox");
+    let finalStorage = "";
+    for(let i = 0 ; i < data.length; i++){
+      finalStorage+=data[i].id;
+      finalStorage+=";";
+    }
+    localStorage.toEdit = finalStorage;
+    for(let i = 0 ; i < data.length; i++){
+      data[i].checked = true;
+    }
+  }
+  else{
+    let data = document.getElementsByClassName("subCheckbox");
+    localStorage.toEdit = "";
+    for(let i = 0 ; i < data.length ;i++){
+      data[i].checked = false;
+    }
+    
+
+  }
+
+});
+
+function goEditThisMessage(name){
+  let id = document.querySelector("#"+name).id;
+  let forSearch = localStorage.toEdit.split(";");
+  let newStorage = "",flag = 0;
+  for(let i = 0 ; i < forSearch.length; i++){
+    if(forSearch[i] != id){
+      newStorage+=forSearch[i];
+        newStorage+=";";
+        if(i == forSearch.length-1 && flag == 0){
+        newStorage+=id;
+      }
+    }
+    else{
+      flag = 1;
+    } 
+  }
+  if(newStorage[0] == ";") {newStorage = newStorage.substring(1);}
+  if(newStorage[newStorage.length - 1] == ";"){newStorage = newStorage.substring(0,newStorage.length - 1);}
+  localStorage.toEdit = newStorage;
+};

@@ -26,7 +26,7 @@ $dir = "../../uploadedImages/";
 $uploadOk = 1;
 $target_dirname = $dir.basename($_FILES["fileToUpload"]["name"]);
 $imageType = strtolower(pathinfo($target_dirname,PATHINFO_EXTENSION));
-$target_dirname = $dir.$title.".".$imageType;
+$target_dirname = $dir.$title.".webp";
 $check = getimagesize($_FILES['fileToUpload']['tmp_name']);
 $messageError = "";
 /*if($check == true)
@@ -49,9 +49,9 @@ if($_FILES['fileToUpload']["size"] > 36000000) //checking size
   $uploadOk = 0;
 }
 if($imageType != "jpg" && $imageType != "png" && $imageType != "jpeg"
-&& $imageType != "gif")
+&& $imageType != "gif" && $imageType != "webp")
 {
-  exitInstructions("Only jpg, png, jpeg and gif format");
+  exitInstructions("Only jpg, png, jpeg,webp and gif format");
   $uploadOk = 0;
 }
 if($uploadOk == 0)
