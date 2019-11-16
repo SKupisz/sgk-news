@@ -6,7 +6,7 @@ if($slength > 0)
 for($i = 0 ; $i < $slength; $i++)
 {
   $title = $sarticles[$i];
-  if(strlen($title) > 30)
+  if(strlen($title) > 15)
   {
 
     if(strpos($title," "))
@@ -14,7 +14,7 @@ for($i = 0 ; $i < $slength; $i++)
       $title1 = "";
       $pos1 = 0;
       $title2 = "";
-      while(strlen($title1) < 30)
+      while(strlen($title1) < 15)
       {
         $now = substr($title,$pos1,strlen($title));
         $pos = strpos($now," ");
@@ -48,13 +48,13 @@ for($i = 0 ; $i < $slength; $i++)
     ?>u11atr2<?php
   }
   ?>">
-<section id = "u11atrt">
+<section class = "u11atrtSend">
   <?php echo $title1; ?>
   <label id = "u11atrtnext">
     <?php echo $title2; ?>
   </label>
 </section>
-<button id = "u11atrr" onclick = "seeStatistic('<?php echo $title;?>',<?php echo $swords[$i];?>,<?php echo $sviews[$i];?>,<?php echo $snumber[$i];?>)">
+<button class = "u11atrr" onclick = "seeStatistic('<?php echo $title;?>',<?php echo $swords[$i];?>,<?php echo $sviews[$i];?>,<?php echo $snumber[$i];?>)">
   See statistic
 </button>
 </section><?php

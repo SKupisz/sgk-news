@@ -51,7 +51,7 @@ for($i = 0 ; $i < $bwlength; $i++)
     ?>u11atr2<?php
   }
   ?>">
-<section id = "u11atrt">
+<section class = "u11atrt">
   <?php echo $title1; ?>
   <label id = "u11atrtnext">
     <?php echo $title2; ?>
@@ -68,8 +68,10 @@ for($i = 0 ; $i < $bwlength; $i++)
 <section id = "u11atrca">
   <form method = "post" action = "articles/confirmArticle.php">
     <input type = "hidden" name = "id" value = "<?php echo $bwids[$i];?>"/>
-    <button type = "submit" id = "u11atrcas">
-      Send
+    <button type = "submit" class = "u11atrcas">
+    <label class = "nonResponsive">Send</label>
+  <label class = "onResponsive">
+  <img src = "articles/sending.png" class = "onResponsiveIcon"/></label>
     </button>
   </form>
 </section>

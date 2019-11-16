@@ -32,6 +32,7 @@
   position: absolute; top: 0px; left: 0px;
   z-index: 10;
   display: none;
+  text-align: center;
 }
 .more-other-wrapper{
   display: block;
@@ -60,25 +61,28 @@
 .modify{
   width: 90%;
 }
-#words{
-  position: absolute; top: 10%; left: 5%;
-}
-#views{
-  position: absolute; top: 10%; left: 55%;
+.u12statistic{
+  display: inline-block;
 }
 #place{
-  position: absolute; top: 23%; left: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .u12close{
-  width: 10%;
-  height: 10%;
-  font-size: 1.4em;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
   cursor: pointer;
   transition: all 0.5s;
   border: 1px solid #aaa;
     background-color: #eee;
   color: #000;
-  position: absolute; top: 60%; left: 45%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 17px;
+  border-radius: 50px;
 }
 .u12close:hover{
   transform: scale(1.01);
@@ -86,15 +90,9 @@
 
 @media screen and (max-width: 500px){
   .u12more-header{
-    font-size: 0.9em;
+    font-size: 23px;
   }
   .u12statistic{
     width: 90%;
-  }
-  #views{
-    position: absolute; top: 24%; left: 5%;
-  }
-  #place{
-    position: absolute; top: 36%; left: 5%;
   }
 }

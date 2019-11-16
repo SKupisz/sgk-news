@@ -1,0 +1,292 @@
+#u11titles{
+    width: 100%;
+    height: 67px;
+    position: relative;
+      background-color: #fff;
+      z-index: 2;
+      box-shadow: 0px 6px 20px -5px rgba(140,0,0,0.6);
+    text-align: center;
+  }
+  #u11a,#u11s,#u11w{
+    width: 30%;
+    height: 100%;
+    color: #333;
+      background-color: #fff;
+    text-align: center;
+    transition: background-color 0.5s;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+      z-index: 1;   
+      display: inline-block;
+  }
+  #u11s{
+    width: 39%;
+  }
+  #u11a:hover, #u11s:hover, #u11w:hover {
+    background-color: #eee;
+  }
+  
+  
+  .paddingtoptext {
+      padding-top: 8px;
+  }
+  #u11asection,#u11ssection,#u11csection{
+    width: 100%;
+    height: 73%;
+    display: none;
+    transition: all 0.5s;
+  }
+  #u11atr{
+    width: 100%;
+    height: 70px;
+    color: #000;
+      background-color: #eee;
+      border: 1px solid #aaa;
+      margin: 20px 0px -15px 0px;
+  }
+  .u11atrt,.u11optionsContainer{
+    display: inline-block;
+  }
+  .u11atrtSend,.u11atrr{
+    display: inline-block;
+  }
+  .u11atr1{
+  background: #111;
+  }
+  .u11atr2{
+    background: #111;
+  }
+  #u11anh{
+    width: 100%;
+    height: 100%;
+      padding-top: 20px;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+      
+  }
+  #u11wti,#u11wta,.u11wtga{
+    text-align: center;
+    font-size: 2em;
+    color: black;
+    font-family: monospace;
+  }
+  #u11wti{
+    margin-bottom: 2%;
+    width: 100%;
+  }
+  .u11wtadesc{
+    width: 100%;
+  }
+  .u11wtai,.u11wtgai{
+    max-width: calc(60% - 20px);
+    min-width: calc(60% - 20px);
+    min-height: 150px;
+    max-height: 150px;
+    font-size: 50%;
+    padding: 10px;
+    font-family: 'Lato',sans-serif;
+  }
+  .u11wtai{
+    background: #fff;
+    border-radius: 5px;
+  }
+  .u11wtgai{
+    max-height: 75px;
+    min-height: 75px;
+  }
+  .u11wtga{
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+  }
+  #u11wsection{
+    width: 100%;
+    min-height: 87%;
+    display: none;
+    transition: all 0.5s;
+  }
+  #u11was{
+    margin-top: 35px;
+    width: 40%;
+    height: 20%;
+    margin-left: 30%;
+    font-size: 1.7em;
+    font-family: "Lato", sans-serif;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #ccc;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+  #u11was:hover{
+    background-color: #fff;
+  }
+  .u11atrt,.u11atrtSend{
+    color: #000;
+    font-family: "Lato", sans-serif;
+      padding-top: 18px;
+    font-size: 25px;
+    width: 60%;
+    height: 100%;
+    padding-right: 10%;
+    text-align: center;
+  }
+  .u11atrt,#u11atrcr,#u11atrca,.u11delArt{
+    display: inline-block;
+  }
+  .u11atrr,button[class="u11atrcrBtn"],.u11atrcas,.u11delArtSumbit{
+    width: 130px;
+    height: 68px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*Background pattern from: subttlepatterns.com*/
+    background: rgba(200,200,200,.5);
+    border-radius: 15px;
+    cursor: pointer;
+    filter: invert(0%);
+    transition: filter 0.5s;
+    color: white;
+    text-decoration: none;
+    border: none;
+  }
+  .u11atrr{
+    width: 170px;
+  }
+  button[class="u11atrr"]:hover,button[class="u11atrcrBtn"]:hover,button[class="u11atrcas"]:hover,.u11delArtSumbit:hover{
+    filter: invert(50%);
+  }
+  .nonResponsive{
+    display: block;
+  }
+  .onResponsive{
+    display: none;
+  }
+  .u11atrt,#u11atrr{
+    display: inline-block;
+  }
+  .u11delArtSumbit{
+    left: 84%;
+    background: rgba(200,11,11,.5);
+  }
+  #u11atrmo{
+    width: 30%;
+    height: 100%;
+    color: white;
+    /*Background pattern from: subttlepatterns.com*/
+    background: url("../dark-grey-terrazzo.png");
+    position: absolute; top: 0px; left: 70%;
+    font-size: 150%;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 50px;
+    filter: sepia(0%) brightness(100%);
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 50px;
+    display: none;
+  }
+  #u11atrresp{
+    display: none;
+  }
+  #u3,#u4,#u5,#u6,#u7,#u8,#u9d{
+    height: 100%;
+  }
+  .u11wtmain{
+    margin-bottom: 20px;
+  }
+  .u11wttag{
+    font-family: "Lato", sans-serif;
+    font-size: 0.8em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #111;
+      padding: 9px 15px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  #politicTag:hover,
+  #entertaimentTag:hover,
+  #scienceTag:hover,
+  #otherTag:hover,
+  #literatureTag:hover{
+    background-color: #ddd;
+  }
+  .tagSigned{
+    background-color: #ddd;
+    color: #000;
+  }
+  .changeContainer{
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .bar1,.bar2{
+    font-size: 20px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    padding: 10px 15px;
+      border: 1px solid #333;
+    border-radius: 5px;
+      margin: 30px 8px 10px 8px;
+  }
+  .now{
+    background-color: #eee;
+  }
+  
+  .articletitle ,.postHeader{
+      font-size: 30px;
+    font-family: "Lato", sans-serif;
+      margin-bottom: 5px;
+  }
+  .postHeader{
+    text-align: center;
+  }
+  
+  .titleInput{
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-family: 'Lato',sans-serif;
+    margin-bottom: 30px;
+  }
+  .forUploadBtn,.uploadSubmitButton{
+    padding: 5px;
+    font-size: 1em;
+    font-family: 'Oswald',sans-serif;
+    background: #ddd;
+    border-radius: 5px;
+    border: 1px solid #111;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    min-width: calc(10% - 10px);
+    cursor: pointer;
+    transition: filter 0.4s;
+  }
+  .forUploadBtn{
+    margin-bottom: 15px;
+  }
+  .uploadSubmitButton{
+    min-width: calc(30% - 20px);
+    padding: 10px;
+  }
+  button[class="forUploadBtn"]:hover{
+    filter: brightness(70%);
+  }
+  .imageUpload{
+    display: none;
+  }
