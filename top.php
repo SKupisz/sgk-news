@@ -24,21 +24,11 @@ if(isset($_GET['watchingImage']))
   </head>
 <body>
   <?php require_once "main/bar.php";?>
-  <main id = "umain">
-    <?php if(isset($_SESSION['liking_image_feedback']))
-    {
-      ?><div class = "errorInformation">
-        <header class = "errorInformationHeader">Ooops!....<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
-        <main class = "errorInformationContent">
-          <?php if(isset($_SESSION['liking_image_feedback']))
-          {
-            echo $_SESSION['liking_image_feedback'];
-          }?>
-        </main>
-      </div><?php
-    } ?>
-    <?php require_once "top/choosingCategory.php"?>
-    <?php require_once "top/filters/filters.php" ?>
+  <main id = "umain"> 
+    <?php if($connection == 1){
+                require_once "top/choosingCategory.php";
+                require_once "top/filters/filters.php";
+    }?>
     <section class = "u11">
       <section class = "u11list">
       <?php

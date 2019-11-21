@@ -1,6 +1,6 @@
 <?php
 $checkin = 1;
-require_once"main/connect.php";
+require_once "main/connect.php";
 $connection = 1;
 try {
   $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);

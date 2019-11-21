@@ -2,7 +2,13 @@
 
 class Decode{
   public function __construct(){
-    include "mainTables.php";
+    if(isset($path)){
+      include $path."mainTables.php";
+    }
+    else{
+      include "./mainTables.php";
+    }
+    
   }
   public function toNormal($alfa)
   {

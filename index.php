@@ -26,24 +26,25 @@ session_start();
     
        <div class="whatnews">
         <h1>What is SGK-news?</h1>
-        <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis. Vivamus justo. Nam tempor vitae, pellentesque eget, purus. 
-          <a id="readmore" href="#">Read more!</a></p>
+        <p> Well, it could be hard to define, but in simple words, it's an online newspaper where the users are journalists. Interested how did it all start? 
+          <a id="readmore" href="about.php">Read more!</a></p>
        </div>
 
         <hr>
         
        <div class="browseartices">
         <h1>Check out the articles!</h1>
-        <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis.</p>
-        <a id="przegladaj" href="#">Read more!</a>
+        <p>After writing an article, it can be published. Then, your work will be visible in the top articles section. Which kind of articles do you prefer? About science? Or about politic? Or maybe you just want to read 
+          some relaxing story? 
+        <a id="przegladaj" href="top.php">Go and check this out!</a></p>
        </div>
 
        <hr>
 
         <div class="writeartc">
         <h1>Write an article!</h1>
-        <p>Lorem ipsum dolor sit amet ligula. Curabitur nec tellus enim, malesuada aliquet, purus scelerisque feugiat. Proin id purus fringilla turpis.</p>
-        <a id="przegladaj" href="#">Read more!</a>
+        <p>Have you ever written some good piece of work, but had no idea where to publish it? Now, it's no more a problem - on SGK-news, you can share your talent with the world (just make sure it doesn't collide with our <a href = "regulations.php">regulations</a>). We're sure it's going to be one of your best decisions.
+        <a id="przegladaj" href="articles.php">Sign in and start creating!</a></p>
        </div>
     
 
