@@ -21,7 +21,7 @@ body{
 }
 .content-container > .bull-container{
     width: calc(100% - 20px);
-    height: 210px;
+    height: 220px;
     border: 1px solid #111;
     padding: 10px;
     display: block;
@@ -41,4 +41,40 @@ body{
     text-align: left;
     font-size: 1.2em;
     font-family: 'Lato',sans-serif;
+}
+.bull-date{
+    margin-left: auto;
+    margin-right: 20px;
+    display: block;
+    padding-top: 7px;
+    font-size: 1.3em;
+    font-style: italic;
+}
+@media screen and (max-width: 508px){
+    .welcome-header{
+        font-size: 2em;
+    }
+    .content-container > .bull-container{
+        height: 210px;
+    }
+    .bull-header{
+        font-size: 1.6em;
+    }
+    .bull-desc{
+        font-size: 1em;
+    }
+    .bull-date{
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 348px){
+    .bull-header{
+        font-size: 1.45em;
+    }
+    .bull-desc{
+        font-size: 0.9em;
+    }
+    .bull-date{
+        font-size: 1em;
+    }
 }

@@ -6,7 +6,7 @@ try{
     $connection = new PDO('mysql:host='.$host.';dbname='.$db_name,$db_user,$db_password,
     [PDO::ATTR_EMULATE_PREPARES => false,
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    $getTheBulletinContent = $connection->prepare("SELECT * FROM bulletins");
+    $getTheBulletinContent = $connection->prepare("SELECT * FROM bulletins ORDER BY publishingDate DESC");
     $getTheBulletinContent->execute();
     $howMany = $getTheBulletinContent->rowCount();
     $rows = array();

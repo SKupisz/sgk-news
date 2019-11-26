@@ -34,7 +34,8 @@ require_once "./src/bulletin/loadData.php";
                     <section class="content-container">
                         <div class="bull-container">
                             <header class="bull-header"><?php echo $row["title"];?></header>
-                            <div class="bull-desc"><?php echo $row["content"];?></div>
+                            <div class="bull-desc"><?php echo (strlen($row["content"]) < 200) ? $row["content"] : substr($row["content"],0,197)."...";?></div>
+                            <footer class="bull-date"><?php echo $row["publishingDate"];?></footer>
                         </div>
                     </section>
                 <?php
