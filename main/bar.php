@@ -13,6 +13,9 @@
   <li class="left_li"><a href = "about.php" class="navlink">
       About us
   </a></li>
+  <li class="left_li"><a href = "bulletin.php" class="navlink">
+      Public bulletin
+  </a></li>
     
       
   <?php if(isset($_SESSION['zalogowany']))

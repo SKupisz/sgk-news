@@ -89,6 +89,9 @@ body::-webkit-scrollbar-button:vertical:increment{
   .links-container{
     display: none;
   }
+  .navlink{
+    font-size: 14px;
+  }
   .navOpening{
     display: block;
     text-align: center;
