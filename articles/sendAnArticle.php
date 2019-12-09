@@ -32,9 +32,11 @@ try {
     throw new Exception($polaczenie->connect_error);
   }
   else{
+    
     $user = $_SESSION['zalogowany'];
     $rezultat = $polaczenie->query("SELECT * FROM $user WHERE title = '$title'");
     if(!$rezultat) throw new Exception($polaczenie->error);
+    
     if($rezultat->num_rows > 0)
     {
       $row = $rezultat->fetch_assoc();
@@ -43,7 +45,7 @@ try {
       if(!$rezultat) throw new Exception($polaczenie->error);
       $rezultat = $polaczenie->query("UPDATE $user SET tags = '$tags' WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
-      exitInstructions("Your article has been sent");
+      exitInstructions("Your article has been updated");
     }
     else {
       $rezultat = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$content',1,'$tags')");

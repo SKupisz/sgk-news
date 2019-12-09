@@ -7,21 +7,22 @@ session_start();
   <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
   <link rel="stylesheet" type="text/css" href = "about/main.css"/>
-
-  <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
+    <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">    
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
+    
   <title> SGK-news </title>
 </head>
 <body onload = "preloader();" class = "onLoadCut">
-  <section id = "preloader" progressbar>
-    <figure class = "ourLogo">
-      <img src = "./main/logo.png" alt = "logo"/>
-    </figure>
-  </section>
+
 <section id = "onLoadNot" class = "onLoadNot">
 <?php require_once "main/bar.php" ?>
-<main id = "umain">
+
+    
+    <!--
+
+    <main id = "umain">
   <header id = "u9">
     About us
   </header>
@@ -42,8 +43,36 @@ session_start();
       </article>
     </section>
   </section>
-  </section>
+  </section>     
 </main>
+
+-->
+
+    <h1>About us</h1>
+    <hr>
+<div class="right" id="text1" class="clearfix">
+        <h2>
+        Simon George Kupisz - founder and CEO of SGK-news. Born in 2003 in Warsaw. 
+        </h2>
+        <p>
+        The 28th of April 2018 - a date for SGK-news as important as the National Day for a country. That day, the first version of the main site has been written. After that, during the following months, we were developing our project - we added the main part of our website, a sign-up system, and an internal inbox, which is just like an email for our users.
+        </p>
+    </div>
+    <div class="left" class="clearfix">
+        <img src="IMG_20180727_132956.jpg" id="pic1">
+        <figcaption class = "captionRWD">Simon George Kupisz - founder and CEO of SGK-news. Born in 2003 in Warsaw.</figcaption>
+    </div> 
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
 </section>
 </body>
 <script src = "main/jquery-3-2-1.js"></script>

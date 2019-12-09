@@ -4,14 +4,14 @@ if(!isset($pass))
   header("Location: index.php");
   exit();
 }
-$connection = 1;
+$isConnected = 1;
 $checkin = 1;
 require_once "main/connect.php";
 try {
-  $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-  if($polaczenie->connect_errno != 0)
+  $connection = new mysqli($host,$db_user,$db_password,$db_name);
+  if($connection->connect_errno != 0)
   {
-    throw new Exception($polaczenie->connect_error);
+    throw new Exception($connection->connect_error);
   }
   else {
     if(!isset($_SESSION['zalogowany']))
@@ -21,13 +21,13 @@ try {
     }
 
     $nick = $_SESSION['zalogowany'];
-    $rezultat = $polaczenie->query("SELECT * FROM users WHERE username = '$nick'");
-    if(!$rezultat) throw new Exception($polaczenie->error);
+    $rezultat = $connection->query("SELECT * FROM users WHERE username = '$nick'");
+    if(!$rezultat) throw new Exception($connection->error);
     if($rezultat->num_rows > 0)
     {
       $post = $_SESSION['zalogowany']."_post";
-      $poczta = $polaczenie->query("SELECT * FROM $post WHERE unreaded = 0 OR unreaded = 1");
-      if(!$poczta) throw new Exception($polaczenie->error);
+      $poczta = $connection->query("SELECT * FROM $post WHERE unreaded = 0 OR unreaded = 1");
+      if(!$poczta) throw new Exception($connection->error);
       if($poczta->num_rows == 0)
       {
         $post = 0;
@@ -38,13 +38,13 @@ try {
       require "postService.php";
     }
     else {
-      $rezultat = $polaczenie->query("SELECT * FROM admins WHERE username = '$nick'");
-      if(!$rezultat) throw new Exception($polaczenie->error);
+      $rezultat = $connection->query("SELECT * FROM admins WHERE username = '$nick'");
+      if(!$rezultat) throw new Exception($connection->error);
       if($rezultat->num_rows > 0)
       {
         $post = $_SESSION['zalogowany']."_post";
-        $poczta = $polaczenie->query("SELECT * FROM $post WHERE unreaded = 0 OR unreaded = 1");
-        if(!$poczta) throw new Exception($polaczenie->error);
+        $poczta = $connection->query("SELECT * FROM $post WHERE unreaded = 0 OR unreaded = 1");
+        if(!$poczta) throw new Exception($connection->error);
         if($poczta->num_rows == 0)
         {
           $post = 0;
@@ -53,20 +53,39 @@ try {
           $post = 1;
         }
         require "postService.php";
-        mysqli_close($polaczenie);
         
       }
       else {
-        mysqli_close($polaczenie);
+        mysqli_close($connection);
         unset($_SESSION['zalogowany']);
         header("Location: index.php");
         exit();
       }
     }
+    $blacklistAddress = $_SESSION["zalogowany"]."_blacklist";
+    $result = $connection->query("SELECT * FROM $blacklistAddress");
+    if(!$result) throw new Exception($connection->error);
+    if($result->num_rows == 0){
+      $ifBlackRows = 0;
+    }
+    else{
+      $ifBlackRows = 1;
+      $blockedNames = array();
+      $blockedDates = array();
+      for($i = 0 ; $i < $result->num_rows; $i++){
+        $row = $result->fetch_assoc();
+        $blockedNames[$i] = $row["username"];
+        $blockedDates[$i] = $row["dateOfBlocking"];
+      }
+      $blockedNames = array_reverse($blockedNames);
+      $blockedDates = array_reverse($blockedDates);
+      $blockedLength = count($blockedNames);
+    }
+    
 
   }
 } catch (Exception $e) {
-  $connection = 0;
+  $isConnected = 0;
 }
 
 ?>

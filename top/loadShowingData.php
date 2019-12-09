@@ -22,6 +22,10 @@
       $content = $row['content'];
       $views = $row['views'];
       $likes = $row['likes'];
+      require_once("../../delta/decoding.php");
+      $cypheringObject = new Decode;
+      $content = $cypheringObject->toNormal($content);
+      
       mysqli_close($polaczenie);
     }
   } catch (Exception $e) {

@@ -53,89 +53,61 @@ else {
     <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href = "../main/bar.css"/>
     <link rel = "stylesheet" href = "./authorize.css"/>
-    <link rel="shortcut icon" type = "image/ico" href = "../main/favicon.ico"/>
+    <link rel="shortcut icon" type = "image/ico" href = "../main/logo.png"/>
     <meta name="description" content="SGK-news website">
     <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
   </head>
   <body>
-    <section id = "u1">
-      <a href = "index.php" id = "u2">
-        <img src="../noweLogo2.png" alt="logo" id = "u2i"/>
-      </a>
-      <button id = "upanelopen">
-        Menu
-      </button>
-      <label id = "upanelofical">
-      <a href = "../top.php" id = "u3">
-        <nav class = "menDescLower">Top articles</nav>
-      </a>
-      <a href = "../articles.php" id = "u4">
-        <nav class = "menDescLower">Your articles</nav>
-      </a>
-      <a href = "../inbox.php" id = "u5">
-        <nav class = "menDesc">Inbox</nav>
-      </a>
-      <a href = "../about.php" id = "u6">
-        <nav class = "menDesc">About us</nav>
-      </a>
-      <?php if(isset($_SESSION['zalogowany']))
-      {
-        ?>
-        <a href = "../settings.php" id = "u7">
-          <nav class = "menDesc">Settings</nav>
-        </a>
-        <a href = "../profile.php" id = "u8">
-          <nav class = "menDesc">Profile</nav>
-        </a>
-        <a href = "../logout.php" id = "u9d">
-          <nav class = "menDesc">Logout</nav>
-        </a><?php
-      }
-      else{?>
-      <a href = "../login.php" id = "u7">
-        <nav class = "menDesc">Sign in</nav>
-      </a>
-      <a href = "../register.php" id = "u8">
-        <nav class = "menDesc">Sign up</nav>
-      </a>
-    <?php }?>
-    </label>
-      <label id = "upanel">
-      <a href = "../top.php" id = "u3">
-        Top articles
-      </a>
-      <a href = "../articles.php" id = "u4">
+       
+  <ul id = "upanel">
+  <li class="image_li"><a href="../index.php"><img id="logo" src="../logo.png"></a></li>  
+  <li class = "navOpening">
+    <span></span>
+    <span></span>
+    <span class = "theLastOne"></span>
+  </li>
+  <section class = "links-container">
+  <li class="left_li"><a href = "../top.php" class="navlink">
+      Articles
+  </a></li>
+  
+  <li class="left_li"><a href = "../about.php" class="navlink">
+      About us
+  </a></li>
+    
+      
+  <?php if(isset($_SESSION['zalogowany']))
+  {
+    ?>
+    <li class="left_li"><a href = "../articles.php"class="navlink">
         Your articles
-      </a>
-      <a href = "../inbox.php" id = "u5">
+  </a></li>
+    <li class="left_li"><a href = "../inbox.php" class="navlink">
         Inbox
-      </a>
-      <a href = "../about.php" id = "u6">
-        About us
-      </a>
-      <?php if(isset($_SESSION['zalogowany']))
-      {
-        ?>
-        <a href = "../settings.php" id = "u7">
-          Settings
-        </a>
-        <a href = "../profile.php" id = "u8">
-          Profile
-        </a>
-        <a href = "../logout.php" id = "u9d">
-          Logout
-        </a><?php
-      }
-      else{?>
-        <a href = "../login.php" id = "u7">
-          Sign in
-        </a>
-        <a href = "../register.php" id = "u8">
-          Sign up
-        </a>
-    <?php }?>
-    </label>
-    </section>
+  </a></li>
+  <li class="right_li"><a href = "../logout.php" class="navlink">
+        Logout
+    </a></li>
+    <li class="right_li"><a href = "../profile.php" class="navlink">
+        Profile
+    </a></li>
+    <li class="right_li"><a href = "../settings.php" class="navlink">
+        Setting
+    </a></li><?php
+  }
+  else{?>
+    <li class="right_li"><a href = "../login.php" class="navlink">
+        Sign in
+    </a></li>
+    <li class="right_li"><a href = "../register.php" class="navlink">
+        Sign up
+    </a></li>
+<?php }?>
+  </section>
+</ul>
+    
+    
+</section>
     <section class = "container">
       <?php
       if($error == 1)

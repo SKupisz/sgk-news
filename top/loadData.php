@@ -1,6 +1,6 @@
 <?php
 $checkin = 1;
-require_once"main/connect.php";
+require_once "main/connect.php";
 $connection = 1;
 try {
   $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
@@ -74,7 +74,7 @@ try {
       unset($_SESSION['tagsError']);
     }
     else {
-      $rezultat = $polaczenie->query("SELECT * FROM sent_articles ORDER BY views");
+      $rezultat = $polaczenie->query("SELECT * FROM sent_articles ORDER BY RAND()");
       if(!$rezultat) throw new Exception($polaczenie->error);
       $from = array();
       $title = array();
@@ -90,6 +90,8 @@ try {
       {
         $length = 50;
       }
+      require_once("../../delta/decoding.php");
+      $cypheringObject = new Decode;
       for($i = 0; $i < $length; $i++)
       {
         $row = $rezultat->fetch_assoc();
@@ -97,6 +99,8 @@ try {
         $from[$i] = $row["username"];
         $title[$i] = $row["title"];
         $content[$i] = $row["content"];
+        $finalContent = $cypheringObject->toNormal($content[$i]);
+        $content[$i] = $finalContent;
         $views[$i] = $row["views"];
         $words[$i] = $row['words'];
         $likes[$i] = $row['likes'];
@@ -125,7 +129,7 @@ try {
       $row = $rezultat->fetch_assoc();
       $imagesId[$i] = $row['id'];
       $imagesFrom[$i] = $row['fromm'];
-      $imagesAddress[$i] = $row['localAddress'];
+      $imagesAddress[$i] = $row['localAdress'];
       $imagesViews[$i] = $row['views'];
       $imagesLikes[$i] = $row['likes'];
     }

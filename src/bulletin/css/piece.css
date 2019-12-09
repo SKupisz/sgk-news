@@ -1,0 +1,36 @@
+.bulletin-header{
+    width: calc(100% - 20px);
+    margin-top: 77px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Oswald',sans-serif;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.bulletin-container{
+    width: calc(90% - 10px);
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bulletin-content{
+    font-size: 1.2em;
+    font-family: 'Lato',sans-serif;
+    letter-spacing: 0.04em;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.bulletin-date{
+    font-size: 1em;
+    font-style: italic;
+    font-family: 'Lato',sans-serif;
+    margin-left: auto;
+    width: calc(100% - 70px);
+    text-align: right;
+    padding-right: 70px;
+}

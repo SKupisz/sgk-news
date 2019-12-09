@@ -23,8 +23,8 @@ require_once "main/connect.php";
 </head>
 <body>
 <?php require_once "main/bar.php" ?>
-<main id = "umain">
-  <header id = "u10title">
+<main class = "umain">
+  <header class = "u10title">
     <?php
       if(isset($_SESSION['e_chpass']))
       {
@@ -46,36 +46,35 @@ require_once "main/connect.php";
       }
       ?>
   </header>
-  <section id = "u11">
-    <div id = "u11pass">
-      <header class = "uheader" id = "passheader">
+  <section class = "u11">
+    <div class = "u11pass">
+      <header class = "uheader" class = "passheader">
         Change your password
       </header>
       <form method = "post" action = "settings/changePassword.php">
-        <div id = "u11passil">New password <input type = "password" id = "u11passi" name = "newpass" required placeholder = "Your new password"/></div>
-<div id = "u11passil">Repeat password <input type = "password" id = "u11passi" name = "newpass2"  required placeholder = "Repeat password"/></div>
-        <input type = "submit" value="Change password" id = "u11pass_submit"/>
+        <div class = "u11passil">New password <input type = "password" class = "u11passi" name = "newpass" required placeholder = "Your new password"/></div>
+<div class = "u11passil final-input">Repeat password <input type = "password" class = "u11passi" name = "newpass2"  required placeholder = "Repeat password"/></div>
+        <input type = "submit" value="Change password" class = "u11pass_submit"/>
       </form>
     </div>
-    <div id = "u11del">
+    <div class = "u11del">
       <header class = "uheader">
         Delete your account
       </header>
       <form method = "post" action = "settings/deleteAccount.php">
-        <div id = "u11passil">Write password to confirm <input type = "password" id = "u11passi" name = "confirmpass"  required placeholder = "Your password"/></div>
-        <input type = "submit" value="Delete my account" id = "u11pass_submit"/>
+        <div class = "u11passil">Write password to confirm <input type = "password" class = "u11passi" name = "confirmpass"  required placeholder = "Your password"/></div>
+        <input type = "submit" value="Delete my account" class = "u11pass_submit"/>
       </form>
     </div>
-    <div id = "u11promotion">
-      <header class = "uheader" id = "promheader">
+    <div class = "u11promotion">
+      <header class = "uheader" class = "promheader">
         Are you thinking of becoming an SGK-news admin?
       </header>
-      <main id = "u11promcontent">
+      <main class = "u11promcontent">
         <form method = "post" action = "settings/promotionMail.php">
           <section class = "u11promcontheader">Write to us, and we will write back on your e-mail</section>
-          <textarea id = "u11promcont" name = "content" placeholder = "Write over here" required>
-          </textarea><br>
-          <input type = "submit" value = "Send" id = "u11promcontent_submit"/>
+          <textarea class = "u11promcont" name = "content" placeholder = "Write over here" required></textarea>
+          <input type = "submit" value = "Send" class = "u11pass_submit"/>
         </form>
       </main>
     </div>

@@ -18,52 +18,9 @@ function sentOpen(){
   document.getElementById("u11asection").style.display = "none";
   document.getElementById("u11wsection").style.display = "none";
 }
-function preloader(){
-  setTimeout(function() {
 
-        var body    =   document.getElementsByTagName("BODY")[0];
-        var loader  =   document.getElementById("preloader");
-        body.className   -=   "onLoadCut";
-        loader.style.display = "none";
-        if(changeMode == 1 || typeof literature !== "undefined" || typeof politic !== "undefined" || typeof other !== "undefined" || typeof science !== "undefined"  || typeof entertaiment !== "undefined")
-        {
-          if(changeMode == 1)
-          {
-            writingOpen();
-            imageLoad();
-          }
-          else {
-            if(typeof literature !== "undefined")
-            {
-              tagOperand("literatureTag");
-            }
-            if(typeof politic !== "undefined")
-            {
-              tagOperand("politicTag");
-            }
-            if(typeof other !== "undefined")
-            {
-              tagOperand("otherTag");
-            }
-            if(typeof entertaiment !== "undefined")
-            {
-              tagOperand("entertaimentTag");
-            }
-            if(typeof science !== "undefined")
-            {
-              tagOperand("scienceTag");
-            }
-            writingOpen();
-          }
+beingWrittenOpen();
 
-        }
-        else {
-          beingWrittenOpen();
-        }
-
-
-},2000);
-}
 function goWriting(id){
   window.location.assign("articles.php?sid="+id);
 }
@@ -167,6 +124,18 @@ function imageLoad(){
   document.querySelector(".sendingArticle").style.display = "none";
   document.querySelector(".imageUpload").style.display = "block";
 }
-document.querySelector("#errorInformationClose").addEventListener("click",function(){
-  document.body.querySelector(".errorInformation").remove();
-});
+
+function failedComment(Title,bodyContent){
+  Push.create(Title,{
+    body: bodyContent,
+    icon: "./main/logo.png"
+  });
+}
+function openTheAlert(Title,Body){
+  if(Push.Permission.has() == false){
+    Push.Permission.request(() => {failedComment(Title,Body)},() => {});
+  }
+  else{
+    failedComment(Title,Body);
+  }
+}

@@ -17,27 +17,18 @@ if(isset($_GET['watchingImage']))
       <link rel = "stylesheet" type = "text/css" href = "top/main.css"/>
       <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
       <meta name="description" content="SGK-news website">
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
     <?php require_once"top/loadData.php"?>
   </head>
 <body>
   <?php require_once "main/bar.php";?>
-  <main id = "umain">
-    <?php if(isset($_SESSION['liking_image_feedback']))
-    {
-      ?><div class = "errorInformation">
-        <header class = "errorInformationHeader">Ooops!....<button class = "errorInformationClose" id = "errorInformationClose">X</button></header>
-        <main class = "errorInformationContent">
-          <?php if(isset($_SESSION['liking_image_feedback']))
-          {
-            echo $_SESSION['liking_image_feedback'];
-          }?>
-        </main>
-      </div><?php
-    } ?>
-    <?php require_once "top/choosingCategory.php"?>
-    <?php require_once "top/filters/filters.php" ?>
+  <main id = "umain"> 
+    <?php if($connection == 1){
+                require_once "top/choosingCategory.php";
+                require_once "top/filters/filters.php";
+    }?>
     <section class = "u11">
       <section class = "u11list">
       <?php
@@ -90,31 +81,33 @@ if(isset($_GET['watchingImage']))
             if(strpos($now_content,"<br>") !==false)
             {
               $now_content = substr($now_content,0,strpos($now_content,"<br>"))."...";
-              if(strlen($now_content) > 300)
+              if(strlen($now_content) > 200)
               {
-                $now_content = substr($now_content,0,300)."...";
+                $now_content = substr($now_content,0,200)."...";
               }
             }
-            else if(strlen($now_content) > 300)
+            else if(strlen($now_content) > 200)
             {
-              $now_content = substr($now_content,0,300)."...";
+              $now_content = substr($now_content,0,200)."...";
             }
 
             ?>
 
-            <a id = "u11article" style = "position: absolute; top: <?php echo 12+(50*$i);?>%;" href = "showarticle.php?id=<?php echo $now_id;?>" target = "_blank">
-              <span id = "u11aofa"><?php echo $now_from;?></span>
-              <div id = "u11at"><?php echo $now_title;?></div>
+            <a id = "u11article" href = "./showarticle.php?id=<?php echo $now_id;?>" target = "_blank">
+            <div class="lining">
+                 <h1 id = "u11at"><?php echo $now_title;?></h1>
+             <h2 id = "u11aofa"><?php echo $now_from;?></h2>
               <section id = "u11av">
                 <?php echo $now_content; ?>
               </section>
+              <section class = "stats">
               <?php
               if(strlen($now_tags) > 0)
               {
-                ?><aside id = "u11info"><?php
+                ?><aside class = "u11info"><?php
               }
               else {
-                ?><aside id = "u11tags"><?php
+                ?><aside class = "u11tags"><?php
               }
               ?>
 
@@ -146,11 +139,13 @@ if(isset($_GET['watchingImage']))
                   }
                 ?>
               </aside>
-              <aside id = "u11tags">
+              <aside class = "u11tags">
                 <?php
                 echo $now_tags;
                 ?>
               </aside>
+              </section>
+                </div>
             </a>
             <?php
           }
@@ -159,28 +154,14 @@ if(isset($_GET['watchingImage']))
     </section>
     </section>
     <section class = "u12">
+      <section class = "u12wrapper">
       <?php require_once "top/images/loadingImages.php"; ?>
+      </section>
     </section>
   </main>
 </body>
-<?php
-  if(isset($_GET['watchingImage']))
-  {
-    ?>
-    <script>
-    document.querySelector(".u11").style.display = "none";
-    document.querySelector(".u12").style.display = "block";
-    document.querySelector("#u10bar").style.display = "none";
-    document.querySelector("#u10filtersbar").style.display = "none";
-    document.querySelector("#u10sortAdvance").style.display = "none";
-    document.querySelector("#u10nameAdvance").style.display = "none";
-    document.querySelector("#u10tagsAdvance").style.display = "none";
-    document.querySelector("#u10wordsAdvance").style.display = "none";
-    document.querySelector("#imageId<?php echo $_GET['watchingImage'];?>").scrollIntoView();
-    </script><?php
-  }
-?>
 <script src = "main/main.js"></script>
-<script src = "jquery-3-2-1.js"></script>
+<script src="./src/node_modules/push.js/bin/push.min.js"></script>
+<script src = "./top/options.js"></script>
 <script src = "top/main.js"></script>
 </html>

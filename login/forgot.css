@@ -1,56 +1,69 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 body{
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../textured_paper.png");
   margin: 0;
   padding: 0;
 }
 .u10t{
-  width: 100%;
-  font-size: 2em;
-  font-family: 'Lato', sans-serif;
+  width: calc(100% - 20px);
   text-align: center;
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../curls.png");
-  color: white;
-  padding-bottom: 5px;
+  padding: 10px;
+  font-size: 1.7em;
+  font-family: 'Oswald',sans-serif;
+  margin-bottom: 20px;
 }
 .u11f{
   width: 100%;
   text-align: center;
-  font-size: 1.3em;
-  font-family: Verdana;
-  font-weight: bold;
 }
-.u11femail{
-  display: inline-block;
-  margin-bottom: 10px;
-  width: 50%;
+.describe{
+  width: calc(90% - 10px);
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.2em;
-  font-family: Verdana;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px #555;
-  margin-top: 10px;
+  font-family: 'Lato',sans-serif;
+  margin-bottom: 20px;
 }
-.u11fsub{
-  width: 60%;
-  padding: 2px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../dark-grey-terrazzo.png");
-  font-size: 2.1em;
+input[type=email] {
+  width: 30%;
+  height: 40px;
+  padding: 10px;
+  margin: 5px 0px;
+  margin-bottom: 10px;
+}
+button[type=submit] ,button[class="u11fsub"]{
+  background-color: #ccc;
+  border: 1px solid black;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 3px;
   cursor: pointer;
-  transition: 0.3s;
-  margin-top: 10px;
+  transition: filter 0.4s;
 }
-#u11fsub:hover{
+button[type=submit]:hover,button[class="u11fsub"]:hover{
   filter: brightness(70%);
 }
 .u11done{
-  width: 100%;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 849px){
+  button[type=submit] ,button[class="u11fsub"]{
+    padding: 10px;
+  }
+  input[type=email]{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 442px){
+  input[type=email]{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 330px){
+  button[type=submit] ,button[class="u11fsub"]{
+    font-size: 0.9em;
+  }
 }

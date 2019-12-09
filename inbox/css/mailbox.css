@@ -1,0 +1,156 @@
+.u9crnone,.u9cblnone{
+    font-size: 2em;
+    font-family: 'Oswald',sans-serif;
+}
+.messagesPanel{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.messagesPanel-item{
+    font-size: 20px;
+    padding: 4px;
+    width: calc(33% - 8px);
+    display: inline-block;
+    font-family: 'Oswald',sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: filter 0.4s;
+}
+.messagesPanel > button:hover{
+    filter: brightness(120%);
+}
+.messagesPanel > button[disabled]:hover{
+    filter: brightness(100%);
+}
+.emails-desc,.email-row,.blacklist-desc{
+    width: 100%;
+    height: 40px;
+    font-family: 'Oswald',sans-serif;
+    border-bottom: 1px solid #bbb;
+}
+.emails-descItem,.email-rowItem,.blacklist-descItem{
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+.from{
+    width: 20%;
+}
+.topic,.since{
+    width: 60%;
+}
+.signAll{
+    width: 10%;
+    display: inline-block;
+}
+.blacklist-desc{
+    margin-top: 10px;
+}
+.checkbox-container{
+    width: 100%;
+    height: 100%;
+}
+input[id="main-checkbox"],input[class="subCheckbox"],input[class="blockSubCheckbox"]{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+
+
+.writing-header,.blocking-header{
+    font-size: 2em;
+    font-family: 'Oswald',sans-serif;
+    padding: 10px;
+    width: calc(90% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+}
+input[class="email-input"],input[class="blocking-input"]{
+    width: 90%;
+    height: 40px;
+    padding: 10px;
+    margin: 5px 0px;
+    font-family: 'Lato',sans-serif;
+}
+.writing-Item,.blocking-Item{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.writingInput-desc,.blockingItem-desc{
+    font-size: 1.2em;
+    font-family: 'Lato',sans-serif;
+    width: calc(10% - 24px);
+    display: inline-block;
+}
+.email-mainContent{
+    min-width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 400px;
+    font-size: 1.1em;
+    font-family: 'Lato',sans-serif;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+button[class="confirm-button"]{
+    width: calc(60% - 20px);
+    padding: 20px;
+    background-color: #ccc;
+    border: 1px solid black;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: filter 0.4s;
+}
+button[class="confirm-button"]:hover{
+    filter: brightness(70%);
+}
+
+
+.choosing-buttons{
+    width: calc(50% - 20px);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Lato',sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ccc;
+    border: 1px solid black;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 3px;
+    font-family: 'Oswald',sans-serif;
+    transition: filter 0.4s;
+    cursor: pointer;
+}
+.choosing-mode > button:hover{
+    filter: brightness(70%);
+}
+input[class="blocking-input"]{
+    width: 60%;
+}
+.blocking-Item{
+    margin-bottom: 60px;
+}
+button[class="confirm-button"]{
+    width: calc(40% - 20px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

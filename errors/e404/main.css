@@ -1,63 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 body{
   margin: 0;
   padding: 0;
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../../curls.png");
 }
 .welcomeHeader{
-  width: 100%;
+  width: calc(100% - 20px);
+  padding: 10px;
   text-align: center;
-  font-size: 4em;
-  color: black;
-  font-family: monospace;
-  box-shadow: 2px 2px #111 inset;
-  /*Background pattern from: subltepatterns.com*/
-  background: url("../../pipes.png");
+  font-family: 'Oswald',sans-serif;
+  font-size: 2.3em;
+  margin-top: 20px;
 }
-.contentInfo{
-  width: 100%;
+.content{
+  width: calc(100% - 40px);
+  padding-right: 20px;
+  padding-left: 20px;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1.8em;
   text-align: center;
-  font-size: 2em;
-  color: white;
-  font-family: Verdana;
+  margin-top: 60px;
 }
-.mainSiteWrapper{
-  width: 100%;
-  text-align: center;
-  margin-top: 50px;
+.mainSite{
+  margin-top: 23px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #aaa;
+  font-family: 'Oswald',sans-serif;
+  font-size: 0.8em;
+  padding: 5px;
+  min-width: 150px;
+  width: 150px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  transition: filter 0.4s;
+}
+button[class="mainSite"]:hover{
+  filter: brightness(70%);
 }
 a{
   text-decoration: none;
 }
-.mainSite{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  text-decoration: none;
-  font-size: 3em;
-  color: black;
-  padding: 2px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  color: white;
-  background: url("../../connectwork.png");
-  width: 30%;
-}
-#mainSite{
-  transition: all 0.6s;
-}
-#mainSite:hover{
-  filter: brightness(70%);
-}
-@media screen and (max-width: 750px)
-{
-  .welcomeHeader{
-    font-size: 3em;
-  }
-  .mainSite{
-    width: 90%;
-  }
-  .contentInfo{
-    font-size: 2em;
+@media screen and (max-width: 610px){
+  .content{
+    font-size: 1.5em;
   }
 }

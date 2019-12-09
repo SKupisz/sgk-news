@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url("./errorStyle.css");
+@import url("./piece.css");
+body{
+    margin: 0;
+    padding: 0;
+}
+.welcome-header{
+    font-family: 'Oswald',sans-serif;
+    font-size: 2.3em;
+    padding: 7px;
+    width: calc(100% - 14px);
+    text-align: center;
+    margin-top: 67px;
+    margin-bottom: 17px;
+}   
+.content-container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: black; 
+}
+.content-container > .bull-container{
+    width: calc(100% - 20px);
+    height: 220px;
+    border: 1px solid #111;
+    padding: 10px;
+    display: block;
+    padding-top: 20px;
+    margin-bottom: 45px;
+}
+.bull-header{
+    width: 100%;
+    text-align: center;
+    font-size: 1.9em;
+    font-family: 'Oswald',sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.bull-desc{
+    width: 100%;
+    text-align: left;
+    font-size: 1.2em;
+    font-family: 'Lato',sans-serif;
+}
+.bull-date{
+    margin-left: auto;
+    margin-right: 20px;
+    display: block;
+    padding-top: 7px;
+    font-size: 1.3em;
+    font-style: italic;
+}
+@media screen and (max-width: 768px){
+    .bulletin-content{
+        font-size: 1em;
+        letter-spacing: normal;
+    }
+    .bulletin-date{
+        font-size: 0.78em;
+    }
+}
+@media screen and (max-width: 560px){
+    .bulletin-header{
+        font-size: 1.6em;
+    }
+}
+@media screen and (max-width: 508px){
+    .welcome-header{
+        font-size: 2em;
+    }
+    .content-container > .bull-container{
+        height: 210px;
+    }
+    .bull-header{
+        font-size: 1.6em;
+    }
+    .bull-desc{
+        font-size: 1em;
+    }
+    .bull-date{
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 420px){
+    .bulletin-content{
+        margin-bottom: 27px;
+    }
+}
+@media screen and (max-width: 348px){
+    .bull-header{
+        font-size: 1.45em;
+    }
+    .bull-desc{
+        font-size: 0.9em;
+    }
+    .bull-date{
+        font-size: 1em;
+    }
+}

@@ -5,19 +5,13 @@ if(!isset($_SESSION['zalogowany']))
   header("Location: ../index.php");
   exit();
 }
-if(!isset($_POST['u9cbl_dn']))
+if(!isset($_REQUEST['u']))
 {
   header("Location: ../inbox.php");
   exit();
 }
-$userIdP = $_POST['u9cbl_dn'];
-$go = strlen($userIdP);
-$userId = (String)(int)$userIdP;
-if(strlen($userId) != $go)
-{
-  header("Location: ../inbox.php");
-  exit();
-}
+$userIdP = $_REQUEST['u'];
+$userIdP = htmlentities($userIdP);
 $checkin = 1;
 require_once "../main/connect.php";
 try {
@@ -28,24 +22,23 @@ try {
   }
   else {
     $list = $_SESSION['zalogowany']."_blacklist";
-    $userId = (int)$userId;
-    $rezultat = $polaczenie->query("SELECT * FROM $list WHERE id = $userId");
+    $rezultat = $polaczenie->query("SELECT * FROM $list WHERE username = '$userIdP'");
     if(!$rezultat) throw new Exception($polaczenie->error);
     if($rezultat->num_rows == 0)
     {
       throw new Exception($polaczenie->error);
     }
     else {
-      $rezultat = $polaczenie->query("DELETE FROM $list WHERE id = $userId");
+      $row = $rezultat->fetch_assoc();
+      $idForDelete = $row['id'];
+      $rezultat = $polaczenie->query("DELETE FROM $list WHERE id = $idForDelete");
       if(!$rezultat) throw new Exception($polaczenie->error);
-      $_SESSION['delError'] = "User succesfully returned";
-      header("Location: ../inbox.php");
+      echo "User unblocked";
       exit();
     }
   }
 } catch (Exception $e) {
-  $_SESSION['delError'] = "You cannot connect right now. Try later";
-  header("Location: ../inbox.php");
+  echo "You cannot connect right now. Try later";
   exit();
 }
 

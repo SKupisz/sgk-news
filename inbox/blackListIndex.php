@@ -1,65 +1,58 @@
-<?php if(!isset($names))
-{
-  header("Location: ../inbox.php");
-  exit();
-}
-?>
-<html>
-<body>
-<section id = "u9cbl_r">Your List</section>
-<section id = "u9cbl_w">Block<label class = "resp"> user</label></section>
-<section id = "u9cbl_rc">
-  <section id = "u9cbl_rcmr">
-    <section id = "u9cbl_rcmrn">Username</section>
-    <section id = "u9cbl_rcmrd">Blocking since</section>
-    <section id = "u9cbl_rcmrr">Delete from black list</section>
-  </section>
-  <?php
-  $lt = count($names);
-  if($lt == 0)
-  {
-    ?><section id = "u9cblnone">There is no user on your black list</section><?php
-  }
-  else {
-    if($lt <= 30)
-    {
-      for($i = 0 ; $i < $lt; $i++)
+<section class = "action-block blacklist">
+      <section class = "choosing-mode">
+        <button class = "choosing-buttons list">Your list</button>
+        <button class = "choosing-buttons block">Block a user</button>
+      </section>
+      <section class = "blacklistMood-container userList">
+      <?php
+      if($ifBlackRows == 0)
       {
-        $name = $names[$i];
-        $date = $dates[$i];
-        $numId = $ids[$i];
-        ?><section id = "u9cbl_rcmr" style="position: absolute; top: <?php echo 23+8*($i);?>%; left: 0px;">
-          <section id = "u9cbl_rcmrn"><?php echo $name;?></section>
-          <section id = "u9cbl_rcmrd"><?php echo $date;?></section>
-          <section id = "u9cbl_rcmrr">
-            <form method = "post" action = "inbox/deleteFromBL.php">
-              <input type = "hidden" name = "u9cbl_dn" value = "<?php echo $numId;?>"/>
-              <input type = "submit" id = "u9cbl_ds" value = "Delete"/>
-            </form>
-          </section>
-        </section><?php
-      }
-    }
-    else {
-      if($lt < 60)
-      {
-
+        ?><section class = "u9cblnone">There is no user on your black list</section><?php
       }
       else {
-
-      }
-    }
-  }
-
-  ?>
-</section>
-<section id = "u9cbl_wc">
-  <form method="post" action = "inbox/onBlackList.php">
-    <label id = "u9cbl_wcus">
-      Username <input type = "text" id = "u9cbl_wcn" name = "u9cbl_wcn"/>
-    </label>
-    <input type="submit" value = "Confirm" id = "u9cbl_wcc"/>
-  </form>
-</section>
-</body>
-</html>
+        ?><nav class = "blacklist-desc">
+        <div class = "blacklist-descItem from">
+          Username
+        </div>
+        <div class = "blacklist-descItem topic">
+          Blocked since
+        </div>
+        <div class = "blacklist-descItem signAll">
+          <button class = "unBlockingAllBtn" onClick = "clearTheBlocked()">Unblock all</button>
+        </div>
+      </nav><?php
+        if($blockedLength <= 30)
+        {
+          for($i = 0 ; $i < $blockedLength; $i++)
+          {
+            $name = $blockedNames[$i];
+            $date = $blockedDates[$i];
+            ?>
+                    <div class = "email-row" id = "u_<?php echo $name;?>">
+          <div class = "email-rowItem from">
+            <?php echo $name; ?>
+          </div>
+          <div class = "email-rowItem topic">
+            <?php echo $date; ?>
+          </div>
+          <div class = "email-rowItem signAll">
+            <button class = "unBlockingBtn" onClick = "unblockTheUser('<?php echo $name;?>')">Unblock</button>
+          </div>
+        </div><?php
+          }
+        }
+      }?>
+      </section>
+      <section class = "blacklistMood-container blockingForm">
+      <header class = "blocking-header">
+        Blocking a user
+      </header>
+      <form method = "post" action = "./inbox/onBlackList.php">
+        <div class = "blocking-Item receiver">
+          <div class = "blockingItem-desc">Username:  </div>
+          <input type = "text" name = "usernameToBlock" class = "blocking-input"/>
+        </div>
+        <button class = "confirm-button" type = "submit">Block</button>
+      </form>
+      </section>
+    </section>

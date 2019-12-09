@@ -31,84 +31,52 @@ else {
   <title> SGK-news </title>
 </head>
 <body>
-  <section id = "u1">
-    <a href = "index.php" id = "u2">
-      <img src="../main/logo.png" alt="logo" id = "u2i"/>
-    </a>
-    <button id = "upanelopen">
-      Menu
-    </button>
-    <label id = "upanelofical">
-    <a href = "../top.php" id = "u3">
-      <nav class = "menDescLower">Top articles</nav>
-    </a>
-    <a href = "../articles.php" id = "u4">
-      <nav class = "menDescLower">Your articles</nav>
-    </a>
-    <a href = "../inbox.php" id = "u5">
-      <nav class = "menDesc">Inbox</nav>
-    </a>
-    <a href = "../about.php" id = "u6">
-      <nav class = "menDesc">About us</nav>
-    </a>
-    <?php if(isset($_SESSION['zalogowany']))
-    {
-      ?>
-      <a href = "../settings.php" id = "u7">
-        <nav class = "menDesc">Settings</nav>
-      </a>
-      <a href = "../profile.php" id = "u8">
-        <nav class = "menDesc">Profile</nav>
-      </a>
-      <a href = "../logout.php" id = "u9d">
-        <nav class = "menDesc">Logout</nav>
-      </a><?php
-    }
-    else{?>
-    <a href = "../login.php" id = "u7">
-      <nav class = "menDesc">Sign in</nav>
-    </a>
-    <a href = "../register.php" id = "u8">
-      <nav class = "menDesc">Sign up</nav>
-    </a>
-  <?php }?>
-  </label>
-    <label id = "upanel">
-    <a href = "../top.php" id = "u3">
-      Top articles
-    </a>
-    <a href = "../articles.php" id = "u4">
-      Your articles
-    </a>
-    <a href = "../inbox.php" id = "u5">
-      Inbox
-    </a>
-    <a href = "../about.php" id = "u6">
+<ul id = "upanel">
+  <li class="image_li"><a href="../index.php"><img id="logo" src="../logo.png"></a></li>  
+  <li class = "navOpening">
+    <span></span>
+    <span></span>
+    <span class = "theLastOne"></span>
+  </li>
+  <section class = "links-container">
+  <li class="left_li"><a href = "../top.php" class="navlink">
+      Articles
+  </a></li>
+  
+  <li class="left_li"><a href = "../about.php" class="navlink">
       About us
-    </a>
-    <?php if(isset($_SESSION['zalogowany']))
-    {
-      ?>
-      <a href = "../settings.php" id = "u7">
-        Settings
-      </a>
-      <a href = "../profile.php" id = "u8">
-        Profile
-      </a>
-      <a href = "../logout.php" id = "u9d">
+  </a></li>
+    
+      
+  <?php if(isset($_SESSION['zalogowany']))
+  {
+    ?>
+    <li class="left_li"><a href = "../articles.php"class="navlink">
+        Your articles
+  </a></li>
+    <li class="left_li"><a href = "../inbox.php" class="navlink">
+        Inbox
+  </a></li>
+  <li class="right_li"><a href = "../logout.php" class="navlink">
         Logout
-      </a><?php
-    }
-    else{?>
-      <a href = "../login.php" id = "u7">
+    </a></li>
+    <li class="right_li"><a href = "../profile.php" class="navlink">
+        Profile
+    </a></li>
+    <li class="right_li"><a href = "../settings.php" class="navlink">
+        Setting
+    </a></li><?php
+  }
+  else{?>
+    <li class="right_li"><a href = "../login.php" class="navlink">
         Sign in
-      </a>
-      <a href = "../register.php" id = "u8">
+    </a></li>
+    <li class="right_li"><a href = "../register.php" class="navlink">
         Sign up
-      </a>
-  <?php }?>
-  </label>
+    </a></li>
+<?php }?>
   </section>
+</ul>
 
 <section id = "umain">
 
@@ -116,6 +84,7 @@ else {
     Recovering password
   </header>
   <main class = "u11f">
+    <div class = "describe">
     <?php if($content == 1)
     {
       if(isset($error))
@@ -125,9 +94,11 @@ else {
       else {
         ?>Enter your email, and we will send you email with your new password<?php
       }
-      ?>
+      ?></div>
       <form method = "post" action="">
-        <input type = "email" <?php if(isset($alfa)){echo "value = '".$alfa."'";}?> name = "u11femail" class = "u11femail" placeholder="Enter your email here..." required/>
+        <div class = "inputWrapper">
+          <input type = "email" <?php if(isset($alfa)){echo "value = '".$alfa."'";}?> name = "u11femail" class = "u11femail" placeholder="Enter your email here..." required/>
+        </div>
         <button type = "submit" class = "u11fsub" id = "u11fsub">
           Send password reset email
         </button>

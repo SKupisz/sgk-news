@@ -6,7 +6,7 @@ session_start();
   <meta charset="utf-8"/>
   <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
-  <link rel="stylesheet" type="text/css" href = "login/main.css"/>
+  <link rel="stylesheet" type="text/css" href = "login/login.css"/>
   <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
   <meta name="description" content="SGK-news website">
   <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
@@ -18,30 +18,44 @@ session_start();
   <section id = "u10t">
     <?php if(isset($_SESSION['zalogowany']))
     {
-      ?>You are signed in!<?php
+      ?><header class = "signed-header">You are signed in!</header><?php
     }
     else if(isset($_SESSION['r_error']))
     {
-      echo $_SESSION['r_error'];
+      ?><header class = "signed-header"><?php echo $_SESSION['r_error'];?></header><?php
       unset($_SESSION['r_error']);
     }
     else {
-    ?>Sign in
+    ?><h2>Sign in</h2>
     <?php } ?></section>
     <?php if(!isset($_SESSION['zalogowany']))
     {
 ?>
 
   <form method="post" action="getIn.php">
+      
+    
+      
     <section class = "u10wrapper">
-    <section id = "u10l"><label class = "u10ldis">Login » </label><input type="text" placeholder = "Login" name = "u10l" id = "u10li" required/></section>
-    <section id = "u10p"><label class = "u10ldis">Password » </label><input type="password" placeholder = "Password" name = "u10p" id = "u10pi" required/></section>
-    <section id = "u10fp"><a href = "login/forgot.php">Forgot password?</a></section>
+        
+        
+    <section class="input"><p><input type="text" placeholder = "Username" name = "u10l" id = "u10li" required/></p></section>
+        
+    <section class="input"><p><input type="password" placeholder = "Password" name = "u10p" id = "u10pi" required/></p></section>
+    
+        <section id = "u10fp"><p id="password"><a  href = "login/forgot.php">Forgot the password?</a></p></section>
+        
   </section>
-    <input type="submit" id = "u10sb" value="Sign In"/>
+      
+    <input type="submit" id = "u10sb" value="Sign in"/>
+        
+       
+        
   </form>
 <?php }?>
 </section>
+          
+          
 </body>
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>

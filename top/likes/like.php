@@ -1,15 +1,18 @@
 <?php
 session_start();
-if(!isset($_SESSION['zalogowany']))
-{
-  header("Location: ../../");
+if(!isset($_REQUEST["id"])){
   exit();
 }
-$id = $_GET['aid'];
+if(!isset($_SESSION['zalogowany']))
+{
+  echo "Not signed";
+  exit();
+}
+$id = $_REQUEST['id'];
 $test_id = (int)$id;
 if($id != $test_id || $id < 0)
 {
-  header("Location: ../../");
+  echo "Connection failure";
   exit();
 }
 $checkin = 1;
@@ -44,8 +47,7 @@ try {
       if(!$rezultat) throw new Exception($polaczenie->error);
       $rezultat = $polaczenie->query("UPDATE sent_articles SET likes = likes-1 WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
-      $_SESSION['liking'] = "liking";
-      header("Location: ../../showarticle.php?id=".$id);
+      echo "done lower";
       exit();
     }
     else {
@@ -53,14 +55,12 @@ try {
       if(!$rezultat) throw new Exception($polaczenie->error);
       $rezultat = $polaczenie->query("UPDATE sent_articles SET likes = likes+1 WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
-      $_SESSION['liking'] = "liking";
-      header("Location: ../../showarticle.php?id=".$id);
+      echo "done upper";
       exit();
     }
   }
 } catch (Exception $e) {
-  $_SESSION['liking_error'] = "Lost connection";
-  header("Location: ../../showarticle.php?id=".$id);
+  echo "Connection failure";
   exit();
 }
 
