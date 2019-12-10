@@ -116,7 +116,29 @@ try {
       $tags = array_reverse($tags);
 
     }
-    $rezultat = $polaczenie->query("SELECT * FROM sent_images_location ORDER BY views");
+    $sql = "SELECT * FROM sent_images_location ORDER BY id DESC LIMIT 10";
+    if(isset($_GET["n"]) && $_GET["n"] != 0){
+      $number = (int)$_GET["n"];
+      $forCheckTheNumber = (string)$number;
+      if($forCheckTheNumber != $_GET["n"]){
+        $number = 0;
+        $_GET["n"] = 0;
+      }
+      else{
+        $sql.=" OFFSET ".$number;
+      }
+    }
+    else{
+      $number = 0;
+    }
+    $forCheck = $polaczenie->query("SELECT COUNT(*) FROM sent_images_location");
+    if(!$forCheck) throw new Exception($polaczenie->error);
+    $row = $forCheck->fetch_assoc();
+    $flag = 0;
+    if($row["COUNT(*)"] < $number+10){
+      $flag = 1;
+    }
+    $rezultat = $polaczenie->query($sql);
     if(!$rezultat) throw new Exception($polaczenie->error);
     $howManyImages = $rezultat->num_rows;
     $imagesId = array();
@@ -133,11 +155,6 @@ try {
       $imagesViews[$i] = $row['views'];
       $imagesLikes[$i] = $row['likes'];
     }
-    $imagesId = array_reverse($imagesId);
-    $imagesFrom = array_reverse($imagesFrom);
-    $imagesAddress = array_reverse($imagesAddress);
-    $imagesViews = array_reverse($imagesViews);
-    $imagesLikes = array_reverse($imagesLikes);
     mysqli_close($polaczenie);
   }
 } catch (Exception $e) {

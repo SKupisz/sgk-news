@@ -88,3 +88,9 @@ function sentArticleLike(artId){
   xmlhttp.open("GET","./top/likes/like.php?id="+artId,true);
   xmlhttp.send();
 }
+
+function selectRightSection(){
+  document.querySelector(".u11").style.display = "none";
+  document.querySelector(".u12").style.display = "block";
+  document.querySelector("#u10bar").style.display = "none";
+}

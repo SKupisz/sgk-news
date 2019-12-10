@@ -20,9 +20,9 @@ if(isset($_GET['watchingImage']))
       <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
-    <?php require_once"top/loadData.php"?>
+    <?php require_once "top/loadData.php"?>
   </head>
-<body>
+<body <?php if(isset($_GET["n"])){?> onload = "selectRightSection()" <?php }?>>
   <?php require_once "main/bar.php";?>
   <main id = "umain"> 
     <?php if($connection == 1){

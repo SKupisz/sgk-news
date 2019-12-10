@@ -15,7 +15,8 @@
     <section class = "<?php echo $class; ?>" id = <?php echo "imageId".$nowId;?>>
       <figure class = "imageFigure">
       <img src = "<?php echo $nowLocalization; ?>" alt = "image" class = "showingImage"/>
-      <figcaption class="imageCaption"><?php echo $name." by ".$author;?></figcaption>
+      <figcaption class="imageCaption">
+        <label class = "imageTitle"><?php echo $name;?></label><?php echo " by ".$author;?></figcaption>
     </figure>
     <aside class = "imageAccesories">
       <div class = "imageLikes">
@@ -28,3 +29,12 @@
     </section><?php
   }
 ?>
+<section class = "choosing-bar">
+  <a href = "?n=<?php if($number-10 >= 0) {echo $number-10;} else {echo '0';} ?>
+  ">
+  <button class="choosing-bar-item left-item"><</button>
+  </a>
+  <a href = "?n=<?php if($flag == 0){echo $number+10;} else { echo $number; }?>">
+  <button class="choosing-bar-item right-item">></button>
+</a>
+</section>

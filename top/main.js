@@ -154,6 +154,3 @@ document.querySelector("#images").addEventListener("click",function(){
   document.querySelector(".u10tagsAdvance").style.display = "none";
   document.querySelector(".u10wordsAdvance").style.display = "none";
 });
-document.querySelector("#errorInformationClose").addEventListener("click",function(){
-  document.body.querySelector(".errorInformation").remove();
-});
