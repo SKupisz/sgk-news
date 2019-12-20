@@ -53,9 +53,9 @@ try {
       $content = $row['message'];
       $title = $row['title'];
       mysqli_close($polaczenie);
-      require_once "./inbox/encrypt.php";
-      $en = new Encrypt;
-      $content = $en->goBack($content);
+      require_once "./inbox/decoding.php";
+      $en = new Decode("./inbox/");
+      $content = $en->toNormal($content);
     }
   }
 } catch (Exception $e) {

@@ -1,7 +1,7 @@
 <?php
 
 class Decode{
-  public function __construct(){
+  public function __construct($path){
     if(isset($path)){
       include $path."mainTables.php";
     }

@@ -80,9 +80,9 @@ else {
         else {
           ?>    
               <section class = "messagesPanel">
-      <button class = "messagesPanel-item unreaded" disabled>Sign as unreaded</button>
-      <button class = "messagesPanel-item delete" disabled>Delete this message</button>
-      <button class = "messagesPanel-item blocker" disabled>Block the sender</button>
+      <button class = "messagesPanel-item unreaded">Sign as unreaded</button>
+      <button class = "messagesPanel-item delete">Delete this message</button>
+      <button class = "messagesPanel-item blocker">Block the sender</button>
     </section>  
           <nav class = "emails-desc">
           <div class = "emails-descItem from">
@@ -104,6 +104,7 @@ else {
                 $ti= $title[$i];
                 $idn = $id[$i];
                 ?>
+                <a href = "openMessage.php?nmb=<?php echo $idn;?>">
             <div class = "email-row">
               <div class = "email-rowItem from">
                 <?php echo $fr; ?>
@@ -116,7 +117,7 @@ else {
                 <input type = 'checkbox' id = "message<?php echo $idn; ?>" class = "subCheckbox" onClick = "goEditThisMessage('message<?php echo $idn; ?>');"/>
                 </div>
               </div>
-            </div><?php
+            </div></a><?php
               }
           }
           else{
@@ -153,7 +154,8 @@ else {
 <script src="./src/node_modules/push.js/bin/push.min.js"></script>
 <script src = "main/jquery-3-2-1.js"></script>
 <script src="main/main.js"></script>
-<script src="inbox/main.js"></script>
+<script src="inbox/js/main.js"></script>
+<script src = "inbox/js/messagePannelButtons.js"></script>
 <script>
   <?php if(isset($_SESSION["e_mailing"])){
     ?>
