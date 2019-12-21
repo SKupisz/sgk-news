@@ -27,7 +27,7 @@ try {
     {
       unset($_SESSION['liking_error']);
     }
-    $rezultat = $polaczenie->query("SELECT tags FROM sent_articles WHERE id = $id");
+    $rezultat = $polaczenie->query("SELECT tags FROM sent_articles_names WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
     if($rezultat->num_rows == 0)
     {
@@ -37,7 +37,7 @@ try {
     }
     $row = $rezultat->fetch_assoc();
     $tags = $row['tags'];
-    $rezultat = $polaczenie->query("SELECT likes FROM sent_articles WHERE id = $id");
+    $rezultat = $polaczenie->query("SELECT likes FROM sent_articles_names WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
     if($rezultat->num_rows == 0)
     {
@@ -49,11 +49,11 @@ try {
     $likes = $row['likes'];
     if(!isset($_SESSION['liking']) && !isset($_SESSION['comment_done']))
     {
-      $rezultat = $polaczenie->query("UPDATE sent_articles SET views = views+1 WHERE id = $id");
+      $rezultat = $polaczenie->query("UPDATE sent_articles_names SET views = views+1 WHERE id = $id");
       if(!$rezultat) throw new Exception($polaczenie->error);
 
     }
-    $comments = $polaczenie->query("SELECT * FROM sent_comments WHERE postId = $id");
+    $comments = $polaczenie->query("SELECT * FROM sent_comments WHERE id = $id");
     if(!$comments) throw new Exception($polaczenie->error);
     if($comments->num_rows == 0)
     {
@@ -91,7 +91,7 @@ try {
       <meta name="description" content="SGK-news website">
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
-    <?php require_once"top/loadShowingData.php"?>
+    <?php require_once "top/loadShowingData.php";?>
   </head>
 <body>
   <?php require_once "main/bar.php";?>

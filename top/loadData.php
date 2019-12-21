@@ -74,7 +74,7 @@ try {
       unset($_SESSION['tagsError']);
     }
     else {
-      $rezultat = $polaczenie->query("SELECT * FROM sent_articles ORDER BY RAND()");
+      $rezultat = $polaczenie->query("SELECT * FROM sent_articles_names ORDER BY RAND()");
       if(!$rezultat) throw new Exception($polaczenie->error);
       $from = array();
       $title = array();
@@ -98,9 +98,12 @@ try {
         $id[$i] = $row['id'];
         $from[$i] = $row["username"];
         $title[$i] = $row["title"];
-        $content[$i] = $row["content"];
-        $finalContent = $cypheringObject->toNormal($content[$i]);
-        $content[$i] = $finalContent;
+        $content[$i] = $row["forShowing"];
+        if(strlen($content[$i]) > 0){
+          $finalContent = $cypheringObject->toNormal($content[$i]);
+          $content[$i] = $finalContent;
+        }
+
         $views[$i] = $row["views"];
         $words[$i] = $row['words'];
         $likes[$i] = $row['likes'];
