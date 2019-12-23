@@ -3,9 +3,11 @@ document.querySelector(".writing").style.display = "none";
 document.querySelector(".blacklist").style.display = "none";
 document.querySelector(".userList").style.display = "none";
 document.querySelector(".blockingForm").style.display = "none";
-document.querySelector(".unreaded").disabled = true;
-document.querySelector(".delete").disabled = true;
-document.querySelector(".blocker").disabled = true;
+if(document.querySelector(".messagesPanel")){
+  document.querySelector(".makeUnreaded").disabled = true;
+  document.querySelector(".delete").disabled = true;
+  document.querySelector(".blocker").disabled = true;
+}
 
 document.querySelector(".goCheckTheBox").addEventListener("click",function(){
   if(document.querySelector(".box").style.display == "none"){
@@ -142,6 +144,16 @@ document.querySelector("#main-checkbox").addEventListener("click",function(){
     
 
   }
+  if(localStorage.toEdit.length > 0){
+    document.querySelector(".makeUnreaded").disabled = false;
+    document.querySelector(".delete").disabled = false;
+    document.querySelector(".blocker").disabled = false;
+  }
+  else{
+    document.querySelector(".makeUnreaded").disabled = true;
+    document.querySelector(".delete").disabled = true;
+    document.querySelector(".blocker").disabled = true;
+  }
 
 });
 
@@ -165,12 +177,12 @@ function goEditThisMessage(name){
   if(newStorage[newStorage.length - 1] == ";"){newStorage = newStorage.substring(0,newStorage.length - 1);}
   localStorage.toEdit = newStorage;
   if(localStorage.toEdit.length > 0){
-    document.querySelector(".unreaded").disabled = false;
+    document.querySelector(".makeUnreaded").disabled = false;
     document.querySelector(".delete").disabled = false;
     document.querySelector(".blocker").disabled = false;
   }
   else{
-    document.querySelector(".unreaded").disabled = true;
+    document.querySelector(".makeUnreaded").disabled = true;
     document.querySelector(".delete").disabled = true;
     document.querySelector(".blocker").disabled = true;
   }

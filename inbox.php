@@ -80,7 +80,7 @@ else {
         else {
           ?>    
               <section class = "messagesPanel">
-      <button class = "messagesPanel-item unreaded">Sign as unreaded</button>
+      <button class = "messagesPanel-item makeUnreaded">Sign as unreaded</button>
       <button class = "messagesPanel-item delete">Delete this message</button>
       <button class = "messagesPanel-item blocker">Block the sender</button>
     </section>  
@@ -103,9 +103,10 @@ else {
                 $fr = $from[$i];
                 $ti= $title[$i];
                 $idn = $id[$i];
+                $ifReaded = $mark[$i];
                 ?>
                 <a href = "openMessage.php?nmb=<?php echo $idn;?>">
-            <div class = "email-row">
+            <div class = "email-row <?php if($ifReaded == 0){?>not-readed<?php } ?>">
               <div class = "email-rowItem from">
                 <?php echo $fr; ?>
               </div>
