@@ -52,10 +52,17 @@ try {
       $from = $row['fromm'];
       $content = $row['message'];
       $title = $row['title'];
+      require_once "./inbox/decoding.php";
+      $en = new Decode("./inbox/");
+      $content = $en->toNormal($content);
+      if($row["unreaded"] == 0){
+        $readed = $polaczenie->query("UPDATE $post SET unreaded = 1 WHERE id = $final");
+        if(!$readed){
+          throw new Exception($polaczenie->error);
+        }
+      }
+
       mysqli_close($polaczenie);
-      require_once "./inbox/encrypt.php";
-      $en = new Encrypt;
-      $content = $en->goBack($content);
     }
   }
 } catch (Exception $e) {

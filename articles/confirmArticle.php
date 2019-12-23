@@ -41,8 +41,55 @@ try {
     $content = $row['article'];
     $tags = $row['tags'];
     $words = str_word_count($content);
-    $rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0,'$tags')");
-    if(!$rezultat) throw new Exception($polaczenie->error);
+    require_once("../inbox/cyphering.php");
+    $base = new Cypher();
+    $content = $base->toDelta($content,rand(1024,3000),1,1);
+    if(strlen($content) > 30000){
+      $counter = 0;
+      $finalParts = array();
+      for($i = 0 ; $i < strlen($content); $i+=30000){
+          if($i == strlen($content) - 1){
+              $sub = substr($content,$i);
+          }
+          else{
+              $sub = substr($content,$i,30000);
+          }
+          $finalParts[$counter] = $sub;
+          $counter++;
+      }
+    }
+    else{
+        $finalParts = array();
+        $finalParts[0] = $content;
+    }
+    /*$rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0,'$tags')");
+    if(!$rezultat) throw new Exception($polaczenie->error);*/
+    $newDirective = $polaczenie->query("INSERT INTO sent_articles_names VALUES(NULL,'$user','$title',$words,0,0,'$tags')");
+    if(!$newDirective) throw new Exception($connection->error);
+    $getIdOfAPreviewQuery = $polaczenie->query("SELECT id FROM sent_articles_names WHERE username = '$user' AND title='$title' AND tags = '$tags' AND words = $words ORDER BY id DESC");
+    if(!$getIdOfAPreviewQuery) throw new Exception($connection->error);
+    if($getIdOfAPreviewQuery->num_rows == 0){
+      exitInstructions("Something went wrong. Try later");
+    }
+    else{
+      $row = $getIdOfAPreviewQuery->fetch_assoc();
+      $postID = $row["id"];
+      for($i = 0; $i < count($finalParts); $i++){
+        $localContent = $finalParts[$i];
+        $insertPart = $polaczenie->query("INSERT INTO sent_articles_parts VALUES(NULL,$postID,$i,'$localContent')");
+        if(!$insertPart){
+          if($i != 0){
+            $firstDel = $polaczenie->query("DELETE FROM sent_articles_names WHERE id = $postID");
+            if(!$firstDel) throw new Exception($polaczenie->error);
+            for($j = $i; $j > 0 ;$j--){
+              $exit = $polaczenie->query("DELETE FROM sent_articles_parts WHERE postId = $postID");
+              if(!$exit) throw new Exception($polaczenie->error);
+            }
+          }
+          throw new Exception($polaczenie->error);
+        }
+      }
+    }
     $rezultat = $polaczenie->query("UPDATE $user SET status = 2 WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
     mysqli_close($polaczenie);
