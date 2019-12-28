@@ -50,7 +50,7 @@
       <form method = "post" action = "./inbox/onBlackList.php">
         <div class = "blocking-Item receiver">
           <div class = "blockingItem-desc">Username:  </div>
-          <input type = "text" name = "usernameToBlock" class = "blocking-input"/>
+          <input type = "text" name = "usernameToBlock" placeholder = "Username..." class = "blocking-input"/>
         </div>
         <button class = "confirm-button" type = "submit">Block</button>
       </form>

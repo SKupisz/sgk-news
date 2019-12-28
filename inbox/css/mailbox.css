@@ -82,7 +82,7 @@ input[id="main-checkbox"],input[class="subCheckbox"],input[class="blockSubCheckb
     margin-right: auto;
 }
 input[class="email-input"],input[class="blocking-input"]{
-    width: 90%;
+    width: calc(100% - 20px);
     height: 40px;
     padding: 10px;
     margin: 5px 0px;
@@ -97,7 +97,7 @@ input[class="email-input"],input[class="blocking-input"]{
     font-size: 1.2em;
     font-family: 'Lato',sans-serif;
     width: calc(10% - 24px);
-    display: inline-block;
+    display: none;
 }
 .email-mainContent{
     min-width: calc(100% - 20px);
@@ -160,4 +160,47 @@ button[class="confirm-button"]{
     width: calc(40% - 20px);
     padding-top: 20px;
     padding-bottom: 20px;
+}
+@media screen and (max-width: 1255px){
+    input[class="blocking-input"]{
+        width: calc(100% - 20px);
+    }
+    .blockingItem-desc{
+        display: none;
+    }
+}
+@media screen and (max-width: 890px){
+    input[class="email-input"]{
+        width: calc(100% - 20px);
+    }
+    .writingInput-desc{
+        display: none;
+    }
+}
+@media screen and (max-width: 670px){
+    .signAll{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 591px){
+    .messagesPanel-item{
+        width: calc(50% - 8px);
+    }
+    .email-mainContent{
+        min-height: 300px;
+        max-height: 350px;
+    }
+}
+@media screen and (max-width: 478px){
+    .messagesPanel-item{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 405px){
+    .email-mainContent{
+        font-size: 0.9em;
+    }
+    .choosing-buttons{
+        width: calc(50% - 10px);
+    }
 }

@@ -15,21 +15,24 @@ if(!isset($_REQUEST["u"])){
   $mood = 1;
 }
 else{
-  $username = $_REQUEST['u'];
-  $mood = 2;
-}
-if(ctype_alnum($username) == false)
-{
-  if($mood == 1){
-    $_SESSION['e_bladd'] = "User you wanna block does not exist";
-    header("Location: ../inbox.php");
-  }
-  else{
-    echo "user doesn't exist";
+  $id = $_REQUEST['u'];
+  $idc = (int)$id;
+  $idc = (string)$idc;
+  if($idc != $id){
+    echo "wrong id";
     exit();
   }
-
+  $mood = 2;
 }
+if($mood == 1){
+  if(ctype_alnum($username) == false)
+  {
+    $_SESSION['e_bladd'] = "User you wanna block does not exist";
+    header("Location: ../inbox.php");
+    exit();
+  }
+}
+
 $checkin = 1;
 require_once "../main/connect.php";
 try {
@@ -40,6 +43,19 @@ try {
   }
   else {
     $blIndex = $_SESSION['zalogowany']."_blacklist";
+    if($mood == 2){
+      $userPost = $_SESSION["zalogowany"]."_post";
+      $checkTheUsername = $polaczenie->query("SELECT fromm FROM $userPost WHERE id = $id");
+      if(!$checkTheUsername) throw new Exception($polaczenie->error);
+      if($checkTheUsername->num_rows == 0){
+        echo "wrong id";
+        exit();
+      }
+      else{
+        $row = $checkTheUsername->fetch_assoc();
+        $username = $row["fromm"];
+      }
+    }
     $rezultat = $polaczenie->query("SELECT * FROM admins WHERE username = '$username'");
     if(!$rezultat) throw new Exception($polaczenie->error);
     if($rezultat->num_rows == 0)

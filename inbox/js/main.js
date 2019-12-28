@@ -6,7 +6,7 @@ document.querySelector(".blockingForm").style.display = "none";
 if(document.querySelector(".messagesPanel")){
   document.querySelector(".makeUnreaded").disabled = true;
   document.querySelector(".delete").disabled = true;
-  document.querySelector(".blocker").disabled = true;
+  //document.querySelector(".blocker").disabled = true;
 }
 
 document.querySelector(".goCheckTheBox").addEventListener("click",function(){
@@ -147,12 +147,12 @@ document.querySelector("#main-checkbox").addEventListener("click",function(){
   if(localStorage.toEdit.length > 0){
     document.querySelector(".makeUnreaded").disabled = false;
     document.querySelector(".delete").disabled = false;
-    document.querySelector(".blocker").disabled = false;
+    //document.querySelector(".blocker").disabled = false;
   }
   else{
     document.querySelector(".makeUnreaded").disabled = true;
     document.querySelector(".delete").disabled = true;
-    document.querySelector(".blocker").disabled = true;
+    //document.querySelector(".blocker").disabled = true;
   }
 
 });
@@ -179,11 +179,11 @@ function goEditThisMessage(name){
   if(localStorage.toEdit.length > 0){
     document.querySelector(".makeUnreaded").disabled = false;
     document.querySelector(".delete").disabled = false;
-    document.querySelector(".blocker").disabled = false;
+    //document.querySelector(".blocker").disabled = false;
   }
   else{
     document.querySelector(".makeUnreaded").disabled = true;
     document.querySelector(".delete").disabled = true;
-    document.querySelector(".blocker").disabled = true;
+    //document.querySelector(".blocker").disabled = true;
   }
 };

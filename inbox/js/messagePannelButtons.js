@@ -65,9 +65,7 @@ if(document.querySelector(".messagesPanel")){
             }
             failedComment("Deleting message","Messages had just been deleted");
         }
-    });
-}
-/*
+    });/*
     document.querySelector(".blocker").addEventListener("click",function(){
         let forSearch = localStorage.toEdit.split(";");
         for(let i = 0 ; i < forSearch.length; i++){
@@ -76,22 +74,24 @@ if(document.querySelector(".messagesPanel")){
                 if(this.status == 200 && this.readyState == 4){
                     let resp = this.response;
                     if(resp == "user blocked"){
-                        document.getElementById(forSearch[i]).parentElement.parentElement.parentElement.remove();
+                        let dir = document.getElementById(forSearch[i]).parentElement.parentElement.parentElement.childNodes;
+                        let name = dir[0].innerHTML;
+                        let newBlocked = document.createElement("div");
                     }
                     else{
-                        if(resp == "wrong id"){
-                            failedComment("Deleting message","Wrong id error. Try again");
+                        if(resp == "wrong id" || resp == "user doesn't exist"){
+                            failedComment("Blocking user","Wrong id error. Try again");
                         }
-                        else if(resp == "Message does not exist"){
-                            failedComment("Deleting message","Wrong id error. Try again");
-                        }
-                        else if(resp == "Wrong connection"){
-                            failedComment("Deleting message","Lost connection. Try later");   
+                        else if(resp == "Lost connection"){
+                            failedComment("Blocking user","Lost connection. Try later");   
                         }
                     }
                 }
             }
             let forSending = forSearch[i].substring(7);
-            xmlhttp.open("GET","./inbox/")
+            xmlhttp.open("GET","./inbox/onBlackList.php?u="+forSending);
+            xmlhttp.send();  
         }
+        failedComment("Blocking user","Users blocked"); 
     });*/
+}
