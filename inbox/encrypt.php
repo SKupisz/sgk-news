@@ -3,25 +3,15 @@ require_once "cyphering.php";
 require_once "decoding.php";
 class Encrypt{
   public $alfa;
+  private $base;
+  public function __construct(){
+  }
   public function goWithIt($alfa){
     $base = new Cypher;
     $encrypt = $base->toDelta($alfa,rand(500,5000),1,1);
+    unset($base);
     return $encrypt;
   }
-  /*
-  public function goWithIt($alfa){
-    $encrypt = "";
-    for($i = 0 ; $i < strlen($alfa); $i++)
-    {
-      $code = ord($alfa[$i]);
-      $code+=1;
-      $code = $code*$code;
-      $al = (String) $code;
-      $encrypt.=$al." ";
-    }
-    return $encrypt;
-  }
-  */
   public function goBack($alfa){
     $decrypt = "";
     $table = explode(" ",$alfa);
@@ -29,6 +19,7 @@ class Encrypt{
     {
       $base = new Decode;
       $decrypt = $base->toNormal($alfa);
+      unset($base);
     }
     else {
       for($i = 0 ; $i < count($table); $i++)

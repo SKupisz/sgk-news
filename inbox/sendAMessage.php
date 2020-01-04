@@ -78,6 +78,7 @@ try {
       $content = str_replace("\n", "<br>", $content);
       $en = new Encrypt;
       $content = $en->goWithIt($content);
+      $title = $en->goWithIt($title);
       $rezultat = $polaczenie->query("INSERT INTO $post VALUES(NULL,'$user','$title','$content',0)");
       if(!$rezultat) throw new Exception($polaczenie->error);
       $_SESSION['e_mailing'] = "The message has been sent";

@@ -233,7 +233,7 @@ button[class="u11atrr"]:hover,button[class="u11atrcrBtn"]:hover,button[class="u1
   text-align: center;
   margin-bottom: 10px;
 }
-.bar1,.bar2{
+.bar1,.bar2,.bar3{
   font-size: 20px;
   color: black;
   font-family: "Lato", sans-serif;
@@ -287,6 +287,6 @@ button[class="u11atrr"]:hover,button[class="u11atrcrBtn"]:hover,button[class="u1
 button[class="forUploadBtn"]:hover{
   filter: brightness(70%);
 }
-.imageUpload{
+.imageUpload,.soundUpload{
   display: none;
 }

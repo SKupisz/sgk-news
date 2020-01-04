@@ -2,7 +2,10 @@
 
 class Cypher{
     public function __construct(){
-      include "mainTables.php";
+      if(!function_exists("basic")){
+        include "mainTables.php";
+      }
+      
     }
     function toDelta($text,$modulo,$ifSum,$option){
       if(strlen($text) > 150)

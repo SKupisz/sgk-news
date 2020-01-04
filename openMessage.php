@@ -55,6 +55,7 @@ try {
       require_once "./inbox/decoding.php";
       $en = new Decode("./inbox/");
       $content = $en->toNormal($content);
+      $title = $en->toNormal($title);
       if($row["unreaded"] == 0){
         $readed = $polaczenie->query("UPDATE $post SET unreaded = 1 WHERE id = $final");
         if(!$readed){

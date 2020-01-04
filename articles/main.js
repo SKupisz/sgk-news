@@ -109,14 +109,26 @@ tagOperand("otherTag");
 document.querySelector("#bar2").addEventListener("click",function(){
   this.classList.add("now");
   document.querySelector("#bar1").classList.remove("now");
+  document.querySelector("#bar3").classList.remove("now");
   document.querySelector(".sendingArticle").style.display = "none";
   document.querySelector(".imageUpload").style.display = "block";
+  document.querySelector(".soundUpload").style.display = "none";
 });
 document.querySelector("#bar1").addEventListener("click",function(){
   this.classList.add("now");
   document.querySelector("#bar2").classList.remove("now");
+  document.querySelector("#bar3").classList.remove("now");
   document.querySelector(".sendingArticle").style.display = "block";
   document.querySelector(".imageUpload").style.display = "none";
+  document.querySelector(".soundUpload").style.display = "none";
+});
+document.querySelector("#bar3").addEventListener("click",function(){
+  this.classList.add("now");
+  document.querySelector("#bar2").classList.remove("now");
+  document.querySelector("#bar1").classList.remove("now");
+  document.querySelector(".sendingArticle").style.display = "none";
+  document.querySelector(".imageUpload").style.display = "none";
+  document.querySelector(".soundUpload").style.display = "block";
 });
 function imageLoad(){
   document.querySelector("#bar2").classList.add("now");
