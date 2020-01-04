@@ -10,12 +10,15 @@ function strpos_all($haystack, $needle) {
 }
 class Decode{
   public function __construct(){
-    if(isset($path)){
-      include $path."mainTables.php";
+    if(!function_exists("basic")){
+      if(isset($path)){
+        include $path."mainTables.php";
+      }
+      else{
+        include "mainTables.php";
+      }
     }
-    else{
-      include "mainTables.php";
-    }
+
     
   }
   public function toNormal($alfa)

@@ -10,6 +10,8 @@ if($post != 0){
   $id = array();
   $mark = array();
   $l = $poczta->num_rows;
+  require_once "./inbox/decoding.php";
+  $dc = new Decode;
   for($i = 0 ; $i < $l; $i++)
   {
     $row = $poczta->fetch_assoc();
@@ -17,6 +19,7 @@ if($post != 0){
     $from[$i] = $row['fromm'];
     $content[$i] = $row['message'];
     $title[$i] = $row['title'];
+    $title[$i] = $dc->toNormal($title[$i]);
     $mark[$i] = $row["unreaded"];
   }
   $from = array_reverse($from);

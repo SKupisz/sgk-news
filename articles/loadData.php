@@ -14,7 +14,7 @@ try {
   }
   else{
     $user = $_SESSION['zalogowany'];
-    $rezultat = $polaczenie->query("SELECT * FROM $user WHERE status = 1");
+    $rezultat = $polaczenie->query("SELECT * FROM $user WHERE status = 1 AND part = 0");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $bwtitles = Array();
     $bwids = Array();
@@ -27,7 +27,7 @@ try {
     }
     $bwtitles = array_reverse($bwtitles);
     $bwids = array_reverse($bwids);
-    $rezultat = $polaczenie->query("SELECT * FROM $user WHERE status = 2");
+    $rezultat = $polaczenie->query("SELECT * FROM $user WHERE status = 2 and part = 0");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $sarticles = Array();
     $sids = Array();
@@ -45,7 +45,7 @@ try {
     $sarticles = array_reverse($sarticles);
     $sids = array_reverse($sids);
 
-    $rezultat = $polaczenie->query("SELECT * FROM sent_articles WHERE username = '$user'");
+    $rezultat = $polaczenie->query("SELECT * FROM sent_articles_names WHERE username = '$user'");
     if(!$rezultat) throw new Exception($polaczenie->error);
     for($i = 0; $i < $rezultat->num_rows; $i++)
     {
@@ -63,12 +63,25 @@ try {
       if(!$rezultat) throw new Exception($polaczenie->error);
       if($rezultat->num_rows == 0)
       {
-        $sid == -1;
+        $sid = -1;
       }
       else {
         $row = $rezultat->fetch_assoc();
+        if($row["part"] != 0){
+          throw new Exception($polaczenie->error);
+        }
         $sidname = $row['title'];
-        $sidcontent = $row['article'];
+        $sidcontent = "";
+        $i = 1;
+        $searchForRows = $polaczenie->query("SELECT * FROM $user WHERE title = '$sidname' ORDER BY part ASC");
+        if(!$searchForRows) throw new Exception($polaczenie->error);
+        for($i = 0 ; $i < $searchForRows->num_rows; $i++){
+          $row = $searchForRows->fetch_assoc();
+          $sidcontent.=$row["article"];
+        }
+        require_once "./inbox/decoding.php";
+        $dc = new Decode;
+        $sidcontent = $dc->toNormal($sidcontent);
         $sidcontent = str_replace("<br>", "\n", $sidcontent);
         while($sidcontent[0] == " ")
         {

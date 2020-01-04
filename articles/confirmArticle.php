@@ -37,13 +37,21 @@ try {
     $rezultat = $polaczenie->query("SELECT * FROM $user WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
     $row = $rezultat->fetch_assoc();
+    if($row["part"] != 0) throw new Exception($polaczenie->error);
     $title = $row['title'];
-    $content = $row['article'];
     $tags = $row['tags'];
+    $search = $polaczenie->query("SELECT * FROM $user WHERE title = '$title' ORDER BY part ASC");
+    if(!$search) throw new Exception($polaczenie->error);
+    require_once("../inbox/encrypt.php");
+    $content = "";
+    for($i = 0 ; $i < $search->num_rows; $i++){
+      $row = $search->fetch_assoc();
+      $content.=$row["article"];
+    } 
+    $base = new Encrypt();
+    $content = $base->goBack($content);
     $words = str_word_count($content);
-    require_once("../inbox/cyphering.php");
-    $base = new Cypher();
-    $content = $base->toDelta($content,rand(1024,3000),1,1);
+    $content = $base->goWithIt($content);
     if(strlen($content) > 30000){
       $counter = 0;
       $finalParts = array();
@@ -62,9 +70,8 @@ try {
         $finalParts = array();
         $finalParts[0] = $content;
     }
-    /*$rezultat = $polaczenie->query("INSERT INTO sent_articles VALUES(NULL,'$user','$title','$content',$words,0,0,'$tags')");
-    if(!$rezultat) throw new Exception($polaczenie->error);*/
-    $newDirective = $polaczenie->query("INSERT INTO sent_articles_names VALUES(NULL,'$user','$title',$words,0,0,'$tags')");
+    $forShowing = $finalParts[0];
+    $newDirective = $polaczenie->query("INSERT INTO sent_articles_names VALUES(NULL,'$user','$title','$forShowing',$words,0,0,'$tags')");
     if(!$newDirective) throw new Exception($connection->error);
     $getIdOfAPreviewQuery = $polaczenie->query("SELECT id FROM sent_articles_names WHERE username = '$user' AND title='$title' AND tags = '$tags' AND words = $words ORDER BY id DESC");
     if(!$getIdOfAPreviewQuery) throw new Exception($connection->error);
@@ -96,7 +103,7 @@ try {
     exitInstructions("The article has been sent");
   }
 } catch (Exception $e) {
-  exitInstructions("Sorry, you cannot connect right now. Try later");
+  exitInstructions("Sorry, you cannot connect right now. Try later ".$e->getMessage());
 }
 
 ?>

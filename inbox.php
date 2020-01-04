@@ -82,8 +82,8 @@ else {
               <section class = "messagesPanel">
       <button class = "messagesPanel-item makeUnreaded">Sign as unreaded</button>
       <button class = "messagesPanel-item delete">Delete this message</button>
-      <button class = "messagesPanel-item blocker">Block the sender</button>
-    </section>  
+      <!--<button class = "messagesPanel-item blocker">Block the sender</button>
+        --></section>  
           <nav class = "emails-desc">
           <div class = "emails-descItem from">
             From
@@ -135,11 +135,11 @@ else {
       <form method = "post" action = "./inbox/sendAMessage.php">
         <div class = "writing-Item receiver">
           <div class = "writingInput-desc">To:  </div>
-          <input type = "text" name = "receiver" class = "email-input"/>
+          <input type = "text" name = "receiver" class = "email-input" placeholder = "To..."/>
         </div>
         <div class = "writing-Item topic">
           <div class = "writingInput-desc" <?php if(isset($_SESSION["e_receiver"])){?>value = "<?php echo $_SESSION['e_receiver'];?>" <?php }?>>Topic:  </div>
-          <input type = "text" name = "topic" class = "email-input" <?php if(isset($_SESSION["e_title"])){?>value = "<?php echo $_SESSION['e_title'];?>" <?php }?>/>
+          <input type = "text" name = "topic" class = "email-input" placeholder = "Topic..." <?php if(isset($_SESSION["e_title"])){?>value = "<?php echo $_SESSION['e_title'];?>" <?php }?>/>
         </div>
         <textarea name = "content" class = "email-mainContent"><?php if(isset($_SESSION["e_receiver"])){?><?php echo $_SESSION['e_content'];?><?php }?></textarea>
         <button class = "confirm-button" type = "submit">Send</button>
