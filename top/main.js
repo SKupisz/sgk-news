@@ -110,6 +110,7 @@ function paralax_article(id)
 document.querySelector("#articles").addEventListener("click",function(){
   document.querySelector(".u11").style.display = "block";
   document.querySelector(".u12").style.display = "none";
+  document.querySelector(".u13").style.display = "none";
   document.querySelector("#u10bar").style.display = "block";
   if(filtersalpha == 1)
   {
@@ -147,6 +148,18 @@ function clickedCheckbox(nameofCheckBox){
 document.querySelector("#images").addEventListener("click",function(){
   document.querySelector(".u11").style.display = "none";
   document.querySelector(".u12").style.display = "block";
+  document.querySelector(".u13").style.display = "none";
+  document.querySelector("#u10bar").style.display = "none";
+  document.querySelector("#u10filtersbar").style.display = "none";
+  document.querySelector(".u10sortAdvance").style.display = "none";
+  document.querySelector(".u10nameAdvance").style.display = "none";
+  document.querySelector(".u10tagsAdvance").style.display = "none";
+  document.querySelector(".u10wordsAdvance").style.display = "none";
+});
+document.querySelector("#sounds").addEventListener("click",function(){
+  document.querySelector(".u11").style.display = "none";
+  document.querySelector(".u12").style.display = "none";
+  document.querySelector(".u13").style.display = "block";
   document.querySelector("#u10bar").style.display = "none";
   document.querySelector("#u10filtersbar").style.display = "none";
   document.querySelector(".u10sortAdvance").style.display = "none";

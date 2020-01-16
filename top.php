@@ -158,6 +158,31 @@ if(isset($_GET['watchingImage']))
       <?php require_once "top/images/loadingImages.php"; ?>
       </section>
     </section>
+    <section class = "u13">
+      <section class = "u13wrapper">
+        <?php 
+          if($ifSounds == 0){
+            ?><div class="no-sounds">
+              <header class="no-soundsHeader">Sorry, there is no sounds uploaded</header>
+              <footer class="no-soundsFooter">Try later</footer>
+            </div><?php
+          }
+          else{
+            for($i = 0 ;$i < count($soundId); $i++){
+              $soundIdTemp = $soundId[$i];
+              $soundName = $soundtitle[$i];
+              $soundaddr = $soundaddress[$i];
+              ?>    
+              <section class = "song-container">
+              <header class = "song-header"><?php echo $soundName;?></header>
+              <button class = "music-buttons play-button" onclick = "play()">Play</button>
+              <button class = "music-buttons reload-button" onclick = "reload()">Reload</button>
+              </section><?php
+            }
+          }
+        ?>
+      </section>
+    </section>
   </main>
 </body>
 <script src = "main/main.js"></script>

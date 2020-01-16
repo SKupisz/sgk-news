@@ -34,7 +34,7 @@
   font-size: 1.2em;
   font-family: 'Lato',sans-serif;
   background: #eee;
-  width: 39.9%;
+  width: 30%;
   margin-top: 0px;
   cursor: pointer;
 }
@@ -277,9 +277,17 @@ input[class="u10tagsSubmit"]:hover{
   div[order="last"]{
     width: 80%;
   }
+  .choosingBtn{
+    font-size: 0.8em;
+  }
 }
 @media screen and (max-width: 350px){
   .u10an{
     width: 55%;
+  }
+}
+@media screen and (max-width: 325px){
+  .choosingBtn{
+    font-size: 0.7em;
   }
 }

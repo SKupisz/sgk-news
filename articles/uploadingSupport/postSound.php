@@ -43,9 +43,10 @@ else{
                 PDO::ATTR_EMULATE_PREPARES => false,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
-            $query = $connection->prepare("INSERT INTO sent_sounds_location VALUES(NULL,:title,:addres)");
+            $query = $connection->prepare("INSERT INTO sent_sounds_location VALUES(NULL,:title,:addres,:likes)");
             $query->bindValue(":title",$title,PDO::PARAM_STR);
             $query->bindValue(":addres",$target_dirname,PDO::PARAM_STR);
+            $query->bindValue(":likes",0,PDO::PARAM_INT);
             $query->execute();
             exitInstructions("Sound uploaded");
         } catch (Exception $e) {
