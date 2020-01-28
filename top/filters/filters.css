@@ -40,6 +40,7 @@
 }
 
 
+
 button[class="choosingBtn"]:hover{
   background: #ddd;
 }
@@ -266,6 +267,9 @@ input[class="u10tagsSubmit"]:hover{
   .u10sortAdvance,.u10nameAdvance,.u10wordsAdvance,.u10tagsAdvance{
     width: 100%;
   }
+  .choosingBtn{
+    font-size: 0.8em;
+  }
 }
 @media screen and (max-width: 416px){
   .u10bi,.u10li{
@@ -276,9 +280,6 @@ input[class="u10tagsSubmit"]:hover{
   }
   div[order="last"]{
     width: 80%;
-  }
-  .choosingBtn{
-    font-size: 0.8em;
   }
 }
 @media screen and (max-width: 350px){

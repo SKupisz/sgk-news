@@ -35,6 +35,7 @@ if($uploadOk == 0){
     exitInstructions("Something went wrong. Try later");
 }
 else{
+
     if(move_uploaded_file($uploadingSound['tmp_name'],$target_dirname)){
         $checkin = 1;
         require_once "../../main/connect.php";

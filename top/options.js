@@ -94,3 +94,20 @@ function selectRightSection(){
   document.querySelector(".u12").style.display = "block";
   document.querySelector("#u10bar").style.display = "none";
 }
+
+function play(address){
+  event.preventDefault();
+  let music = document.querySelector("#"+address);
+    if(music.paused){
+      event.target.childNodes[1].innerHTML = "||";
+        music.play();
+    }
+    else{
+      event.target.childNodes[1].innerHTML = "▶";
+        music.pause();
+    }
+}
+function reload(address){
+    let music = document.querySelector("#"+address);
+    music.load();
+}

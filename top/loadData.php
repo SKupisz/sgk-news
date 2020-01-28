@@ -170,9 +170,9 @@ try {
       $soundaddress = array();
       for($i = 0 ; $i < $nowSounds->num_rows; $i++){
         $row = $nowSounds->fetch_assoc();
-        $soundId = $row["id"];
-        $soundtitle = $row["title"];
-        $soundaddress = $row["address"];
+        $soundId[$i] = $row["id"];
+        $soundtitle[$i] = $row["title"];
+        $soundaddress[$i] = $row["address"];
       }
     }
     mysqli_close($polaczenie);

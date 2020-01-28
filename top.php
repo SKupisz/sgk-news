@@ -172,11 +172,18 @@ if(isset($_GET['watchingImage']))
               $soundIdTemp = $soundId[$i];
               $soundName = $soundtitle[$i];
               $soundaddr = $soundaddress[$i];
+              $soundaddr = substr($soundaddr,4);
               ?>    
               <section class = "song-container">
+                <audio class = "local-song" id = "play<?php echo $i+2;?>">
+                  <source src = "<?php echo $soundaddr;?>" type = "audio/mp3"/>
+                </audio>
               <header class = "song-header"><?php echo $soundName;?></header>
-              <button class = "music-buttons play-button" onclick = "play()">Play</button>
-              <button class = "music-buttons reload-button" onclick = "reload()">Reload</button>
+              <button class = "music-buttons play-button" id = "play<?php echo $soundIdTemp;?>" onclick = "play('play<?php echo $i+2;?>')">
+              <label class = "temp-state">▶</label>
+              <label class = "temp-state not-now">||</label>
+            </button>
+              <button class = "music-buttons reload-button" onclick = "reload('play<?php echo $i+2;?>')">Reload</button>
               </section><?php
             }
           }
