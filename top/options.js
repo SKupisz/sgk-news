@@ -99,15 +99,18 @@ function play(address){
   event.preventDefault();
   let music = document.querySelector("#"+address);
     if(music.paused){
-      event.target.childNodes[1].innerHTML = "||";
+      event.target.innerHTML = "||";
         music.play();
     }
     else{
-      event.target.childNodes[1].innerHTML = "▶";
+      event.target.innerHTML = "▶";
         music.pause();
     }
 }
 function reload(address){
+    event.preventDefault();
     let music = document.querySelector("#"+address);
+    let gateway = event.target.parentNode.querySelector(".play-button");
+    gateway.innerHTML = "▶";
     music.load();
 }

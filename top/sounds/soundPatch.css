@@ -1,3 +1,4 @@
+@import url("./soundBackgrounds.css");
 .no-sounds{
     width: 90%;
     text-align: center;
@@ -21,6 +22,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+    color: #111;
+    background-size: cover;
 }
 .song-header{
     font-size: 2em;
@@ -28,6 +31,8 @@
     text-align: center;
     padding: 7px;
     margin-bottom: 30px;
+    color: #eee;
+    text-shadow: 2px 2px 2px #111;
 }
 .music-buttons{
     background-color: #ccc;
