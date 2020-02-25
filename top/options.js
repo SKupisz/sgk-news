@@ -95,22 +95,3 @@ function selectRightSection(){
   document.querySelector("#u10bar").style.display = "none";
 }
 
-function play(address){
-  event.preventDefault();
-  let music = document.querySelector("#"+address);
-    if(music.paused){
-      event.target.innerHTML = "||";
-        music.play();
-    }
-    else{
-      event.target.innerHTML = "▶";
-        music.pause();
-    }
-}
-function reload(address){
-    event.preventDefault();
-    let music = document.querySelector("#"+address);
-    let gateway = event.target.parentNode.querySelector(".play-button");
-    gateway.innerHTML = "▶";
-    music.load();
-}

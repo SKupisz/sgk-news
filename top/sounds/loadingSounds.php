@@ -8,24 +8,36 @@
             </div><?php
           }
           else{
+            $last = -1;
+            $randMax = 4;
             for($i = 0 ;$i < count($soundId); $i++){
               $soundIdTemp = $soundId[$i];
               $soundName = $soundtitle[$i];
-              $soundaddr = $soundaddress[$i];
-              $soundaddr = substr($soundaddr,4);
-              ?>    
-              <section class = "song-container background<?php echo rand(0,3);?>">
-                <audio class = "local-song" id = "play<?php echo $i+1;?>">
-                  <source src = "<?php echo $soundaddr;?>" type = "audio/mp3"/>
-                </audio>
-              <header class = "song-header"><?php echo $soundName;?></header>
-              <button class = "music-buttons play-button" id = "playId<?php echo $soundIdTemp;?>" onclick = "play('play<?php echo $i+1;?>')">
-              ▶
-            </button>
-              <button class = "music-buttons reload-button" onclick = "reload('play<?php echo $i+1;?>')">⟳</button>
-              </section><?php
+              $soundauthor = $soundauthors[$i];
+              
+              if($last == -1){
+                $last = rand(0,$randMax);
+              }
+              else{
+                $forLast = rand(0,$randMax);
+                while($last == $forLast){
+                  $forLast = rand(0,$randMax);
+                }
+                $last = $forLast;
+              }
+              ?>
+              <a href="./listen/?s=<?php echo $soundIdTemp;?>" target = "_blank">
+                <section class = "song-container background<?php echo $last;?>">
+
+                <header class = "song-header"><?php echo $soundName;?></header>
+                <footer class="song-author">By <?php echo $soundauthor;?></footer>
+                </section>
+              </a><?php
             }
           }
+          /*     $soundaddr = $soundaddress[$i];
+              $soundaddr = substr($soundaddr,4);           
+                */
         ?>
       </section>
     </section>

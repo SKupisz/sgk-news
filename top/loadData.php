@@ -167,12 +167,12 @@ try {
       $ifSounds = 1;
       $soundId = array();
       $soundtitle = array();
-      $soundaddress = array();
+      $soundauthors = array();
       for($i = 0 ; $i < $nowSounds->num_rows; $i++){
         $row = $nowSounds->fetch_assoc();
         $soundId[$i] = $row["id"];
         $soundtitle[$i] = $row["title"];
-        $soundaddress[$i] = $row["address"];
+        $soundauthors[$i] = $row["fromm"];
       }
     }
     mysqli_close($polaczenie);

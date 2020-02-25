@@ -24,15 +24,31 @@
     margin-top: 30px;
     color: #111;
     background-size: cover;
+    min-height: 200px;
+    cursor: pointer;
 }
+
+.song-header,.song-author{
+    color: #eee;
+    text-shadow: 2px 2px 2px #111;
+    font-family: 'Oswald',sans-serif;
+}
+
 .song-header{
     font-size: 2em;
-    font-family: 'Oswald',sans-serif;
+    
     text-align: center;
     padding: 7px;
     margin-bottom: 30px;
-    color: #eee;
-    text-shadow: 2px 2px 2px #111;
+
+}
+.song-author{
+    font-size: 1.4em;
+}
+.music-section{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .music-buttons{
     background-color: #ccc;
@@ -50,6 +66,7 @@ cursor: pointer;
 @media screen and (max-width: 520px){
     .song-container{
         width: calc(80% - 20px);
+        min-height: 140px;
     }
     .song-header{
         font-size: 1.7em;
