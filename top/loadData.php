@@ -158,6 +158,23 @@ try {
       $imagesViews[$i] = $row['views'];
       $imagesLikes[$i] = $row['likes'];
     }
+    $nowSounds = $polaczenie->query("SELECT * FROM sent_sounds_location ORDER BY title ASC");
+    if(!$nowSounds) throw new Exception($connection->error);
+    if($nowSounds->num_rows == 0){
+      $ifSounds = 0;
+    }
+    else{
+      $ifSounds = 1;
+      $soundId = array();
+      $soundtitle = array();
+      $soundauthors = array();
+      for($i = 0 ; $i < $nowSounds->num_rows; $i++){
+        $row = $nowSounds->fetch_assoc();
+        $soundId[$i] = $row["id"];
+        $soundtitle[$i] = $row["title"];
+        $soundauthors[$i] = $row["fromm"];
+      }
+    }
     mysqli_close($polaczenie);
   }
 } catch (Exception $e) {

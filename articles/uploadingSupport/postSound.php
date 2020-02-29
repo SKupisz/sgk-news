@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_POST["title"]) || !isset($_FILES["fileToUpload"])){
+    header("Location: ../../");
+    exit();
+}
 function exitInstructions($type){
     $_SESSION['uploadSoundFail'] = $type;
     header("Location: ../../articles.php");
@@ -26,15 +31,11 @@ if(file_exists($target_dirname))
   $uploadOk = 0;
   exitInstructions("File already exists");
 }
-if($soundType != "mp3" && $soundType != "mp4" && $soundType != "wav")
-{
-  $uploadOk = 0;
-  exitInstructions("Not-allowed format");
-}
 if($uploadOk == 0){
     exitInstructions("Something went wrong. Try later");
 }
 else{
+
     if(move_uploaded_file($uploadingSound['tmp_name'],$target_dirname)){
         $checkin = 1;
         require_once "../../main/connect.php";
@@ -43,9 +44,13 @@ else{
                 PDO::ATTR_EMULATE_PREPARES => false,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
-            $query = $connection->prepare("INSERT INTO sent_sounds_location VALUES(NULL,:title,:addres)");
+            $user = $_SESSION["zalogowany"];
+            $query = $connection->prepare("INSERT INTO sent_sounds_location VALUES(NULL,:user,:title,:addres,:likes,:views)");
+            $query->bindValue(":user",$user,PDO::PARAM_STR);
             $query->bindValue(":title",$title,PDO::PARAM_STR);
             $query->bindValue(":addres",$target_dirname,PDO::PARAM_STR);
+            $query->bindValue(":likes",0,PDO::PARAM_INT);
+            $query->bindValue(":views",0,PDO::PARAM_INT);
             $query->execute();
             exitInstructions("Sound uploaded");
         } catch (Exception $e) {

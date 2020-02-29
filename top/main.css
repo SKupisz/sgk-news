@@ -1,6 +1,7 @@
 @import url("filters/filters.css");
 @import url("articles/articles.css");
 @import url("images/imagesMain.css");
+@import url("sounds/soundPatch.css");
 
 * {
     padding: 0;
@@ -62,15 +63,15 @@ html{
     z-index: 4;
 }
 
-.u11,.u12{
+.u11,.u12,.u13{
   width: 100%;
   height: 120%;
   z-index: 3;
 }
-.u11list,.u12wrapper{
+.u11list,.u12wrapper,.u13wrapper{
   margin-top: 71px;
 }
-.u12{
+.u12,.u13{
   display: none;
 }
 @media screen and (max-width: 786px){

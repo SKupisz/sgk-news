@@ -26,55 +26,7 @@ Regulations of the SGK-news
 4.2 Everybody who have an account can post their own article.
 4.3 The SGK-news guarantees the freedom of creativity comply with the law.
 4.4 Before publishing user's article, it is saved in a user's waiting room. If user wants to publish his article, he has to push the button "Send an article".
-4.5 It is forbidden to post prorasist, procommunist and pronazi articles. In this case, the rule 1.2 will be executed with all its consequences.
-4.6 If the SGK-news user saw that someother user had broken therms of publishing, he can write to the SGK-news management: sgk-news@wp.pl. After that, the SGK-news management will decide if law-breaking user is guilty or not guilty, in less than 4 weeks.
-4.7 Articles should be written in high style. In case of publishing a vulgar or an inappropriate article, the SGK-news staff can ban it.
-
-
-5. Rules of own an SGK-news account
-5.1 An SGK-news account can be used only by his owner. It is forbidden to share and sell accounts.
-5.2 If the SGK-news management will have a suspicion of sharing or selling account, points 2.3 and 2.3.2 of the regulations will be executed.
-5.3 The SGK-news user can:
--change password
--delete his account
--apply for an SGK-news lower admin
-5.4 The SGK-news user cannot change his nickname, because it would complicate copyright law.
-5.5 In case of deleting account, the following data will be removed from database:
--base of unconfirmed articles
--inbox informations
--user's black list
-Confirmed articles will not be removed from the website.
-5.5.1 Even if user deletes his account, his articles will be protected by the copyright.
-5.6 In case of any problems with account, please write to us: sgk-news@wp.pl
-Regulations of the SGK-news
-1. Relations between SGK-news and the user
-1.1. By using website SGK-news, the user accepts conditions which are in this document. The conditions of using SGK-news are the agreement between SGK-news and the user
-1.2. The user is responsible for content which he publishes. If the terms of publishing is broken the user account will be deleted and his data will be removed from SGK news database.
-1.3. On user request, the SGK-news can remove his data from database.
-
-2. Rules of publishing content on the SGK-news
-2.1 The user can publish his creation on website. That content is protected by copyright.
-2.2 The user article can be showed inthe top articles section. All of the articles have equal chances and are not favored.
-2.3 If the user publish content not made by himself, the article will be putted down the list of the articles, and his account will be deleted.
-2.3.2 In case of situation from point 2.3, all of the user data will be removed from SGK-news database, however not including e-mail address so that the user cannot sing-up again on this e-mail address.
-2.3.3 According to point 2.3.2, even if the user asks for removing his e-mail address from database, in case of plagiarism it will be unenforceable, because of protecting copyright.
-
-3. Signing-up on the SGK-news
-3.1 By signing up on SGK-news, you accept privacy politic.
-3.2 To sign-up, you must to give us:
-- your nickname
-- your password
-- your e-mail address
-- info if you want to be in our newsletter
-3.3 Without this data, you cannot open an SGK-news account.
-3.4 To start, you must also agree with our privacy policy and this regulations.
-
-4. Therms of publishing on the SGK-news
-4.1 Article content is protected by copyright (point 2.2).
-4.2 Everybody who have an account can post their own article.
-4.3 The SGK-news guarantees the freedom of creativity comply with the law.
-4.4 Before publishing user's article, it is saved in a user's waiting room. If user wants to publish his article, he has to push the button "Send an article".
-4.5 It is forbidden to post prorasist, procommunist and pronazi articles. In this case, the rule 1.2 will be executed with all its consequences.
+4.5 It is forbidden to post prorasist, promarxist and pronazi articles. In this case, the rule 1.2 will be executed with all its consequences.
 4.6 If the SGK-news user saw that someother user had broken therms of publishing, he can write to the SGK-news management: sgk-news@wp.pl. After that, the SGK-news management will decide if law-breaking user is guilty or not guilty, in less than 4 weeks.
 4.7 Articles should be written in high style. In case of publishing a vulgar or an inappropriate article, the SGK-news staff can ban it.
 
@@ -101,9 +53,20 @@ Confirmed articles will not be removed from the website.
 6.1.2 The user suspected of breaking the terms of conditions is obliged to reply to an e-mail in one week.
 6.1.3 If the point 6.1.2 is not executed, the user is disclaiming his law to defend.
 6.1.4 One week after sending the email by the SGK-news's press department, the SGK-news management must set the date of the trial.
-6.2 Till two days before the trial, the SGK-news management is obliged to set down all of the necessairy emplacements and conditions.
-6.2.1 At first, the SGK-news management must choose the user's defender and give him an authorization to prepare the defense line for his client.
+6.2 Till two days before the trial, SGK-news management is obliged to set down all of the necessary emplacements and conditions.
+6.2.1 At first, the SGK-news management must choose the user's defender and authorize him to prepare the defence line for his client.
 6.2.2 After the point 6.2.1 is executed, the main accuser, also known as the governor has to be chosen by the SGK-news management in less than two weeks.
-6.2.3 The governor is obliged to prepare the indictment on the basis of evidences provided by the SGK-news management.
+6.2.3 The governor is obliged to prepare the indictment based on pieces of evidence provided by the SGK-news management.
 6.2.4 After all of the following points are executed, the trial can be started.
 6.3 When the above points are executed, the trial can be started.
+6.3.1 By the beginning of the trial, the SGK-news management's representative explains the details of a case.
+6.3.2 The main part of a trial begins when the governor is starting his accuse speech.
+6.3.3 After point 6.3.2, the user's defender gives counterarguments to the indictments.
+6.4 When all of 6.3 points are executed, the SGK-news's management is obliged to decide about the verdict.
+6.4.1 In two hours after the trial, the representative is obliged to inform the management about the process and the result of the trial.
+6.4.2 The management must acquaint with delivered data and give the final verdict in no more than 10 days.
+6.4.3 After the time appointed in point 6.4.2 passes, the SGK-news management is obliged to give the public verdict about the case.
+6.5 In case of finding the user guilty, the SGK-news's management could sentence the user to follow punishments.
+6.5.1 According to point 2.3 the user's account can be permanently blocked.
+6.5.2 The user's devices can be blocked from publishing any kind of content.
+6.5.3 In case of an extraordinary rule-breaking, the SGK-news's management can forbid mentioning the user's trial in any public activity on the website.

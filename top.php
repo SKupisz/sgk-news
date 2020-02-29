@@ -158,6 +158,7 @@ if(isset($_GET['watchingImage']))
       <?php require_once "top/images/loadingImages.php"; ?>
       </section>
     </section>
+    <?php require_once "./top/sounds/loadingSounds.php";?>
   </main>
 </body>
 <script src = "main/main.js"></script>

@@ -94,3 +94,4 @@ function selectRightSection(){
   document.querySelector(".u12").style.display = "block";
   document.querySelector("#u10bar").style.display = "none";
 }
+
