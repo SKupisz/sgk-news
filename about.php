@@ -62,7 +62,11 @@ session_start();
         <img src="IMG_20180727_132956.jpg" id="pic1">
         <figcaption class = "captionRWD">Simon George Kupisz - founder and CEO of SGK-news. Born in 2003 in Warsaw.</figcaption>
     </div> 
-
+    <section class="credits">
+      <header class="credits-header">Credits</header>
+      <div class="credits-desc">Special thanks for those who suppported and cooperated with us</div>
+      <div class="cooperators"></div>
+    </section>
 
     
     
