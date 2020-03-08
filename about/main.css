@@ -98,6 +98,7 @@ hr {
   margin-right: auto;
   font-size: 1.2em;
   font-family: "Lato",sans-serif;
+  padding-bottom: 40px;
 }
 
 @media screen and (max-width: 950px){
