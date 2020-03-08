@@ -52,7 +52,7 @@ session_start();
     <div class="footer">
       
 
-    <p>&copy; 2019 SGK News</p>
+    <p>&copy; 2020 SGK News</p>
 
     </div>
         
