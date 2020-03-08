@@ -21,7 +21,7 @@ session_start();
   <main id = "umain">
     <header class="main-header">Tutorial</header>
     <div class="short-describe">
-
+        If you don't know how something on SGK-news works, just check here - there is a big chance you'll find what you want.
     </div>
     <section class="tutorials" id = "tutorials">
 

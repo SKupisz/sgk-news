@@ -10,6 +10,18 @@
     font-family: "Oswald",sans-serif;
 }
 
+.short-describe{
+    width: calc(90% - 20px);
+    padding: 10px;
+    text-align: center;
+    font-family: "Lato",sans-serif;
+    font-size: 1.1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
 .question-container{
     width: calc(80% - 30px);
     padding: 15px;
