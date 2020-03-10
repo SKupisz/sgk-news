@@ -24,6 +24,14 @@ $words = str_word_count($content);
 $content = str_replace("\n", "<br>", $content);
 $tags = str_replace("Tag","",$tags);
 $checkin = 1;
+
+if(isset($_POST["to_public"])){
+  $status = 2;
+}
+else{
+  $status = 1;
+}
+
 require_once "../main/connect.php";
 
 try {
@@ -60,6 +68,7 @@ try {
     if($rezultat->num_rows > 0)
     {
       $l = $rezultat->num_rows;
+      $postId = 0;
       for($i = 0 ; $i < $l; $i++){
         $row = $rezultat->fetch_assoc();
         $id = $row['id'];
@@ -69,6 +78,20 @@ try {
           if(!$update) throw new Exception($polaczenie->error);
           $update = $polaczenie->query("UPDATE $user SET tags = '$tags' WHERE id = $id");
           if(!$update) throw new Exception($polaczenie->error);
+          if($status == 2){
+            $update = $polaczenie->query("UPDATE $user SET status = $status WHERE id = $id");
+            if(!$update) throw new Exception($polaczenie->error);
+            if($i == 0){
+              $gettingIntoPublic = $polaczenie->query("INSERT INTO sent_articles_names VALUES (NULL,'$user','$title','$localContent',$words,0,0,'$tags')");
+              if(!$gettingIntoPublic) throw new Exception($polaczenie->error);
+              $getTheId = $polaczenie->query("SELECT * FROM sent_articles_names WHERE username = '$user' AND title = '$title' AND forShowing = '$localContent' ORDER BY id DESC");
+              if(!$getTheId) throw new Exception($polaczenie->error);
+              $gettingIDRow = $getTheId->fetch_assoc();
+              $postId = $gettingIDRow["id"];
+            }
+            $insertPart = $polaczenie->query("INSERT INTO sent_articles_parts VALUES(NULL,$postId,$i,'$localContent')");
+            if(!$insertPart) throw new Exception($polaczenie->error);
+          }
         }
         else{
           $del = $polaczenie->query("DELETE FROM $user WHERE id = $id");
@@ -85,12 +108,6 @@ try {
       exitInstructions("Your article has been updated");
     }
     else {
-      if(isset($_POST["to_public"])){
-        $status = 2;
-      }
-      else{
-        $status = 1;
-      }
       $postId = -1;
       for($i = 0; $i < count($finalParts); $i++){
         $localContent = $finalParts[$i];
@@ -115,7 +132,7 @@ try {
     }
   }
 } catch (Exception $e) {
-  exitInstructions("You cannot connect right now. Try later ");
+  exitInstructions("You cannot connect right now. Try later ".$e->getMessage());
 }
 
 ?>
