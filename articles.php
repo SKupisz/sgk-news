@@ -89,9 +89,15 @@ require_once "articles/loadData.php";
               </span>
               <input type = "hidden" name = "u11moreInfo" class = "u11moreInfo"/>
             </section>
-            <button type = "submit" id = "u11was">
+            <button type = "submit" name = "to_waiting" id = "u11was">
                Send<span class = "u11wasr"> an article</span> to waiting room
             </button>
+            <?php if(!isset($_GET["sid"])){?>
+            <button type = "submit" name = "to_public" id = "u11was">
+               Send<span class = "u11wasr"> an article</span> to public
+            </button><?php
+            }?>
+
           </form>
           <form method = "post" action = "articles/uploadingSupport/uploadImage.php" enctype="multipart/form-data" class = "imageUpload">
             <section class = "postHeader">

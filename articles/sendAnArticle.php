@@ -20,6 +20,7 @@ $content = $_POST['u11wtai'];
 $tags = $_POST['u11moreInfo'];
 $title = htmlentities($title,ENT_QUOTES,"UTF-8");
 $content = htmlentities($content,ENT_QUOTES,"UTF-8");
+$words = str_word_count($content); 
 $content = str_replace("\n", "<br>", $content);
 $tags = str_replace("Tag","",$tags);
 $checkin = 1;
@@ -84,11 +85,30 @@ try {
       exitInstructions("Your article has been updated");
     }
     else {
+      if(isset($_POST["to_public"])){
+        $status = 2;
+      }
+      else{
+        $status = 1;
+      }
+      $postId = -1;
       for($i = 0; $i < count($finalParts); $i++){
         $localContent = $finalParts[$i];
-        $insertPart = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$localContent',1,'$tags',$i)");
+        $insertPart = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$localContent',$status,'$tags',$i)");
         if(!$insertPart){
           throw new Exception($polaczenie->error);
+        }
+        if($status == 2){
+          if($i == 0){
+            $insertOfficial = $polaczenie->query("INSERT INTO sent_articles_names VALUES (NULL,'$user','$title','$localContent',$words,0,0,'$tags')");
+            if(!$insertOfficial) throw new Exception($polaczenie->error);
+            $getTheId = $polaczenie->query("SELECT * FROM sent_articles_names WHERE username = '$user' AND title = '$title' AND forShowing = '$localContent' ORDER BY id DESC");
+            if(!$getTheId) throw new Exception($polaczenie->error);
+            $gettingIDRow = $getTheId->fetch_assoc();
+            $postId = $gettingIDRow["id"];
+          }
+          $insertPart = $polaczenie->query("INSERT INTO sent_articles_parts VALUES(NULL,$postId,$i,'$localContent')");
+          if(!$insertPart) throw new Exception($polaczenie->error);
         }
       }
       exitInstructions("Your article has been sent");
