@@ -14,12 +14,12 @@ if($id != $test_id || $id < 0)
 }
 $checkin = 1;
 require_once "main/connect.php";
-$connection = 1;
+$connected = 1;
 try {
-  $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-  if($polaczenie->connect_errno != 0)
+  $connection = new mysqli($host,$db_user,$db_password,$db_name);
+  if($connection->connect_errno != 0)
   {
-    throw new Exception($polaczenie->connect_error);
+    throw new Exception($connection->connect_error);
   }
   else {
     $likes = 0;
@@ -27,21 +27,21 @@ try {
     {
       unset($_SESSION['liking_error']);
     }
-    $rezultat = $polaczenie->query("SELECT tags FROM sent_articles_names WHERE id = $id");
-    if(!$rezultat) throw new Exception($polaczenie->error);
+    $rezultat = $connection->query("SELECT tags FROM sent_articles_names WHERE id = $id");
+    if(!$rezultat) throw new Exception($connection->error);
     if($rezultat->num_rows == 0)
     {
-      mysqli_close($polaczenie);
+      mysqli_close($connection);
       header("Location: ../../");
       exit();
     }
     $row = $rezultat->fetch_assoc();
     $tags = $row['tags'];
-    $rezultat = $polaczenie->query("SELECT likes FROM sent_articles_names WHERE id = $id");
-    if(!$rezultat) throw new Exception($polaczenie->error);
+    $rezultat = $connection->query("SELECT likes FROM sent_articles_names WHERE id = $id");
+    if(!$rezultat) throw new Exception($connection->error);
     if($rezultat->num_rows == 0)
     {
-      mysqli_close($polaczenie);
+      mysqli_close($connection);
       header("Location: ../../");
       exit();
     }
@@ -49,12 +49,12 @@ try {
     $likes = $row['likes'];
     if(!isset($_SESSION['liking']) && !isset($_SESSION['comment_done']))
     {
-      $rezultat = $polaczenie->query("UPDATE sent_articles_names SET views = views+1 WHERE id = $id");
-      if(!$rezultat) throw new Exception($polaczenie->error);
+      $rezultat = $connection->query("UPDATE sent_articles_names SET views = views+1 WHERE id = $id");
+      if(!$rezultat) throw new Exception($connection->error);
 
     }
-    $comments = $polaczenie->query("SELECT * FROM sent_comments WHERE id = $id");
-    if(!$comments) throw new Exception($polaczenie->error);
+    $comments = $connection->query("SELECT * FROM sent_comments WHERE id = $id");
+    if(!$comments) throw new Exception($connection->error);
     if($comments->num_rows == 0)
     {
       $noComments = 1;
@@ -73,11 +73,24 @@ try {
       $fromCom = array_reverse($fromCom);
       $contentsCom = array_reverse($contentsCom);
     }
-    mysqli_close($polaczenie);
+    $checkIfSomePhotos = $connection->query("SELECT * FROM sent_articles_images_locations WHERE postId = $id ORDER BY place");
+    if(!$checkIfSomePhotos) throw new Exception($connection->error);
+    if($checkIfSomePhotos->num_rows == 0){
+      $ifPhotos = 0;
+    }
+    else{
+      $ifPhotos = 1;
+      $addresses = array();
+      for($i = 0 ; $i < $checkIfSomePhotos->num_rows; $i++){
+        $row = $checkIfSomePhotos->fetch_assoc();
+        $addresses[$i] = substr($row["address"],1);
+      }
+    }
+    mysqli_close($connection);
 
   }
 } catch (Exception $e) {
-  $connection = 0;
+  $connected = 0;
 }
 ?>
 <!DOCTYPE html>
@@ -87,7 +100,7 @@ try {
       <meta name="viewport"  content="width=device-width, inital-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href = "main/bar.css"/>
       <link rel = "stylesheet" type = "text/css" href = "top/show.css"/>
-      <link rel="shortcut icon" type = "image/png" href = "main/logo.png"/>
+      <link rel="shortcut icon" type = "image/png" href = "logo.png"/>
       <meta name="description" content="SGK-news website">
       <meta name="keywords" content="SGK-news, news, daily, buisness, politic,art,Simon Kupisz">
     <title>SGK news</title>
@@ -97,7 +110,7 @@ try {
   <?php require_once "main/bar.php";?>
   <main id = "umain">
     <?php
-    if($connection == 0)
+    if($connected == 0)
     {
       ?><section class = "u10connectionfail">
         <header class = "u10cfheader">
@@ -146,6 +159,24 @@ try {
             <?php
           ?>
         </aside>
+        <?php
+          if($ifPhotos == 1){
+            ?>
+            <section class="photos-section">
+              <?php
+                for($i = 0 ; $i < count($addresses); $i++){
+                  $address = $addresses[$i];
+                  ?>
+                    <div class="image-container">
+                      <img src="<?php echo $address?>" alt="" class = "added-image"/>
+                    </div>
+                  <?php
+                }
+              ?>
+            </section>
+            <?php
+          }
+        ?>
         <section class = "comments">
           <form method = "post" action = "top/sendCom.php?postId=<?php echo $id;?>">
             <textarea class = "commentContent" name = "content" placeholder="Write your comment here"></textarea>

@@ -69,7 +69,7 @@ require_once "articles/loadData.php";
             <div class = "changingMode bar2" id = "bar2">Image</div>
             <div class = "changingMode bar3" id = "bar3">Sound</div>
           </div>
-          <form method = "post" action = "articles/sendAnArticle.php" class = "sendingArticle">
+          <form method = "post" action = "articles/sendAnArticle.php" enctype="multipart/form-data" class = "sendingArticle">
 
             <section id = "u11wti"><p class="articletitle">Title </p><input type = "text" name = "u11wti" class = "titleInput" required value = "<?php if($sid != -1){
               echo $sidname;
@@ -89,6 +89,7 @@ require_once "articles/loadData.php";
               </span>
               <input type = "hidden" name = "u11moreInfo" class = "u11moreInfo"/>
             </section>
+            <?php require_once "./articles/uploadingSupport/photosForArticle.php";?>
             <button type = "submit" name = "to_waiting" id = "u11was">
                Send<span class = "u11wasr"> an article</span> to waiting room
             </button>

@@ -23,6 +23,7 @@ $content = htmlentities($content,ENT_QUOTES,"UTF-8");
 $words = str_word_count($content); 
 $content = str_replace("\n", "<br>", $content);
 $tags = str_replace("Tag","",$tags);
+$idForTheImage = -1;
 $checkin = 1;
 
 if(isset($_POST["to_public"])){
@@ -123,12 +124,19 @@ try {
             if(!$getTheId) throw new Exception($polaczenie->error);
             $gettingIDRow = $getTheId->fetch_assoc();
             $postId = $gettingIDRow["id"];
+            $idForTheImage = $postId;
           }
           $insertPart = $polaczenie->query("INSERT INTO sent_articles_parts VALUES(NULL,$postId,$i,'$localContent')");
           if(!$insertPart) throw new Exception($polaczenie->error);
         }
       }
-      exitInstructions("Your article has been sent");
+      if($status == 2 && !(isset($_POST["first-name"]) && isset($_FILES["first-photo"]))){
+        exitInstructions("Your article has been sent");
+      }
+      
+    }
+    if($status == 2){
+      require_once "./uploadingSupport/uploadingImagesToArticle.php";
     }
   }
 } catch (Exception $e) {
