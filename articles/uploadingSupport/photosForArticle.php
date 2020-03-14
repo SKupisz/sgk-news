@@ -5,7 +5,7 @@
             Photo name: <input type="text" name="first-name" id="">
         </div>
         <div class="photo-browse">
-            <input type="file" name="first-photo" id="" class="first-upload">
+            <input type="file" name="first-photo" id="" class="first-upload" <?php if($ifPicturesInBase == 1){ ?> value = "<?php echo $picAddress[0];?>"<?php }?>>
             <input type="button" value="Browse..." class="forUploadBtn" onclick="document.querySelector('.first-upload').click();">
         </div>
     </div>

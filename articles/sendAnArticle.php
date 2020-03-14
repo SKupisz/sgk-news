@@ -24,6 +24,7 @@ $words = str_word_count($content);
 $content = str_replace("\n", "<br>", $content);
 $tags = str_replace("Tag","",$tags);
 $idForTheImage = -1;
+$flag = 0;
 $checkin = 1;
 
 if(isset($_POST["to_public"])){
@@ -73,6 +74,10 @@ try {
       for($i = 0 ; $i < $l; $i++){
         $row = $rezultat->fetch_assoc();
         $id = $row['id'];
+        if($i == 0){
+          $idForTheImage = $id;
+          $flag = 1;
+        }
         if($i < count($finalParts)){
           $localContent = $finalParts[$i];
           $update = $polaczenie->query("UPDATE $user SET article = '$localContent' WHERE id = $id");
@@ -106,7 +111,7 @@ try {
           if(!$insert) throw new Exception($polaczenie->error);
         }
       }
-      exitInstructions("Your article has been updated");
+      //exitInstructions("Your article has been updated");
     }
     else {
       $postId = -1;
@@ -115,6 +120,12 @@ try {
         $insertPart = $polaczenie->query("INSERT INTO $user VALUES (NULL,'$title','$localContent',$status,'$tags',$i)");
         if(!$insertPart){
           throw new Exception($polaczenie->error);
+        }
+        if($status != 2 && $i == 0){
+          $searchForFirst = $polaczenie->query("SELECT * FROM $user WHERE title = '$title' AND article = '$localContent' AND tags = '$tags' AND part = 0");
+          if(!$searchForFirst) throw new Exception($polaczenie->error);
+          $row = $searchForFirst->fetch_assoc();
+          $idForTheImage = $row["id"];
         }
         if($status == 2){
           if($i == 0){
@@ -130,14 +141,10 @@ try {
           if(!$insertPart) throw new Exception($polaczenie->error);
         }
       }
-      if($status == 2 && !(isset($_POST["first-name"]) && isset($_FILES["first-photo"]))){
-        exitInstructions("Your article has been sent");
-      }
+
       
     }
-    if($status == 2){
-      require_once "./uploadingSupport/uploadingImagesToArticle.php";
-    }
+    require_once "./uploadingSupport/uploadingImagesToArticle.php";
   }
 } catch (Exception $e) {
   exitInstructions("You cannot connect right now. Try later ".$e->getMessage());

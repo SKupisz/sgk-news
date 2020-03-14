@@ -93,7 +93,7 @@ require_once "articles/loadData.php";
             <button type = "submit" name = "to_waiting" id = "u11was">
                Send<span class = "u11wasr"> an article</span> to waiting room
             </button>
-            <button type = "submit" name = "to_public" id = "u11was">
+            <button type = "submit" name = "to_public" id = "u11was" formaction = "./articles/sendAnArticle.php">
                Send<span class = "u11wasr"> an article</span> to public
             </button>
 

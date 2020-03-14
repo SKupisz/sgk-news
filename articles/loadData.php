@@ -34,6 +34,7 @@ try {
     $swords = Array();
     $sviews = Array();
     $snumber = Array();
+    $ifPicturesInBase = -1;
     $slength = $rezultat->num_rows;
     for($i = 0; $i < $slength; $i++)
     {
@@ -95,6 +96,19 @@ try {
           ?>let <?php echo $baseTags[$i];?> = 1;<?php
         }
         ?></script><?php
+        $getThePictures = $polaczenie->query("SELECT * FROM waiting_articles_images_locations WHERE postId = $sid");
+        if(!$getThePictures) throw new Exception($polaczenie->error);
+        if($getThePictures->num_rows == 0){
+          $ifPicturesInBase = 0;
+        }
+        else{
+          $ifPicturesInBase = 1;
+          $picAddress = array();
+          for($i = 0 ; $i < $getThePictures->num_rows; $i++){
+            $row = $getThePictures->fetch_assoc();
+            $picAddress[$i] = $row["address"];
+          }
+        }
       }
     }
     else {
