@@ -6,6 +6,6 @@
     Images
   </button>
   <button class = "choosingBtn" id = "sounds">
-    Music & sounds
-</button>
+    Multimedia
+  </button>
 </section>

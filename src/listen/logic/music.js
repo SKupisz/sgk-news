@@ -42,7 +42,6 @@ function sendSoundLike(soundId){
   xmlhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       let anwser = this.response;
-      console.log(anwser);
       if(anwser == "Not signed"){
         if(Push.Permission.has() == false){
           Push.Permission.request(() => {failedComment("Liking error","You must be signed in for be able to like this picture")},() => {});

@@ -130,6 +130,20 @@ document.querySelector("#bar3").addEventListener("click",function(){
   document.querySelector(".imageUpload").style.display = "none";
   document.querySelector(".soundUpload").style.display = "block";
 });
+
+document.querySelector(".sound-opener").addEventListener("click",function(){
+  this.classList.add("selected-form");
+  document.querySelector(".video-opener").classList.remove("selected-form");
+  document.querySelector(".soundUpload-form").style.display = "block";
+  document.querySelector(".videoUpload-form").style.display = "none";
+});
+document.querySelector(".video-opener").addEventListener("click",function(){
+  this.classList.add("selected-form");
+  document.querySelector(".sound-opener").classList.remove("selected-form");
+  document.querySelector(".videoUpload-form").style.display = "block";
+  document.querySelector(".soundUpload-form").style.display = "none";
+});
+
 function imageLoad(){
   document.querySelector("#bar2").classList.add("now");
   document.querySelector("#bar1").classList.remove("now");

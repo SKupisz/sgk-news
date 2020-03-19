@@ -9,11 +9,8 @@ function exitInstructions($type){
     header("Location: ../../articles.php");
     exit();
 }
-if(!isset($_POST["title"]) || !isset($_FILES["fileToUpload"])){
-    header("Location: ../../");
-    exit();
-}
 $title = $_POST["title"];
+$title = htmlentities($title,ENT_QUOTES,"UTF-8");
 $uploadingSound = $_FILES["fileToUpload"];
 $name = $_FILES["fileToUpload"]["name"];
 $uploadOk = 1;

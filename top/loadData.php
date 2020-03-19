@@ -175,6 +175,34 @@ try {
         $soundauthors[$i] = $row["fromm"];
       }
     }
+    $giveTheVideos = $polaczenie->query("SELECT * FROM sent_videos ORDER BY id DESC");
+    if(!$giveTheVideos) throw new Exception($polaczenie->error);
+    if($giveTheVideos->num_rows == 0){
+      $ifVideos = 0;
+    }
+    else{
+      $ifVideos = 1;
+      $videoId = array();
+      $videotitle = array();
+      $videoauthor = array();
+      $videoIcon = array();
+      for($i = 0; $i < $giveTheVideos->num_rows; $i++){
+        $row = $giveTheVideos->fetch_assoc();
+        $videoId[$i] = $row["id"];
+        $videotitle[$i] = $row["title"];
+        $videoauthor[$i] = $row["fromm"];
+        $videoIcon[$i] = $row["iconAddress"];
+        if(strlen($videotitle[$i]) > 0){
+          $videotitle[$i] = $cypheringObject->toNormal($videotitle[$i]);
+        }
+        if(strlen($videoauthor[$i]) > 0){
+          $videoauthor[$i] = $cypheringObject->toNormal($videoauthor[$i]);
+        }
+        if(strlen($videoIcon[$i]) > 0){
+          $videoIcon[$i] = $cypheringObject->toNormal($videoIcon[$i]);
+        }
+      }
+    }
     mysqli_close($polaczenie);
   }
 } catch (Exception $e) {

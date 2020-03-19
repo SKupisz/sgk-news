@@ -67,7 +67,7 @@ require_once "articles/loadData.php";
           <div class = "changeContainer">
             <div class = "changingMode bar1 now" id = "bar1">Article</div>
             <div class = "changingMode bar2" id = "bar2">Image</div>
-            <div class = "changingMode bar3" id = "bar3">Sound</div>
+            <div class = "changingMode bar3" id = "bar3">Multimedia</div>
           </div>
           <form method = "post" action = "articles/sendAnArticle.php" enctype="multipart/form-data" class = "sendingArticle">
 
@@ -89,7 +89,7 @@ require_once "articles/loadData.php";
               </span>
               <input type = "hidden" name = "u11moreInfo" class = "u11moreInfo"/>
             </section>
-            <?php require_once "./articles/uploadingSupport/photosForArticle.php";?>
+            <?php require_once "./articles/uploadingSupport/parts/photosForArticle.php";?>
             <button type = "submit" name = "to_waiting" id = "u11was">
                Send<span class = "u11wasr"> an article</span> to waiting room
             </button>
@@ -110,18 +110,8 @@ require_once "articles/loadData.php";
             </section>
             </main>
           </form>
-          <form method = "post" action = "articles/uploadingSupport/postSound.php" enctype="multipart/form-data" class = "soundUpload">
-            <section class = "postHeader">
-              Title of sound <input type = "text" name = "title" class = "titleInput" required/>
-            </section>
-            <main class = "mainUploadSection">
-              <input type = "file" name = "fileToUpload" class = "soundForUpload" style = "display: none;"/>
-              <input type="button" value="Browse..." class = "forUploadBtn" onclick="document.querySelector('.soundForUpload').click();" />
-              <section class = "submitSection">
-              <input name = "submit" type="submit" class = "uploadSubmitButton" value = "Send this sound to public"/>
-            </section>
-            </main>
-          </form>
+          <?php require_once "./articles/uploadingSupport/parts/multimedia.php";?>
+
         </section>
       </section>
     <?php }?>
@@ -148,7 +138,7 @@ require_once "articles/loadData.php";
   <script src = "main/main.js"></script>
   <script src = "articles/main.js"></script>
   <script>
-    <?php if(isset($_SESSION['uploadImageFail']) || isset($_SESSION['e_art']) || isset($_SESSION['deletingError']) || isset($_SESSION["e_artc"]))
+    <?php if(isset($_SESSION['uploadImageFail']) || isset($_SESSION['e_art']) || isset($_SESSION['deletingError']) || isset($_SESSION["e_artc"]) || isset($_SESSION["uploadSoundFail"]))
     {
       ?>
       openTheAlert("Articles Information","<?php
@@ -164,9 +154,13 @@ require_once "articles/loadData.php";
         echo $_SESSION["deletingError"];
         unset($_SESSION["deletingError"]);
       }
-      else{
+      else if(isset($_SESSION["e_artc"])){
         echo $_SESSION["e_artc"];
         unset($_SESSION["e_artc"]);
+      }
+      else{
+        echo $_SESSION["uploadSoundFail"];
+        unset($_SESSION["uploadSoundFail"]);      
       }
       ?>");<?php
     }

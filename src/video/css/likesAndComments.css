@@ -1,0 +1,86 @@
+.likes-section{
+    margin-bottom: 20px;
+}
+.views-container,.likes-container,.dislikes-container{
+    display: inline-block;
+}
+.views-container{
+    margin-right: 40px;
+}
+.likes-container{
+    margin-right: 20px;
+}
+.dislikes-container{
+    margin-left: 20px;
+}
+.views-container{
+    font-size: 1.4em;
+    font-family: "Oswald",sans-serif;
+}
+.eye-container{
+    font-size: 1.4em;
+}
+.eye-container,.views-quantity{
+    display: inline-block;
+}
+.like-button,.dislike-button{
+    background: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-right: 5px;
+}
+.like-button:focus,.dislike-button:focus{
+    outline: none;
+}
+.like-button:hover,.dislike-button:hover{
+    border-radius: 50%;
+}
+.comments{
+    width: calc(80% - 20px);
+    padding: 10px;
+    text-align: center;
+    font-family: "Oswald",sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+.comments > form{
+    margin-bottom: 10px;
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+.comment-input{
+    font-size: 1.4em;
+    padding: 9px;
+    font-family: "Oswald",sans-serif;
+    border-radius: 5px;
+    min-width: calc(70% - 18px);
+    max-width: calc(70% - 18px);
+    min-height: 100px;
+    max-height: 120px;
+}
+.send-comment{
+    width: calc(50% - 20px);
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    font-family: "Oswald",sans-serif;
+    font-size: 1.4em;
+    background: #ddd;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+.send-comment:hover{
+    background: #aaa;
+}

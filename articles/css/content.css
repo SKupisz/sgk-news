@@ -290,3 +290,42 @@ button[class="forUploadBtn"]:hover{
 .imageUpload,.soundUpload{
   display: none;
 }
+
+.soundUpload-form,.videoUpload-form{
+  display: none;
+}
+
+.upload-buttonsContainer{
+  width: calc(60% - 20px);
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.multimedia-mode{
+  width: calc(50% - 40px);
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+  color: black;
+  font-family: "Lato", sans-serif;
+  transition: background 0.4s;
+}
+.multimedia-mode:nth-child(1){
+  margin-right: 10px;
+}
+.multimedia-mode:nth-child(2){
+  margin-left: 10px;
+}
+.selected-form{
+  background: rgba(1,1,1,.1);
+}
+
+.video-icon{
+  margin-top: 40px;
+  display: block;
+}
