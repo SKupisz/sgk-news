@@ -48,6 +48,17 @@ try {
             }
             $image = substr($image,3);
             $cookieName = $s."_videoStatus";
+            $gettingTheComments = $connection->query("SELECT * FROM sent_videos_comments WHERE videoId = $s");
+            if(!$gettingTheComments) throw new Exception($connection->error);
+            $commentsContent = array();
+            $commentsAuthors = array();
+            for($i = 0 ; $i < $gettingTheComments->num_rows; $i++){
+                $row = $gettingTheComments->fetch_assoc();
+                $commentsAuthors[$i] = $row["userName"];
+                $commentsContent[$i] = $row["content"];
+                $commentsAuthors[$i] = $base->goBack($commentsAuthors[$i]);
+                $commentsContent[$i] = $base->goBack($commentsContent[$i]);
+            }
             if(!isset($_COOKIE[$cookieName])){
                 $addTheViews = $connection->query("UPDATE sent_videos SET views = views+1 WHERE id = $s");
                 if(!$addTheViews) throw new Exception($connection->error);

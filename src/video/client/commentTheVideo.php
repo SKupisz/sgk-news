@@ -36,7 +36,9 @@ try {
         $base = new Cypher();
         $content = $base->toDelta($content,rand(1024,3000),1,1);
         $uid = $_SESSION["zalogowany_id"];
-        $insertTheComment = $connection->query("INSERT INTO sent_videos_comments VALUES(NULL,$v,$uid,'$content')");
+        $user = $_SESSION["zalogowany"];
+        $user = $base->toDelta($user,rand(1024,3000),1,1);
+        $insertTheComment = $connection->query("INSERT INTO sent_videos_comments VALUES(NULL,$v,$uid,'$user','$content')");
         if(!$insertTheComment) throw new Exception($connection->error);
         mysqli_close($connection);
         $_SESSION["e_comment"] = "Comment successfully posted";
@@ -50,12 +52,3 @@ try {
 }
 
 ?>
-    <section class="comments">
-        <form action="../src/video/client/commentTheVideo.php?v=<?php echo $s;?>" method="post">
-            <textarea type="text" name="comment-content" class="comment-input" required placeholder = "Your comment here..."></textarea>
-            <button type="submit" class="send-comment">Comment</button>
-        </form>
-        <section class="presenting-comments">
-
-        </section>
-    </section>

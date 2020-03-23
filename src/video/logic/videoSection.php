@@ -20,4 +20,22 @@
         </div>
 
     </div>
+    <section class="comments">
+        <form action="../src/video/client/commentTheVideo.php?v=<?php echo $s;?>" method="post">
+            <textarea type="text" name="comment-content" class="comment-input" required placeholder = "Your comment here..."></textarea>
+            <button type="submit" class="send-comment">Comment</button>
+        </form>
+    </section>
+    <section class="presenting-comments">
+            <?php
+                for($i = 0 ; $i < count($commentsContent); $i++){
+                    ?>
+                    <div class="comment-container">
+                        <header class="comment-author"><?php echo $commentsAuthors[$i];?></header>
+                        <div class="comment-content"><?php echo $commentsContent[$i];?></div>
+                    </div>
+                    <?php
+                }
+            ?>
+    </section>
 </section>
