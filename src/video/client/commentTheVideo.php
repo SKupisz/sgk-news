@@ -1,7 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION["zalogowany"]) || !isset($_GET["v"])){
+if(!isset($_GET["v"])){
     header("Location: ../../../");
+    exit();
+}
+if(!isset($_SESSION["zalogowany"])){
+    $_SESSION["e_comment"] = "You're not signed in.";
+    header("Location: ../../../video/?s=".$_GET["v"]);
     exit();
 }
 if(!isset($_POST["comment-content"])){

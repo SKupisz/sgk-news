@@ -48,7 +48,7 @@ try {
             }
             $image = substr($image,3);
             $cookieName = $s."_videoStatus";
-            $gettingTheComments = $connection->query("SELECT * FROM sent_videos_comments WHERE videoId = $s");
+            $gettingTheComments = $connection->query("SELECT * FROM sent_videos_comments WHERE videoId = $s ORDER by id DESC");
             if(!$gettingTheComments) throw new Exception($connection->error);
             $commentsContent = array();
             $commentsAuthors = array();
