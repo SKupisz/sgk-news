@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+.image-adding{
+    width: calc(90% - 20px);
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.image-header{
+    font-family: "Oswald",sans-serif;
+    width: calc(100% - 10px);
+    padding: 5px;
+    text-align: center;
+    font-size: 1.9em;
+    margin-bottom: 30px;
+}
+
+.photo-input{
+    width: calc(90% - 20px);
+    padding: 10px;
+    text-align: center;
+    font-family: "Oswald",sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-name{
+    font-size: 1.2em;
+}
+
+.photo-name > input{
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Lato',sans-serif;
+    margin-bottom: 20px;
+}
+
+.photo-browse{
+    margin-bottom: 10px;
+}
+
+.photo-browse > input:nth-child(1){
+    display: none;
+}

@@ -60,8 +60,7 @@ try {
     }
   }
 } catch (Exception $e) {
-  echo "Connection failure ".$e->getMessage();
+  echo "Connection failure ";
   exit();
 }
-/* TODO: zrób komunikację przez ajaxa z tym skryptem*/
 ?>

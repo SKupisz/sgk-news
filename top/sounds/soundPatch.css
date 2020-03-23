@@ -1,4 +1,35 @@
 @import url("./soundBackgrounds.css");
+
+.multimedia-navbar{
+    width: calc(70% - 20px);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.multimedia-navItem{
+    width: calc(50% - 20px);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: none;
+    font-size: 1.2em;
+    font-family: "Lato",sans-serif;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+.multimedia-navItem:hover{
+    background: rgba(1,1,1,.2);
+}
+.item-signed{
+    background: rgba(1,1,1,.2);
+}
+
+.sounds-container,.videos-container{
+    display: none;
+}
+
 .no-sounds{
     width: 90%;
     text-align: center;
@@ -13,7 +44,7 @@
     width: calc(100% - 20px);
     padding: 10px;
 }
-.song-container{
+.song-container,.video-container{
     width: 40%;
     text-align: center;
     padding: 10px;

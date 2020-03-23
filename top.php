@@ -165,4 +165,5 @@ if(isset($_GET['watchingImage']))
 <script src="./src/node_modules/push.js/bin/push.min.js"></script>
 <script src = "./top/options.js"></script>
 <script src = "top/main.js"></script>
+<script src="./top/sounds/multimedia.js"></script>
 </html>

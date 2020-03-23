@@ -44,9 +44,13 @@ try {
     if(!$search) throw new Exception($polaczenie->error);
     require_once("../inbox/encrypt.php");
     $content = "";
+    $idForImages = -1;
     for($i = 0 ; $i < $search->num_rows; $i++){
       $row = $search->fetch_assoc();
       $content.=$row["article"];
+      if($i == 0){
+        $idForImages = $row["id"];
+      }
     } 
     $base = new Encrypt();
     $content = $base->goBack($content);
@@ -97,6 +101,20 @@ try {
         }
       }
     }
+    $getPictures = $polaczenie->query("SELECT * FROM waiting_articles_images_locations WHERE postId = $idForImages ORDER BY place ASC");
+    if(!$getPictures) throw new Exception($polaczenie->error);
+    if($getPictures->num_rows > 0){
+      for($i = 0 ; $i < $getPictures->num_rows; $i++){
+        $row = $getPictures->fetch_assoc();
+        $address = $row["address"];
+        $newAddr = str_replace("waiting/",$postID."_",$address);
+        rename($address,$newAddr);
+        $confirm = $polaczenie->query("INSERT INTO sent_articles_images_locations VALUES(NULL,$postID,'$newAddr',$i)");
+        if(!$confirm) throw new Exception($polaczenie->error);
+      }
+    }
+    $makeSpace = $polaczenie->query("DELETE FROM waiting_articles_images_locations WHERE postId = $idForImages");
+    if(!$makeSpace) throw new Exception($polaczenie->error);
     $rezultat = $polaczenie->query("UPDATE $user SET status = 2 WHERE id = $id");
     if(!$rezultat) throw new Exception($polaczenie->error);
     mysqli_close($polaczenie);

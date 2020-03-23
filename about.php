@@ -65,7 +65,11 @@ session_start();
     <section class="credits">
       <header class="credits-header">Credits</header>
       <div class="credits-desc">Special thanks for those who suppported and cooperated with us</div>
-      <div class="cooperators"></div>
+      <div class="cooperators">
+        <div class="cooperator">
+          <label class="cooperator-name">Firma jest kobietą</label>: <a href="https://www.facebook.com/firmajestkobieta/" target="_blank" rel="noopener noreferrer">https://www.facebook.com/firmajestkobieta/</a>
+        </div>
+      </div>
     </section>
 
     

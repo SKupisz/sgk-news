@@ -1,5 +1,6 @@
 @import url("./css/statistic.css");    
 @import url("./css/content.css");  
+@import url("./css/articlesButtons.css"); 
 * {
   margin: 0px;
   padding: 0px;
